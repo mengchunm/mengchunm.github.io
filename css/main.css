@@ -3708,3 +3708,7 @@ div.swiper-slide img {
   background: #fff !important;
   --swiper-theme-color: #ff5722 !important;
 }
+.cmt-body.beaudar {
+  margin: 0 -4px;
+  width: calc(100% + 8px);
+}
