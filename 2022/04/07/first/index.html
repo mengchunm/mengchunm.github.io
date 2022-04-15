@@ -58,7 +58,7 @@
 <!-- 老式写法，兼容性最忧 -->
 <script>
   var xhr = new XMLHttpRequest();
-  xhr.open('get', 'https://v1.hitokoto.cn/?encode=js&select=%23hitokoto');
+  xhr.open('get', 'https://v1.hitokoto.cn');
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
       var data = JSON.parse(xhr.responseText);
