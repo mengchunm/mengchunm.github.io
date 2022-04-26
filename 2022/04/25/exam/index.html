@@ -28,7 +28,7 @@
 <meta property="og:description" content="选择题总之今天先汇总了这些">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-25T13:45:24.351Z">
-<meta property="article:modified_time" content="2022-04-25T16:20:34.073Z">
+<meta property="article:modified_time" content="2022-04-26T06:57:09.026Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -136,6 +136,12 @@
 <p>在创建对象时必须（ ）</p>
 <p>A 先声明对象，然后才能使用对象<br>B 先声明对象，为对象分配内存空间，然后才能使用对象<br><strong>C 先声明对象，然后才能使用对象</strong><br>D 先声明对象，为对象分配内存空间，对对象初始化，然后才能使用对象</p>
 <hr>
+<p>如果希望某个变量只可以被类本身访问和调用，则应该使用下列( ) 访问控制修饰。</p>
+<p><strong>A private</strong></p>
+<p>B protected</p>
+<p>C default</p>
+<p>D public</p>
+<hr>
 <p>指出下列程序运行的结果 （ ）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Example</span>&#123;</span><br><span class="line">	String str=<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;good&quot;</span>);</span><br><span class="line">	<span class="type">char</span>[] ch = &#123;<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>&#125;;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[])</span>&#123;</span><br><span class="line">		Example ex=<span class="keyword">new</span> <span class="title class_">Example</span>();</span><br><span class="line">		ex.change(ex.str,ex.ch);</span><br><span class="line">		System.out.print(ex.str+<span class="string">&quot; and &quot;</span>);</span><br><span class="line">		Sytem.out.print(ex.ch);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">change</span><span class="params">(String str,<span class="type">char</span> ch[])</span>&#123;</span><br><span class="line">		str=<span class="string">&quot;test ok&quot;</span>; ch[<span class="number">0</span>]=<span class="string">&#x27;g&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -152,11 +158,33 @@
 
 <p>A 移动C:\test.dat<br>B 创建C:\test.dat<br><strong>C 删除C:\test.dat</strong><br>D 打开C:\test.dat文件输出流</p>
 <hr>
+<p>getCustomerInfo()方法如下, try中可以捕获三种类型的异常, 如果在该方法运行中产生了一个IOException ,将会输出( )</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">getCustomerInfo</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">try</span>&#123;</span><br><span class="line">		<span class="comment">//一些可以引起异常的语句</span></span><br><span class="line">	&#125; <span class="keyword">catch</span> (java.io.FileNotFoundException ex)&#123;</span><br><span class="line">		System.out.print(<span class="string">&quot;FileNotFoundException!&quot;</span>);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (java.io.IOException ex) &#123;</span><br><span class="line">		System.out.print(<span class="string">&quot;IOException!&quot;</span>);</span><br><span class="line">	&#125;<span class="keyword">catch</span> (java.lang.Exception ex) &#123;</span><br><span class="line">		System.out.print(<span class="string">&quot;Exception!&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A IOException!Exception!</p>
+<p>B FileNotFoundException!IOException!</p>
+<p><strong>C IOException!</strong></p>
+<p>D FileNotFoundException!IOException!Exception!</p>
+<hr>
 <p>设有定义 float x&#x3D;3.5f, y&#x3D;4.6f, z&#x3D;5.7f；则以下的表达式中，值为true的是( )</p>
 <p><strong>A x !&#x3D; y</strong><br>B x &gt; y || x &gt; z<br>C z &gt; ( y + x )<br>D x &lt; y &amp; ! ( x &lt; z )</p>
 <hr>
 <p>Java源文件中最多只能有一个（）类，其他类的个数不限。</p>
 <p>A interface<br>B abstract<br>C final<br><strong>D public</strong></p>
+<hr>
+<p>定义有如下的方法:</p>
+<p>abstract void performDial( );</p>
+<p>该方法属于( )。</p>
+<p>A 接口方法</p>
+<p>B 最终方法</p>
+<p>C 空方法</p>
+<p><strong>D 抽象方法</strong></p>
+<hr>
+<p>下列关于for循环和while循环的说法中( )是正确的 ?</p>
+<p>A 两种循环任何时候都可替换</p>
+<p><strong>B while循环能实现的操作, for循环也都能实现</strong></p>
+<p>C 两种循环结构中都必须有 循环体,循环体不能为空</p>
+<p>D while循环判断条件一般是程 序结果, for循环判断条件一般是非程序结果</p>
 <hr>
 <p>参照以下Java代码，以下四个叙述中最确切的是（　　　）</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>&#123;</span><br><span class="line">	<span class="type">int</span> x;</span><br><span class="line">	<span class="keyword">static</span> <span class="type">int</span> y;</span><br><span class="line">	<span class="keyword">void</span> <span class="title function_">fac</span><span class="params">(String s)</span>&#123;</span><br><span class="line">		Syatem. out. println(＂字符串:＂+s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -174,6 +202,14 @@
 <p>C 1 </p>
 <p>D 3</p>
 <hr>
+<p>下面的方法,当输入为2的时候返回值是( )</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">getValue</span><span class="params">(<span class="type">int</span> i)</span> &#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">switch</span> (i) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">1</span>:result = result+i;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">2</span>: result= result+i*<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">3</span>: result= result+i*<span class="number">3</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>A 4</p>
+<p>B 2</p>
+<p>C 0</p>
+<p><strong>D 10</strong></p>
+<hr>
 <p>指出正确的表达式 （ ）</p>
 <p>A double d &#x3D; 0.9239d; </p>
 <p><strong>B long l &#x3D; 0xfffL;</strong></p>
@@ -185,6 +221,15 @@
 <p>B.没错，类型有、变量名有、赋值没错。</p>
 <p>C.boolean 类型只能赋值 true 或者false。而这里的Boolean应该是boolean类型的包装类，Boolean类型时可以被赋值为null的。所以此选项缺少变量名。</p>
 <p>D.byte赋值范围为-128~127；</p>
+</blockquote>
+<hr>
+<p>下面语句在编译时不会出现警告或错误的是( )</p>
+<p>A Boolean b &#x3D; null;</p>
+<p>B int i &#x3D; 10.0;</p>
+<p>C char c &#x3D;” C”;</p>
+<p>D float f &#x3D; 3.14;</p>
+<blockquote>
+<p>全错？</p>
 </blockquote>
 <hr>
 <p>关于被私有访问控制符private修饰的成员变量，以下说法正确的是（ ）</p>
@@ -202,18 +247,24 @@
 <p>D public float aMethod（float a， float b，float c）{ }</p>
 <hr>
 <p>类Test1、Test2定义如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1public <span class="keyword">class</span> <span class="title class_">Test1</span></span><br><span class="line"><span class="number">2</span>&#123;</span><br><span class="line"><span class="number">3</span>	<span class="keyword">public</span> <span class="type">float</span> aMethod（<span class="type">float</span> a，<span class="type">float</span> b） <span class="keyword">throws</span> IOException &#123; &#125;</span><br><span class="line"><span class="number">4</span>&#125;</span><br><span class="line"><span class="number">5</span>	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test2</span> <span class="keyword">extends</span> <span class="title class_">Test1</span>&#123;</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">7</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test1</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="type">float</span> aMethod（<span class="type">float</span> a，<span class="type">float</span> b） <span class="keyword">throws</span> IOException &#123; &#125;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Test2</span> <span class="keyword">extends</span> <span class="title class_">Test1</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>将以下（ ）插入行6是不合法的。</p>
 <p>A public int aMethod（int a，int b）throws Exception{ }<br>B public float aMethod（float p，float q）{ }<br><strong>C float aMethod（float a，float b）{ }</strong><br>D public int aMethod（int a，int b）throws IOException{ }</p>
 <hr>
 <p>关于以下程序代码的说明正确的是（ ）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">class</span> <span class="title class_">HasStatic</span>&#123;</span><br><span class="line"><span class="number">2</span> 	<span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> x=<span class="number">100</span>;</span><br><span class="line"><span class="number">3</span> 	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[ ])</span>&#123;</span><br><span class="line"><span class="number">4</span> 		HasStatic hs1= <span class="keyword">new</span> <span class="title class_">HasStatic</span>( );</span><br><span class="line"><span class="number">5</span> 		hs1.x++;</span><br><span class="line"><span class="number">6</span> 		HasStatic hs2=<span class="keyword">new</span> <span class="title class_">HasStatic</span>( );</span><br><span class="line"><span class="number">7</span> 		hs2.x++;</span><br><span class="line"><span class="number">8</span> 		hs1=<span class="keyword">new</span> <span class="title class_">HasStatic</span>( );</span><br><span class="line"><span class="number">9</span>	 	hs1.x++;</span><br><span class="line"><span class="number">10</span>	HasStatic.x- -;</span><br><span class="line"><span class="number">11</span>		System.out.println(“x=”+x);</span><br><span class="line"><span class="number">12</span>	&#125;</span><br><span class="line"><span class="number">13</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">class</span> <span class="title class_">HasStatic</span>&#123;</span><br><span class="line"> 	<span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span> x=<span class="number">100</span>;</span><br><span class="line"> 	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String args[ ])</span>&#123;</span><br><span class="line"> 		HasStatic hs1= <span class="keyword">new</span> <span class="title class_">HasStatic</span>( );</span><br><span class="line"> 		hs1.x++;</span><br><span class="line"> 		HasStatic hs2=<span class="keyword">new</span> <span class="title class_">HasStatic</span>( );</span><br><span class="line">		hs2.x++;</span><br><span class="line"> 		hs1=<span class="keyword">new</span> <span class="title class_">HasStatic</span>( );</span><br><span class="line">	 	hs1.x++;</span><br><span class="line">	HasStatic.x- -;</span><br><span class="line">		System.out.println(“x=”+x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>A 5行不能通过编译，因为引用了私有静态变量<br>B 10行不能通过编译，因为x是私有静态变量<br><strong>C 程序通过编译，输出结果为：x&#x3D;102</strong><br>D 程序通过编译，输出结果为：x&#x3D;103</p>
 <hr>
 <p>执行语句int i &#x3D; 1, j &#x3D; ++i; 后i与j的值分别为（ ）。</p>
 <p>A 2与1<br><strong>B 2与2</strong><br>C 1与1<br>D 1与2</p>
+<hr>
+<p>在调用方法时,若要使方法改变实参的值,可以( )</p>
+<p><strong>A 用对象作为参数</strong></p>
+<p>B 用基本数据类型作为参数</p>
+<p>C 用String类型做参数</p>
+<p>D使用对象的数据域做参数</p>
 <hr>
 <p>在Java中，在包com.db下定义一个类，要让包com.util下的所有类都可以访问这个类，这个类必须定义为（ ）</p>
 <p><strong>A public</strong><br>B default<br>C protected<br>D private</p>
@@ -229,6 +280,31 @@
 <p>B Tree&amp;Glasses </p>
 <p>C 273.5 </p>
 <p><strong>D FirstJavaApplet</strong></p>
+<hr>
+<p>以下声明合法的是( )</p>
+<p><strong>A public final static int w() ;</strong></p>
+<p>B abstract double d ;</p>
+<p>C abstract final double hyperbolicCosine();</p>
+<p>D default String s ;</p>
+<hr>
+<p>下面不是合法标识符的是( )</p>
+<p>A $d2000_</p>
+<p>B whataQuiz</p>
+<p>C giveMes</p>
+<p><strong>D 2ofUS</strong></p>
+<hr>
+<p>在Java的类库中,包含实现输入输出操作的包是( )</p>
+<p><strong>A java.io</strong></p>
+<p>B java.awt</p>
+<p>C java.util</p>
+<p>D java.applet</p>
+<hr>
+<hr>
+<p>声明成员变量时,如果不使用任何访问控制符(public, protected, private) ,则以下( ) 类型的类不能对该成员进行直接访问。</p>
+<p><strong>A 不同包中的子类</strong></p>
+<p>B 同一包中的子类</p>
+<p>C 同一包中的非子类</p>
+<p>D 同一类</p>
 <hr>
 <p>下面声明数组的写法错误的是（ ）。</p>
 <p>A int[ ] a;<br>B int[ ] a &#x3D; {1，2，3};<br><strong>C int[3][ ] a;</strong><br>D int a[ ];</p>
@@ -254,6 +330,12 @@
 <p>下述概念中不属于面向对象方法的是（ ）。</p>
 <p>A 继承、多态<br>B 类、封装<br><strong>C 过程调用</strong><br>D 对象、消息</p>
 <hr>
+<p>在switch语句中, switch后面括号内的表达式的类型不能是( )</p>
+<p>A byte</p>
+<p>B int</p>
+<p>C char</p>
+<p><strong>D long</strong></p>
+<hr>
 <p>以下关于构造函数的描述错误的是（ ）。</p>
 <p>A 一般在创建新对象时，系统会自动调用构造函数。<br><strong>B 构造函数的返回类型只能是void型。</strong><br>C 构造函数的主要作用是完成对类的对象的初始化工作。<br>D 构造函数是类的一种特殊函数，它的方法名必须与类名相同。</p>
 <hr>
@@ -270,6 +352,8 @@
 <hr>
 <p>Java语言的许多特点中，下列（）特点是C++语言所不具备的。</p>
 <p>A 高性能<br><strong>B 跨平台</strong><br>C 有类库<br>D 面向对象</p>
+<hr>
+<p>在Java中用( ) 关键字修饰的方法可以直接通过类名来调用。<br>A void<br><strong>B static</strong><br>C final<br>D private</p>
 <hr>
 <p>为AB类的一个无形式参数无返回值的方法method书写方法头，使得使用类名AB作为前缀就可以调用它，该方法头的形式为( )。</p>
 <p><strong>A static void method( )</strong><br>B public void method( )<br>C final void method( )<br>D abstract void method( )</p>
