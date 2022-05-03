@@ -28,7 +28,7 @@
 <meta property="og:description" content="答案均由搜题软件搜出，不一定正确，欢迎反馈">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-25T13:45:24.351Z">
-<meta property="article:modified_time" content="2022-04-28T05:46:58.554Z">
+<meta property="article:modified_time" content="2022-05-03T14:49:55.640Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -350,7 +350,7 @@
 <p>下列语句序列执行后</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i=<span class="number">10</span>, j=<span class="number">18</span>, k=<span class="number">30</span>;</span><br><span class="line"><span class="keyword">switch</span>( j - i ) &#123;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">8</span> : k++;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">9</span> : k += <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">case</span> <span class="number">10</span>: k += <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">default</span> : k /= j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>k 的值是( )<br><strong>A 2</strong><br>B 31<br>C 3<br>D 33</p>
+<p>k的值是( )<br><strong>A 2</strong><br>B 31<br>C 3<br>D 33</p>
 <hr>
 <p>Java语言的许多特点中，下列（）特点是C++语言所不具备的。</p>
 <p>A 高性能<br><strong>B 跨平台</strong><br>C 有类库<br>D 面向对象</p>
@@ -359,6 +359,69 @@
 <hr>
 <p>为AB类的一个无形式参数无返回值的方法method书写方法头，使得使用类名AB作为前缀就可以调用它，该方法头的形式为( )。</p>
 <p><strong>A static void method( )</strong><br>B public void method( )<br>C final void method( )<br>D abstract void method( )</p>
+<hr>
+<p>下面是People和Child类的定义和构造方法，每个构造方法都输出编号在执行new Child(“mike”)的时候都有哪些构造方法被顺序调用?<br>请选择输出结果()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">People</span> &#123;</span><br><span class="line">String name;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">People</span><span class="params">()</span>&#123; System.out.print(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">People</span><span class="params">(String name)</span> &#123;</span><br><span class="line">		System.out.print(<span class="number">2</span>);</span><br><span class="line"><span class="built_in">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Child</span> <span class="keyword">extends</span> <span class="title class_">People</span> &#123;</span><br><span class="line">	People father;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Child</span><span class="params">(String name)</span> &#123;</span><br><span class="line">	System.out.print(<span class="number">3</span>);</span><br><span class="line">	<span class="built_in">this</span>.name= name;</span><br><span class="line">	father= <span class="keyword">new</span> <span class="title class_">People</span>(name + <span class="string">&quot;:F&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Child</span><span class="params">()</span>&#123;</span><br><span class="line">	System.out.print(<span class="number">4</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>A.312</strong> B.32 C.13 D.132</p>
+<hr>
+<p>在Java中如果父类中的某些方法不包含让任何逻辑，并且并且需要子类重写，可以用()关键字来声明父类中的这些方法</p>
+<p>A.final B.static C.void <strong>D.abstract</strong></p>
+<hr>
+<p>以下关于继承的叙述正确的是()<br><strong>A 在Java中类只允许单一继承</strong><br>B 在Java中一个类只能实现一个接口<br>C 在Java中一个类不能同时继承一个类和实现一个接口<br>D 在Java中接口只允许单一继承</p>
+<blockquote>
+<p>解析:该题考查的是类的继承。继承分为单继承和多继承两种形式。单继承允许一个类可以有多个子类，但只能有一个父类;多继承则允许一一个类不仅可以有多个子类，还可以有多个父类。但需要注意- -点，Java只支持单继承，但可以通过接口实现多继承的功能。一个类可以同时继承一个类和实现一个接口。所以选项A是正确的。</p>
+</blockquote>
+<hr>
+<p>下列属于合法的Java标识符是()</p>
+<p><strong>A.cat</strong> B.5books C.+static D.-3.14159</p>
+<hr>
+<p>有语句String s&#x3D;”hello world”;，以下操作不合法的是()<br>A int i&#x3D;s.length();<br><strong>B s&gt;&gt;&gt;&#x3D;3;</strong><br>C String s&#x3D;s.trim();<br>D String t&#x3D;s+”!”;</p>
+<hr>
+<p>java语言的类间的继承关系是（）</p>
+<p>A 不能继承<br>B 多重的<br><strong>C 单重的</strong><br>D 线程的</p>
+<hr>
+<p>执行语句int i&#x3D;1,j&#x3D;++i;后i与j的值分别为()</p>
+<p>A 2与1</p>
+<p>B 1与1</p>
+<p>**C 2与2</p>
+<p>D 1与2</p>
+<hr>
+<p>下面( )行代码正确的声明了一个类方法(静态方法)</p>
+<p>A public int method(inti)</p>
+<p>B protected method(int i) </p>
+<p>C public static method(Strings)</p>
+<p><strong>D public static void method(lnteger i)</strong></p>
+<hr>
+<p>分析如下的java代码段,( )编译没有异常和错误</p>
+<p>A. byte b&#x3D;257; B. boolean b&#x3D;null; C. float f&#x3D;1.3; <strong>D. int i&#x3D;12;</strong></p>
+<hr>
+<p>假设方法unsafe()将抛出lOException,请问可将以下()可以第1行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="keyword">if</span>(unsafe()&#123;<span class="comment">//do something..&#125;</span></span><br><span class="line"> <span class="keyword">else</span> <span class="keyword">if</span> (safe())&#123;<span class="comment">//do the other..&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A public IOException methodName()<br>B public void methodName()<br>**C public void methodName() throws IOException **<br>D public void methodName() throw IOException</p>
+<hr>
+<p>下面程序定义了一个类，关于该类说法正确的是( )。<br>abstract class abstract Class{}<br>关于该类说法正确的是()<br>A 该类不能被继承<br>B 该类的方法不能被重载<br>C 该类能调用new abstractClass()方法实例化为一个对象<br><strong>D 该类中可以有普通的方法</strong></p>
+<hr>
+<p>欲构造ArrayList类的一个实例，此类继承了List接口，下列( )是正确的</p>
+<p>A ArrayList myList&#x3D;new Object( ); </p>
+<p>B ArrayList myList&#x3D;new List( ); </p>
+<p>**C List myList&#x3D;new ArrayList( ); **</p>
+<p>D List myList&#x3D;new List( );</p>
+<hr>
+<p>下列关于包的描述中,错误的是()</p>
+<p><strong>A 包是一种特殊的类</strong></p>
+<p>B 包是若干个类的集合</p>
+<p>C 包是使用package语句创建的</p>
+<p>D 包有有包名包和无名包两种</p>
+<hr>
+<p>有一段java应用程序，它的主类名是a1，那么保存它的源文件名可以是()。</p>
+<p><strong>A. a1.java</strong> B. a1.class C. a1 D.a.jsp</p>
+<hr>
+<p>若a的值为3时，执行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a&gt;<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> (a&gt;<span class="number">3</span>) </span><br><span class="line">c=<span class="number">2</span>; </span><br><span class="line">elsec=<span class="number">3</span>; </span><br><span class="line">elsec=<span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+
+<p>c的值是多少? ()<br>A.2 B.2 <strong>C.3</strong> D.4</p>
 <h3 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h3><p>Java的源代码中定义几个类，编译结果就生成几个以“.class”后缀的字节码文件。</p>
 <p><strong>✅</strong>对</p>
 <p><strong>⬜</strong>错</p>
@@ -429,7 +492,7 @@
 
 <hr>
 <p>方法int sigmaEvenNum（int[]a）的功能是求已知数组中偶数的个数。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">int</span> sigmaEvenNum（<span class="type">int</span> a[]）&#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span><span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (______________) &#123;</span><br><span class="line">		<span class="keyword">if</span>(______________)</span><br><span class="line">		s++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">int</span> <span class="title function_">sigmaEvenNum</span><span class="params">(<span class="type">int</span> a[])</span>&#123;</span><br><span class="line">	<span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span><span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (______________) &#123;</span><br><span class="line">		<span class="keyword">if</span>(______________)</span><br><span class="line">		s++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
 <p>类Fact求n的阶乘，请将程序补充完整。</p>
@@ -460,14 +523,10 @@
 </li>
 <li><p>类Points2D 的方法有：</p>
 <p>属性x,y的get和set方法 Points2D( ) : 构造函数，将x和y坐标都置0</p>
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_3" value="Points2D( double x, double y) :"><button class="copy-btn" onclick="util.copy(&quot;copy_3&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div> 构造函数，设置x和y为给定坐标。
-
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_4" value="double distance(Points2D a) :"><button class="copy-btn" onclick="util.copy(&quot;copy_4&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>  计算当前点与给定点的距离。
-
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_5" value="double distance(double x，double y)："><button class="copy-btn" onclick="util.copy(&quot;copy_5&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div> 计算当前点与给定x,y坐标点的距离。 
-
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_6" value="String ToString( ) :"><button class="copy-btn" onclick="util.copy(&quot;copy_6&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div> 输出当前点的坐标信息。 
-
+<p>copy Points2D( double x, double y) : 构造函数，设置x和y为给定坐标。</p>
+<p>copy double distance(Points2D a) : 计算当前点与给定点的距离。</p>
+<p>copy double distance(double x，double y)：计算当前点与给定x,y坐标点的距离。 </p>
+<p>copy String ToString( ) : 输出当前点的坐标信息。 </p>
 <p>请写出测试方法，分别计算给定两点的距离的两种情况，并输出，然后输出当前点的坐标信息。 </p>
 <p>请上传源代码截图，截图需带类名和行号。类名用给定类名+学号命名，例如161007112王明，Points2D类名为 Points2D161007112.java，其余类名依此规则定义。并将运行结果截图上传，运行结果需要带输出窗口的运行时间。<br><a target="_blank" rel="noopener" href="https://api.dzzui.com/api/lanzoujx?url=https://mengchunm.lanzouw.com/i7mj203r320b&type=down">最小截图工具.exe</a></p>
 </li>
