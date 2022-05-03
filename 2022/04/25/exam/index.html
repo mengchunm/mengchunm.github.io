@@ -28,7 +28,7 @@
 <meta property="og:description" content="答案均由搜题软件搜出，不一定正确，欢迎反馈">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-25T13:45:24.351Z">
-<meta property="article:modified_time" content="2022-05-03T14:49:55.640Z">
+<meta property="article:modified_time" content="2022-05-03T16:44:51.029Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -421,8 +421,117 @@
 <p>若a的值为3时，执行</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a&gt;<span class="number">0</span>)</span><br><span class="line"><span class="keyword">if</span> (a&gt;<span class="number">3</span>) </span><br><span class="line">c=<span class="number">2</span>; </span><br><span class="line">elsec=<span class="number">3</span>; </span><br><span class="line">elsec=<span class="number">4</span>;</span><br></pre></td></tr></table></figure>
 
-<p>c的值是多少? ()<br>A.2 B.2 <strong>C.3</strong> D.4</p>
-<h3 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h3><p>Java的源代码中定义几个类，编译结果就生成几个以“.class”后缀的字节码文件。</p>
+<p>c的值是多少? ()<br>A.1 B.2 <strong>C.3</strong> D.4</p>
+<hr>
+<p>若需要定义一个类的作用域或类中使用的方法应使用 ()修饰符。</p>
+<p>A private</p>
+<p>B public</p>
+<p>C package</p>
+<p>D static</p>
+<hr>
+<p>下面（）行代码正确的声明了一个类方法（静态方法）</p>
+<p>A protected method(int i) </p>
+<p>B public static method(Strings s)</p>
+<p>C public int method(int i) </p>
+<p><strong>D protected static void method(Integer i)</strong></p>
+<hr>
+<p>有以下方法的定义请选择该方法的返回类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ReturnType <span class="title function_">method</span><span class="params">(<span class="type">byte</span> x,<span class="type">double</span> y)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="type">short</span>)x/y*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>A int</p>
+<p><strong>B double</strong></p>
+<p>C int</p>
+<p>D short</p>
+<hr>
+<p>在Java中,一个类可同时定义许多同名的方法，这些方法的形式参数个数，类型或顺序各不相同，传回的值也可以不相同。这种面向对象程序的特性称为（） </p>
+<p>A 隐藏 </p>
+<p>B 覆盖 </p>
+<p>C Java不支持此特性 </p>
+<p><strong>D 重载</strong></p>
+<hr>
+<p>一个可以独立运行的Java应用程序（ )</p>
+<p>A 最多只能有两个main( )方法 </p>
+<p><strong>B 只能有一个main( )方法</strong> </p>
+<p>C 可以有一个或多个main( )方法 </p>
+<p>D 可以有一个或零个main( )方法</p>
+<hr>
+<p>下列关于包的描述中，错误的是（） </p>
+<p>A 包是使用package语句创建的 </p>
+<p>B 包有有名包和无名包两种 </p>
+<p>C 包是若干个类的集合 </p>
+<p><strong>D 包是一种特殊的类型</strong></p>
+<hr>
+<p>假设在Java源程序文件“MvClassiava”中只含有一个类,而且这个类必须能够被位于个庞大的软件系统中的所有Java类访问到,那么下面()声明有可能是符合要求的类声明。</p>
+<p>A private class MyClass extends Object </p>
+<p>B public class myclass extends Object </p>
+<p><strong>C public class MyClass</strong> </p>
+<p>D class MyClass extends Object</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">foo</span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">		String s;</span><br><span class="line">		System.out.println(<span class="string">&quot;s=&quot;</span>+s);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;??</span><br></pre></td></tr></table></figure>
+
+<p>输出结果应该是：<br>A 代码得到编译，但捕获到NullPointException异常<br>B 代码得到编译，并输出”s&#x3D;”<br>C 由于Strings没有初始化，代码不能编译通过<br><strong>D 代码得到编译，并输出”s&#x3D;null”</strong></p>
+<hr>
+<p>整型数据类型中，需要内存空间最少的是（)</p>
+<p>A.int B.long C.short <strong>D.byte</strong></p>
+<hr>
+<p>在java中（）关键宇用于终止语句</p>
+<p>A continue </p>
+<p><strong>B break</strong> </p>
+<p>C exit </p>
+<p>D return</p>
+<hr>
+<p>下列说法不正确的是  </p>
+<p>A 一个子类的对象可以接收父类对象能接收的消息</p>
+<p>B 当子类对象和父类对象能接收同样的消息时，它们针对消息产生的行为可能不同</p>
+<p><strong>C 父类比它的子类的方法更多</strong></p>
+<p>D 子类在构造函数中可以使用super( )来调用父类的构造函数</p>
+<hr>
+<p>下面（）循环会导致死循环？ </p>
+<p>A for(int k&#x3D;0;k&lt;0;k++)</p>
+<p>B for(int k&#x3D;0;k&gt;0;k++） </p>
+<p>C for(int k&#x3D;10;k&gt;0;k–) </p>
+<p><strong>D for(int k&#x3D;0;k&lt;10;k–)</strong></p>
+<hr>
+<p>Java为移动设备提供的平台是（ )</p>
+<p>A JDK6 </p>
+<p><strong>B Java ME</strong> </p>
+<p>C Java SE </p>
+<p>D Java EE</p>
+<hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> a=b=<span class="number">5</span>;</span><br><span class="line">String s1=<span class="string">&quot;祝你今天考出好成绩!&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> s1;</span><br></pre></td></tr></table></figure>
+
+<p>则表达式a&#x3D;&#x3D;b与s2&#x3D;&#x3D;s1的结果分别是:( )<br>A.true与true </p>
+<p>B.false与true</p>
+<p>C.true与false</p>
+<p>D.false与false</p>
+<hr>
+<p>有语句String s&#x3D;”hello world”;以下操作（）是不合法的？</p>
+<p><strong>A s&gt;&gt;&gt;&#x3D;3 ;</strong></p>
+<p>B String t&#x3D;s+”!”;</p>
+<p>C String ts &#x3D;s.trim;</p>
+<p>D int i&#x3D;s.length();</p>
+<hr>
+<p>设i、j为int型数组变量名，a为int型数组名，以下选项中，正确的赋值语句是()<br>A i&#x3D;i+2</p>
+<p><strong>B a[0]&#x3D;7;</strong></p>
+<p>C i++—j;</p>
+<p>D a(0)&#x3D;66;</p>
+<hr>
+<h3 id="判断题"><a href="#判断题" class="headerlink" title="判断题"></a>判断题</h3><p>接口里不能定义成员变量。</p>
+<p><strong>✅</strong>对</p>
+<p><strong>⬜</strong>错</p>
+<p>equals()方法只有在两个对象的内容一致时返回true</p>
+<p><strong>⬜</strong>对</p>
+<p><strong>❌</strong>错</p>
+<p>父类的构造方法不可以被子类继承</p>
+<p><strong>✅</strong>对</p>
+<p><strong>⬜</strong>错</p>
+<p>构造方法一般不允许有任何返回值，因此需要在构造方法返回类型处标注为void</p>
+<p><strong>⬜</strong>对</p>
+<p><strong>❌</strong>错</p>
+<p>抽象方法必须在抽象类中，所以抽象类中的方法都必须是抽象方法，不能包含带有方法体的具体方法</p>
+<p><strong>⬜</strong>对</p>
+<p><strong>❌</strong>错</p>
+<p>Java的源代码中定义几个类，编译结果就生成几个以“.class”后缀的字节码文件。</p>
 <p><strong>✅</strong>对</p>
 <p><strong>⬜</strong>错</p>
 <p>switch语句中可以没有default子句。</p>
@@ -478,6 +587,18 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">SuperClass</span> &#123;</span><br><span class="line">	<span class="type">float</span> x;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	SuperClass( <span class="type">float</span> x , <span class="type">int</span> n ) &#123;</span><br><span class="line">	<span class="built_in">this</span>.x = x ;</span><br><span class="line">	<span class="built_in">this</span>.n = n;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">SubClass</span> <span class="keyword">extends</span> <span class="title class_">SuperClass</span> &#123;</span><br><span class="line">	SubClass( <span class="type">float</span> x , <span class="type">int</span> n ) &#123;</span><br><span class="line">		______________;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">double</span> <span class="title function_">exp</span><span class="params">( )</span> &#123;</span><br><span class="line">		<span class="type">double</span> <span class="variable">s</span> <span class="operator">=</span> <span class="number">1.0</span>;</span><br><span class="line">		<span class="keyword">for</span> ( <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i&lt;=n; i++ ) &#123;</span><br><span class="line">		s =______________;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
+<p>有一对免子，从出生后第3个月起每个月都生对兔子 ，小兔子长到第三个月后每个月又生一对兔子，假如兔子都不死，问每个月的兔子总数为多少?</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">fibonacci</span> <span class="params">(<span class="type">int</span> m)</span> &#123;</span><br><span class="line">intf l= <span class="number">1</span>,f2= <span class="number">1</span>,f;</span><br><span class="line">	<span class="keyword">for</span>(inti=<span class="number">3</span>;______________;i++)&#123;</span><br><span class="line">	f = f2;</span><br><span class="line">	f2 = __________</span><br><span class="line">	f1= f;</span><br><span class="line">	System.out.println(<span class="string">&quot;第&quot;</span> + i +<span class="string">&quot;个月的免子对数: &quot;</span>+f2);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>程序获取当前日期,将日期字符串输出;<br>截取日期字符串中从第11位开始到字母C之前的字符串，并输出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Class1</span>&#123;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(Srting args[])</span>&#123;</span><br><span class="line">	Date date1=<span class="keyword">new</span> <span class="title class_">Date</span>();</span><br><span class="line">	System. out. println(datel);</span><br><span class="line">	String t=datel.toString0;</span><br><span class="line">	<span class="type">int</span> <span class="variable">endPos</span> <span class="operator">=</span>______________;</span><br><span class="line">	t=______________;</span><br><span class="line">	System. out.println(t);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>方法void primeNumber(int n )将一个正整数分解质因数。例如：输入90，打印出2*3*3*5。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">primeNumber</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">	intk=<span class="number">2</span>;</span><br><span class="line">	System.out.print(n + <span class="string">&quot;=&quot;</span> );</span><br><span class="line">	<span class="keyword">while</span>(k &lt;= n)&#123;</span><br><span class="line">		<span class="keyword">if</span>(k==n)&#123;</span><br><span class="line">			System.out.println(n);</span><br><span class="line">			______________;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(n%k == <span class="number">0</span>) &#123;</span><br><span class="line">			System.out.print(k + <span class="string">&quot;*&quot;</span>);</span><br><span class="line">			n=______________;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> k++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
 <p>方法int maxDigit(int n)的功能是找出十进制整数n各位中最大的一位数字。例如，n&#x3D;23765，该方法的返回值是7。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="type">int</span> <span class="title function_">maxDigit</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">	<span class="type">int</span> c=<span class="number">0</span>,d;</span><br><span class="line">	<span class="keyword">while</span>(n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">		d = ______________;</span><br><span class="line">		<span class="keyword">if</span>(d&gt;c) c=d;</span><br><span class="line">		n/=<span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	______________;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -499,7 +620,21 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Fact</span> &#123;</span><br><span class="line">	<span class="type">int</span> n ;</span><br><span class="line">	Fact( <span class="type">int</span> n ) &#123;</span><br><span class="line">		______________;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> <span class="title function_">fact</span><span class="params">( )</span> &#123;</span><br><span class="line">		<span class="type">int</span> <span class="variable">f</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= n; i++ )</span><br><span class="line">		f = ______________;</span><br><span class="line">	<span class="keyword">return</span> f;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h3><p>定义一个表示学生信息的类Student，要求如下：</p>
+<h3 id="简答题"><a href="#简答题" class="headerlink" title="简答题"></a>简答题</h3><p>类CountChar有方法int countNum(String str , char a),该方法的功能是找出给定字符a在字符串str中出现的次数。<br>例如,countNum(“Welcome”,’e’)的返回值是2.<br>请上传源代码截图,截图需带类名和行号。类名用给定类名+学号命名,例如161007112王明, CountChar类名为CountChar161007112java ,其余类名依此规则定义。并将运行结果截图上传,运行结果需要带输出窗口的运行时间。</p>
+<p><a target="_blank" rel="noopener" href="https://api.dzzui.com/api/lanzoujx?url=https://mengchunm.lanzouw.com/i7mj203r320b&type=down">最小截图工具.exe</a></p>
+<hr>
+<p>编写个计算图形面积的程序，程序能够计算并输出圆的面积。设计个图形抽象类: Shape，Shape有两个抽象方法:计算面积getArea( ) 方法。显示图形的基本信息toString( )方法。和在此基础上派生出Circle类。</p>
+<ol>
+<li><p>Circle类基本信息:圆心坐标、半径，園心坐标使用系统提供的Point2D类进行声明。</p>
+</li>
+<li><p>Circle有默认的构造方法及带参数的构造方法，默认是圆心在(0,0)点，半径为1.0的圆;成员变量为private属性，成员方法为public属性。</p>
+</li>
+<li><p>Circle类有属性的get和set方法.<br>请上传源代码截至，截图需带美名和行号。类名用给定类名+学号命名，例如161007112王明，Shape类名为<br>Shape161007112.java，其余类名依此规则定义。并将运行结果截图上传，运行结果需要带输出窗口的运行时间。</p>
+<p><a target="_blank" rel="noopener" href="https://api.dzzui.com/api/lanzoujx?url=https://mengchunm.lanzouw.com/i7mj203r320b&type=down">最小截图工具.exe</a></p>
+</li>
+</ol>
+<hr>
+<p>定义一个表示学生信息的类Student，要求如下：</p>
 <ol>
 <li><p>类Student的成员变量： sNO表示学号；sName表示姓名；sSex表示性别；sAge表示年龄；sJava：表示Java课程成绩。</p>
 </li>
