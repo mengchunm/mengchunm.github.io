@@ -223,7 +223,7 @@ if (stellar.plugins.sitesjs) {
   }
 }
 if (stellar.plugins.friendsjs) {
-  const issues_api = document.getElementById('zh-api');
+  const issues_api = document.getElementById('friends-api');
   if (issues_api != undefined) {
     stellar.jQuery( () => {
       stellar.loadScript(stellar.plugins.friendsjs, {defer:true})
