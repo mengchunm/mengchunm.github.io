@@ -29,8 +29,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-5-6-Redundant-Networks-Exam-Answers-001.jpg">
 <meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-5-6-Redundant-Networks-Exam-Answers-002.png">
-<meta property="article:published_time" content="2022-05-09T14:26:40.416Z">
-<meta property="article:modified_time" content="2022-05-09T14:26:40.416Z">
+<meta property="article:published_time" content="2022-05-09T14:42:11.932Z">
+<meta property="article:modified_time" content="2022-05-09T14:42:11.932Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -237,649 +237,704 @@
 <ol start="10">
 <li>STP 在可扩展网络中的作用是什么？</li>
 </ol>
-<pre><code>- 它减小了故障域的大小以包含故障的影响。
-
-- 它保护企业网络的边缘免受恶意活动的侵害。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;它禁用冗余路径以消除第 2 层环路。&lt;/span&gt;
-
-- 它结合了多条交换机中继链路作为一条逻辑链路来增加带宽。
-
-  **答案解释和提示：**STP 是可扩展网络中的重要组成部分，因为它允许在第 2 层设备之间实现冗余物理连接，而无需创建第 2 层环路。STP 通过禁用第 2 层设备上的接口来防止形成第 2 层环路，因为它们会创建环路。
+<ul>
+<li><p>它减小了故障域的大小以包含故障的影响。</p>
+</li>
+<li><p>它保护企业网络的边缘免受恶意活动的侵害。</p>
+</li>
+<li><p><span style="color: #ff0000">它禁用冗余路径以消除第 2 层环路。</span></p>
+</li>
+<li><p>它结合了多条交换机中继链路作为一条逻辑链路来增加带宽。</p>
+<pre><code>**答案解释和提示：**STP 是可扩展网络中的重要组成部分，因为它允许在第 2 层设备之间实现冗余物理连接，而无需创建第 2 层环路。STP 通过禁用第 2 层设备上的接口来防止形成第 2 层环路，因为它们会创建环路。
 </code></pre>
+</li>
+</ul>
 <ol start="11">
 <li>生成树的特点是什么？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;它在 Cisco 交换机上默认启用。&lt;/span&gt;
-
-- 它有一个在第 2 层工作的 TTL 机制。
-
-- 它可以防止第 2 层广播帧的传播。
-
-- 它用于发现有关相邻 Cisco 设备的信息。
-
-  **答案解释和提示：**生成树在基于以太网的网络上的第 2 层工作，并且默认启用，但它没有 TTL 机制。生成树的存在是因为第 2 层帧没有 TTL 机制。启用生成树后，第 2 层帧仍会广播，但只能通过由生成树创建的第 2 层网络通过单一路径传输帧。思科发现协议 (CDP) 用于发现有关相邻思科设备的信息。
+<ul>
+<li><p><span style="color: #ff0000">它在 Cisco 交换机上默认启用。</span></p>
+</li>
+<li><p>它有一个在第 2 层工作的 TTL 机制。</p>
+</li>
+<li><p>它可以防止第 2 层广播帧的传播。</p>
+</li>
+<li><p>它用于发现有关相邻 Cisco 设备的信息。</p>
+<pre><code>**答案解释和提示：**生成树在基于以太网的网络上的第 2 层工作，并且默认启用，但它没有 TTL 机制。生成树的存在是因为第 2 层帧没有 TTL 机制。启用生成树后，第 2 层帧仍会广播，但只能通过由生成树创建的第 2 层网络通过单一路径传输帧。思科发现协议 (CDP) 用于发现有关相邻思科设备的信息。
 </code></pre>
+</li>
+</ul>
 <ol start="12">
 <li>哪种生成树标准仅支持一个根桥，以便所有 VLAN 的流量都流经同一路径？</li>
 </ol>
-<pre><code>- 快速 PVST
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;802.1D&lt;/span&gt;
-
-- MST
-
-- PVST+
-
-  **答案解释和提示：**MST 是 MSTP 的 Cisco 实现，它是一种 IEEE 标准协议，可提供多达 16 个 RSTP 实例。PVST+ 为网络中配置的每个 VLAN 提供单独的 802.1D 生成树实例。802.1D 是 IEEE 定义的原始 STP 标准，并且只允许一个根桥用于所有 VLAN。802.1w 或 RSTP 可提供更快的收敛速度，但仍对所有 VLAN 仅使用一个 STP 实例。
+<ul>
+<li><p>快速 PVST</p>
+</li>
+<li><p><span style="color: #ff0000">802.1D</span></p>
+</li>
+<li><p>MST</p>
+</li>
+<li><p>PVST+</p>
+<pre><code>**答案解释和提示：**MST 是 MSTP 的 Cisco 实现，它是一种 IEEE 标准协议，可提供多达 16 个 RSTP 实例。PVST+ 为网络中配置的每个 VLAN 提供单独的 802.1D 生成树实例。802.1D 是 IEEE 定义的原始 STP 标准，并且只允许一个根桥用于所有 VLAN。802.1w 或 RSTP 可提供更快的收敛速度，但仍对所有 VLAN 仅使用一个 STP 实例。
 </code></pre>
+</li>
+</ul>
 <ol start="13">
 <li>生成树协议 (STP) 的目的是什么？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;防止第 2 层环路&lt;/span&gt;
-
-- 防止路由器上的路由环路
-
-- 创建更小的冲突域
-
-- 创建更小的广播域
-
-- 允许 Cisco 设备交换路由表更新
-
-  **答案解释和提示：**生成树协议 (STP) 通过交换机网络创建一条路径，以防止第 2 层环路。
+<ul>
+<li><p><span style="color: #ff0000">防止第 2 层环路</span></p>
+</li>
+<li><p>防止路由器上的路由环路</p>
+</li>
+<li><p>创建更小的冲突域</p>
+</li>
+<li><p>创建更小的广播域</p>
+</li>
+<li><p>允许 Cisco 设备交换路由表更新</p>
+<pre><code>**答案解释和提示：**生成树协议 (STP) 通过交换机网络创建一条路径，以防止第 2 层环路。
 </code></pre>
+</li>
+</ul>
 <ol start="14">
 <li>哪种协议提供最多 16 个 RSTP 实例，将多个具有相同物理和逻辑拓扑的 VLAN 组合成一个通用 RSTP 实例，并提供对 PortFast、BPDU 保护、BPDU 过滤器、根保护和环路保护的支持？</li>
 </ol>
-<pre><code>- 直通式
-
-- 快速 PVST+
-
-- PVST+
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;MST&lt;/span&gt;
-
-  **答案解释和提示：**MST 是 MSTP 的 Cisco 实现，这是一种 IEEE 标准协议，可提供多达 16 个 RSTP 实例，并将许多具有相同物理和逻辑拓扑的 VLAN 组合成一个通用 RSTP 实例。每个实例都支持 PortFast、BPDU 防护、BPDU 过滤器、根防护和环路防护。STP 和 RSTP 假设整个桥接网络只有一个生成树实例，而与 VLAN 的数量无关。PVST+ 为网络中配置的每个 VLAN 提供单独的 802.1D 生成树实例。
+<ul>
+<li><p>直通式</p>
+</li>
+<li><p>快速 PVST+</p>
+</li>
+<li><p>PVST+</p>
+</li>
+<li><p><span style="color: #ff0000">MST</span></p>
+<pre><code>**答案解释和提示：**MST 是 MSTP 的 Cisco 实现，这是一种 IEEE 标准协议，可提供多达 16 个 RSTP 实例，并将许多具有相同物理和逻辑拓扑的 VLAN 组合成一个通用 RSTP 实例。每个实例都支持 PortFast、BPDU 防护、BPDU 过滤器、根防护和环路防护。STP 和 RSTP 假设整个桥接网络只有一个生成树实例，而与 VLAN 的数量无关。PVST+ 为网络中配置的每个 VLAN 提供单独的 802.1D 生成树实例。
 </code></pre>
+</li>
+</ul>
 <ol start="15">
 <li>在哪两个 PVST+ 端口状态下学习了 MAC 地址？（选择两个。）</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;转发&lt;/span&gt;
-
-- 禁用
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;学习&lt;/span&gt;
-
-- 听
-
-- 阻塞
-
-  **答案解释和提示：**学习 MAC 地址并填充 MAC 地址表的两个 PVST+ 端口状态是学习和转发状态。
+<ul>
+<li><p><span style="color: #ff0000">转发</span></p>
+</li>
+<li><p>禁用</p>
+</li>
+<li><p><span style="color: #ff0000">学习</span></p>
+</li>
+<li><p>听</p>
+</li>
+<li><p>阻塞</p>
+<pre><code>**答案解释和提示：**学习 MAC 地址并填充 MAC 地址表的两个 PVST+ 端口状态是学习和转发状态。
 </code></pre>
+</li>
+</ul>
 <ol start="16">
 <li>用于确定非根网桥上的哪个端口将成为 STP 网络中的根端口的值是多少？</li>
 </ol>
-<pre><code>- 交换机中所有端口的最高 MAC 地址
-
-- 交换机中所有端口的最低 MAC 地址
-
-- VTP 修订号
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;路径成本&lt;/span&gt;
-
-  **答案解释和提示：**STP 在每个非根桥上建立一个根端口。根端口是从非根桥到根桥的成本最低的路径，表示到根桥的最佳路径的方向。这主要基于到根网桥的路径成本。
+<ul>
+<li><p>交换机中所有端口的最高 MAC 地址</p>
+</li>
+<li><p>交换机中所有端口的最低 MAC 地址</p>
+</li>
+<li><p>VTP 修订号</p>
+</li>
+<li><p><span style="color: #ff0000">路径成本</span></p>
+<pre><code>**答案解释和提示：**STP 在每个非根桥上建立一个根端口。根端口是从非根桥到根桥的成本最低的路径，表示到根桥的最佳路径的方向。这主要基于到根网桥的路径成本。
 </code></pre>
+</li>
+</ul>
 <ol start="17">
 <li>请参见图示。选举过程完成后，哪台交换机将成为根桥？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 04](https://ccnav7.net/wp-content/uploads/2020/01/i223533v1n1_223533.png)
-
-
-
-- S1
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;S2&lt;/span&gt;
-
-- S3
-
-- S4
-
-  **答案解释和提示：**根网桥由最低网桥 ID 确定，该 ID 由优先级值和 MAC 地址组成。由于所有交换机的优先级值相同，因此 MAC 地址用于确定根桥。因为 S2 的 MAC 地址最低，所以 S2 成为根网桥。
 </code></pre>
+<ul>
+<li><p>S1</p>
+</li>
+<li><p><span style="color: #ff0000">S2</span></p>
+</li>
+<li><p>S3</p>
+</li>
+<li><p>S4</p>
+<pre><code>**答案解释和提示：**根网桥由最低网桥 ID 确定，该 ID 由优先级值和 MAC 地址组成。由于所有交换机的优先级值相同，因此 MAC 地址用于确定根桥。因为 S2 的 MAC 地址最低，所以 S2 成为根网桥。
+</code></pre>
+</li>
+</ul>
 <ol start="18">
 <li>关闭生成树并让多条路径通过第 2 层交换机网络有哪两个缺点？（选择两个。）</li>
 </ol>
-<pre><code>- 交换机就像一个集线器。
-
-- 港口安全变得不稳定。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;MAC 地址表变得不稳定。&lt;/span&gt;
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;广播帧被无限期地传输。&lt;/span&gt;
-
-- 端口安全关闭所有连接设备的端口。
-
-  **答案解释和提示：**生成树永远不应该被禁用。没有它，MAC 地址表会变得不稳定，广播风暴会导致网络客户端和交换机无法使用，并且可以将多个单播帧副本传送到终端设备。
+<ul>
+<li><p>交换机就像一个集线器。</p>
+</li>
+<li><p>港口安全变得不稳定。</p>
+</li>
+<li><p><span style="color: #ff0000">MAC 地址表变得不稳定。</span></p>
+</li>
+<li><p><span style="color: #ff0000">广播帧被无限期地传输。</span></p>
+</li>
+<li><p>端口安全关闭所有连接设备的端口。</p>
+<pre><code>**答案解释和提示：**生成树永远不应该被禁用。没有它，MAC 地址表会变得不稳定，广播风暴会导致网络客户端和交换机无法使用，并且可以将多个单播帧副本传送到终端设备。
 </code></pre>
+</li>
+</ul>
 <ol start="19">
 <li>哪个端口角色分配给到达根桥的成本最低的交换机端口？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;根端口&lt;/span&gt;
-
-- 非指定港口
-
-- 指定港口
-
-- 禁用端口
-
-  **答案解释和提示：**交换机上的根端口是到达根桥的成本最低的端口。
+<ul>
+<li><p><span style="color: #ff0000">根端口</span></p>
+</li>
+<li><p>非指定港口</p>
+</li>
+<li><p>指定港口</p>
+</li>
+<li><p>禁用端口</p>
+<pre><code>**答案解释和提示：**交换机上的根端口是到达根桥的成本最低的端口。
 </code></pre>
+</li>
+</ul>
 <ol start="20">
 <li>一个小型公司网络有六个互连的第 2 层交换机。目前所有交换机都使用默认的网桥优先级值。哪个值可用于配置其中一台交换机的网桥优先级，以确保它成为本设计中的根网桥？</li>
 </ol>
-<pre><code>- 1
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;28672&lt;/span&gt;
-
-- 32768
-
-- 34816
-
-- 61440
-
-  **答案解释和提示：**所有 Cisco 交换机的默认网桥优先级值为 32768。范围为 0 到 61440，增量为 4096。因此，值 1 和 34816 无效。将一台交换机配置为较低的值 28672（并且保持所有其他交换机的网桥优先级值不变）将使该交换机成为根网桥。
+<ul>
+<li><p>1</p>
+</li>
+<li><p><span style="color: #ff0000">28672</span></p>
+</li>
+<li><p>32768</p>
+</li>
+<li><p>34816</p>
+</li>
+<li><p>61440</p>
+<pre><code>**答案解释和提示：**所有 Cisco 交换机的默认网桥优先级值为 32768。范围为 0 到 61440，增量为 4096。因此，值 1 和 34816 无效。将一台交换机配置为较低的值 28672（并且保持所有其他交换机的网桥优先级值不变）将使该交换机成为根网桥。
 </code></pre>
+</li>
+</ul>
 <ol start="21">
 <li>请参见图示。管理员尝试通过显示的命令在 S1 和其他两个交换机之间创建 EtherChannel，但未成功。问题是什么？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 10](https://ccnav7.net/wp-content/uploads/2020/01/i216434v1n3_Item-216434.png)
-
-
-
-- 如果在千兆以太网接口上实施 EtherChannel，则只能将流量发送到两个不同的交换机。
-
-- 如果在第 3 层交换机上实施 EtherChannel，则只能将流量发送到两个不同的交换机。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;流量不能通过同一 EtherChannel 链路发送到两个不同的交换机。&lt;/span&gt;
-
-- 流量不能发送到两个不同的交换机，而只能发送到两个不同的设备，例如启用 EtherChannel 的服务器和交换机。
-
-  **答案解释和提示：**EtherChannel 链路只能在两个交换机之间或在启用了 EtherChannel 的服务器和交换机之间创建。流量不能通过同一 EtherChannel 链路发送到两个不同的交换机。
 </code></pre>
+<ul>
+<li><p>如果在千兆以太网接口上实施 EtherChannel，则只能将流量发送到两个不同的交换机。</p>
+</li>
+<li><p>如果在第 3 层交换机上实施 EtherChannel，则只能将流量发送到两个不同的交换机。</p>
+</li>
+<li><p><span style="color: #ff0000">流量不能通过同一 EtherChannel 链路发送到两个不同的交换机。</span></p>
+</li>
+<li><p>流量不能发送到两个不同的交换机，而只能发送到两个不同的设备，例如启用 EtherChannel 的服务器和交换机。</p>
+<pre><code>**答案解释和提示：**EtherChannel 链路只能在两个交换机之间或在启用了 EtherChannel 的服务器和交换机之间创建。流量不能通过同一 EtherChannel 链路发送到两个不同的交换机。
+</code></pre>
+</li>
+</ul>
 <ol start="22">
 <li>关于使用 PAgP 创建 EtherChannel，以下哪项陈述是正确的？</li>
 </ol>
-<pre><code>- 它需要全双工。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;它是思科专有的。&lt;/span&gt;
-
-- 它需要比 LACP 更多的物理链路。
-
-- 它增加了参与生成树的端口数量。
-
-- 它要求使用偶数个端口（2、4、6 等）进行聚合。
-
-  **答案解释和提示：**PAgP 用于将多个端口自动聚合到一个 EtherChannel 捆绑包中，但它仅适用于 Cisco 设备。LACP 可用于 Cisco 和非 Cisco 设备之间的相同目的。PAgP 必须在两端具有相同的双工模式，并且可以使用两个或更多端口。端口数量取决于交换机平台或模块。一条 EtherChannel 聚合链路被生成树算法视为一个端口。
+<ul>
+<li><p>它需要全双工。</p>
+</li>
+<li><p><span style="color: #ff0000">它是思科专有的。</span></p>
+</li>
+<li><p>它需要比 LACP 更多的物理链路。</p>
+</li>
+<li><p>它增加了参与生成树的端口数量。</p>
+</li>
+<li><p>它要求使用偶数个端口（2、4、6 等）进行聚合。</p>
+<pre><code>**答案解释和提示：**PAgP 用于将多个端口自动聚合到一个 EtherChannel 捆绑包中，但它仅适用于 Cisco 设备。LACP 可用于 Cisco 和非 Cisco 设备之间的相同目的。PAgP 必须在两端具有相同的双工模式，并且可以使用两个或更多端口。端口数量取决于交换机平台或模块。一条 EtherChannel 聚合链路被生成树算法视为一个端口。
 </code></pre>
+</li>
+</ul>
 <ol start="23">
 <li>能够在两台交换机之间配置 EtherChannel 的两个要求是什么？（选择两个。）</li>
 </ol>
-<pre><code>- 涉及的接口需要在交换机上是连续的。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;所有接口都需要以相同的速度工作。&lt;/span&gt;
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;所有接口都需要在相同的双工模式下工作。&lt;/span&gt;
-
-- 所有接口都需要分配到不同的 VLAN。
-
-- 两端必须存在不同的 VLAN 允许范围。
-
-  **答案解释和提示：**EtherChannel 捆绑包中的所有接口都必须分配到相同的 VLAN 或配置为中继。如果允许的 VLAN 范围不同，即使设置为自动或期望模式，接口也不会形成 EtherChannel。
+<ul>
+<li><p>涉及的接口需要在交换机上是连续的。</p>
+</li>
+<li><p><span style="color: #ff0000">所有接口都需要以相同的速度工作。</span></p>
+</li>
+<li><p><span style="color: #ff0000">所有接口都需要在相同的双工模式下工作。</span></p>
+</li>
+<li><p>所有接口都需要分配到不同的 VLAN。</p>
+</li>
+<li><p>两端必须存在不同的 VLAN 允许范围。</p>
+<pre><code>**答案解释和提示：**EtherChannel 捆绑包中的所有接口都必须分配到相同的 VLAN 或配置为中继。如果允许的 VLAN 范围不同，即使设置为自动或期望模式，接口也不会形成 EtherChannel。
 </code></pre>
+</li>
+</ul>
 <ol start="24">
 <li>请参见图示。根据显示的输出，可以确定 EtherChannel 捆绑包的哪些内容？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 06](https://ccnav7.net/wp-content/uploads/2020/01/i217690v1n1_217690.png)
-
-
-
-- EtherChannel 捆绑包已关闭。
-
-- EtherChannel 捆绑包同时在第 2 层和第 3 层运行。
-
-- 两个千兆以太网端口用于形成 EtherChannel。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;Cisco 专有协议用于协商 EtherChannel 链路。&lt;/span&gt;
-
-  **答案解释和提示：**可以使用两种协议来发送用于尝试建立 EtherChannel 链路的协商帧：PAgP 和 LACP。PAgP 是 Cisco 专有的，LACP 遵循行业标准。
 </code></pre>
+<ul>
+<li><p>EtherChannel 捆绑包已关闭。</p>
+</li>
+<li><p>EtherChannel 捆绑包同时在第 2 层和第 3 层运行。</p>
+</li>
+<li><p>两个千兆以太网端口用于形成 EtherChannel。</p>
+</li>
+<li><p><span style="color: #ff0000">Cisco 专有协议用于协商 EtherChannel 链路。</span></p>
+<pre><code>**答案解释和提示：**可以使用两种协议来发送用于尝试建立 EtherChannel 链路的协商帧：PAgP 和 LACP。PAgP 是 Cisco 专有的，LACP 遵循行业标准。
+</code></pre>
+</li>
+</ul>
 <ol start="25">
 <li>两个交换机的端口上必须匹配哪两个参数才能在交换机之间创建 PAgP EtherChannel？（选择两个。）</li>
 </ol>
-<pre><code>- MAC地址
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;速度&lt;/span&gt;
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;VLAN信息&lt;/span&gt;
-
-- PAgP模式
-
-- 端口号
-
-  **答案解释和提示：**要创建 EtherChannel，两台交换机上的相关端口必须在速度、双工和 VLAN 信息方面匹配。PAgP 模式必须兼容但不一定相等。端口 ID 和 MAC 地址不必匹配。
+<ul>
+<li><p>MAC地址</p>
+</li>
+<li><p><span style="color: #ff0000">速度</span></p>
+</li>
+<li><p><span style="color: #ff0000">VLAN信息</span></p>
+</li>
+<li><p>PAgP模式</p>
+</li>
+<li><p>端口号</p>
+<pre><code>**答案解释和提示：**要创建 EtherChannel，两台交换机上的相关端口必须在速度、双工和 VLAN 信息方面匹配。PAgP 模式必须兼容但不一定相等。端口 ID 和 MAC 地址不必匹配。
 </code></pre>
+</li>
+</ul>
 <ol start="26">
 <li>EtherChannel 技术中有哪两种负载均衡方法？（选择两个。）</li>
 </ol>
-<pre><code>- 源端口和 IP 到目标端口和 IP 的组合
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;源IP到目的IP&lt;/span&gt;
-
-- 源端口到目的端口
-
-- 源 MAC 和 IP 到目标 MAC 和 IP 的组合
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;源 MAC 到目标 MAC&lt;/span&gt;
-
-  **答案解释和提示：**根据硬件平台，可以实现一种或多种负载平衡方法。这些方法包括跨物理链路的源 MAC 到目标 MAC 负载平衡或源 IP 到目标 IP 负载平衡。
+<ul>
+<li><p>源端口和 IP 到目标端口和 IP 的组合</p>
+</li>
+<li><p><span style="color: #ff0000">源IP到目的IP</span></p>
+</li>
+<li><p>源端口到目的端口</p>
+</li>
+<li><p>源 MAC 和 IP 到目标 MAC 和 IP 的组合</p>
+</li>
+<li><p><span style="color: #ff0000">源 MAC 到目标 MAC</span></p>
+<pre><code>**答案解释和提示：**根据硬件平台，可以实现一种或多种负载平衡方法。这些方法包括跨物理链路的源 MAC 到目标 MAC 负载平衡或源 IP 到目标 IP 负载平衡。
 </code></pre>
+</li>
+</ul>
 <ol start="27">
 <li>配置 EtherChannel 时，哪种模式会强制接口进入端口通道而不交换聚合协议数据包？</li>
 </ol>
-<pre><code>- 积极的
-
-- 汽车
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;在&lt;/span&gt;
-
-- 可取的
-
-  **答案解释和提示：**对于 LACP 和 PAgP，“on”模式将强制接口进入 EtherChannel，而不交换协议数据包。
+<ul>
+<li><p>积极的</p>
+</li>
+<li><p>汽车</p>
+</li>
+<li><p><span style="color: #ff0000">在</span></p>
+</li>
+<li><p>可取的</p>
+<pre><code>**答案解释和提示：**对于 LACP 和 PAgP，“on”模式将强制接口进入 EtherChannel，而不交换协议数据包。
 </code></pre>
+</li>
+</ul>
 <ol start="28">
 <li>请参见图示。在交换机 S1 和 S2 之间配置了 EtherChannel，但接口未形成 EtherChannel。问题是什么？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 08](https://ccnav7.net/wp-content/uploads/2020/01/i216436v1n4_Item-216436.png)
-
-
-
-- 每个交换机上的接口端口通道号必须不同。
-
-- 交换机端口未配置速度和双工模式。
-
-- 交换机端口必须配置为接入端口，每个端口都分配有一个 VLAN。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;未在每个接口上为 EtherChannel 配置相同的允许 VLAN 范围。&lt;/span&gt;
-
-  **答案解释和提示：**配置 EtherChannel 链路的指导原则是： 形成 EtherChannel 的接口可以在物理上不连续，并且位于不同的模块上。 EtherChannel 中的接口必须以相同的速度和相同的双工模式运行。 EtherChannel 中的接口必须分配到相同的 VLAN，或配置为中继。 EtherChannel 中的接口必须支持相同的 VLAN 允许范围。
 </code></pre>
+<ul>
+<li><p>每个交换机上的接口端口通道号必须不同。</p>
+</li>
+<li><p>交换机端口未配置速度和双工模式。</p>
+</li>
+<li><p>交换机端口必须配置为接入端口，每个端口都分配有一个 VLAN。</p>
+</li>
+<li><p><span style="color: #ff0000">未在每个接口上为 EtherChannel 配置相同的允许 VLAN 范围。</span></p>
+<pre><code>**答案解释和提示：**配置 EtherChannel 链路的指导原则是： 形成 EtherChannel 的接口可以在物理上不连续，并且位于不同的模块上。 EtherChannel 中的接口必须以相同的速度和相同的双工模式运行。 EtherChannel 中的接口必须分配到相同的 VLAN，或配置为中继。 EtherChannel 中的接口必须支持相同的 VLAN 允许范围。
+</code></pre>
+</li>
+</ul>
 <ol start="29">
 <li>哪种模式配置设置允许在交换机 SW1 和 SW2 之间形成 EtherChannel 链路而不发送协商流量？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;SW1：开启&lt;/span&gt;
-  &lt;span style=&quot;color: #ff0000&quot;&gt;SW2：开启&lt;/span&gt;
+<ul>
+<li><p><span style="color: #ff0000">SW1：开启</span><br><span style="color: #ff0000">SW2：开启</span></p>
+</li>
+<li><p>SW1：理想<br>SW2：理想</p>
+</li>
+<li><p>SW1：自动<br>SW2：<br>在两个交换机上启用自动中继</p>
+</li>
+<li><p>SW1：自动<br>SW2：<br>在两个交换机上启用自动 PortFast</p>
+</li>
+<li><p>SW1：被动</p>
+<pre><code>SW2：主动
 
-- SW1：理想
-  SW2：理想
 
-- SW1：自动
-  SW2：
-  在两个交换机上启用自动中继
 
-- SW1：自动
-  SW2：
-  在两个交换机上启用自动 PortFast
-
-- SW1：被动
-
-  SW2：主动
-
-  
-
-  **答案解释和提示：**仅当在链路的另一侧检测到 PAgP 设备时，auto channel-group 关键字才启用 PAgP。如果使用 auto 关键字，则形成 EtherChannel 链路的唯一方法是对端连接的设备配置有 desired 关键字。PortFast 和中继技术与形成 EtherChannel 链路无关。即使在双方都配置为所需模式时可以形成 EtherChannel，但 PAgP 处于活动状态，并且 PAgP 消息在链路上不断发送，从而减少了可用于用户流量的带宽量。
+**答案解释和提示：**仅当在链路的另一侧检测到 PAgP 设备时，auto channel-group 关键字才启用 PAgP。如果使用 auto 关键字，则形成 EtherChannel 链路的唯一方法是对端连接的设备配置有 desired 关键字。PortFast 和中继技术与形成 EtherChannel 链路无关。即使在双方都配置为所需模式时可以形成 EtherChannel，但 PAgP 处于活动状态，并且 PAgP 消息在链路上不断发送，从而减少了可用于用户流量的带宽量。
 </code></pre>
+</li>
+</ul>
 <ol start="30">
 <li>哪两种通道组模式会使用 PAgP 将接口置于协商状态？（选择两个。）</li>
 </ol>
-<pre><code>- 在
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;可取的&lt;/span&gt;
-
-- 积极的
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;汽车&lt;/span&gt;
-
-- 被动的
-
-  **答案解释和提示：**为 PAgP 配置接口时，可以使用三种模式：on、desired 和 auto。仅需要并自动将接口置于协商状态。主动和被动状态用于配置 LACP 而不是 PAgP。
+<ul>
+<li><p>在</p>
+</li>
+<li><p><span style="color: #ff0000">可取的</span></p>
+</li>
+<li><p>积极的</p>
+</li>
+<li><p><span style="color: #ff0000">汽车</span></p>
+</li>
+<li><p>被动的</p>
+<pre><code>**答案解释和提示：**为 PAgP 配置接口时，可以使用三种模式：on、desired 和 auto。仅需要并自动将接口置于协商状态。主动和被动状态用于配置 LACP 而不是 PAgP。
 </code></pre>
+</li>
+</ul>
 <ol start="31">
 <li>网络管理员在通过四个中继链路连接的两台交换机之间配置了一个 EtherChannel。如果其中一条中继链路的物理接口变为关闭状态，那么 EtherChannel 会发生什么情况？</li>
 </ol>
-<pre><code>- EtherChannel 将转换为关闭状态。
-
-- 生成树协议将重新计算剩余的中继链路。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;EtherChannel 将保持正常运行。&lt;/span&gt;
-
-- 生成树协议会将失败的物理接口转换为转发模式。
-
-  **答案解释和提示：**EtherChannel 通过将多个中继链路捆绑到一个逻辑连接中来提供冗余。EtherChannel 中的一条物理链路发生故障不会导致拓扑发生变化，因此无需通过生成树进行重新计算。只有一条物理链路必须保持运行，EtherChannel 才能继续运行。
+<ul>
+<li><p>EtherChannel 将转换为关闭状态。</p>
+</li>
+<li><p>生成树协议将重新计算剩余的中继链路。</p>
+</li>
+<li><p><span style="color: #ff0000">EtherChannel 将保持正常运行。</span></p>
+</li>
+<li><p>生成树协议会将失败的物理接口转换为转发模式。</p>
+<pre><code>**答案解释和提示：**EtherChannel 通过将多个中继链路捆绑到一个逻辑连接中来提供冗余。EtherChannel 中的一条物理链路发生故障不会导致拓扑发生变化，因此无需通过生成树进行重新计算。只有一条物理链路必须保持运行，EtherChannel 才能继续运行。
 </code></pre>
+</li>
+</ul>
 <ol start="32">
 <li>请参见图示。网络管理员正在配置两台交换机 SW1 和 SW2 之间的 EtherChannel 链路。哪个语句描述了命令在 SW1 和 SW2 上发出后的效果？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 03](https://ccnav7.net/wp-content/uploads/2020/01/i246277v1n2_246277.png)
-
-
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;EtherChannel 无法建立。&lt;/span&gt;
-
-- EtherChannel 无需协商即可建立。
-
-- EtherChannel 是在 SW1 发起链路请求后建立的。
-
-- EtherChannel 是在 SW2 发起链路请求后建立的。
-
-  **答案解释和提示：**接口 GigabitEthernet 0/1 和 GigabitEthernet 0/2 为 EtherChannel 链路配置为“开启”。此模式强制接口在没有 PAgP 或 LACP 的情况下进行通道。仅当另一端也设置为“on”时，才会建立 EtherChannel。但是，SW2 侧的模式设置为 PAgP 合意。因此不会建立 EtherChannel 链路。
 </code></pre>
+<ul>
+<li><p><span style="color: #ff0000">EtherChannel 无法建立。</span></p>
+</li>
+<li><p>EtherChannel 无需协商即可建立。</p>
+</li>
+<li><p>EtherChannel 是在 SW1 发起链路请求后建立的。</p>
+</li>
+<li><p>EtherChannel 是在 SW2 发起链路请求后建立的。</p>
+<pre><code>**答案解释和提示：**接口 GigabitEthernet 0/1 和 GigabitEthernet 0/2 为 EtherChannel 链路配置为“开启”。此模式强制接口在没有 PAgP 或 LACP 的情况下进行通道。仅当另一端也设置为“on”时，才会建立 EtherChannel。但是，SW2 侧的模式设置为 PAgP 合意。因此不会建立 EtherChannel 链路。
+</code></pre>
+</li>
+</ul>
 <ol start="33">
 <li>请参见图示。网络管理员正在配置两台交换机 SW1 和 SW2 之间的 EtherChannel 链路。但是，无法建立 EtherChannel 链路。配置中的哪些更改可以解决问题？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 02](https://ccnav7.net/wp-content/uploads/2020/01/i246279v1n1_246279.png)
-
-
-
-- 将 SW1 EtherChannel 模式配置为打开。
-
-- 将 SW2 EtherChannel 模式配置为打开。
-
-- 将 SW2 EtherChannel 模式配置为自动。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;将 SW2 EtherChannel 模式配置为理想状态。 &lt;/span&gt;
-
-  **答案解释和提示：**EtherChannel 模式必须在每一侧都兼容，链路才能正常工作。PAgP 协议的三种模式是 on、desirable 和 auto。LACP 协议的三种模式是开启、主动和被动。兼容模式包括on-on、auto-desirable、desirable-desirable、主动-被动和主动-主动。任何其他组合都不会形成 EtherChannel 链接。
 </code></pre>
+<ul>
+<li><p>将 SW1 EtherChannel 模式配置为打开。</p>
+</li>
+<li><p>将 SW2 EtherChannel 模式配置为打开。</p>
+</li>
+<li><p>将 SW2 EtherChannel 模式配置为自动。</p>
+</li>
+<li><p><span style="color: #ff0000">将 SW2 EtherChannel 模式配置为理想状态。 </span></p>
+<pre><code>**答案解释和提示：**EtherChannel 模式必须在每一侧都兼容，链路才能正常工作。PAgP 协议的三种模式是 on、desirable 和 auto。LACP 协议的三种模式是开启、主动和被动。兼容模式包括on-on、auto-desirable、desirable-desirable、主动-被动和主动-主动。任何其他组合都不会形成 EtherChannel 链接。
+</code></pre>
+</li>
+</ul>
 <ol start="34">
 <li>一位网络管理员在两台交换机之间配置了一个具有三个接口的 EtherChannel 链路。如果三个接口之一关闭，结果如何？</li>
 </ol>
-<pre><code>- EtherChannel 失败。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;其余两个接口继续负载均衡流量。&lt;/span&gt;
-
-- 其余两个接口成为两个交换机之间的独立链路。
-
-- 一个接口成为数据流量的活动链路，另一个成为备份链路。
-
-  **答案解释和提示：**EtherChannel 创建一个被视为一个逻辑链路的聚合。它提供了冗余，因为整个链路是一个逻辑连接。通道内一条物理链路的丢失不会导致拓扑结构发生变化；EtherChannel 保持正常运行。
+<ul>
+<li><p>EtherChannel 失败。</p>
+</li>
+<li><p><span style="color: #ff0000">其余两个接口继续负载均衡流量。</span></p>
+</li>
+<li><p>其余两个接口成为两个交换机之间的独立链路。</p>
+</li>
+<li><p>一个接口成为数据流量的活动链路，另一个成为备份链路。</p>
+<pre><code>**答案解释和提示：**EtherChannel 创建一个被视为一个逻辑链路的聚合。它提供了冗余，因为整个链路是一个逻辑连接。通道内一条物理链路的丢失不会导致拓扑结构发生变化；EtherChannel 保持正常运行。
 </code></pre>
+</li>
+</ul>
 <ol start="35">
 <li>哪项陈述描述了 EtherChannel 的特性？</li>
 </ol>
-<pre><code>- 它最多可以组合 4 个物理链路。
-
-- 它可以捆绑混合类型的 100 Mb/s 和 1Gb/s 以太网链路。
-
-- 它由交换机和路由器之间的多个并行链路组成。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;它是通过组合多个物理链路制成的，这些物理链路被视为两个交换机之间的一条链路。&lt;/span&gt;
-
-  **答案解释和提示：**一个 EtherChannel 是通过组合多个（相同类型的）以太网物理链路形成的，因此它们被视为一个逻辑链路并被配置为一个逻辑链路。它提供了两个交换机之间的聚合链路。目前，每个 EtherChannel 最多可以包含八个兼容配置的以太网端口。
+<ul>
+<li><p>它最多可以组合 4 个物理链路。</p>
+</li>
+<li><p>它可以捆绑混合类型的 100 Mb&#x2F;s 和 1Gb&#x2F;s 以太网链路。</p>
+</li>
+<li><p>它由交换机和路由器之间的多个并行链路组成。</p>
+</li>
+<li><p><span style="color: #ff0000">它是通过组合多个物理链路制成的，这些物理链路被视为两个交换机之间的一条链路。</span></p>
+<pre><code>**答案解释和提示：**一个 EtherChannel 是通过组合多个（相同类型的）以太网物理链路形成的，因此它们被视为一个逻辑链路并被配置为一个逻辑链路。它提供了两个交换机之间的聚合链路。目前，每个 EtherChannel 最多可以包含八个兼容配置的以太网端口。
 </code></pre>
+</li>
+</ul>
 <ol start="36">
 <li>网络管理员正在使用命令 SW1(config-if-range)# channel-group 1 mode auto 在交换机 SW1 和 SW2 之间配置 EtherChannel 链路。必须在 SW2 上使用哪个命令来启用此 EtherChannel？</li>
 </ol>
-<pre><code>- SW2(config-if-range)# 通道组 1 模式开启
-
-- SW2(config-if-range)# 通道组 1 模式激活
-
-- SW2(config-if-range)# 通道组 1 模式被动
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;SW2(config-if-range)# 通道组 1 模式可取&lt;/span&gt;
-
-  **答案解释和提示：**使用 LACP 或 PAgP 在 SW1 和 SW2 之间建立 EtherChannel 的可能组合如下： PAgP on on auto LACP 开启 主动 主动 被动 主动在 EtherChannel 的每一侧选择的 EtherChannel 模式必须兼容才能启用它。
+<ul>
+<li><p>SW2(config-if-range)# 通道组 1 模式开启</p>
+</li>
+<li><p>SW2(config-if-range)# 通道组 1 模式激活</p>
+</li>
+<li><p>SW2(config-if-range)# 通道组 1 模式被动</p>
+</li>
+<li><p><span style="color: #ff0000">SW2(config-if-range)# 通道组 1 模式可取</span></p>
+<pre><code>**答案解释和提示：**使用 LACP 或 PAgP 在 SW1 和 SW2 之间建立 EtherChannel 的可能组合如下： PAgP on on auto LACP 开启 主动 主动 被动 主动在 EtherChannel 的每一侧选择的 EtherChannel 模式必须兼容才能启用它。
 </code></pre>
+</li>
+</ul>
 <ol start="37">
 <li>哪种技术是允许交换机自动将物理端口捆绑到单个逻辑链路中的开放协议标准？</li>
 </ol>
-<pre><code>- 多链路 PPP
-
-- 桌面排版
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;LACP&lt;/span&gt;
-
-- PAgP
-
-  **答案解释和提示：**LACP，即链路聚合控制协议，由 IEEE 802.3ad 定义，是一种开放标准协议。LACP 允许交换机自动将交换机端口捆绑到单个逻辑链路中以增加带宽。PAgP 或端口聚合协议执行类似的功能，但它是 Cisco 专有协议。DTP 是动态中继协议，用于在交换机之间自动和动态地建立中继。多链路 PPP 用于跨多个串行接口对 PPP 流量进行负载平衡。
+<ul>
+<li><p>多链路 PPP</p>
+</li>
+<li><p>桌面排版</p>
+</li>
+<li><p><span style="color: #ff0000">LACP</span></p>
+</li>
+<li><p>PAgP</p>
+<pre><code>**答案解释和提示：**LACP，即链路聚合控制协议，由 IEEE 802.3ad 定义，是一种开放标准协议。LACP 允许交换机自动将交换机端口捆绑到单个逻辑链路中以增加带宽。PAgP 或端口聚合协议执行类似的功能，但它是 Cisco 专有协议。DTP 是动态中继协议，用于在交换机之间自动和动态地建立中继。多链路 PPP 用于跨多个串行接口对 PPP 流量进行负载平衡。
 </code></pre>
+</li>
+</ul>
 <ol start="38">
 <li>在两台交换机之间配置中继 EtherChannel 有什么要求？</li>
 </ol>
-<pre><code>- 参与的接口必须在交换机上物理上连续。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;两台交换机上允许的 VLAN 范围必须相同。&lt;/span&gt;
-
-- 参与的接口必须位于交换机上的同一模块上。
-
-- 参与的接口必须在两台交换机上分配相同的 VLAN 号。
-
-  **答案解释和提示：**要成功启用中继 EtherChannel，所有接口上允许的 VLAN 范围必须匹配；否则，无法形成 EtherChannel。EtherChannel 中涉及的接口不必在物理上是连续的，也不必在同一模块上。因为 EtherChannel 是一个中继通道，所以参与接口被配置为中继模式，而不是访问模式。
+<ul>
+<li><p>参与的接口必须在交换机上物理上连续。</p>
+</li>
+<li><p><span style="color: #ff0000">两台交换机上允许的 VLAN 范围必须相同。</span></p>
+</li>
+<li><p>参与的接口必须位于交换机上的同一模块上。</p>
+</li>
+<li><p>参与的接口必须在两台交换机上分配相同的 VLAN 号。</p>
+<pre><code>**答案解释和提示：**要成功启用中继 EtherChannel，所有接口上允许的 VLAN 范围必须匹配；否则，无法形成 EtherChannel。EtherChannel 中涉及的接口不必在物理上是连续的，也不必在同一模块上。因为 EtherChannel 是一个中继通道，所以参与接口被配置为中继模式，而不是访问模式。
 </code></pre>
+</li>
+</ul>
 <ol start="39">
 <li>请参见图示。网络管理员在交换机 S1 上发出了 show etherchannel summary 命令。可以得出什么结论？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 01](https://ccnav7.net/wp-content/uploads/2020/01/i247497v1n1_247497.png)
-
-
-
-- EtherChannel 已暂停。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;EtherChannel 不起作用。&lt;/span&gt;
-
-- 端口聚合协议 PAgP 配置错误。
-
-- FastEthernet 端口 Fa0/1、Fa0/2 和 Fa0/3 不加入 EtherChannel。
-
-  **答案解释和提示：**EtherChannel 状态显示为 (SD)，表示它是第 2 层 EtherChannel，状态为 D 或 down。由于 EtherChannel 已关闭，因此通道组中的接口状态为单机。在 S1 上配置了 PAgP，但没有指示在 S1 上是否配置正确。问题也可能是相邻交换机 EtherChannel 配置。
 </code></pre>
+<ul>
+<li><p>EtherChannel 已暂停。</p>
+</li>
+<li><p><span style="color: #ff0000">EtherChannel 不起作用。</span></p>
+</li>
+<li><p>端口聚合协议 PAgP 配置错误。</p>
+</li>
+<li><p>FastEthernet 端口 Fa0&#x2F;1、Fa0&#x2F;2 和 Fa0&#x2F;3 不加入 EtherChannel。</p>
+<pre><code>**答案解释和提示：**EtherChannel 状态显示为 (SD)，表示它是第 2 层 EtherChannel，状态为 D 或 down。由于 EtherChannel 已关闭，因此通道组中的接口状态为单机。在 S1 上配置了 PAgP，但没有指示在 S1 上是否配置正确。问题也可能是相邻交换机 EtherChannel 配置。
+</code></pre>
+</li>
+</ul>
 <ol start="40">
 <li>哪个语句描述了 EtherChannel 实现？</li>
 </ol>
-<pre><code>- EtherChannel 仅在第 2 层运行。
-
-- PAgP 不能与 EtherChannel 结合使用。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;中继端口可以是 EtherChannel 捆绑包的一部分。&lt;/span&gt;
-
-- EtherChannel 最多可以支持十个单独的链路。
-
-  **答案解释和提示：**通过使用 PAgP 或 LACP 协议，最多可以将 16 个链路分组到一个 EtherChannel 中。EtherChannel 可以配置为第 2 层捆绑包或第 3 层捆绑包。配置第 3 层捆绑包超出了本课程的范围。如果中继端口是 EtherChannel 捆绑包的一部分，则捆绑包中的所有端口都必须是中继端口，并且所有这些端口上的本地 VLAN 必须相同。最佳实践是将配置应用到端口通道接口。然后配置会自动应用于各个端口。
+<ul>
+<li><p>EtherChannel 仅在第 2 层运行。</p>
+</li>
+<li><p>PAgP 不能与 EtherChannel 结合使用。</p>
+</li>
+<li><p><span style="color: #ff0000">中继端口可以是 EtherChannel 捆绑包的一部分。</span></p>
+</li>
+<li><p>EtherChannel 最多可以支持十个单独的链路。</p>
+<pre><code>**答案解释和提示：**通过使用 PAgP 或 LACP 协议，最多可以将 16 个链路分组到一个 EtherChannel 中。EtherChannel 可以配置为第 2 层捆绑包或第 3 层捆绑包。配置第 3 层捆绑包超出了本课程的范围。如果中继端口是 EtherChannel 捆绑包的一部分，则捆绑包中的所有端口都必须是中继端口，并且所有这些端口上的本地 VLAN 必须相同。最佳实践是将配置应用到端口通道接口。然后配置会自动应用于各个端口。
 </code></pre>
+</li>
+</ul>
 <ol start="41">
 <li>使用 LACP 的两个优点是什么？（选择两个。）</li>
 </ol>
-<pre><code>- LACP 允许在单个 EtherChannel 中混合使用快速以太网和千兆以太网接口。
-
-- 在多台交换机上部署 VLAN 时，无需配置中继接口。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;它允许直接连接的交换机协商 EtherChannel 链路。&lt;/span&gt;
-
-- 它为测试链路聚合提供了一个模拟环境。
-
-- 它减少了交换机上所需的配置量。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;它允许使用多供应商设备。&lt;/span&gt;
-
-  **答案解释和提示：**链路聚合控制协议 (LACP) 允许直接连接的多供应商交换机协商 EtherChannel 链路。LACP 通过检测每一端的配置并确保它们兼容，从而可以在需要时启用 EtherChannel 链路，从而帮助创建 EtherChannel 链路。
+<ul>
+<li><p>LACP 允许在单个 EtherChannel 中混合使用快速以太网和千兆以太网接口。</p>
+</li>
+<li><p>在多台交换机上部署 VLAN 时，无需配置中继接口。</p>
+</li>
+<li><p><span style="color: #ff0000">它允许直接连接的交换机协商 EtherChannel 链路。</span></p>
+</li>
+<li><p>它为测试链路聚合提供了一个模拟环境。</p>
+</li>
+<li><p>它减少了交换机上所需的配置量。</p>
+</li>
+<li><p><span style="color: #ff0000">它允许使用多供应商设备。</span></p>
+<pre><code>**答案解释和提示：**链路聚合控制协议 (LACP) 允许直接连接的多供应商交换机协商 EtherChannel 链路。LACP 通过检测每一端的配置并确保它们兼容，从而可以在需要时启用 EtherChannel 链路，从而帮助创建 EtherChannel 链路。
 </code></pre>
+</li>
+</ul>
 <ol start="42">
 <li>EtherChannel 的两大优势是什么？（选择两个。）</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;配置 EtherChannel 接口可提供物理链路配置的一致性。&lt;/span&gt;
-
-- 负载平衡发生在配置为不同 EtherChannel 的链路之间。
-
-- EtherChannel 使用升级的物理链路来提供更大的带宽。
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;生成树协议将 EtherChannel 中的物理链路视为一个逻辑连接。&lt;/span&gt;
-
-- 生成树协议通过将 EtherChannel 中的故障接口转换为转发状态来确保冗余。
-
-  **答案解释和提示：**一个逻辑接口的 EtherChannel 配置可确保 EtherChannel 中物理链路的配置一致性。EtherChannel 使用现有交换机端口提供更高的带宽，而无需对物理接口进行任何升级。负载平衡方法在属于同一 Etherchannel 的链路之间实现。由于 EtherChannel 将捆绑的物理链路视为一个逻辑连接，因此如果捆绑的物理链路之一发生故障，则不需要重新计算生成树。如果物理接口发生故障，STP 无法将发生故障的接口转换为转发状态。
+<ul>
+<li><p><span style="color: #ff0000">配置 EtherChannel 接口可提供物理链路配置的一致性。</span></p>
+</li>
+<li><p>负载平衡发生在配置为不同 EtherChannel 的链路之间。</p>
+</li>
+<li><p>EtherChannel 使用升级的物理链路来提供更大的带宽。</p>
+</li>
+<li><p><span style="color: #ff0000">生成树协议将 EtherChannel 中的物理链路视为一个逻辑连接。</span></p>
+</li>
+<li><p>生成树协议通过将 EtherChannel 中的故障接口转换为转发状态来确保冗余。</p>
+<pre><code>**答案解释和提示：**一个逻辑接口的 EtherChannel 配置可确保 EtherChannel 中物理链路的配置一致性。EtherChannel 使用现有交换机端口提供更高的带宽，而无需对物理接口进行任何升级。负载平衡方法在属于同一 Etherchannel 的链路之间实现。由于 EtherChannel 将捆绑的物理链路视为一个逻辑连接，因此如果捆绑的物理链路之一发生故障，则不需要重新计算生成树。如果物理接口发生故障，STP 无法将发生故障的接口转换为转发状态。
 </code></pre>
+</li>
+</ul>
 <ol start="43">
 <li>交换机配置为运行 STP。什么术语描述了一个默认值为 32,768 的字段，并且是选择根桥时的初始决定因素？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;桥优先&lt;/span&gt;
-- BPDU
-- 网桥ID
-- 扩展系统标识
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">桥优先</span></li>
+<li>BPDU</li>
+<li>网桥ID</li>
+<li>扩展系统标识</li>
+</ul>
 <ol start="44">
 <li>交换机配置为运行 STP。什么术语描述了所有路径计算的参考点？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;根桥&lt;/span&gt;
-- 根端口
-- 指定港口
-- 备用端口
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">根桥</span></li>
+<li>根端口</li>
+<li>指定港口</li>
+<li>备用端口</li>
+</ul>
 <ol start="45">
 <li>交换机配置为运行 STP。什么术语描述了用于指定 VLAN ID 的字段？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;扩展系统标识&lt;/span&gt;
-- 端口号
-- MAC地址
-- 桥优先
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">扩展系统标识</span></li>
+<li>端口号</li>
+<li>MAC地址</li>
+<li>桥优先</li>
+</ul>
 <ol start="46">
 <li>交换机配置为运行 STP。哪个术语描述了在总成本方面最接近根桥的交换机端口？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;根端口&lt;/span&gt;
-- 指定港口
-- 备用端口
-- 禁用
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">根端口</span></li>
+<li>指定港口</li>
+<li>备用端口</li>
+<li>禁用</li>
+</ul>
 <ol start="47">
 <li>交换机配置为运行 STP。哪个术语描述了在总成本方面最接近根桥的交换机端口？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;根端口&lt;/span&gt;
-- 指定港口
-- 备用端口
-- 根桥
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">根端口</span></li>
+<li>指定港口</li>
+<li>备用端口</li>
+<li>根桥</li>
+</ul>
 <ol start="48">
 <li>交换机配置为运行 STP。什么术语描述了所有路径计算的参考点？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;根桥&lt;/span&gt;
-- 根端口
-- 指定港口
-- 禁用
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">根桥</span></li>
+<li>根端口</li>
+<li>指定港口</li>
+<li>禁用</li>
+</ul>
 <ol start="49">
 <li>交换机配置为运行 STP。什么术语描述了允许在网络上转发流量的非根端口？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;指定港口&lt;/span&gt;
-- 备用端口
-- 禁用
-- 根端口
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">指定港口</span></li>
+<li>备用端口</li>
+<li>禁用</li>
+<li>根端口</li>
+</ul>
 <ol start="50">
 <li>交换机配置为运行 STP。什么术语描述了允许在网络上转发流量的非根端口？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;指定港口&lt;/span&gt;
-- 备用端口
-- 禁用
-- 专用端口
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">指定港口</span></li>
+<li>备用端口</li>
+<li>禁用</li>
+<li>专用端口</li>
+</ul>
 <ol start="51">
 <li>交换机配置为运行 STP。什么术语描述了用于指定 VLAN ID 的字段？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;扩展系统标识&lt;/span&gt;
-- 端口号
-- 桥优先
-- 网桥ID
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">扩展系统标识</span></li>
+<li>端口号</li>
+<li>桥优先</li>
+<li>网桥ID</li>
+</ul>
 <ol start="52">
 <li>交换机配置为运行 STP。什么术语描述了一个默认值为 32,768 的字段，并且是选择根桥时的初始决定因素？</li>
 </ol>
-<pre><code>- &lt;span style=&quot;color: #ff0000&quot;&gt;桥优先&lt;/span&gt;
-- MAC地址
-- 扩展系统标识
-- 网桥ID
-</code></pre>
+<ul>
+<li><span style="color: #ff0000">桥优先</span></li>
+<li>MAC地址</li>
+<li>扩展系统标识</li>
+<li>网桥ID</li>
+</ul>
 <ol start="53">
 <li>请参见图示。在这个启用 RSTP 的网络中，端口 A、B、C 和 D 可能的端口角色是什么？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 05](https://ccnav7.net/wp-content/uploads/2020/01/i223430v1n1_Item-223430.jpg)
-
-
-
-- 替代的，根，指定的，根
-
-- 指定，根，备用，根
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;替代的，指定的，根，根&lt;/span&gt;
-
-- 指定的, 备用的, 根, 根
-
-  **答案解释和提示：**因为S1是根桥，B是指定端口，C和D是根端口。RSTP 支持一种新的端口类型，即处于丢弃状态的备用端口，在这种情况下可以是端口 A。
 </code></pre>
+<ul>
+<li><p>替代的，根，指定的，根</p>
+</li>
+<li><p>指定，根，备用，根</p>
+</li>
+<li><p><span style="color: #ff0000">替代的，指定的，根，根</span></p>
+</li>
+<li><p>指定的, 备用的, 根, 根</p>
+<pre><code>**答案解释和提示：**因为S1是根桥，B是指定端口，C和D是根端口。RSTP 支持一种新的端口类型，即处于丢弃状态的备用端口，在这种情况下可以是端口 A。
+</code></pre>
+</li>
+</ul>
 <ol start="54">
 <li>请参见图示。哪种交换技术允许聚合每个接入层交换机链路以在每个第 2 层交换机和第 3 层交换机之间提供更多带宽？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 07](https://ccnav7.net/wp-content/uploads/2020/01/i217659v1n1_217659.png)
-
-
-
-- HSRP
-
-- PortFast
-
-- 中继
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;以太通道&lt;/span&gt;
-
-  **答案解释和提示：**PortFast 用于减少端口通过生成树算法所花费的时间，以便设备可以更快地开始发送数据。中继可以与 EtherChannel 一起实施，但单独的中继并不能聚合交换机链路。HSRP 用于在到第 3 层设备的两个不同连接之间对流量进行负载平衡，以实现默认网关冗余。HSRP 不像 EtherChannel 那样在第 2 层或第 3 层聚合链路。
 </code></pre>
+<ul>
+<li><p>HSRP</p>
+</li>
+<li><p>PortFast</p>
+</li>
+<li><p>中继</p>
+</li>
+<li><p><span style="color: #ff0000">以太通道</span></p>
+<pre><code>**答案解释和提示：**PortFast 用于减少端口通过生成树算法所花费的时间，以便设备可以更快地开始发送数据。中继可以与 EtherChannel 一起实施，但单独的中继并不能聚合交换机链路。HSRP 用于在到第 3 层设备的两个不同连接之间对流量进行负载平衡，以实现默认网关冗余。HSRP 不像 EtherChannel 那样在第 2 层或第 3 层聚合链路。
+</code></pre>
+</li>
+</ul>
 <ol start="55">
 <li>请参见图示。管理员希望使用端口聚合协议在两台交换机之间形成 EtherChannel。如果交换机 S1 配置为自动模式，应在 S2 上配置哪种模式以形成 EtherChannel？</li>
 </ol>
 <pre><code>![CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 09](https://ccnav7.net/wp-content/uploads/2020/01/i216435v1n2_Item-216435.png)
-
-
-
-- 在
-
-- 汽车
-
-- &lt;span style=&quot;color: #ff0000&quot;&gt;可取的&lt;/span&gt;
-
-- 离开
-
-  **答案解释和提示：**当两个开关都处于开启模式或其中一个处于自动或期望模式而另一个处于期望模式时，将通过 PAgP 形成一个 EtherChannel。
 </code></pre>
+<ul>
+<li><p>在</p>
+</li>
+<li><p>汽车</p>
+</li>
+<li><p><span style="color: #ff0000">可取的</span></p>
+</li>
+<li><p>离开</p>
+<pre><code>**答案解释和提示：**当两个开关都处于开启模式或其中一个处于自动或期望模式而另一个处于期望模式时，将通过 PAgP 形成一个 EtherChannel。
+</code></pre>
+</li>
+</ul>
 <ol start="56">
 <li><p>打开 PT 活动。执行活动说明中的任务，然后回答问题。</p>
 <p>在 SW1 上发出的哪组配置命令将成功完成 SW1 和 SW2 之间的 EtherChannel 链路？</p>
 </li>
 </ol>
-<pre><code>- 接口端口通道 1
-  不关闭
+<ul>
+<li><p>接口端口通道 1<br>不关闭</p>
+</li>
+<li><p><span style="color: #ff0000">接口 GigabitEthernet0&#x2F;1</span><br><span style="color: #ff0000">通道组 1 模式可取</span></p>
+</li>
+<li><p>接口 GigabitEthernet0&#x2F;1<br>没有关闭</p>
+</li>
+<li><p>接口 GigabitEthernet0&#x2F;2</p>
+<pre><code>通道组 2 模式可取
 
-- &lt;span style=&quot;color: #ff0000&quot;&gt;接口 GigabitEthernet0/1&lt;/span&gt;
-  &lt;span style=&quot;color: #ff0000&quot;&gt;通道组 1 模式可取&lt;/span&gt;
 
-- 接口 GigabitEthernet0/1
-  没有关闭
 
-- 接口 GigabitEthernet0/2
-
-  通道组 2 模式可取
-
-  
-
-  **答案解释和提示：**在 SW1 上发出 show running-configuration 命令显示接口 GigabitEthernet0/1 缺少通道组 1 模式所需命令，该命令将竞争接口 GigabitEthernet0/1 和接口 GigabitEthernet0/2 的 EtherChannel 配置。
+**答案解释和提示：**在 SW1 上发出 show running-configuration 命令显示接口 GigabitEthernet0/1 缺少通道组 1 模式所需命令，该命令将竞争接口 GigabitEthernet0/1 和接口 GigabitEthernet0/2 的 EtherChannel 配置。
 </code></pre>
+</li>
+</ul>
 
   
   </article>
