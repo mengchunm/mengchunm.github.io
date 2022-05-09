@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.1.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  <title>saevio</title>
+
+  
+    <meta name="description" content="模块 1 – 4 交换概念、VLAN 和 VLAN 间路由 哪个命令显示有关特定接口的自动 MDIX 设置的信息？ 显示界面  显示控制器  显示过程  显示运行配置 答案解释和提示：要检查特定接口的自动 MDIX 设置，应使用带有 phy 关键字的 show controllers ethernet-controller 命令。    如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工">
+<meta property="og:type" content="website">
+<meta property="og:title" content="saevio">
+<meta property="og:url" content="https://mengchunm.github.io/cisco1-4.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="模块 1 – 4 交换概念、VLAN 和 VLAN 间路由 哪个命令显示有关特定接口的自动 MDIX 设置的信息？ 显示界面  显示控制器  显示过程  显示运行配置 答案解释和提示：要检查特定接口的自动 MDIX 设置，应使用带有 phy 关键字的 show controllers ethernet-controller 命令。    如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-09T09:41:17.701Z">
+<meta property="article:modified_time" content="2022-05-09T09:40:29.296Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://s2.loli.net/2022/04/14/sxZv7XFJwfEPRQz.png">
+  
+
+  
+</head>
+
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+          .then(function (res){
+            return res.json();
+          })
+          .then(function (data) {
+            var hitokoto = document.getElementById('hitokoto');
+            hitokoto.innerText = data.hitokoto ;
+          })
+          .catch(function (err) {
+            console.error(err);
+          })
+</script>
+<!-- 一言API -->
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+
+<header class="header">
+
+<div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://s2.loli.net/2022/04/14/LiUCugASG1pxven.png" onerror="javascript:this.classList.add('error');this.src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0">( ˙꒳​˙)</div></a></div>
+<nav class="menu dis-select"><a class="nav-item" href="/">随笔</a><a class="nav-item" href="/notes/">便签</a><a class="nav-item" href="/more/">更多</a></nav></header>
+
+<div class="widgets">
+<div class="widget-wrap" id="markdown"><div class="widget-header cap dis-select"><span class="name">你好呀，旅行者</span></div><div class="widget-body fs14"><p id="hitokoto">ヾ(≧▽≦*)o</p>
+</div></div>
+
+
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%BE%E7%A4%BA%E6%9C%89%E5%85%B3%E7%89%B9%E5%AE%9A%E6%8E%A5%E5%8F%A3%E7%9A%84%E8%87%AA%E5%8A%A8-MDIX-%E8%AE%BE%E7%BD%AE%E7%9A%84%E4%BF%A1%E6%81%AF%EF%BC%9F"><span class="toc-text">哪个命令显示有关特定接口的自动 MDIX 设置的信息？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BB%A5%E5%A4%AA%E7%BD%91%E8%BF%9E%E6%8E%A5%E7%9A%84%E4%B8%80%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%85%A8%E5%8F%8C%E5%B7%A5%EF%BC%8C%E8%80%8C%E8%BF%9E%E6%8E%A5%E7%9A%84%E5%8F%A6%E4%B8%80%E7%AB%AF%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%8D%8A%E5%8F%8C%E5%B7%A5%EF%BC%8C%E9%82%A3%E4%B9%88%E5%9C%A8%E5%93%AA%E9%87%8C%E4%BC%9A%E8%A7%82%E5%AF%9F%E5%88%B0%E5%90%8E%E6%9C%9F%E5%86%B2%E7%AA%81%EF%BC%9F"><span class="toc-text">如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工，那么在哪里会观察到后期冲突？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%B8%AA%E5%91%BD%E4%BB%A4%E7%94%A8%E4%BA%8E%E8%AE%BE%E7%BD%AE-BOOT-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%EF%BC%8C%E8%AF%A5%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89%E4%BA%86%E5%9C%A8%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%E5%93%AA%E9%87%8C%E5%8F%AF%E4%BB%A5%E6%89%BE%E5%88%B0-IOS-%E6%98%A0%E5%83%8F%E6%96%87%E4%BB%B6%EF%BC%9F"><span class="toc-text">哪个命令用于设置 BOOT 环境变量，该变量定义了在交换机上哪里可以找到 IOS 映像文件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E6%9D%A5%E5%AE%9A%E4%BD%8D%E5%92%8C%E5%8A%A0%E8%BD%BD-IOS-%E6%98%A0%E5%83%8F%EF%BC%9F"><span class="toc-text">交换机使用什么来定位和加载 IOS 映像？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E7%A7%8D%E5%8D%8F%E8%AE%AE%E4%B8%BA%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5%E5%A2%9E%E5%8A%A0%E4%BA%86%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%9F"><span class="toc-text">哪种协议为远程连接增加了安全性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cisco-IOS-%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8A%E7%9A%84-IPv4-%E7%8E%AF%E5%9B%9E%E6%8E%A5%E5%8F%A3%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="toc-text">Cisco IOS 路由器上的 IPv4 环回接口有什么特点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E5%99%A8%E4%B8%8D%E4%BC%9A%E4%BD%9C%E4%B8%BA%E6%AE%8B%E5%B8%A7%E4%B8%A2%E5%BC%83%E7%9A%84%E6%9C%80%E5%B0%8F%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7%E5%A4%A7%E5%B0%8F%E6%98%AF%E5%A4%9A%E5%B0%91%EF%BC%9F"><span class="toc-text">接收器不会作为残帧丢弃的最小以太网帧大小是多少？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%90%AF%E5%8A%A8%E5%BA%8F%E5%88%97%E7%9A%84%E5%93%AA%E4%B8%AA%E6%AD%A5%E9%AA%A4%E4%B9%8B%E5%90%8E%E6%89%A7%E8%A1%8C%E5%BC%95%E5%AF%BC%E5%8A%A0%E8%BD%BD%E7%A8%8B%E5%BA%8F%EF%BC%9F"><span class="toc-text">在交换机启动序列的哪个步骤之后执行引导加载程序？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BA%8C%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%AF%B9%E7%BD%91%E7%BB%9C%E6%9C%89%E4%BB%80%E4%B9%88%E5%BD%B1%E5%93%8D%EF%BC%9F"><span class="toc-text">添加二层交换机对网络有什么影响？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%B8%AA%E7%89%B9%E5%BE%81%E6%8F%8F%E8%BF%B0%E4%BA%86%E7%9B%B4%E9%80%9A%E5%88%87%E6%8D%A2%EF%BC%9F"><span class="toc-text">哪个特征描述了直通切换？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E7%BA%BF%E5%99%A8%E5%92%8C%E7%AC%AC-2-%E5%B1%82-LAN-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E6%98%BE%E7%9D%80%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">集线器和第 2 层 LAN 交换机之间的显着区别是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%B8%A7%E8%BD%AC%E5%8F%91%E5%86%B3%E7%AD%96%EF%BC%8C%E5%93%AA%E9%A1%B9%E9%99%88%E8%BF%B0%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%EF%BC%9F"><span class="toc-text">关于以太网交换机帧转发决策，哪项陈述是正确的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%BC%93%E5%86%B2%E5%8C%BA%E5%A6%82%E4%BD%95%E5%BD%B1%E5%93%8D%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%EF%BC%9F"><span class="toc-text">交换机缓冲区如何影响网络性能？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%89%B9%E6%80%A7%E6%9C%89%E5%8A%A9%E4%BA%8E%E4%BF%9D%E6%8C%81%E6%9C%AC%E5%9C%B0%E6%B5%81%E9%87%8F%E5%B9%B6%E7%BC%93%E8%A7%A3%E7%BD%91%E7%BB%9C%E6%8B%A5%E5%A1%9E%EF%BC%9F"><span class="toc-text">哪种交换机特性有助于保持本地流量并缓解网络拥塞？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%B8%AA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%BB%84%E4%BB%B6%E5%87%8F%E5%B0%91%E4%BA%86%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%86%85%E9%83%A8%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%84%E7%90%86%E6%97%B6%E9%97%B4%EF%BC%9F"><span class="toc-text">哪个交换机组件减少了交换机内部的数据包处理时间？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%8E%A5%E6%94%B6%E5%88%B0%E5%8C%85%E5%90%AB%E6%BA%90-MAC-%E5%9C%B0%E5%9D%80-000b-a023-c501-%E5%92%8C%E7%9B%AE%E6%A0%87-MAC-%E5%9C%B0%E5%9D%80-0050-0fae-75aa-%E7%9A%84%E7%AC%AC-2-%E5%B1%82%E5%B8%A7%E3%80%82%E6%8C%89%E5%AE%83%E4%BB%AC%E5%8F%91%E7%94%9F%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%94%BE%E7%BD%AE%E5%BC%80%E5%85%B3%E6%AD%A5%E9%AA%A4%E3%80%82%EF%BC%88%E5%B9%B6%E9%9D%9E%E6%89%80%E6%9C%89%E9%80%89%E9%A1%B9%E9%83%BD%E8%A2%AB%E4%BD%BF%E7%94%A8%E3%80%82%EF%BC%89"><span class="toc-text">请参见图示。交换机接收到包含源 MAC 地址 000b.a023.c501 和目标 MAC 地址 0050.0fae.75aa 的第 2 层帧。按它们发生的顺序放置开关步骤。（并非所有选项都被使用。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E4%BC%A0%E5%85%A5%E5%B8%A7%E5%90%91%E4%BA%A4%E6%8D%A2%E8%A1%A8%E6%B7%BB%E5%8A%A0%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BF%A1%E6%81%AF%EF%BC%9F"><span class="toc-text">从传入帧向交换表添加了哪些信息？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E7%A1%AE%E4%BF%9D%E4%BC%A0%E5%85%A5%E5%B8%A7%E5%9C%A8%E8%BD%AC%E5%8F%91%E4%B9%8B%E5%89%8D%E6%B2%A1%E6%9C%89%E9%94%99%E8%AF%AF%EF%BC%9F"><span class="toc-text">哪种交换方法可以确保传入帧在转发之前没有错误？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E6%98%BE%E7%A4%BA%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%B9%BF%E6%92%AD%E5%9F%9F%EF%BC%9F"><span class="toc-text">请参见图示。显示多少个广播域？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%A1%E7%90%86%E5%91%98%E5%9C%A8%E7%AE%A1%E7%90%86%E5%B1%80%E5%9F%9F%E7%BD%91%E6%97%B6%E5%BA%94%E5%9C%A8%E5%93%AA%E4%B8%A4%E7%A7%8D%E6%83%85%E5%86%B5%E4%B8%8B%E7%A6%81%E7%94%A8-DTP%EF%BC%9F%EF%BC%88%E9%80%89%E6%8B%A9%E4%B8%A4%E4%B8%AA%E3%80%82%EF%BC%89"><span class="toc-text">管理员在管理局域网时应在哪两种情况下禁用 DTP？（选择两个。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%B8%A4%E4%B8%AA%E7%89%B9%E5%BE%81%E6%8F%8F%E8%BF%B0%E4%BA%86%E6%9C%AC%E5%9C%B0-VLAN%EF%BC%9F%EF%BC%88%E9%80%89%E6%8B%A9%E4%B8%A4%E4%B8%AA%E3%80%82%EF%BC%89"><span class="toc-text">哪两个特征描述了本地 VLAN？（选择两个。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E9%85%8D%E7%BD%AE%E4%BA%86%E5%A4%9A%E4%B8%AA-VLAN-%E7%9A%84%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%EF%BC%8C%E5%93%AA%E4%B8%AA%E5%91%BD%E4%BB%A4%E5%B0%86%E4%BB%85%E4%BB%8E%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%AD%E5%88%A0%E9%99%A4-VLAN-100%EF%BC%9F"><span class="toc-text">在配置了多个 VLAN 的交换机上，哪个命令将仅从交换机中删除 VLAN 100？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E6%AD%A3%E5%9C%A8%E6%9F%A5%E7%9C%8B%E4%BA%A4%E6%8D%A2%E6%9C%BA-S2-%E4%B8%8A%E7%9A%84%E7%AB%AF%E5%8F%A3%E5%92%8C-VLAN-%E5%88%86%E9%85%8D%EF%BC%8C%E5%B9%B6%E6%B3%A8%E6%84%8F%E5%88%B0%E6%8E%A5%E5%8F%A3-Gi0-x2F-1-%E5%92%8C-Gi0-x2F-2-%E6%9C%AA%E5%8C%85%E5%90%AB%E5%9C%A8%E8%BE%93%E5%87%BA%E4%B8%AD%E3%80%82%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BE%93%E5%87%BA%E4%B8%AD%E4%BC%9A%E7%BC%BA%E5%B0%91%E6%8E%A5%E5%8F%A3%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员正在查看交换机 S2 上的端口和 VLAN 分配，并注意到接口 Gi0&#x2F;1 和 Gi0&#x2F;2 未包含在输出中。为什么输出中会缺少接口？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%BD%91%E7%BB%9C%E5%8C%85%E5%90%AB%E8%B7%A8%E8%B6%8A%E5%A4%9A%E4%B8%AA%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84%E5%A4%9A%E4%B8%AA-VLAN%E3%80%82%E5%BD%93-VLAN-20-%E4%B8%AD%E7%9A%84%E8%AE%BE%E5%A4%87%E5%8F%91%E9%80%81%E5%B9%BF%E6%92%AD%E4%BB%A5%E5%A4%AA%E7%BD%91%E5%B8%A7%E6%97%B6%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">一个网络包含跨越多个交换机的多个 VLAN。当 VLAN 20 中的设备发送广播以太网帧时会发生什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E6%89%80%E6%9C%89%E5%B7%A5%E4%BD%9C%E7%AB%99%E9%83%BD%E5%9C%A8-VLAN-20-%E4%B8%AD%E6%AD%A3%E7%A1%AE%E9%85%8D%E7%BD%AE%E3%80%82%E8%BF%9E%E6%8E%A5%E5%88%B0%E4%BA%A4%E6%8D%A2%E6%9C%BA-SW1-%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%AB%99%E6%97%A0%E6%B3%95%E5%B0%86%E6%B5%81%E9%87%8F%E5%8F%91%E9%80%81%E5%88%B0-SW2-%E4%B8%8A%E7%9A%84%E5%B7%A5%E4%BD%9C%E7%AB%99%E3%80%82%E5%8F%AF%E4%BB%A5%E5%81%9A%E4%BA%9B%E4%BB%80%E4%B9%88%E6%9D%A5%E8%A7%A3%E5%86%B3%E8%BF%99%E4%B8%AA%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-text">请参见图示。所有工作站都在 VLAN 20 中正确配置。连接到交换机 SW1 的工作站无法将流量发送到 SW2 上的工作站。可以做些什么来解决这个问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%AB%AF%E5%8F%A3%E5%88%86%E9%85%8D%E5%88%B0%E7%9A%84-VLAN-%E5%88%A0%E9%99%A4%E5%90%8E%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%EF%BC%9F"><span class="toc-text">交换机端口分配到的 VLAN 删除后会发生什么情况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86-IEEE-802-1Q-%E6%A0%87%E5%87%86-VLAN-%E6%A0%87%E8%AE%B0%E5%AD%97%E6%AE%B5%E4%B8%8E%E6%8F%8F%E8%BF%B0%E7%9B%B8%E5%8C%B9%E9%85%8D%E3%80%82%EF%BC%88%E5%B9%B6%E9%9D%9E%E6%89%80%E6%9C%89%E9%80%89%E9%A1%B9%E9%83%BD%E8%A2%AB%E4%BD%BF%E7%94%A8%E3%80%82%EF%BC%89"><span class="toc-text">将 IEEE 802.1Q 标准 VLAN 标记字段与描述相匹配。（并非所有选项都被使用。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8-Cisco-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%EF%BC%8C%E5%BA%94%E5%9C%A8%E5%93%AA%E7%A7%8D%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%A8%A1%E5%BC%8F%E4%B8%8B%E5%88%86%E9%85%8D%E7%AB%AF%E5%8F%A3-G0-x2F-1%EF%BC%9F"><span class="toc-text">请参见图示。如果使用 Cisco 最佳实践，应在哪种交换机模式下分配端口 G0&#x2F;1？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%86-DTP-%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%85%B6%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%8C%B9%E9%85%8D%E3%80%82%EF%BC%88%E5%B9%B6%E9%9D%9E%E6%89%80%E6%9C%89%E9%80%89%E9%A1%B9%E9%83%BD%E8%A2%AB%E4%BD%BF%E7%94%A8%E3%80%82%EF%BC%89"><span class="toc-text">将 DTP 模式与其功能相匹配。（并非所有选项都被使用。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%9A%84Fa0-x2F-11%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%88%86%E9%85%8D%E5%88%B0VLAN-30%EF%BC%8C%E5%A6%82%E6%9E%9C%E5%9C%A8Fa0-x2F-11%E6%8E%A5%E5%8F%A3%E8%BE%93%E5%85%A5%E5%91%BD%E4%BB%A4no-switchport-access-vlan-30%EF%BC%8C%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%EF%BC%9F"><span class="toc-text">交换机的Fa0&#x2F;11端口被分配到VLAN 30，如果在Fa0&#x2F;11接口输入命令no switchport access vlan 30，会发生什么情况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%B8%AA%E5%91%BD%E4%BB%A4%E6%98%BE%E7%A4%BA-Fa0-x2F-1-%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B0%81%E8%A3%85%E7%B1%BB%E5%9E%8B%E3%80%81%E8%AF%AD%E9%9F%B3-VLAN-ID-%E5%92%8C%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%BC%8F-VLAN%EF%BC%9F"><span class="toc-text">哪个命令显示 Fa0&#x2F;1 接口的封装类型、语音 VLAN ID 和访问模式 VLAN？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E5%AF%B9%E4%BA%A4%E6%8D%A2%E6%9C%BA-SW3-%E8%BF%9B%E8%A1%8C%E7%BC%96%E7%A8%8B%EF%BC%8C%E4%BB%A5%E9%80%9A%E8%BF%87%E7%AB%AF%E5%8F%A3-Fa0-x2F-20-%E7%AE%A1%E7%90%86%E8%AF%AD%E9%9F%B3%E5%92%8C%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%8F%E3%80%82%E9%85%8D%E7%BD%AE%E6%9C%89%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%88%E5%A6%82%E6%9E%9C%E6%9C%89%E7%9A%84%E8%AF%9D%EF%BC%89%EF%BC%9F"><span class="toc-text">请参见图示。技术人员正在对交换机 SW3 进行编程，以通过端口 Fa0&#x2F;20 管理语音和数据流量。配置有什么问题（如果有的话）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E4%BA%A4%E6%8D%A2%E6%9C%BA%E7%AB%AF%E5%8F%A3%E4%B8%8A%E9%85%8D%E7%BD%AE%E8%AF%AD%E9%9F%B3-VLAN-%E9%9C%80%E8%A6%81%E5%93%AA%E5%9B%9B%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%9F%EF%BC%88%E9%80%89%E6%8B%A9%E5%9B%9B%E4%B8%AA%EF%BC%89%E3%80%82"><span class="toc-text">在交换机端口上配置语音 VLAN 需要哪四个步骤？（选择四个）。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82PC1-%E6%97%A0%E6%B3%95%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8-1-%E9%80%9A%E4%BF%A1%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E5%8F%91%E5%87%BA-show-interfaces-trunk-%E5%91%BD%E4%BB%A4%E5%BC%80%E5%A7%8B%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E3%80%82%E6%A0%B9%E6%8D%AE%E6%AD%A4%E5%91%BD%E4%BB%A4%E7%9A%84%E8%BE%93%E5%87%BA%E5%8F%AF%E4%BB%A5%E5%BE%97%E5%87%BA%E4%BB%80%E4%B9%88%E7%BB%93%E8%AE%BA%EF%BC%9F"><span class="toc-text">请参见图示。PC1 无法与服务器 1 通信。网络管理员发出 show interfaces trunk 命令开始故障排除。根据此命令的输出可以得出什么结论？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E8%B7%AF%E7%94%B1%E5%99%A8-CiscoVille-%E4%B8%8A%E7%9A%84-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE%E4%B8%AD%E6%98%BE%E7%A4%BA%E9%94%99%E8%AF%AF%E7%9A%84%E5%8E%9F%E5%9B%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">请参见图示。路由器 CiscoVille 上的 VLAN 间路由配置中显示错误的原因是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E5%B7%B2%E4%BD%BF%E7%94%A8%E4%B8%8A%E8%BF%B0%E5%91%BD%E4%BB%A4%E9%85%8D%E7%BD%AE%E8%B7%AF%E7%94%B1%E5%99%A8-CiscoVille%EF%BC%8C%E4%BB%A5%E6%8F%90%E4%BE%9B-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E3%80%82%E8%BF%9E%E6%8E%A5%E5%88%B0%E8%B7%AF%E7%94%B1%E5%99%A8-CiscoVille-%E4%B8%8A%E7%9A%84-Gi0-x2F-0-%E6%8E%A5%E5%8F%A3%E7%9A%84%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E5%91%BD%E4%BB%A4%E6%89%8D%E8%83%BD%E5%85%81%E8%AE%B8-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 接口的交换机需要什么命令才能允许 VLAN 间路由？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%90%E9%AB%98%E4%B8%AD%E7%9A%84%E5%AE%9E%E9%AA%8C%E5%AE%A4%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8-VLAN15%EF%BC%8C%E6%95%99%E8%81%8C%E5%91%98%E5%B7%A5%E7%BD%91%E7%BB%9C%E4%BD%BF%E7%94%A8-VLAN30%E3%80%82%E5%9C%A8%E4%BD%BF%E7%94%A8%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E5%99%A8%E6%96%B9%E6%B3%95%E6%97%B6%EF%BC%8C%E5%90%AF%E7%94%A8%E8%BF%99%E4%B8%A4%E4%B8%AA-VLAN-%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">某高中的实验室网络使用 VLAN15，教职员工网络使用 VLAN30。在使用单臂路由器方法时，启用这两个 VLAN 之间的通信需要什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E8%B7%AF%E7%94%B1%E5%A4%A7%E9%87%8F-VLAN-%E6%97%B6%EF%BC%8C%E4%BD%BF%E7%94%A8-router-on-a-stick-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E6%96%B9%E6%B3%95%E8%80%8C%E4%B8%8D%E6%98%AF%E5%A4%9A%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%A4%E4%B8%AA%E7%BC%BA%E7%82%B9%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E9%80%89%E6%8B%A9%E4%B8%A4%E4%B8%AA%E3%80%82%EF%BC%89"><span class="toc-text">在路由大量 VLAN 时，使用 router-on-a-stick VLAN 间路由方法而不是多层交换机 VLAN 间路由方法的两个缺点是什么？（选择两个。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E6%AD%A3%E5%9C%A8%E9%AA%8C%E8%AF%81-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82%E7%94%A8%E6%88%B7%E6%8A%B1%E6%80%A8%E4%B8%8D%E5%90%8C-VLAN-%E4%B8%8A%E7%9A%84-PC-%E6%97%A0%E6%B3%95%E9%80%9A%E4%BF%A1%E3%80%82%E6%A0%B9%E6%8D%AE%E8%BE%93%E5%87%BA%EF%BC%8C%E4%BA%A4%E6%8D%A2%E6%9C%BA%E6%8E%A5%E5%8F%A3-Gi1-x2F-1-%E4%B8%8A%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%85%8D%E7%BD%AE%E9%94%99%E8%AF%AF%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E9%80%89%E6%8B%A9%E4%B8%A4%E4%B8%AA%E3%80%82%EF%BC%89"><span class="toc-text">请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨不同 VLAN 上的 PC 无法通信。根据输出，交换机接口 Gi1&#x2F;1 上的两个配置错误是什么？（选择两个。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E6%AD%A3%E5%9C%A8%E9%AA%8C%E8%AF%81-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E7%9A%84%E9%85%8D%E7%BD%AE%E3%80%82%E7%94%A8%E6%88%B7%E6%8A%B1%E6%80%A8-PC2-%E6%97%A0%E6%B3%95%E4%B8%8E-PC1-%E9%80%9A%E4%BF%A1%E3%80%82%E6%A0%B9%E6%8D%AE%E8%BE%93%E5%87%BA%EF%BC%8C%E9%97%AE%E9%A2%98%E7%9A%84%E5%8F%AF%E8%83%BD%E5%8E%9F%E5%9B%A0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨 PC2 无法与 PC1 通信。根据输出，问题的可能原因是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E5%B7%B2%E4%BD%BF%E7%94%A8%E4%B8%8A%E8%BF%B0%E5%91%BD%E4%BB%A4%E9%85%8D%E7%BD%AE%E8%B7%AF%E7%94%B1%E5%99%A8-CiscoVille%EF%BC%8C%E4%BB%A5%E6%8F%90%E4%BE%9B-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E3%80%82%E8%BF%9E%E6%8E%A5%E5%88%B0%E8%B7%AF%E7%94%B1%E5%99%A8-CiscoVille-%E4%B8%8A%E7%9A%84-Gi0-x2F-0-%E7%9A%84%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%AB%AF%E5%8F%A3%E6%89%8D%E8%83%BD%E5%85%81%E8%AE%B8-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 的交换机上需要什么类型的端口才能允许 VLAN 间路由？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E6%AD%A3%E5%9C%A8%E4%B8%BA-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE-RT1%E3%80%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE%E6%AD%A3%E7%A1%AE%E4%B8%94%E5%8A%9F%E8%83%BD%E6%AD%A3%E5%B8%B8%E3%80%82Host1%E3%80%81Host2-%E5%92%8C-Host3-%E6%97%A0%E6%B3%95%E7%9B%B8%E4%BA%92%E9%80%9A%E4%BF%A1%E3%80%82%E6%A0%B9%E6%8D%AE%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%EF%BC%8C%E6%98%AF%E4%BB%80%E4%B9%88%E5%AF%BC%E8%87%B4%E4%BA%86%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员正在为 VLAN 间路由配置 RT1。交换机配置正确且功能正常。Host1、Host2 和 Host3 无法相互通信。根据路由器配置，是什么导致了问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E6%A0%B9%E6%8D%AE-show-running-config-%E5%91%BD%E4%BB%A4%E7%9A%84%E8%BE%93%E5%87%BA%EF%BC%8C%E4%B8%BA-VLAN-15%E3%80%8130-%E5%92%8C-45-%E5%AE%9E%E6%96%BD%E4%BA%86%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E5%99%A8%E9%85%8D%E7%BD%AE%E3%80%82VLAN-45-%E4%B8%8A%E4%BD%BF%E7%94%A8-172-16-45-0-x2F-24-%E7%BD%91%E7%BB%9C%E7%9A%84-PC-%E6%97%A0%E6%B3%95%E8%BF%9E%E6%8E%A5%E5%88%B0-172-16-30-0-x2F-24-%E7%BD%91%E7%BB%9C%E4%B8%AD-VLAN-30-%E4%B8%8A%E7%9A%84-PC%E3%80%82%E5%93%AA%E4%B8%AA%E9%94%99%E8%AF%AF%E6%9C%80%E6%9C%89%E5%8F%AF%E8%83%BD%E5%AF%BC%E8%87%B4%E6%AD%A4%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-text">请参见图示。根据 show running-config 命令的输出，为 VLAN 15、30 和 45 实施了单臂路由器配置。VLAN 45 上使用 172.16.45.0 &#x2F;24 网络的 PC 无法连接到 172.16.30.0 &#x2F;24 网络中 VLAN 30 上的 PC。哪个错误最有可能导致此问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC-3-%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8A%E7%9A%84%E8%B7%AF%E7%94%B1%E7%AB%AF%E5%8F%A3%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9%EF%BC%9F"><span class="toc-text">第 3 层交换机上的路由端口有什么特点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E9%9C%80%E8%A6%81%E4%B8%BA%E6%98%BE%E7%A4%BA%E7%9A%84%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E5%99%A8%E3%80%82%E5%A6%82%E6%9E%9C%E8%A6%81%E8%B7%AF%E7%94%B1%E6%98%BE%E7%A4%BA%E7%9A%84%E6%AF%8F%E4%B8%AA-VLAN-%E5%B9%B6%E4%B8%94%E6%AF%8F%E4%B8%AA-VLAN-%E9%83%BD%E6%9C%89%E8%87%AA%E5%B7%B1%E7%9A%84%E5%AD%90%E6%8E%A5%E5%8F%A3%EF%BC%8C%E5%88%99%E5%BF%85%E9%A1%BB%E5%9C%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E4%B8%8A%E5%88%9B%E5%BB%BA%E5%A4%9A%E5%B0%91%E4%B8%AA%E5%AD%90%E6%8E%A5%E5%8F%A3%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员需要为显示的网络配置单臂路由器。如果要路由显示的每个 VLAN 并且每个 VLAN 都有自己的子接口，则必须在路由器上创建多少个子接口？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-config-if-mdix-auto-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# mdix auto 命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-config-if-ip-address-172-18-33-88-255-255-255-0-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# ip address 172.18.33.88 255.255.255.0 命令有什么效果？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-%E9%85%8D%E7%BD%AE%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-%E9%85%8D%E7%BD%AE%E7%BB%88%E7%AB%AF%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F-1"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-config-if-shutdown-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-config-if-shutdown-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F-1"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-config-if-ipv6-address-2001-db8-a2b4-88-1-x2F-64-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E6%95%88%E6%9E%9C%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# ipv6 address 2001:db8:a2b4:88::1&#x2F;64 命令有什么效果？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-config-if-exit-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# exit 命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-gt-enable-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw&gt; enable 命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E6%AD%A3%E5%9C%A8%E9%85%8D%E7%BD%AE%E6%96%B0%E7%9A%84-Cisco-2960-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E3%80%82%E5%8F%91%E5%87%BA-BranchSw-config-if-duplex-full-%E5%91%BD%E4%BB%A4%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F"><span class="toc-text">技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# duplex full 命令有什么作用？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E4%B8%8D%E5%BA%94%E8%AF%A5%E6%89%BF%E8%BD%BD%E8%AF%AD%E9%9F%B3%E5%92%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E6%B5%81%E9%87%8F%EF%BC%9F"><span class="toc-text">什么类型的 VLAN 不应该承载语音和网络管理流量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E4%B8%8D%E5%BA%94%E8%AF%A5%E6%89%BF%E8%BD%BD%E8%AF%AD%E9%9F%B3%E5%92%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E6%B5%81%E9%87%8F%EF%BC%9F-1"><span class="toc-text">什么类型的 VLAN 不应该承载语音和网络管理流量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E6%97%A8%E5%9C%A8%E9%A2%84%E7%95%99%E5%B8%A6%E5%AE%BD%E4%BB%A5%E7%A1%AE%E4%BF%9D-IP-%E7%94%B5%E8%AF%9D%E8%B4%A8%E9%87%8F%EF%BC%9F"><span class="toc-text">什么类型的 VLAN 旨在预留带宽以确保 IP 电话质量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E6%9C%80%E5%88%9D%E6%98%AF%E7%AE%A1%E7%90%86-VLAN%EF%BC%9F"><span class="toc-text">什么类型的 VLAN 最初是管理 VLAN？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E8%AE%BE%E8%AE%A1%E4%B8%BA%E5%9C%A8%E6%95%B4%E4%B8%AA%E7%BD%91%E7%BB%9C%E4%B8%AD%E5%85%B7%E6%9C%89%E5%B0%8F%E4%BA%8E-150-%E6%AF%AB%E7%A7%92%E7%9A%84%E5%BB%B6%E8%BF%9F%EF%BC%9F"><span class="toc-text">哪种类型的 VLAN 设计为在整个网络中具有小于 150 毫秒的延迟？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E5%B0%86%E7%BD%91%E7%BB%9C%E5%88%92%E5%88%86%E4%B8%BA%E7%94%A8%E6%88%B7%E6%88%96%E8%AE%BE%E5%A4%87%E7%BB%84%EF%BC%9F"><span class="toc-text">使用什么类型的 VLAN 将网络划分为用户或设备组？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E4%B8%93%E9%97%A8%E4%B8%BA-SSH%E3%80%81Telnet%E3%80%81HTTPS%E3%80%81HHTP-%E5%92%8C-SNMP-%E7%AD%89%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E9%85%8D%E7%BD%AE%EF%BC%9F"><span class="toc-text">什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E4%B8%93%E9%97%A8%E4%B8%BA-SSH%E3%80%81Telnet%E3%80%81HTTPS%E3%80%81HHTP-%E5%92%8C-SNMP-%E7%AD%89%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E9%85%8D%E7%BD%AE%EF%BC%9F-1"><span class="toc-text">什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E6%94%AF%E6%8C%81%E6%9C%AA%E6%A0%87%E8%AE%B0%E7%9A%84%E6%B5%81%E9%87%8F%EF%BC%9F"><span class="toc-text">什么类型的 VLAN 支持未标记的流量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E6%94%AF%E6%8C%81%E6%9C%AA%E6%A0%87%E8%AE%B0%E7%9A%84%E6%B5%81%E9%87%8F%EF%BC%9F-1"><span class="toc-text">什么类型的 VLAN 支持未标记的流量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E5%A6%82%E5%9B%BE%E6%89%80%E7%A4%BA%EF%BC%8C%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E5%B7%B2%E9%85%8D%E7%BD%AE-R1%E3%80%82%E5%BD%93%E7%AE%A1%E7%90%86%E5%91%98%E6%A3%80%E6%9F%A5%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%8A%B6%E6%80%81%E6%97%B6%EF%BC%8C%E8%AF%A5%E6%8E%A5%E5%8F%A3%E6%98%BE%E7%A4%BA%E4%B8%BA%E7%AE%A1%E7%90%86%E6%80%A7%E5%85%B3%E9%97%AD%E3%80%82%E5%BF%85%E9%A1%BB%E5%9C%A8-R1-%E7%9A%84%E4%B8%B2%E8%A1%8C%E6%8E%A5%E5%8F%A3%E4%B8%8A%E8%BE%93%E5%85%A5%E4%BB%80%E4%B9%88%E9%99%84%E5%8A%A0%E5%91%BD%E4%BB%A4%E6%89%8D%E8%83%BD%E5%90%AF%E5%8A%A8%E8%AF%A5%E6%8E%A5%E5%8F%A3%EF%BC%9F"><span class="toc-text">请参见图示。如图所示，网络管理员已配置 R1。当管理员检查串行接口的状态时，该接口显示为管理性关闭。必须在 R1 的串行接口上输入什么附加命令才能启动该接口？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E5%B8%8C%E6%9C%9B%E5%B0%86-Switch1-%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%85%81%E8%AE%B8-SSH-%E8%BF%9E%E6%8E%A5%E5%B9%B6%E7%A6%81%E6%AD%A2-Telnet-%E8%BF%9E%E6%8E%A5%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E5%BA%94%E5%A6%82%E4%BD%95%E6%9B%B4%E6%94%B9%E6%98%BE%E7%A4%BA%E7%9A%84%E9%85%8D%E7%BD%AE%E4%BB%A5%E6%BB%A1%E8%B6%B3%E9%9C%80%E6%B1%82%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员希望将 Switch1 配置为允许 SSH 连接并禁止 Telnet 连接。网络管理员应如何更改显示的配置以满足需求？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E7%A7%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%8F%AF%E4%BB%A5%E5%B8%AE%E5%8A%A9%E5%A4%A7%E5%AD%A6%E7%BC%93%E8%A7%A3%E7%94%B1%E4%BA%8E%E5%86%B2%E7%AA%81%E5%AF%BC%E8%87%B4%E7%9A%84%E7%BD%91%E7%BB%9C%E6%8B%A5%E5%A1%9E%EF%BC%9F"><span class="toc-text">哪种解决方案可以帮助大学缓解由于冲突导致的网络拥塞？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-SVI-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%EF%BC%8C%E5%93%AA%E4%B8%A4%E4%B8%AA%E9%99%88%E8%BF%B0%E6%98%AF%E6%AD%A3%E7%A1%AE%E7%9A%84%EF%BC%9F%EF%BC%88%E9%80%89%E6%8B%A9%E4%B8%A4%E4%B8%AA%E3%80%82%EF%BC%89"><span class="toc-text">关于 SVI VLAN 间路由，哪两个陈述是正确的？（选择两个。）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E5%8F%82%E8%A7%81%E5%9B%BE%E7%A4%BA%E3%80%82%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E6%AD%A3%E5%9C%A8%E7%BD%91%E7%BB%9C%E4%B8%8A%E9%85%8D%E7%BD%AE-VLAN-%E9%97%B4%E8%B7%AF%E7%94%B1%E3%80%82%E7%9B%AE%E5%89%8D%EF%BC%8C%E5%8F%AA%E4%BD%BF%E7%94%A8%E4%BA%86%E4%B8%80%E4%B8%AA-VLAN%EF%BC%8C%E4%BD%86%E5%BE%88%E5%BF%AB%E4%BC%9A%E6%B7%BB%E5%8A%A0%E6%9B%B4%E5%A4%9A%E3%80%82%E5%9C%A8%E5%9B%BE%E4%B8%AD%E6%98%BE%E7%A4%BA%E4%B8%BA%E7%AA%81%E5%87%BA%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E5%8F%B7%E7%9A%84%E7%BC%BA%E5%A4%B1%E5%8F%82%E6%95%B0%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">请参见图示。网络管理员正在网络上配置 VLAN 间路由。目前，只使用了一个 VLAN，但很快会添加更多。在图中显示为突出显示的问号的缺失参数是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84-VLAN-%E7%94%A8%E4%BA%8E%E6%8C%87%E5%AE%9A%E9%80%9A%E8%BF%87%E4%B8%AD%E7%BB%A7%E7%AB%AF%E5%8F%A3%E6%97%B6%E6%9C%AA%E6%A0%87%E8%AE%B0%E7%9A%84%E6%B5%81%E9%87%8F%EF%BC%9F"><span class="toc-text">哪种类型的 VLAN 用于指定通过中继端口时未标记的流量？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86%E5%91%98%E5%9C%A8%E5%AF%B9%E7%94%A8%E6%88%B7%E6%94%AF%E6%8C%81%E7%A5%A8%E8%BF%9B%E8%A1%8C%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4%E6%97%B6%E5%8F%91%E5%87%BA-show-vlan-brief-%E5%91%BD%E4%BB%A4%E3%80%82%E5%B0%86%E6%98%BE%E7%A4%BA%E4%BB%80%E4%B9%88%E8%BE%93%E5%87%BA%EF%BC%9F"><span class="toc-text">网络管理员在对用户支持票进行故障排除时发出 show vlan brief 命令。将显示什么输出？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%93%E5%BC%80-PT-%E6%B4%BB%E5%8A%A8%E3%80%82%E6%89%A7%E8%A1%8C%E6%B4%BB%E5%8A%A8%E8%AF%B4%E6%98%8E%E4%B8%AD%E7%9A%84%E4%BB%BB%E5%8A%A1%EF%BC%8C%E7%84%B6%E5%90%8E%E5%9B%9E%E7%AD%94%E9%97%AE%E9%A2%98%E3%80%82"><span class="toc-text">打开 PT 活动。执行活动说明中的任务，然后回答问题。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8-PC1-Web-Browser-%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%BE%93%E5%85%A5-10-10-10-1-%E6%97%B6%E6%98%BE%E7%A4%BA%E4%BB%80%E4%B9%88%E4%BF%A1%E6%81%AF%EF%BC%9F"><span class="toc-text">在 PC1 Web Browser 地址栏输入 10.10.10.1 时显示什么信息？</span></a></li></ol></div></div></div>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only">
+
+<div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://s2.loli.net/2022/04/14/LiUCugASG1pxven.png" onerror="javascript:this.classList.add('error');this.src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0">( ˙꒳​˙)</div></a></div>
+</header>
+
+
+
+      
+
+  
+
+
+  <article class='content md page'>
+  
+  
+    <h1 id="模块-1-–-4-交换概念、VLAN-和-VLAN-间路由"><a href="#模块-1-–-4-交换概念、VLAN-和-VLAN-间路由" class="headerlink" title="模块 1 – 4 交换概念、VLAN 和 VLAN 间路由"></a>模块 1 – 4 交换概念、VLAN 和 VLAN 间路由</h1><ol>
+<li><h3 id="哪个命令显示有关特定接口的自动-MDIX-设置的信息？"><a href="#哪个命令显示有关特定接口的自动-MDIX-设置的信息？" class="headerlink" title="哪个命令显示有关特定接口的自动 MDIX 设置的信息？"></a>哪个命令显示有关特定接口的自动 MDIX 设置的信息？</h3><ul>
+<li><p>显示界面</p>
+</li>
+<li><p><strong>显示控制器</strong></p>
+</li>
+<li><p>显示过程</p>
+</li>
+<li><p>显示运行配置</p>
+<p><strong>答案解释和提示：</strong>要检查特定接口的自动 MDIX 设置，应使用带有 phy 关键字的 show controllers ethernet-controller 命令。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工，那么在哪里会观察到后期冲突？"><a href="#如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工，那么在哪里会观察到后期冲突？" class="headerlink" title="如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工，那么在哪里会观察到后期冲突？"></a>如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工，那么在哪里会观察到后期冲突？</h3><ul>
+<li><p>在连接的两端</p>
+</li>
+<li><p>在连接的全双工端</p>
+</li>
+<li><p>仅在串行接口上</p>
+</li>
+<li><p><strong>在连接的半双工端</strong></p>
+<p><strong>答案解释和提示：</strong>全双工通信不会产生冲突。然而，冲突经常发生在半双工操作中。当一个连接有两种不同的双工配置时，半双工端将经历后期冲突。在以太网上发现冲突。串行接口使用以太网以外的技术。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪个命令用于设置-BOOT-环境变量，该变量定义了在交换机上哪里可以找到-IOS-映像文件？"><a href="#哪个命令用于设置-BOOT-环境变量，该变量定义了在交换机上哪里可以找到-IOS-映像文件？" class="headerlink" title="哪个命令用于设置 BOOT 环境变量，该变量定义了在交换机上哪里可以找到 IOS 映像文件？"></a>哪个命令用于设置 BOOT 环境变量，该变量定义了在交换机上哪里可以找到 IOS 映像文件？</h3><ul>
+<li><p>配置注册</p>
+</li>
+<li><p><strong>引导系统</strong></p>
+</li>
+<li><p>引导加载程序</p>
+</li>
+<li><p>配置</p>
+<p><strong>答案解释和提示：</strong>boot系统命令用于设置BOOT环境变量。config-register 和 confreg 命令用于设置配置寄存器。引导加载程序命令支持格式化闪存文件系统、重新安装操作系统软件以及从丢失或忘记的密码中恢复的命令。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="交换机使用什么来定位和加载-IOS-映像？"><a href="#交换机使用什么来定位和加载-IOS-映像？" class="headerlink" title="交换机使用什么来定位和加载 IOS 映像？"></a>交换机使用什么来定位和加载 IOS 映像？</h3><ul>
+<li><p><strong>引导环境变量</strong></p>
+</li>
+<li><p>IOS镜像文件</p>
+</li>
+<li><p>邮政</p>
+</li>
+<li><p>启动配置</p>
+</li>
+<li><p>非易失性存储器</p>
+<p><strong>答案解释和提示：</strong>BOOT 环境变量包含有关在何处查找 IOS 映像文件的信息。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪种协议为远程连接增加了安全性？"><a href="#哪种协议为远程连接增加了安全性？" class="headerlink" title="哪种协议为远程连接增加了安全性？"></a>哪种协议为远程连接增加了安全性？</h3><ul>
+<li><p>FTP</p>
+</li>
+<li><p>HTTP</p>
+</li>
+<li><p>NetBEUI</p>
+</li>
+<li><p>流行音乐</p>
+</li>
+<li><p><strong>SSH</strong></p>
+<p><strong>答案解释和提示：</strong>SSH 允许技术人员安全地连接到远程网络设备以进行监控和故障排除。HTTP 建立网页请求。FTP 管理文件传输。NetBEUI 不在 Internet 上路由。POP 从电子邮件服务器下载电子邮件消息。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="Cisco-IOS-路由器上的-IPv4-环回接口有什么特点？"><a href="#Cisco-IOS-路由器上的-IPv4-环回接口有什么特点？" class="headerlink" title="Cisco IOS 路由器上的 IPv4 环回接口有什么特点？"></a>Cisco IOS 路由器上的 IPv4 环回接口有什么特点？</h3><ul>
+<li><p>需要使用 no shutdown 命令将此接口置于 UP 状态。</p>
+</li>
+<li><p><strong>它是路由器内部的逻辑接口。</strong></p>
+</li>
+<li><p>一台路由器只能启用一个环回接口。</p>
+</li>
+<li><p>它被分配到一个物理端口，并且可以连接到其他设备。</p>
+<p><strong>答案解释和提示：</strong>环回接口是路由器内部的逻辑接口，只要路由器正常工作，它就会自动置于 UP 状态。它没有分配给物理端口，因此永远不能连接到任何其他设备。可以在路由器上启用多个环回接口。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="接收器不会作为残帧丢弃的最小以太网帧大小是多少？"><a href="#接收器不会作为残帧丢弃的最小以太网帧大小是多少？" class="headerlink" title="接收器不会作为残帧丢弃的最小以太网帧大小是多少？"></a>接收器不会作为残帧丢弃的最小以太网帧大小是多少？</h3><ul>
+<li><p><strong>64 字节</strong></p>
+</li>
+<li><p>512 字节</p>
+</li>
+<li><p>1024 字节</p>
+</li>
+<li><p>1500 字节</p>
+<p><strong>答案解释和提示：</strong>最小以太网帧大小为 64 字节。小于 64 字节的帧被视为冲突片段或残帧并被丢弃。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="在交换机启动序列的哪个步骤之后执行引导加载程序？"><a href="#在交换机启动序列的哪个步骤之后执行引导加载程序？" class="headerlink" title="在交换机启动序列的哪个步骤之后执行引导加载程序？"></a>在交换机启动序列的哪个步骤之后执行引导加载程序？</h3><ul>
+<li><p>CPU初始化后</p>
+</li>
+<li><p>IOS本地化后</p>
+</li>
+<li><p>闪存文件系统初始化后</p>
+</li>
+<li><p><strong>POST 执行后</strong></p>
+<p><strong>答案解释和提示：</strong>正确的启动顺序如下： 1.- 交换机加载并执行 POST。 2.- 交换机加载引导加载程序软件。 3.- 引导加载程序执行低级 CPU 初始化。 4.- 引导加载程序初始化闪存。 5.- 引导加载程序定位并加载默认 IOS 映像。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="添加二层交换机对网络有什么影响？"><a href="#添加二层交换机对网络有什么影响？" class="headerlink" title="添加二层交换机对网络有什么影响？"></a>添加二层交换机对网络有什么影响？</h3><ul>
+<li><p>丢帧数增加</p>
+</li>
+<li><p><strong>广播域大小的增加</strong></p>
+</li>
+<li><p>网络冲突数量增加</p>
+</li>
+<li><p>碰撞域的大小增加</p>
+<p><strong>答案解释和提示：</strong>将第 2 层交换机添加到网络会增加冲突域的数量并增加广播域的大小。第 2 层交换机不会减少广播流量，不会增加网络冲突的数量，也不会增加丢帧的数量。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪个特征描述了直通切换？"><a href="#哪个特征描述了直通切换？" class="headerlink" title="哪个特征描述了直通切换？"></a>哪个特征描述了直通切换？</h3><ul>
+<li><p>转发无错误的片段，因此切换时延迟较低。</p>
+</li>
+<li><p><strong>转发帧时不进行任何错误检查。</strong></p>
+</li>
+<li><p>仅检查传出帧是否有错误。</p>
+</li>
+<li><p>缓冲用于支持不同的以太网速度。</p>
+<p><strong>答案解释和提示：</strong>直通交换通过从 MAC 地址表中读取目标 MAC 地址和相应的交换机端口后立即转发帧来减少延迟。这种交换方法不执行任何错误检查，也不使用缓冲区来支持不同的以太网速度。错误检查和缓冲区是存储转发交换的特性。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="集线器和第-2-层-LAN-交换机之间的显着区别是什么？"><a href="#集线器和第-2-层-LAN-交换机之间的显着区别是什么？" class="headerlink" title="集线器和第 2 层 LAN 交换机之间的显着区别是什么？"></a>集线器和第 2 层 LAN 交换机之间的显着区别是什么？</h3><ul>
+<li><p><strong>集线器扩展了冲突域，交换机划分了冲突域。</strong></p>
+</li>
+<li><p>集线器划分冲突域，交换机划分广播域。</p>
+</li>
+<li><p>集线器的每个端口都是一个冲突域，交换机的每个端口都是一个广播域。</p>
+</li>
+<li><p>集线器转发帧，而交换机只转发数据包。</p>
+<p><strong>答案解释和提示：</strong>集线器仅在物理层运行，将比特作为线路信号从所有端口转发出去，并扩展网络的冲突域。在数据链路层交换转发帧，每个交换端口是一个单独的冲突域，它创建更多但更小的冲突域。交换机不管理广播域，因为广播帧总是从所有活动端口转发出去。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="关于以太网交换机帧转发决策，哪项陈述是正确的？"><a href="#关于以太网交换机帧转发决策，哪项陈述是正确的？" class="headerlink" title="关于以太网交换机帧转发决策，哪项陈述是正确的？"></a>关于以太网交换机帧转发决策，哪项陈述是正确的？</h3><ul>
+<li><p><strong>帧转发决策基于 CAM 表中的 MAC 地址和端口映射。</strong></p>
+</li>
+<li><p>直通帧转发确保始终丢弃无效帧。</p>
+</li>
+<li><p>只有具有广播目标地址的帧才会转发出所有活动的交换机端口。</p>
+</li>
+<li><p>无论目标 MAC 地址如何，始终转发单播帧。</p>
+<p><strong>答案解释和提示：</strong>直通帧转发最多只能读取帧的前 22 个字节，这不包括帧检查序列，因此可能会转发无效帧。除了广播帧，目标 MAC 地址不在 CAM 中的帧也会从所有活动端口溢出。单播帧并不总是被转发。接收到的帧的目标 MAC 地址与接收它的交换机端口相关联，因为目标存在于连接到该端口的网段上，所以不会转发接收到的帧。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="交换机缓冲区如何影响网络性能？"><a href="#交换机缓冲区如何影响网络性能？" class="headerlink" title="交换机缓冲区如何影响网络性能？"></a>交换机缓冲区如何影响网络性能？</h3><ul>
+<li><p>它们对收到的数据进行错误检查。</p>
+</li>
+<li><p><strong>它们存储接收到的帧，从而防止在发生网络拥塞时过早丢弃帧。</strong></p>
+</li>
+<li><p>如果速度或双工的自动协商失败，它们会为特定端口提供额外的内存。</p>
+</li>
+<li><p>它们在发生冲突时临时保存数据，直到恢复正常的数据传输。</p>
+<p><strong>答案解释和提示：</strong>交换机具有大的帧缓冲区，允许存储等待传输的数据，因此不会丢失数据。此功能非常有用，特别是如果传入流量来自比用于传输的出口端口更快的端口。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪种交换机特性有助于保持本地流量并缓解网络拥塞？"><a href="#哪种交换机特性有助于保持本地流量并缓解网络拥塞？" class="headerlink" title="哪种交换机特性有助于保持本地流量并缓解网络拥塞？"></a>哪种交换机特性有助于保持本地流量并缓解网络拥塞？</h3><ul>
+<li><p><strong>高端口密度</strong></p>
+</li>
+<li><p>端口速度快</p>
+</li>
+<li><p>大帧缓冲区</p>
+</li>
+<li><p>快速内部切换</p>
+<p><strong>答案解释和提示：</strong>具有大量端口（高端口密度）的交换机会减少所需的交换机数量，并将部分流量保留在交换机本地，从而无需在交换机之间发送流量。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪个交换机组件减少了交换机内部的数据包处理时间？"><a href="#哪个交换机组件减少了交换机内部的数据包处理时间？" class="headerlink" title="哪个交换机组件减少了交换机内部的数据包处理时间？"></a>哪个交换机组件减少了交换机内部的数据包处理时间？</h3><ul>
+<li><p><strong>ASIC</strong></p>
+</li>
+<li><p>双处理器</p>
+</li>
+<li><p>大缓冲区大小</p>
+</li>
+<li><p>存储转发RAM</p>
+<p><strong>答案解释和提示：</strong>Cisco 交换机中使用专用集成电路 (ASIC) 来加速交换机操作，以便交换机可以拥有更多的端口，而不会降低交换机性能。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。交换机接收到包含源-MAC-地址-000b-a023-c501-和目标-MAC-地址-0050-0fae-75aa-的第-2-层帧。按它们发生的顺序放置开关步骤。（并非所有选项都被使用。）"><a href="#请参见图示。交换机接收到包含源-MAC-地址-000b-a023-c501-和目标-MAC-地址-0050-0fae-75aa-的第-2-层帧。按它们发生的顺序放置开关步骤。（并非所有选项都被使用。）" class="headerlink" title="请参见图示。交换机接收到包含源 MAC 地址 000b.a023.c501 和目标 MAC 地址 0050.0fae.75aa 的第 2 层帧。按它们发生的顺序放置开关步骤。（并非所有选项都被使用。）"></a>请参见图示。交换机接收到包含源 MAC 地址 000b.a023.c501 和目标 MAC 地址 0050.0fae.75aa 的第 2 层帧。按它们发生的顺序放置开关步骤。（并非所有选项都被使用。）</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 17](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i211348v1n1_211348.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 17</p>
+<p>![CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 001](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-001.jpg)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4 交换概念、VLAN 和 VLAN 间路由考试答案 001</p>
+<p><strong>答案解释和提示：</strong>交换机处理帧的第一步是查看源 MAC 地址是否在 MAC 地址表中。如果地址不存在，交换机会添加它。然后交换机检查目标 MAC 地址并将其与 MAC 地址表进行比较。如果地址在表中，则交换机将帧转发到相应的端口。如果表中缺少地址，交换机会将帧转发到除帧到达的端口之外的所有端口。</p>
+</li>
+<li><h3 id="从传入帧向交换表添加了哪些信息？"><a href="#从传入帧向交换表添加了哪些信息？" class="headerlink" title="从传入帧向交换表添加了哪些信息？"></a>从传入帧向交换表添加了哪些信息？</h3><ul>
+<li><p><strong>源 MAC 地址和传入端口号</strong></p>
+</li>
+<li><p>目标 MAC 地址和传入端口号</p>
+</li>
+<li><p>源 IP 地址和传入端口号</p>
+</li>
+<li><p>目标 IP 地址和传入端口号</p>
+<p><strong>答案解释和提示：</strong>当帧进入交换机时，交换机会根据源 MAC 地址“学习”或构建 MAC 地址表。交换机根据目的 MAC 地址转发帧。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪种交换方法可以确保传入帧在转发之前没有错误？"><a href="#哪种交换方法可以确保传入帧在转发之前没有错误？" class="headerlink" title="哪种交换方法可以确保传入帧在转发之前没有错误？"></a>哪种交换方法可以确保传入帧在转发之前没有错误？</h3><ul>
+<li><p>直通</p>
+</li>
+<li><p>FCS</p>
+</li>
+<li><p>无片段</p>
+</li>
+<li><p><strong>存储转发</strong></p>
+<p><strong>答案解释和提示：</strong>交换机用于传输帧的两种方法是存储转发和直通交换。存储转发方法在发送帧之前使用帧校验序列 (FCS) 值对帧执行错误校验。相反，直通式交换会在标头的目标 MAC 地址部分被读取和处理后立即发送帧。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。显示多少个广播域？"><a href="#请参见图示。显示多少个广播域？" class="headerlink" title="请参见图示。显示多少个广播域？"></a>请参见图示。显示多少个广播域？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 09](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i214998v1n1_207610.jpg)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 09</p>
+<ul>
+<li><p>1</p>
+</li>
+<li><p>4</p>
+</li>
+<li><p><strong>8</strong></p>
+</li>
+<li><p>16</p>
+</li>
+<li><p>55</p>
+<p><strong>答案解释和提示：</strong>路由器定义了一个广播边界，因此两个路由器之间的每条链路都是一个广播域。在图中，路由器之间的 4 条链路构成 4 个广播域。此外，连接到路由器的每个 LAN 都是一个广播域。图中的 4 个 LAN 导致多了 4 个广播域，因此总共有 8 个广播域。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="管理员在管理局域网时应在哪两种情况下禁用-DTP？（选择两个。）"><a href="#管理员在管理局域网时应在哪两种情况下禁用-DTP？（选择两个。）" class="headerlink" title="管理员在管理局域网时应在哪两种情况下禁用 DTP？（选择两个。）"></a>管理员在管理局域网时应在哪两种情况下禁用 DTP？（选择两个。）</h3><ul>
+<li><p><strong>将 Cisco 交换机连接到非 Cisco 交换机时</strong></p>
+</li>
+<li><p>当邻居交换机使用动态自动的 DTP 模式时</p>
+</li>
+<li><p>当邻居交换机使用动态期望的 DTP 模式时</p>
+</li>
+<li><p><strong>在不应该中继的链路上</strong></p>
+</li>
+<li><p>在应该动态尝试中继的链路上</p>
+<p><strong>答案解释和提示：</strong>Cisco 最佳实践建议在不打算使用中继的链路上以及当 Cisco 交换机连接到非 Cisco 交换机时禁用 DTP。动态中继协商需要 DTP。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪两个特征描述了本地-VLAN？（选择两个。）"><a href="#哪两个特征描述了本地-VLAN？（选择两个。）" class="headerlink" title="哪两个特征描述了本地 VLAN？（选择两个。）"></a>哪两个特征描述了本地 VLAN？（选择两个。）</h3><ul>
+<li><p>设计用于承载用户生成的流量，这种类型的 VLAN 也称为默认 VLAN。</p>
+</li>
+<li><p><strong>本机 VLAN 流量将通过中继链路取消标记。</strong></p>
+</li>
+<li><p>此 VLAN 是远程管理交换机所必需的。</p>
+</li>
+<li><p>语音流量等高优先级流量使用本地 VLAN。</p>
+</li>
+<li><p><strong>本地 VLAN 为中继的两端提供一个通用标识符。</strong></p>
+<p><strong>答案解释和提示：</strong>本地 VLAN 分配给 802.1Q 中继，以便为中继链路的两端提供通用标识符。无论分配给端口的 VLAN 本地编号是什么，或者如果端口是默认 VLAN 1，当流量通过中继时，端口都不会标记该 VLAN 中的任何帧。在链路的另一端，看不到标签的接收设备知道特定的 VLAN 编号，因为接收设备必须具有准确的本地 VLAN 编号。本机 VLAN 应该是一个未使用的 VLAN，它不同于 VLAN1、默认 VLAN 以及其他 VLAN。数据 VLAN，也称为用户 VLAN，配置为承载用户生成的流量，但高优先级流量（如 VoIP）除外。语音 VLAN 是为 VoIP 流量配置的。管理 VLAN 配置为提供对交换机管理功能的访问。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="在配置了多个-VLAN-的交换机上，哪个命令将仅从交换机中删除-VLAN-100？"><a href="#在配置了多个-VLAN-的交换机上，哪个命令将仅从交换机中删除-VLAN-100？" class="headerlink" title="在配置了多个 VLAN 的交换机上，哪个命令将仅从交换机中删除 VLAN 100？"></a>在配置了多个 VLAN 的交换机上，哪个命令将仅从交换机中删除 VLAN 100？</h3><ul>
+<li><p>Switch#删除flash:vlan.dat</p>
+</li>
+<li><p>Switch(config-if)# no switchport access vlan 100</p>
+</li>
+<li><p>Switch(config-if)# no switchport trunk allowed vlan 100</p>
+</li>
+<li><p><strong>Switch(config)# no vlan 100</strong></p>
+<p><strong>答案解释和提示：</strong>要从交换机中删除所有 VLAN，将使用 delete flash:vlan.dat 命令。要更改为接口分配的 VLAN，将使用 no switchport access vlan 100 接口配置命令。要将 VLAN 100 作为中继上的允许 VLAN 删除，将使用 no switchport trunk allowed vlan 100，但这不会从交换机中删除 VLAN。要删除单个 VLAN，例如 VLAN 100，将使用 no vlan 100 全局配置命令。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员正在查看交换机-S2-上的端口和-VLAN-分配，并注意到接口-Gi0-x2F-1-和-Gi0-x2F-2-未包含在输出中。为什么输出中会缺少接口？"><a href="#请参见图示。网络管理员正在查看交换机-S2-上的端口和-VLAN-分配，并注意到接口-Gi0-x2F-1-和-Gi0-x2F-2-未包含在输出中。为什么输出中会缺少接口？" class="headerlink" title="请参见图示。网络管理员正在查看交换机 S2 上的端口和 VLAN 分配，并注意到接口 Gi0&#x2F;1 和 Gi0&#x2F;2 未包含在输出中。为什么输出中会缺少接口？"></a>请参见图示。网络管理员正在查看交换机 S2 上的端口和 VLAN 分配，并注意到接口 Gi0&#x2F;1 和 Gi0&#x2F;2 未包含在输出中。为什么输出中会缺少接口？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 08](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i215660v1n1_215660.gif)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 08</p>
+<ul>
+<li><p>交换机之间存在本地 VLAN 不匹配。</p>
+</li>
+<li><p>没有媒体连接到接口。</p>
+</li>
+<li><p>他们在行政上被关闭。</p>
+</li>
+<li><p><strong>它们被配置为中继接口。</strong></p>
+<p><strong>答案解释和提示：</strong>配置为中继的接口不属于 VLAN，因此不会显示在 show vlan brief 命令的输出中。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="一个网络包含跨越多个交换机的多个-VLAN。当-VLAN-20-中的设备发送广播以太网帧时会发生什么？"><a href="#一个网络包含跨越多个交换机的多个-VLAN。当-VLAN-20-中的设备发送广播以太网帧时会发生什么？" class="headerlink" title="一个网络包含跨越多个交换机的多个 VLAN。当 VLAN 20 中的设备发送广播以太网帧时会发生什么？"></a>一个网络包含跨越多个交换机的多个 VLAN。当 VLAN 20 中的设备发送广播以太网帧时会发生什么？</h3><ul>
+<li><p>所有 VLAN 中的所有设备都可以看到该帧。</p>
+</li>
+<li><p>VLAN 20 和管理 VLAN 中的设备会看到该帧。</p>
+</li>
+<li><p><strong>只有 VLAN 20 中的设备才能看到该帧。</strong></p>
+</li>
+<li><p>只有连接到本地交换机的设备才能看到该帧。</p>
+<p><strong>答案解释和提示：</strong>VLAN 创建可以跨越多个 VLAN 段的逻辑广播域。特定 VLAN 上的设备发送的以太网帧只能被同一 VLAN 中的其他设备看到。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。所有工作站都在-VLAN-20-中正确配置。连接到交换机-SW1-的工作站无法将流量发送到-SW2-上的工作站。可以做些什么来解决这个问题？"><a href="#请参见图示。所有工作站都在-VLAN-20-中正确配置。连接到交换机-SW1-的工作站无法将流量发送到-SW2-上的工作站。可以做些什么来解决这个问题？" class="headerlink" title="请参见图示。所有工作站都在 VLAN 20 中正确配置。连接到交换机 SW1 的工作站无法将流量发送到 SW2 上的工作站。可以做些什么来解决这个问题？"></a>请参见图示。所有工作站都在 VLAN 20 中正确配置。连接到交换机 SW1 的工作站无法将流量发送到 SW2 上的工作站。可以做些什么来解决这个问题？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 07](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i215729v1n1_215729.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 07</p>
+<ul>
+<li><p><strong>在中继链路上允许 VLAN 20。</strong></p>
+</li>
+<li><p>在中继两端启用 DTP。</p>
+</li>
+<li><p>将 SW1 上的所有工作站配置为默认 VLAN 的一部分。</p>
+</li>
+<li><p>将 SW2 上的所有工作站配置为本地 VLAN 的一部分。</p>
+<p><strong>答案解释和提示：</strong>在两台交换机上启用 DTP 只允许协商中继。图中的“Negotiation of Trunking”行显示 DTP 已启用。该图还显示了本地 VLAN 如何为 1，任何 Cisco 交换机的默认 VLAN 为 1。该图显示 PC 将位于 VLAN 20 中。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="交换机端口分配到的-VLAN-删除后会发生什么情况？"><a href="#交换机端口分配到的-VLAN-删除后会发生什么情况？" class="headerlink" title="交换机端口分配到的 VLAN 删除后会发生什么情况？"></a>交换机端口分配到的 VLAN 删除后会发生什么情况？</h3><ul>
+<li><p>端口被禁用。</p>
+</li>
+<li><p>端口处于中继模式。</p>
+</li>
+<li><p>端口被分配到默认 VLAN 的 VLAN1。</p>
+</li>
+<li><p>**端口停止与连接的设备通信。  **</p>
+<p><strong>答案解释和提示：</strong>必须为活动 VLAN 重新配置受影响的端口。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="将-IEEE-802-1Q-标准-VLAN-标记字段与描述相匹配。（并非所有选项都被使用。）"><a href="#将-IEEE-802-1Q-标准-VLAN-标记字段与描述相匹配。（并非所有选项都被使用。）" class="headerlink" title="将 IEEE 802.1Q 标准 VLAN 标记字段与描述相匹配。（并非所有选项都被使用。）"></a>将 IEEE 802.1Q 标准 VLAN 标记字段与描述相匹配。（并非所有选项都被使用。）</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 002](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-002.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4 交换概念、VLAN 和 VLAN 间路由考试答案 002</p>
+<p><strong>答案解释和提示：</strong>IEEE 802.1Q 标准标头包括一个 4 字节的 VLAN 标记：<strong>类型</strong>– 一个 2 字节的值，称为标签协议 ID (TPID) 值。<strong>用户优先级</strong>——支持级别或服务实现的 3 位值。<strong>规范格式标识符 (CFI)</strong> – 一个 1 位标识符，使令牌环帧能够跨以太网链路传送。<strong>VLAN ID (VID)</strong> – 一个 12 位 VLAN 标识号，最多支持 4096 个 VLAN ID。 </p>
+</li>
+<li><h3 id="请参见图示。如果使用-Cisco-最佳实践，应在哪种交换机模式下分配端口-G0-x2F-1？"><a href="#请参见图示。如果使用-Cisco-最佳实践，应在哪种交换机模式下分配端口-G0-x2F-1？" class="headerlink" title="请参见图示。如果使用 Cisco 最佳实践，应在哪种交换机模式下分配端口 G0&#x2F;1？"></a>请参见图示。如果使用 Cisco 最佳实践，应在哪种交换机模式下分配端口 G0&#x2F;1？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 04](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i271149v1n1_271147.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 04</p>
+<ul>
+<li><p>使用权</p>
+</li>
+<li><p><strong>树干</strong></p>
+</li>
+<li><p>本国的</p>
+</li>
+<li><p>汽车</p>
+<p><strong>答案解释和提示：</strong>路由器用于两个 VLAN 之间的路由，因此交换机端口 G0&#x2F;1 需要配置为中继模式。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="将-DTP-模式与其功能相匹配。（并非所有选项都被使用。）"><a href="#将-DTP-模式与其功能相匹配。（并非所有选项都被使用。）" class="headerlink" title="将 DTP 模式与其功能相匹配。（并非所有选项都被使用。）"></a>将 DTP 模式与其功能相匹配。（并非所有选项都被使用。）</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 003](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-003.jpg)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4 交换概念、VLAN 和 VLAN 间路由考试答案 003</p>
+<p><strong>答案解释和提示：</strong>如果相邻接口设置为中继或期望模式，则动态自动模式使该接口成为中继接口。动态期望模式使接口主动尝试将链路转换为中继链路。中继模式将接口置于永久中继模式并协商将相邻链路转换为中继链路。非协商模式可防止接口生成 DTP 帧。</p>
+</li>
+<li><h3 id="交换机的Fa0-x2F-11端口被分配到VLAN-30，如果在Fa0-x2F-11接口输入命令no-switchport-access-vlan-30，会发生什么情况？"><a href="#交换机的Fa0-x2F-11端口被分配到VLAN-30，如果在Fa0-x2F-11接口输入命令no-switchport-access-vlan-30，会发生什么情况？" class="headerlink" title="交换机的Fa0&#x2F;11端口被分配到VLAN 30，如果在Fa0&#x2F;11接口输入命令no switchport access vlan 30，会发生什么情况？"></a>交换机的Fa0&#x2F;11端口被分配到VLAN 30，如果在Fa0&#x2F;11接口输入命令no switchport access vlan 30，会发生什么情况？</h3><ul>
+<li><p>端口 Fa0&#x2F;11 将被关闭。</p>
+</li>
+<li><p>将显示一条错误消息。</p>
+</li>
+<li><p><strong>端口 Fa0&#x2F;11 将返回到 VLAN 1。</strong></p>
+</li>
+<li><p>VLAN 30 将被删除。</p>
+<p><strong>答案解释和提示：</strong>当输入 no switchport access vlan 命令时，端口将返回到默认的 VLAN 1。端口将作为 VLAN 1 的成员保持活动状态，并且 VLAN 30 将保持不变，即使没有其他端口与之关联。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪个命令显示-Fa0-x2F-1-接口的封装类型、语音-VLAN-ID-和访问模式-VLAN？"><a href="#哪个命令显示-Fa0-x2F-1-接口的封装类型、语音-VLAN-ID-和访问模式-VLAN？" class="headerlink" title="哪个命令显示 Fa0&#x2F;1 接口的封装类型、语音 VLAN ID 和访问模式 VLAN？"></a>哪个命令显示 Fa0&#x2F;1 接口的封装类型、语音 VLAN ID 和访问模式 VLAN？</h3><ul>
+<li><p>显示 vlan 简介</p>
+</li>
+<li><p><strong>显示接口 Fa0&#x2F;1 交换机端口</strong></p>
+</li>
+<li><p>显示 mac 地址表接口 Fa0&#x2F;1</p>
+</li>
+<li><p>显示接口中继</p>
+<p><strong>答案解释和提示：</strong>show interfaces switchport 命令显示给定端口的以下信息： Switchport 管理模式 操作模式 管理 Trunking Encapsulation 操作 Trunking Encapsulation 协商 Trunking Access Mode VLAN Trunking Native Mode VLAN Administrative Native VLAN tagging Voice VLAN</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。技术人员正在对交换机-SW3-进行编程，以通过端口-Fa0-x2F-20-管理语音和数据流量。配置有什么问题（如果有的话）？"><a href="#请参见图示。技术人员正在对交换机-SW3-进行编程，以通过端口-Fa0-x2F-20-管理语音和数据流量。配置有什么问题（如果有的话）？" class="headerlink" title="请参见图示。技术人员正在对交换机 SW3 进行编程，以通过端口 Fa0&#x2F;20 管理语音和数据流量。配置有什么问题（如果有的话）？"></a>请参见图示。技术人员正在对交换机 SW3 进行编程，以通过端口 Fa0&#x2F;20 管理语音和数据流量。配置有什么问题（如果有的话）？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 02](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i297770v1n1_297770.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 02</p>
+<ul>
+<li><p>配置没有问题。</p>
+</li>
+<li><p>接口 Fa0&#x2F;20 只能分配一个 VLAN。</p>
+</li>
+<li><p>mls qos trust cos 命令应引用 VLAN 35。</p>
+</li>
+<li><p><strong>用于将语音 VLAN 分配给交换机端口的命令不正确。</strong></p>
+<p><strong>答案解释和提示：</strong>语音 VLAN 应使用 switchport voice vlan 150 命令配置。交换机接口可以配置为支持一个数据 VLAN 和一个语音 VLAN。mls qos trust cos 与接口关联。必须信任语音流量，以便可以使用语音数据包中的字段对其进行分类以实现 QoS。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="在交换机端口上配置语音-VLAN-需要哪四个步骤？（选择四个）。"><a href="#在交换机端口上配置语音-VLAN-需要哪四个步骤？（选择四个）。" class="headerlink" title="在交换机端口上配置语音 VLAN 需要哪四个步骤？（选择四个）。"></a>在交换机端口上配置语音 VLAN 需要哪四个步骤？（选择四个）。</h3><ul>
+<li><p>将接口配置为 IEEE 802.1Q 中继。</p>
+</li>
+<li><p><strong>将语音 VLAN 分配给交换机端口。</strong></p>
+</li>
+<li><p>在接口上激活生成树 PortFast。</p>
+</li>
+<li><p><strong>确保语音流量受信任并带有 CoS 优先级值标记。</strong></p>
+</li>
+<li><p><strong>添加语音 VLAN。</strong></p>
+</li>
+<li><p>使用子接口配置交换机端口接口。</p>
+</li>
+<li><p>为交换机端口分配数据 VLAN。</p>
+</li>
+<li><p><strong>将交换机端口配置为接入模式。</strong></p>
+<p><strong>答案解释和提示：</strong>要添加 IP 电话，应在交换机端口添加以下命令： SW3(config-vlan)# vlan 150 SW3(config-vlan)# name voice SW3(config-vlan)# int fa0&#x2F;20 SW3(config- if)# switchport mode access SW3(config-if)# mls qos trust cos SW3(config-if)# switchport access vlan 150</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。PC1-无法与服务器-1-通信。网络管理员发出-show-interfaces-trunk-命令开始故障排除。根据此命令的输出可以得出什么结论？"><a href="#请参见图示。PC1-无法与服务器-1-通信。网络管理员发出-show-interfaces-trunk-命令开始故障排除。根据此命令的输出可以得出什么结论？" class="headerlink" title="请参见图示。PC1 无法与服务器 1 通信。网络管理员发出 show interfaces trunk 命令开始故障排除。根据此命令的输出可以得出什么结论？"></a>请参见图示。PC1 无法与服务器 1 通信。网络管理员发出 show interfaces trunk 命令开始故障排除。根据此命令的输出可以得出什么结论？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 01](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i331826v1n1_331826.gif)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 01</p>
+<ul>
+<li><p><strong>接口 G0&#x2F;2 未配置为中继。</strong></p>
+</li>
+<li><p>VLAN 20 尚未创建。</p>
+</li>
+<li><p>接口 G0&#x2F;1 封装不正确。</p>
+</li>
+<li><p>DTP 模式在接口 G0&#x2F;1 上错误地设置为动态自动。</p>
+<p><strong>答案解释和提示：</strong>在 show interfaces trunk 输出中，没有列出 DLS1 的 G0&#x2F;2 接口。这表明该接口可能尚未配置为中继链路。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。路由器-CiscoVille-上的-VLAN-间路由配置中显示错误的原因是什么？"><a href="#请参见图示。路由器-CiscoVille-上的-VLAN-间路由配置中显示错误的原因是什么？" class="headerlink" title="请参见图示。路由器 CiscoVille 上的 VLAN 间路由配置中显示错误的原因是什么？"></a>请参见图示。路由器 CiscoVille 上的 VLAN 间路由配置中显示错误的原因是什么？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 14](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i212653v1n3_212653.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 14</p>
+<ul>
+<li><p>gig0&#x2F;0 接口不支持 VLAN 间路由。</p>
+</li>
+<li><p>未配置 no shutdown 命令。</p>
+</li>
+<li><p>CiscoVille 上的 IP 地址不正确。</p>
+</li>
+<li><p>**封装dot1Q 20命令未配置。  **</p>
+<p><strong>答案解释和提示：</strong>配置 VLAN 间路由的步骤必须按特定顺序完成。在子接口上配置IP地址前，必须先指定encapsulation dot1q VLAN_id命令。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员已使用上述命令配置路由器-CiscoVille，以提供-VLAN-间路由。连接到路由器-CiscoVille-上的-Gi0-x2F-0-接口的交换机需要什么命令才能允许-VLAN-间路由？"><a href="#请参见图示。网络管理员已使用上述命令配置路由器-CiscoVille，以提供-VLAN-间路由。连接到路由器-CiscoVille-上的-Gi0-x2F-0-接口的交换机需要什么命令才能允许-VLAN-间路由？" class="headerlink" title="请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 接口的交换机需要什么命令才能允许 VLAN 间路由？"></a>请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 接口的交换机需要什么命令才能允许 VLAN 间路由？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 12](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i212656v1n1_212655.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 12</p>
+<ul>
+<li><p>交换端口模式访问</p>
+</li>
+<li><p>没有交换机端口</p>
+</li>
+<li><p><strong>交换端口模式中继</strong></p>
+</li>
+<li><p>开关端口模式动态可取</p>
+<p><strong>答案解释和提示：</strong>当它们被配置为 VLAN 间路由时，路由器不支持交换机使用的动态中继协议。要使单臂路由器配置起作用，连接的交换机必须使用命令 switchport mode trunk 。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="某高中的实验室网络使用-VLAN15，教职员工网络使用-VLAN30。在使用单臂路由器方法时，启用这两个-VLAN-之间的通信需要什么？"><a href="#某高中的实验室网络使用-VLAN15，教职员工网络使用-VLAN30。在使用单臂路由器方法时，启用这两个-VLAN-之间的通信需要什么？" class="headerlink" title="某高中的实验室网络使用 VLAN15，教职员工网络使用 VLAN30。在使用单臂路由器方法时，启用这两个 VLAN 之间的通信需要什么？"></a>某高中的实验室网络使用 VLAN15，教职员工网络使用 VLAN30。在使用单臂路由器方法时，启用这两个 VLAN 之间的通信需要什么？</h3><ul>
+<li><p>需要多层交换机。</p>
+</li>
+<li><p>需要至少有两个 LAN 接口的路由器。</p>
+</li>
+<li><p>需要两组交换机，每组都有为一个 VLAN 配置的端口。</p>
+</li>
+<li><p><strong>连接到路由器时，需要一个端口配置为中继的交换机。</strong></p>
+<p><strong>答案解释和提示：</strong>使用单臂路由器，VLAN 间路由由具有单个路由器接口的路由器执行，该路由器接口连接到配置有中继模式的交换机端口。可以在单个物理路由器接口下配置多个子接口，每个子接口都为一个 VLAN 配置。交换机可以有分配给不同 VLAN 的端口，但这些 VLAN 之间的通信需要路由器的路由功能。多层交换机不用于 VLAN 间路由的单棒路由器方法。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="在路由大量-VLAN-时，使用-router-on-a-stick-VLAN-间路由方法而不是多层交换机-VLAN-间路由方法的两个缺点是什么？（选择两个。）"><a href="#在路由大量-VLAN-时，使用-router-on-a-stick-VLAN-间路由方法而不是多层交换机-VLAN-间路由方法的两个缺点是什么？（选择两个。）" class="headerlink" title="在路由大量 VLAN 时，使用 router-on-a-stick VLAN 间路由方法而不是多层交换机 VLAN 间路由方法的两个缺点是什么？（选择两个。）"></a>在路由大量 VLAN 时，使用 router-on-a-stick VLAN 间路由方法而不是多层交换机 VLAN 间路由方法的两个缺点是什么？（选择两个。）</h3><ul>
+<li><p>需要多个 SVI。</p>
+</li>
+<li><p><strong>需要专用路由器。</strong></p>
+</li>
+<li><p>Router-on-a-stick 需要在相同的子网上配置子接口。</p>
+</li>
+<li><p>Router-on-a-stick 需要路由器上有多个物理接口。</p>
+</li>
+<li><p><strong>多个子接口可能会影响流量速度。</strong></p>
+<p><strong>答案解释和提示：</strong>使用单臂路由器 VLAN 间路由方法时，需要专用路由器。通过在一个物理接口上使用子接口，只需路由器上的一个物理接口即可在多个 VLAN 之间路由流量。另一方面，由于所有 VLAN 的流量都必须经过相同的物理接口，因此会影响吞吐量。此外，多层交换机可以使用多个 SVI 来执行 VLAN 间路由。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员正在验证-VLAN-间路由的配置。用户抱怨不同-VLAN-上的-PC-无法通信。根据输出，交换机接口-Gi1-x2F-1-上的两个配置错误是什么？（选择两个。）"><a href="#请参见图示。网络管理员正在验证-VLAN-间路由的配置。用户抱怨不同-VLAN-上的-PC-无法通信。根据输出，交换机接口-Gi1-x2F-1-上的两个配置错误是什么？（选择两个。）" class="headerlink" title="请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨不同 VLAN 上的 PC 无法通信。根据输出，交换机接口 Gi1&#x2F;1 上的两个配置错误是什么？（选择两个。）"></a>请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨不同 VLAN 上的 PC 无法通信。根据输出，交换机接口 Gi1&#x2F;1 上的两个配置错误是什么？（选择两个。）</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 11](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i212683v1n2_212683.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 11</p>
+<ul>
+<li><p><strong>Gi1&#x2F;1 位于默认 VLAN 中。</strong></p>
+</li>
+<li><p>语音 VLAN 未分配给 Gi1&#x2F;1。</p>
+</li>
+<li><p><strong>Gi1&#x2F;1 配置为中继模式。</strong></p>
+</li>
+<li><p>在 Gi1&#x2F;1 上开启中继协商。</p>
+</li>
+<li><p>中继封装协议配置错误。</p>
+<p><strong>答案解释和提示：</strong>使用传统的 VLAN 间路由方法，连接到路由器的交换机端口应配置为访问模式并分配适当的 VLAN。在这种情况下，Gi1&#x2F;1 接口应处于分配了 VLAN 10 的访问模式。其他选项是交换机上的默认设置，对传统的 VLAN 间路由没有影响。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员正在验证-VLAN-间路由的配置。用户抱怨-PC2-无法与-PC1-通信。根据输出，问题的可能原因是什么？"><a href="#请参见图示。网络管理员正在验证-VLAN-间路由的配置。用户抱怨-PC2-无法与-PC1-通信。根据输出，问题的可能原因是什么？" class="headerlink" title="请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨 PC2 无法与 PC1 通信。根据输出，问题的可能原因是什么？"></a>请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨 PC2 无法与 PC1 通信。根据输出，问题的可能原因是什么？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 10](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i212684v1n3_212684.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 10</p>
+<ul>
+<li><p>Gi0&#x2F;0 未配置为中继端口。</p>
+</li>
+<li><p>命令接口 GigabitEthernet0&#x2F;0.5 输入错误。</p>
+</li>
+<li><p>接口 Gi0&#x2F;0 上没有配置 IP 地址。</p>
+</li>
+<li><p>没有在子接口上输入 no shutdown 命令。</p>
+</li>
+<li><p>**encapsulation dot1Q 5 命令包含错误的 VLAN。 **</p>
+<p><strong>答案解释和提示：</strong>在 router-on-a-stick 中，子接口配置要与 encapsulation 命令中的 VLAN 号匹配，这种情况下，VLAN 10 应该使用命令 encapsulation dot1Q 10。由于使用了子接口，因此无需配置 IP在物理接口 Gi0&#x2F;0 上。中继模式是在连接到路由器的交换机端口上配置的。添加子接口时将打开它们。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员已使用上述命令配置路由器-CiscoVille，以提供-VLAN-间路由。连接到路由器-CiscoVille-上的-Gi0-x2F-0-的交换机上需要什么类型的端口才能允许-VLAN-间路由？"><a href="#请参见图示。网络管理员已使用上述命令配置路由器-CiscoVille，以提供-VLAN-间路由。连接到路由器-CiscoVille-上的-Gi0-x2F-0-的交换机上需要什么类型的端口才能允许-VLAN-间路由？" class="headerlink" title="请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 的交换机上需要什么类型的端口才能允许 VLAN 间路由？"></a>请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 的交换机上需要什么类型的端口才能允许 VLAN 间路由？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 13](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i212655v1n2_212655.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 13</p>
+<ul>
+<li><p>路由端口</p>
+</li>
+<li><p>访问端口</p>
+</li>
+<li><p><strong>中继端口</strong></p>
+</li>
+<li><p>SVI</p>
+<p><strong>答案解释和提示：</strong>为了允许单臂路由器配置起作用，交换机必须通过中继端口连接到路由器以承载要路由的 VLAN。SVI 将用于交换机执行 VLAN 间路由的多层交换机上。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员正在为-VLAN-间路由配置-RT1。交换机配置正确且功能正常。Host1、Host2-和-Host3-无法相互通信。根据路由器配置，是什么导致了问题？"><a href="#请参见图示。网络管理员正在为-VLAN-间路由配置-RT1。交换机配置正确且功能正常。Host1、Host2-和-Host3-无法相互通信。根据路由器配置，是什么导致了问题？" class="headerlink" title="请参见图示。网络管理员正在为 VLAN 间路由配置 RT1。交换机配置正确且功能正常。Host1、Host2 和 Host3 无法相互通信。根据路由器配置，是什么导致了问题？"></a>请参见图示。网络管理员正在为 VLAN 间路由配置 RT1。交换机配置正确且功能正常。Host1、Host2 和 Host3 无法相互通信。根据路由器配置，是什么导致了问题？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 06](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i215797v1n1_215797.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 06</p>
+<ul>
+<li><p>接口 Fa0&#x2F;0 缺少 IP 地址配置信息。</p>
+</li>
+<li><p><strong>子接口上的 IP 地址与 VLAN 不匹配。</strong></p>
+</li>
+<li><p>Fa0&#x2F;0 的每个子接口都需要单独的 no shutdown 命令。</p>
+</li>
+<li><p>路由器不支持子接口上的 802.1Q 封装。</p>
+<p><strong>答案解释和提示：</strong>由于主机 1（在 VLAN 20 中）的 IP 为 172.18.1.10&#x2F;27，因此应为子接口 Fa0&#x2F;0.1 配置网络 172.168.1.0&#x2F;27 中的 IP 地址。同样，Fa0&#x2F;0.2 应使用网络 172.168.1.64&#x2F;27 中的 IP 地址，Fa0&#x2F;0.3 应使用网络 172.168.1.96&#x2F;27 中的 IP 地址。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。根据-show-running-config-命令的输出，为-VLAN-15、30-和-45-实施了单臂路由器配置。VLAN-45-上使用-172-16-45-0-x2F-24-网络的-PC-无法连接到-172-16-30-0-x2F-24-网络中-VLAN-30-上的-PC。哪个错误最有可能导致此问题？"><a href="#请参见图示。根据-show-running-config-命令的输出，为-VLAN-15、30-和-45-实施了单臂路由器配置。VLAN-45-上使用-172-16-45-0-x2F-24-网络的-PC-无法连接到-172-16-30-0-x2F-24-网络中-VLAN-30-上的-PC。哪个错误最有可能导致此问题？" class="headerlink" title="请参见图示。根据 show running-config 命令的输出，为 VLAN 15、30 和 45 实施了单臂路由器配置。VLAN 45 上使用 172.16.45.0 &#x2F;24 网络的 PC 无法连接到 172.16.30.0 &#x2F;24 网络中 VLAN 30 上的 PC。哪个错误最有可能导致此问题？"></a>请参见图示。根据 show running-config 命令的输出，为 VLAN 15、30 和 45 实施了单臂路由器配置。VLAN 45 上使用 172.16.45.0 &#x2F;24 网络的 PC 无法连接到 172.16.30.0 &#x2F;24 网络中 VLAN 30 上的 PC。哪个错误最有可能导致此问题？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 05](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i223314v1n1_212679.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 05</p>
+<ul>
+<li><p>在 GigabitEthernet 0&#x2F;0.45 上配置了错误的 VLAN。</p>
+</li>
+<li><p>GigabitEthernet 0&#x2F;0.30 上缺少 no shutdown 命令。</p>
+</li>
+<li><p>GigabitEthernet 0&#x2F;0 接口缺少 IP 地址。</p>
+</li>
+<li><p><strong>在 GigabitEthernet 0&#x2F;0.30 上配置了错误的 IP 地址。</strong></p>
+<p><strong>答案解释和提示：</strong>子接口 GigabitEthernet 0&#x2F;0.30 的 IP 地址与 VLAN 寻址方案不对应。物理接口 GigabitEthernet 0&#x2F;0 不需要 IP 地址来使子接口起作用。子接口不需要 no shutdown 命令。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="第-3-层交换机上的路由端口有什么特点？"><a href="#第-3-层交换机上的路由端口有什么特点？" class="headerlink" title="第 3 层交换机上的路由端口有什么特点？"></a>第 3 层交换机上的路由端口有什么特点？</h3><ul>
+<li><p>它支持中继。</p>
+</li>
+<li><p><strong>它没有分配给 VLAN。</strong></p>
+</li>
+<li><p>它通常用作 WAN 链接。</p>
+</li>
+<li><p>不能为其分配 IP 地址。</p>
+<p><strong>答案解释和提示：</strong>三层交换机上的路由端口通常用于连接分布层交换机和核心层交换机或三层交换机和路由器之间。此端口没有获得分配给它的 VLAN 或中继命令。相反，该端口使用 IP 地址进行编程。这通常在交换机上配置静态路由或在第 3 层交换机与路由器或另一个第 3 层交换机之间运行路由协议时使用。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员需要为显示的网络配置单臂路由器。如果要路由显示的每个-VLAN-并且每个-VLAN-都有自己的子接口，则必须在路由器上创建多少个子接口？"><a href="#请参见图示。网络管理员需要为显示的网络配置单臂路由器。如果要路由显示的每个-VLAN-并且每个-VLAN-都有自己的子接口，则必须在路由器上创建多少个子接口？" class="headerlink" title="请参见图示。网络管理员需要为显示的网络配置单臂路由器。如果要路由显示的每个 VLAN 并且每个 VLAN 都有自己的子接口，则必须在路由器上创建多少个子接口？"></a>请参见图示。网络管理员需要为显示的网络配置单臂路由器。如果要路由显示的每个 VLAN 并且每个 VLAN 都有自己的子接口，则必须在路由器上创建多少个子接口？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 15](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i212625v1n1_212625.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 15</p>
+<ul>
+<li><p>1</p>
+</li>
+<li><p>2</p>
+</li>
+<li><p>3</p>
+</li>
+<li><p><strong>4</strong></p>
+</li>
+<li><p>5</p>
+<p><strong>答案解释和提示：</strong>根据给定的 IP 地址和掩码，PC、打印机、IP 电话和交换机管理 VLAN 都在不同的 VLAN 上。这种情况需要路由器上有四个子接口。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-mdix-auto-命令有什么作用？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-mdix-auto-命令有什么作用？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# mdix auto 命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# mdix auto 命令有什么作用？</h3><ul>
+<li><strong>它会自动调整端口以允许设备连接使用直通或交叉电缆。</strong></li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它将 IPv6 地址应用于虚拟接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-ip-address-172-18-33-88-255-255-255-0-命令有什么效果？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-ip-address-172-18-33-88-255-255-255-0-命令有什么效果？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# ip address 172.18.33.88 255.255.255.0 命令有什么效果？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# ip address 172.18.33.88 255.255.255.0 命令有什么效果？</h3><ul>
+<li><strong>它将 IPv4 地址应用于虚拟接口。</strong></li>
+<li>它将 IPv6 地址应用于虚拟接口。</li>
+<li>它激活虚拟或物理交换机接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-配置终端命令有什么作用？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-配置终端命令有什么作用？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？</h3><ul>
+<li><strong>它进入全局配置模式。</strong></li>
+<li>它进入交换机虚拟接口的配置模式。</li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-配置终端命令有什么作用？-1"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-配置终端命令有什么作用？-1" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？</h3><ul>
+<li><strong>它进入全局配置模式。</strong></li>
+<li>它将运行配置保存到 NVRAM。</li>
+<li>它禁用虚拟或物理交换机接口。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它将启动配置保存到运行配置中。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-shutdown-命令有什么作用？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-shutdown-命令有什么作用？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？</h3><ul>
+<li><strong>它禁用虚拟或物理交换机接口。</strong></li>
+<li>它将运行配置保存到 NVRAM。</li>
+<li>它激活虚拟或物理交换机接口。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它将启动配置保存到运行配置中。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-shutdown-命令有什么作用？-1"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-shutdown-命令有什么作用？-1" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？</h3><ul>
+<li><strong>它禁用虚拟或物理交换机接口。</strong></li>
+<li>它将 IPv6 地址应用于虚拟接口。</li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-ipv6-address-2001-db8-a2b4-88-1-x2F-64-命令有什么效果？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-ipv6-address-2001-db8-a2b4-88-1-x2F-64-命令有什么效果？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# ipv6 address 2001:db8:a2b4:88::1&#x2F;64 命令有什么效果？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# ipv6 address 2001:db8:a2b4:88::1&#x2F;64 命令有什么效果？</h3><ul>
+<li><strong>它将 IPv6 地址应用于虚拟接口。</strong></li>
+<li>它激活虚拟或物理交换机接口。</li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-exit-命令有什么作用？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-exit-命令有什么作用？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# exit 命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# exit 命令有什么作用？</h3><ul>
+<li><strong>它返回到全局配置模式。</strong></li>
+<li>它返回特权模式。</li>
+<li>它为交换机配置默认网关。</li>
+<li>它进入用户模式。</li>
+<li>它将启动配置保存到运行配置中。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-gt-enable-命令有什么作用？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-gt-enable-命令有什么作用？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw&gt; enable 命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw&gt; enable 命令有什么作用？</h3><ul>
+<li><strong>它进入特权模式。</strong></li>
+<li>它进入全局配置模式。</li>
+<li>它进入交换机虚拟接口的配置模式。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+</ul>
+</li>
+<li><h3 id="技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-duplex-full-命令有什么作用？"><a href="#技术人员正在配置新的-Cisco-2960-交换机。发出-BranchSw-config-if-duplex-full-命令有什么作用？" class="headerlink" title="技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# duplex full 命令有什么作用？"></a>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# duplex full 命令有什么作用？</h3><ul>
+<li><strong>它允许数据在接口上同时双向流动。</strong></li>
+<li>它允许数据在界面上一次仅沿一个方向流动</li>
+<li>它会自动调整端口以允许设备连接使用直通或交叉电缆。</li>
+<li>它将交换机配置为默认网关。</li>
+<li>当用户远程连接时，它会加密用户模式密码。</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-不应该承载语音和网络管理流量？"><a href="#什么类型的-VLAN-不应该承载语音和网络管理流量？" class="headerlink" title="什么类型的 VLAN 不应该承载语音和网络管理流量？"></a>什么类型的 VLAN 不应该承载语音和网络管理流量？</h3><ul>
+<li><strong>数据 VLAN</strong></li>
+<li>语音 VLAN</li>
+<li>管理 VLAN</li>
+<li>安全 VLAN</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-不应该承载语音和网络管理流量？-1"><a href="#什么类型的-VLAN-不应该承载语音和网络管理流量？-1" class="headerlink" title="什么类型的 VLAN 不应该承载语音和网络管理流量？"></a>什么类型的 VLAN 不应该承载语音和网络管理流量？</h3><ul>
+<li><strong>数据 VLAN</strong></li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+<li>语音 VLAN</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-旨在预留带宽以确保-IP-电话质量？"><a href="#什么类型的-VLAN-旨在预留带宽以确保-IP-电话质量？" class="headerlink" title="什么类型的 VLAN 旨在预留带宽以确保 IP 电话质量？"></a>什么类型的 VLAN 旨在预留带宽以确保 IP 电话质量？</h3><ul>
+<li><strong>语音 VLAN</strong></li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+<li>管理 VLAN</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-最初是管理-VLAN？"><a href="#什么类型的-VLAN-最初是管理-VLAN？" class="headerlink" title="什么类型的 VLAN 最初是管理 VLAN？"></a>什么类型的 VLAN 最初是管理 VLAN？</h3><ul>
+<li><strong>默认 VLAN</strong></li>
+<li>本机 VLAN</li>
+<li>数据 VLAN</li>
+<li>管理 VLAN</li>
+</ul>
+</li>
+<li><h3 id="哪种类型的-VLAN-设计为在整个网络中具有小于-150-毫秒的延迟？"><a href="#哪种类型的-VLAN-设计为在整个网络中具有小于-150-毫秒的延迟？" class="headerlink" title="哪种类型的 VLAN 设计为在整个网络中具有小于 150 毫秒的延迟？"></a>哪种类型的 VLAN 设计为在整个网络中具有小于 150 毫秒的延迟？</h3><ul>
+<li><strong>语音 VLAN</strong></li>
+<li>理想的VLAN</li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+</ul>
+</li>
+<li><h3 id="使用什么类型的-VLAN-将网络划分为用户或设备组？"><a href="#使用什么类型的-VLAN-将网络划分为用户或设备组？" class="headerlink" title="使用什么类型的 VLAN 将网络划分为用户或设备组？"></a>使用什么类型的 VLAN 将网络划分为用户或设备组？</h3><ul>
+<li><strong>数据 VLAN</strong></li>
+<li>管理 VLAN</li>
+<li>语音 VLAN</li>
+<li>本机 VLAN</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-专门为-SSH、Telnet、HTTPS、HHTP-和-SNMP-等网络流量配置？"><a href="#什么类型的-VLAN-专门为-SSH、Telnet、HTTPS、HHTP-和-SNMP-等网络流量配置？" class="headerlink" title="什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？"></a>什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？</h3><ul>
+<li><strong>管理 VLAN</strong></li>
+<li>安全 VLAN</li>
+<li>中继 VLAN</li>
+<li>语音 VLAN</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-专门为-SSH、Telnet、HTTPS、HHTP-和-SNMP-等网络流量配置？-1"><a href="#什么类型的-VLAN-专门为-SSH、Telnet、HTTPS、HHTP-和-SNMP-等网络流量配置？-1" class="headerlink" title="什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？"></a>什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？</h3><ul>
+<li><strong>管理 VLAN</strong></li>
+<li>语音 VLAN</li>
+<li>安全 VLAN</li>
+<li>本机 VLAN</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-支持未标记的流量？"><a href="#什么类型的-VLAN-支持未标记的流量？" class="headerlink" title="什么类型的 VLAN 支持未标记的流量？"></a>什么类型的 VLAN 支持未标记的流量？</h3><ul>
+<li><strong>本机 VLAN</strong></li>
+<li>语音 VLAN</li>
+<li>安全 VLAN</li>
+<li>管理 VLAN</li>
+</ul>
+</li>
+<li><h3 id="什么类型的-VLAN-支持未标记的流量？-1"><a href="#什么类型的-VLAN-支持未标记的流量？-1" class="headerlink" title="什么类型的 VLAN 支持未标记的流量？"></a>什么类型的 VLAN 支持未标记的流量？</h3><ul>
+<li><strong>本机 VLAN</strong></li>
+<li>理想的VLAN</li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。如图所示，网络管理员已配置-R1。当管理员检查串行接口的状态时，该接口显示为管理性关闭。必须在-R1-的串行接口上输入什么附加命令才能启动该接口？"><a href="#请参见图示。如图所示，网络管理员已配置-R1。当管理员检查串行接口的状态时，该接口显示为管理性关闭。必须在-R1-的串行接口上输入什么附加命令才能启动该接口？" class="headerlink" title="请参见图示。如图所示，网络管理员已配置 R1。当管理员检查串行接口的状态时，该接口显示为管理性关闭。必须在 R1 的串行接口上输入什么附加命令才能启动该接口？"></a>请参见图示。如图所示，网络管理员已配置 R1。当管理员检查串行接口的状态时，该接口显示为管理性关闭。必须在 R1 的串行接口上输入什么附加命令才能启动该接口？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 18](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i209408v1n1_209408.gif)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 18</p>
+<ul>
+<li><p>IPv6 启用</p>
+</li>
+<li><p>时钟频率 128000</p>
+</li>
+<li><p>结尾</p>
+</li>
+<li><p><strong>不关机</strong></p>
+<p><strong>答案解释和提示：</strong>默认情况下，所有路由器接口都关闭。要启动接口，管理员必须在接口模式下发出 no shutdown 命令。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员希望将-Switch1-配置为允许-SSH-连接并禁止-Telnet-连接。网络管理员应如何更改显示的配置以满足需求？"><a href="#请参见图示。网络管理员希望将-Switch1-配置为允许-SSH-连接并禁止-Telnet-连接。网络管理员应如何更改显示的配置以满足需求？" class="headerlink" title="请参见图示。网络管理员希望将 Switch1 配置为允许 SSH 连接并禁止 Telnet 连接。网络管理员应如何更改显示的配置以满足需求？"></a>请参见图示。网络管理员希望将 Switch1 配置为允许 SSH 连接并禁止 Telnet 连接。网络管理员应如何更改显示的配置以满足需求？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 03](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i283584v1n1_24177.jpg)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 03</p>
+<ul>
+<li>使用 SSH 版本 1。</li>
+<li>重新配置 RSA 密钥。</li>
+<li>在不同的线路上配置 SSH。</li>
+<li><strong>修改传输输入命令。</strong></li>
+</ul>
+</li>
+<li><h3 id="哪种解决方案可以帮助大学缓解由于冲突导致的网络拥塞？"><a href="#哪种解决方案可以帮助大学缓解由于冲突导致的网络拥塞？" class="headerlink" title="哪种解决方案可以帮助大学缓解由于冲突导致的网络拥塞？"></a>哪种解决方案可以帮助大学缓解由于冲突导致的网络拥塞？</h3><ul>
+<li><p>连接到两个 Internet 提供商的防火墙</p>
+</li>
+<li><p><strong>高端口密度交换机</strong></p>
+</li>
+<li><p>带有两个以太网端口的路由器</p>
+</li>
+<li><p>具有三个以太网端口的路由器</p>
+<p><strong>答案解释和提示：</strong>交换机提供微分段，因此一个设备不会与另一个网络设备竞争相同的以太网网络带宽，从而实际上消除了冲突。高端口密度交换机为许多设备提供非常快速的连接。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="关于-SVI-VLAN-间路由，哪两个陈述是正确的？（选择两个。）"><a href="#关于-SVI-VLAN-间路由，哪两个陈述是正确的？（选择两个。）" class="headerlink" title="关于 SVI VLAN 间路由，哪两个陈述是正确的？（选择两个。）"></a>关于 SVI VLAN 间路由，哪两个陈述是正确的？（选择两个。）</h3><ul>
+<li><p><strong>使用 SVI 可以更快地交换数据包。</strong></p>
+</li>
+<li><p><strong>无需连接到路由器。</strong></p>
+</li>
+<li><p>虚拟接口支持子接口。</p>
+</li>
+<li><p>SVI 可以捆绑到 EtherChannel 中。</p>
+</li>
+<li><p>SVI 无需在主机中设置默认网关。</p>
+<p><strong>答案解释和提示：</strong>SVI VLAN间路由方法比其他方法更快。交换机无需路由器即可路由现有的 VLAN。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="请参见图示。网络管理员正在网络上配置-VLAN-间路由。目前，只使用了一个-VLAN，但很快会添加更多。在图中显示为突出显示的问号的缺失参数是什么？"><a href="#请参见图示。网络管理员正在网络上配置-VLAN-间路由。目前，只使用了一个-VLAN，但很快会添加更多。在图中显示为突出显示的问号的缺失参数是什么？" class="headerlink" title="请参见图示。网络管理员正在网络上配置 VLAN 间路由。目前，只使用了一个 VLAN，但很快会添加更多。在图中显示为突出显示的问号的缺失参数是什么？"></a>请参见图示。网络管理员正在网络上配置 VLAN 间路由。目前，只使用了一个 VLAN，但很快会添加更多。在图中显示为突出显示的问号的缺失参数是什么？</h3><p>![CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 16](.&#x2F;CCNA2 v7 - SRWE - 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 - ICT Community_files&#x2F;i212623v1n4_212623.png)</p>
+<p>CCNA2 v7 SRWE – 模块 1 – 4：交换概念、VLAN 和 VLAN 间路由考试答案 16</p>
+<ul>
+<li><p>它标识子接口。</p>
+</li>
+<li><p><strong>它标识 VLAN 号。</strong></p>
+</li>
+<li><p>它标识本地 VLAN 号。</p>
+</li>
+<li><p>它标识所使用的封装类型。</p>
+</li>
+<li><p>它标识接口上允许的主机数量。</p>
+<p><strong>答案解释和提示：</strong>完成的命令将是封装 dot1q 7 。该命令的封装 dot1q 部分启用中继并标识要使用的中继类型。7 标识 VLAN 号。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="哪种类型的-VLAN-用于指定通过中继端口时未标记的流量？"><a href="#哪种类型的-VLAN-用于指定通过中继端口时未标记的流量？" class="headerlink" title="哪种类型的 VLAN 用于指定通过中继端口时未标记的流量？"></a>哪种类型的 VLAN 用于指定通过中继端口时未标记的流量？</h3><ul>
+<li><p>数据</p>
+</li>
+<li><p>默认</p>
+</li>
+<li><p><strong>本国的</strong></p>
+</li>
+<li><p>管理</p>
+<p><strong>答案解释和提示：</strong>本地 VLAN 是未在 IEEE 802.1Q 帧头中接收 VLAN 标记的 VLAN。Cisco 最佳实践建议尽可能使用未使用的 VLAN（不是数据 VLAN、VLAN 1 的默认 VLAN 或管理 VLAN）作为本地 VLAN。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="网络管理员在对用户支持票进行故障排除时发出-show-vlan-brief-命令。将显示什么输出？"><a href="#网络管理员在对用户支持票进行故障排除时发出-show-vlan-brief-命令。将显示什么输出？" class="headerlink" title="网络管理员在对用户支持票进行故障排除时发出 show vlan brief 命令。将显示什么输出？"></a>网络管理员在对用户支持票进行故障排除时发出 show vlan brief 命令。将显示什么输出？</h3><ul>
+<li><p>设备 MAC 地址的 VLAN 分配和成员资格</p>
+</li>
+<li><p><strong>所有交换机端口的 VLAN 分配和成员资格</strong></p>
+</li>
+<li><p>VLAN分配和中继封装</p>
+</li>
+<li><p>VLAN 分配和本地 VLAN</p>
+<p><strong>答案解释和提示：</strong>show vlan brief 命令将提供显示交换机上所有交换机端口的 VLAN 分配和成员资格的信息。</p>
+</li>
+</ul>
+</li>
+<li><h3 id="打开-PT-活动。执行活动说明中的任务，然后回答问题。"><a href="#打开-PT-活动。执行活动说明中的任务，然后回答问题。" class="headerlink" title="打开 PT 活动。执行活动说明中的任务，然后回答问题。"></a>打开 PT 活动。执行活动说明中的任务，然后回答问题。</h3><h3 id="在-PC1-Web-Browser-地址栏输入-10-10-10-1-时显示什么信息？"><a href="#在-PC1-Web-Browser-地址栏输入-10-10-10-1-时显示什么信息？" class="headerlink" title="在 PC1 Web Browser 地址栏输入 10.10.10.1 时显示什么信息？"></a>在 PC1 Web Browser 地址栏输入 10.10.10.1 时显示什么信息？</h3><ul>
+<li><p>本地服务器</p>
+</li>
+<li><p>测试服务器</p>
+</li>
+<li><p><strong>文件服务器</strong></p>
+</li>
+<li><p>思科服务器</p>
+<p><strong>答案解释和提示：</strong>检查交换机 SW1 的配置显示接口 Gi0&#x2F;1 未配置为中继。在此接口上发出接口配置命令 switchport mode trunk 将启用 PC1 和 Server1 之间的通信。</p>
+</li>
+</ul>
+</li>
+</ol>
+
+  
+  </article>
+
+
+
+  <div class='related-wrap md reveal' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </div>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<p>本站由 <a href="https://mengchunm.github.io/">@saevio</a> 创建，使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.6.1" title="v1.6.1">Stellar</a> 作为主题。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.6.1';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js',
+    sitesjs: '/js/plugins/sites.js',
+    friendsjs: '/js/plugins/friends.js',
+  };
+
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://cdn.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
