@@ -5,8 +5,8 @@ color: #ff0000;"><font style="vertical-align: inherit;"><font style="vertical-al
 
 <!---->
 
-git config --global http.proxy http://127.0.0.1:8889
-git config --global http.proxy https://127.0.0.1:8889
-git config --global http.https://github.com.proxy http://127.0.0.1:8889
+git config --global http.proxy http://127.0.0.1:16888
+git config --global http.proxy https://127.0.0.1:16888
+git config --global http.https://github.com.proxy http://127.0.0.1:16888
 
 git config --global --add safe.directory D:/test/tmp
