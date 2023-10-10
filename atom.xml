@@ -6,7 +6,7 @@
   <link href="https://mengchunm.github.io/atom.xml" rel="self"/>
   
   <link href="https://mengchunm.github.io/"/>
-  <updated>2023-10-10T11:03:15.607Z</updated>
+  <updated>2023-08-08T09:06:08.064Z</updated>
   <id>https://mengchunm.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://mengchunm.github.io/2023/10/10/alist/"/>
+    <id>https://mengchunm.github.io/2023/10/10/alist/</id>
+    <published>2023-10-10T12:24:13.700Z</published>
+    <updated>2023-08-08T09:06:08.064Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="通过Alist-Clouddrive2挂载夸克网盘到本地"><a href="#通过Alist-Clouddrive2挂载夸克网盘到本地" class="headerlink" title="通过Alist,Clouddrive2挂载夸克网盘到本地"></a>通过Alist,Clouddrive2挂载夸克网盘到本地</h2><h3 id="启动项问题"><a href="#启动项问题" class="headerlink" title="启动项问题"></a>启动项问题</h3><p>按Win＋R</p><p>输入<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_1" value="shell:startup"><button class="copy-btn" onclick="util.copy(&quot;copy_1&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div></p><p>进入开机启动目录:C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</p><p>在其中建立文本文档，粘贴以下内容：</p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> C:\Users\saevio</span><br><span class="line">alist server</span><br></pre></td></tr></table></figure><p>重命名文件后缀为**.bat**</p><h3 id="Alist问题"><a href="#Alist问题" class="headerlink" title="Alist问题"></a>Alist问题</h3><p>不要下载官网windows版本,下载github版本</p><p>启动：Alist server</p><p><a href="http://127.0.0.1:5244/">http://127.0.0.1:5244</a></p><p>账号:saevio</p><h3 id="挂载到本地"><a href="#挂载到本地" class="headerlink" title="挂载到本地"></a>挂载到本地</h3><p>使用<strong>Raidrive</strong></p><p>配置如下：</p><div class="tag-plugin image"><div class="image-bg"><img src="https://article.biliimg.com/bfs/article/8299937a1ca2f4068eb01918cbace3049cbb80be.png" alt="image-20230803181553972"/></div><div class="image-meta"><span class="image-caption center">image-20230803181553972</span></div></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;通过Alist-Clouddrive2挂载夸克网盘到本地&quot;&gt;&lt;a href=&quot;#通过Alist-Clouddrive2挂载夸克网盘到本地&quot; class=&quot;headerlink&quot; title=&quot;通过Alist,Clouddrive2挂载夸克网盘到本地&quot;&gt;&lt;/a&gt;通过</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>音视频下载&amp;剪辑</title>
