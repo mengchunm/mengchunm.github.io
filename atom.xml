@@ -3,11 +3,11 @@
   <title>saevio</title>
   <icon>https://www.gravatar.com/avatar/029d105e488c9255f2c8ae58f697feb4</icon>
   <subtitle>welcome to my Blog. | ( ˙꒳​˙)</subtitle>
-  <link href="https://mengchunm.github.io/atom.xml" rel="self"/>
+  <link href="https://saevio.cn/atom.xml" rel="self"/>
   
-  <link href="https://mengchunm.github.io/"/>
+  <link href="https://saevio.cn/"/>
   <updated>2023-10-10T13:55:28.000Z</updated>
-  <id>https://mengchunm.github.io/</id>
+  <id>https://saevio.cn/</id>
   
   <author>
     <name>saevio</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>常用工具合集</title>
-    <link href="https://mengchunm.github.io/2024/10/09/software/"/>
-    <id>https://mengchunm.github.io/2024/10/09/software/</id>
+    <link href="https://saevio.cn/2024/10/09/software/"/>
+    <id>https://saevio.cn/2024/10/09/software/</id>
     <published>2024-10-09T14:54:41.250Z</published>
     <updated>2023-10-10T13:55:28.000Z</updated>
     
@@ -35,8 +35,8 @@
   
   <entry>
     <title>蒲公英女孩（The Dandelion Girl）</title>
-    <link href="https://mengchunm.github.io/2024/10/09/%E8%92%B2%E5%85%AC%E8%8B%B1%E5%A5%B3%E5%AD%A9/"/>
-    <id>https://mengchunm.github.io/2024/10/09/%E8%92%B2%E5%85%AC%E8%8B%B1%E5%A5%B3%E5%AD%A9/</id>
+    <link href="https://saevio.cn/2024/10/09/%E8%92%B2%E5%85%AC%E8%8B%B1%E5%A5%B3%E5%AD%A9/"/>
+    <id>https://saevio.cn/2024/10/09/%E8%92%B2%E5%85%AC%E8%8B%B1%E5%A5%B3%E5%AD%A9/</id>
     <published>2024-10-09T14:54:41.250Z</published>
     <updated>2022-09-20T13:24:45.000Z</updated>
     
@@ -52,8 +52,8 @@
   
   <entry>
     <title>信息安全技术实验</title>
-    <link href="https://mengchunm.github.io/2024/10/09/Network%20Security%20Technology/"/>
-    <id>https://mengchunm.github.io/2024/10/09/Network%20Security%20Technology/</id>
+    <link href="https://saevio.cn/2024/10/09/Network%20Security%20Technology/"/>
+    <id>https://saevio.cn/2024/10/09/Network%20Security%20Technology/</id>
     <published>2024-10-09T14:54:41.250Z</published>
     <updated>2023-10-10T13:53:10.000Z</updated>
     
@@ -69,8 +69,8 @@
   
   <entry>
     <title>第一篇文章</title>
-    <link href="https://mengchunm.github.io/2024/10/09/first/"/>
-    <id>https://mengchunm.github.io/2024/10/09/first/</id>
+    <link href="https://saevio.cn/2024/10/09/first/"/>
+    <id>https://saevio.cn/2024/10/09/first/</id>
     <published>2024-10-09T14:54:41.249Z</published>
     <updated>2023-03-23T05:29:19.000Z</updated>
     
@@ -86,8 +86,8 @@
   
   <entry>
     <title>java学习</title>
-    <link href="https://mengchunm.github.io/2024/10/09/java/"/>
-    <id>https://mengchunm.github.io/2024/10/09/java/</id>
+    <link href="https://saevio.cn/2024/10/09/java/"/>
+    <id>https://saevio.cn/2024/10/09/java/</id>
     <published>2024-10-09T14:54:41.249Z</published>
     <updated>2023-03-23T05:28:10.000Z</updated>
     
@@ -103,8 +103,8 @@
   
   <entry>
     <title>网络管理期末总结</title>
-    <link href="https://mengchunm.github.io/2024/10/09/network%20design/"/>
-    <id>https://mengchunm.github.io/2024/10/09/network%20design/</id>
+    <link href="https://saevio.cn/2024/10/09/network%20design/"/>
+    <id>https://saevio.cn/2024/10/09/network%20design/</id>
     <published>2024-10-09T14:54:41.249Z</published>
     <updated>2023-10-10T13:51:13.000Z</updated>
     
@@ -120,8 +120,8 @@
   
   <entry>
     <title>Cisco答案</title>
-    <link href="https://mengchunm.github.io/2024/10/09/Cisco/"/>
-    <id>https://mengchunm.github.io/2024/10/09/Cisco/</id>
+    <link href="https://saevio.cn/2024/10/09/Cisco/"/>
+    <id>https://saevio.cn/2024/10/09/Cisco/</id>
     <published>2024-10-09T14:54:41.248Z</published>
     <updated>2022-05-11T09:20:52.000Z</updated>
     
@@ -137,8 +137,8 @@
   
   <entry>
     <title>音视频下载&amp;剪辑</title>
-    <link href="https://mengchunm.github.io/2024/10/09/ffmpeg/"/>
-    <id>https://mengchunm.github.io/2024/10/09/ffmpeg/</id>
+    <link href="https://saevio.cn/2024/10/09/ffmpeg/"/>
+    <id>https://saevio.cn/2024/10/09/ffmpeg/</id>
     <published>2024-10-09T14:54:41.248Z</published>
     <updated>2023-10-10T14:17:15.000Z</updated>
     
@@ -154,8 +154,8 @@
   
   <entry>
     <title>Java考试题目汇总</title>
-    <link href="https://mengchunm.github.io/2024/10/09/exam/"/>
-    <id>https://mengchunm.github.io/2024/10/09/exam/</id>
+    <link href="https://saevio.cn/2024/10/09/exam/"/>
+    <id>https://saevio.cn/2024/10/09/exam/</id>
     <published>2024-10-09T14:54:41.248Z</published>
     <updated>2022-07-15T14:10:26.000Z</updated>
     
@@ -171,8 +171,8 @@
   
   <entry>
     <title>指点天下及学习通签到</title>
-    <link href="https://mengchunm.github.io/2024/10/09/fakelocation/"/>
-    <id>https://mengchunm.github.io/2024/10/09/fakelocation/</id>
+    <link href="https://saevio.cn/2024/10/09/fakelocation/"/>
+    <id>https://saevio.cn/2024/10/09/fakelocation/</id>
     <published>2024-10-09T14:54:41.248Z</published>
     <updated>2023-10-10T14:16:03.000Z</updated>
     
@@ -188,8 +188,8 @@
   
   <entry>
     <title>Android studio</title>
-    <link href="https://mengchunm.github.io/2024/10/09/Android%20studio/"/>
-    <id>https://mengchunm.github.io/2024/10/09/Android%20studio/</id>
+    <link href="https://saevio.cn/2024/10/09/Android%20studio/"/>
+    <id>https://saevio.cn/2024/10/09/Android%20studio/</id>
     <published>2024-10-09T14:54:41.247Z</published>
     <updated>2023-10-10T13:54:40.000Z</updated>
     
@@ -205,8 +205,8 @@
   
   <entry>
     <title>刷机资源整合</title>
-    <link href="https://mengchunm.github.io/2024/10/09/Brush/"/>
-    <id>https://mengchunm.github.io/2024/10/09/Brush/</id>
+    <link href="https://saevio.cn/2024/10/09/Brush/"/>
+    <id>https://saevio.cn/2024/10/09/Brush/</id>
     <published>2024-10-09T14:54:41.247Z</published>
     <updated>2023-10-10T13:56:16.000Z</updated>
     
