@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta name="referrer" content="no-referrer">
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>信息安全技术实验 - saevio</title>
+
+  
+    <meta name="description" content="分享下答案">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信息安全技术实验">
+<meta property="og:url" content="https://mengchunm.github.io/2024/10/09/Network%20Security%20Technology/index.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="分享下答案">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png">
+<meta property="og:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png">
+<meta property="article:published_time" content="2024-10-09T13:42:25.045Z">
+<meta property="article:modified_time" content="2024-10-09T13:42:25.045Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">随笔</a><a class="nav-item" href="/notes/">便签</a><a class="nav-item" href="/more/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/blog/" placeholder="文章搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">信息安全技术实验</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1"><span class="toc-text">实验1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%89%AB%E6%8F%8F%E8%AF%BE%E7%A8%8B"><span class="toc-text">信息扫描课程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E4%BF%A1%E6%81%AF%E6%89%AB%E6%8F%8F"><span class="toc-text">主机信息扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E6%89%AB%E6%8F%8F"><span class="toc-text">网络信息扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">网络信息获取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F%E8%AF%BE%E7%A8%8B"><span class="toc-text">漏洞扫描课程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F"><span class="toc-text">系统漏洞扫描</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F"><span class="toc-text">网站漏洞扫描</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C2"><span class="toc-text">实验2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#KALI%E5%BA%94%E7%94%A8%E8%AF%BE%E7%A8%8B"><span class="toc-text">KALI应用课程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#kalli%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">kalli信息收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kali%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90"><span class="toc-text">Kali漏洞分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kali%E5%AF%86%E7%A0%81%E6%94%BB%E5%87%BB"><span class="toc-text">Kali密码攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kali%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-text">Kali漏洞利用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kali%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81"><span class="toc-text">Kali权限维持</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Kali%E6%B5%8B%E8%AF%95%E5%88%86%E6%9E%90"><span class="toc-text">Kali测试分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C3"><span class="toc-text">实验3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E8%AF%BE%E7%A8%8B"><span class="toc-text">密码破解课程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3"><span class="toc-text">本地密码破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3"><span class="toc-text">远程密码破解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E6%94%BB%E5%87%BB"><span class="toc-text">SQL注入漏洞攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E5%88%9D%E6%8E%A2"><span class="toc-text">SQL注入初探</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%B7%A5SQL%E6%B3%A8%E5%85%A5"><span class="toc-text">手工SQL注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL%E6%B3%A8%E5%85%A5%E6%B7%B1%E5%85%A5"><span class="toc-text">SQL注入深入</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSRF%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB"><span class="toc-text">CSRF跨站请求伪造攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%AF%86%E7%A0%81%E7%A0%B4%E8%A7%A3%E6%94%BB%E5%87%BB"><span class="toc-text">Web密码破解攻击</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C4"><span class="toc-text">实验4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%BF%97%E6%B8%85%E9%99%A4"><span class="toc-text">日志清除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97%E6%B8%85%E9%99%A4"><span class="toc-text">Linux系统日志清除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows%E7%B3%BB%E7%BB%9F%E6%97%A5%E5%BF%97%E6%B8%85%E9%99%A4"><span class="toc-text">Windows系统日志清除</span></a></li></ol></li></ol></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div><div id="post-meta">发布于&nbsp;<time datetime="2024-10-09T13:42:25.045Z">2024-10-09</time></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>信息安全技术实验</span></h1>
+<p>分享下答案</p>
+<span id="more"></span><!-- more -->
+
+<meta name="referrer" content="no-referrer">
+
+
+<h1 id="该实验会记录时长，建议先完成至综合测验部分（中途不需要挂在网页后台），一段时间后再写实验总结"><a href="#该实验会记录时长，建议先完成至综合测验部分（中途不需要挂在网页后台），一段时间后再写实验总结" class="headerlink" title=" 该实验会记录时长，建议先完成至综合测验部分（中途不需要挂在网页后台），一段时间后再写实验总结"></a><font color='red'> 该实验会记录时长，建议先完成至综合测验部分（中途不需要挂在网页后台），一段时间后再写实验总结</font></h1><h2 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png"/></span></h2><h3 id="信息扫描课程"><a href="#信息扫描课程" class="headerlink" title="信息扫描课程"></a>信息扫描课程</h3><h4 id="主机信息扫描"><a href="#主机信息扫描" class="headerlink" title="主机信息扫描"></a>主机信息扫描</h4><p><a href="https://mengchunm.github.io/font">https://mengchunm.github.io/font</a></p>
+<details class="tag-plugin folding" child="codeblock"><summary><span>主机信息探测实验</span></summary><div class="body"><p>DDDDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>端口服务探测实验</span></summary><div class="body"><p>ABDCA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>操作系统指纹探测实验</span></summary><div class="body"><p>【填空题】直接ping目标主机的时，数据包是默认发送了____个。（见图1覆盖箭头，请按标准填写）</p><p>【正确答案】：4</p><p>【填空题】使用nmap –O命令得到的系统指纹结果中，可以看到netbios-ssn服务所开启的端口是____（见图4覆盖处，请按标准填写）</p><p>【正确答案】：139</p><p>BCABD</p></div></details>
+
+<h4 id="网络信息扫描"><a href="#网络信息扫描" class="headerlink" title="网络信息扫描"></a>网络信息扫描</h4><details class="tag-plugin folding" child="codeblock"><summary><span>路由信息探测实验</span></summary><div class="body"><p>DABB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>交换式网络嗅探实验</span></summary><div class="body"><p>【填空题】在设置过滤规则时，协议捕编辑是选项卡的第四个选项是____【见图15中覆盖部分】</p><p>【正确答案】：Advanced</p><p>【填空题】在进行对FTP数据捕获的结果中，可以看到USER用户名是____（见图29覆盖处，请按标准填写）</p><p>【正确答案】：test</p><p>CDADB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>网络连通探测实验</span></summary><div class="body"><p>【单选题】如上图3，ping 127.0.0.1时，发送数据为多少字节 ？</p><p>A. 32</p><p>B. 256</p><p>C. 64</p><p>D. 128</p><p>【正确答案】：C</p><p>ACDBD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>局域网信息探测实验</span></summary><div class="body"><p>【单选题】在定制扫描选项时，“General”选项卡中“Max.threads”最大可以取值为【 】</p><p>A. 500</p><p>B. 1000</p><p>C. 2000</p><p>D. 100</p><p>【正确答案】：B</p><p>DBDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>DNS域名信息探测实验</span></summary><div class="body"><p>DDABD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>网络注册信息探测实验</span></summary><div class="body"><p>使用whois.chinaz.com站长之家查询注册信息结果中，可以得到baidu的创建时间____（见图4覆盖处，请按标准填写）</p><p>【正确答案】：1999年10月11日</p><p>【填空题】使用whoistd工具查询注册信息结果中，可以得到的注册商Registrar是____（见图6覆盖处，请按标准填写）</p><p>【正确答案】：MarkMonitor, Inc.</p><p>DCABB</p></div></details>
+
+<h4 id="网络信息获取"><a href="#网络信息获取" class="headerlink" title="网络信息获取"></a>网络信息获取</h4><details class="tag-plugin folding" child="codeblock"><summary><span>网站后台扫描</span></summary><div class="body"><p>【填空题】wscan完成扫描后，在扫描结果中可以找到到地址http：&#x2F;&#x2F;100.100.0.6&#x2F;admin.asp?action&#x3D;____（见图6覆盖处，请按标准填写）</p><p>【正确答案】：login</p><p>BDBCA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>综合扫描（X-scan）实验</span></summary><div class="body"><p>【填空题】在X-scan端口配置的预设知名服务端口中，pop3的端口号为____（见图12覆盖处，请按标准提填写）</p><p>【正确答案】：110</p><p>【填空题】在X-scan扫描结果报告中，可以看到漏洞“SMB运行在445端口”的风险等级是____（见图18覆盖处，请按标准填写）</p><p>【正确答案】：中</p><p>BCADD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>综合扫描（Nessus）实验</span></summary><div class="body"><p>【填空题】在新建扫描模板时，扫描类型Type为Run Now、Scheduled和____（见图26覆盖处，请按标准填写）</p><p>【正确答案】：Template</p><p>BAADD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Wireshark抓包实验</span></summary><div class="body"><p>【填空题】在抓包过程中，深蓝色的数据报文为____（见步骤1.5文字解释，请按标准填写）</p><p>【正确答案】：DNS</p><p>DCBCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Wireshark工具的使用与TCP数据包分析实验</span></summary><div class="body"><p>【填空题】 FTP协议的抓包中，操作机发送请求时的信息是pass____，表示操作机以发送pass命令。（见图9覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>CBDAC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工信息收集1</span></summary><div class="body"><p>【填空题】当一个搜索蜘蛛访问一个站点时，它会首先检查该站点根目录下是否存在____（答案见步骤1.1，请按标准填写）</p><p>【正确答案】：robots.txt</p><p>【填空题】发现网站有.git目录，重塑网页代码用到的工具是____（请按标准填写，注意大小写）</p><p>【正确答案】：GitHack</p><p>AABDD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工信息收集2</span></summary><div class="body"><p>我也不会，哈哈</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>工具扫描</span></summary><div class="body"><p>【填空题】hydra指定扫描用户名的参数是____（注意使用英文字符，注意大小写）</p><p>【正确答案】：-l</p><p>【填空题】BurpSuite的默认监听（拦截）端口为____</p><p>【正确答案】：8080</p><p>DCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>信息收集</span></summary><div class="body"><p>【单选题】从哪可以搜集到网站相关信息</p><p>A. LOGO</p><p>B. 标题</p><p>C. 版权所有</p><p>D. A、B、C</p><p>【正确答案】：D</p><p>DBACD</p></div></details>
+
+<h3 id="漏洞扫描课程"><a href="#漏洞扫描课程" class="headerlink" title="漏洞扫描课程"></a>漏洞扫描课程</h3><h4 id="系统漏洞扫描"><a href="#系统漏洞扫描" class="headerlink" title="系统漏洞扫描"></a>系统漏洞扫描</h4><details class="tag-plugin folding" child="codeblock"><summary><span>系统漏洞探测（Fluxay）实验</span></summary><div class="body"><p>【填空题】在高级扫描设置界面中，可以看到目标系统可以设置为ALL、Windows NT&#x2F;2000、____（见图5覆盖处，请按标准填写）</p><p>【正确答案】：Linux&#x2F;Unix</p><p>【填空题】在对FTP主机中的所有name设置扫描时，扫描的主机类型有POP3、FTP、NT&#x2F;98、IIS&#x2F;FRONT PAGE和____（见图13覆盖处，请按标准填写）</p><p>【正确答案】：SQL</p><p>DBCA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>利用retina探测系统弱点实验</span></summary><div class="body"><p>DADBA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Serv-U目录遍历漏洞扫描实验</span></summary><div class="body"><p>【填空题】在Nessus中添加新的扫描策略时，setting type有Basic、Port Scanning、Performance、Advanced四种。（见图6覆盖处，请按标准填写）</p><p>【正确答案】：Port Scanning</p><p>【填空题】在查看“Ftpfiles.txt”文件时，可以得到文件内容为：This is a ftp site test file!（见图18覆盖处，请按标准填写）</p><p>【正确答案】：ftp</p><p>AAADB</p></div></details>
+
+<h4 id="网站漏洞扫描"><a href="#网站漏洞扫描" class="headerlink" title="网站漏洞扫描"></a>网站漏洞扫描</h4><details class="tag-plugin folding" child="codeblock"><summary><span>网站漏洞扫描（Wapiti）实验</span></summary><div class="body"><p>【填空题】示例XSS漏洞是以什么HTTP方法传递参数的GET（填写“GET”或“POST”，注意大小写）</p><p>【正确答案】：GET</p><p>CCCD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Iiswrite漏洞扫描实验</span></summary><div class="body"><p>【填空题】在查看目标机网站漏洞时，右键可以看到选项有Visit web(浏览网站)、Put file（上传文件）、Export（导出列表）和Delete（见图4覆盖处，请按标准填写）</p><p>【正确答案】：Delete</p><p>【填空题】试验中禁止webda后，再次用iisputscanner扫描网站时，就看不到该漏洞了，说明漏洞已经修补成功，其中扫描结果“PUT”状态为NO（见图16覆盖处，请按标准填写）</p><p>【正确答案】：NO</p><p>DACA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>网站漏洞扫描（owasp-zap）实验</span></summary><div class="body"><p>【填空题】<br>查看owasp zap工具的编码&#x2F;解码功能时，当输入 “basic”该字符的md5哈希值为F17AAABC20BFE045075927934FED52D2（见图16覆盖处，请按标准填写）</p><p>【正确答案】：F17AAABC20BFE045075927934FED52D2</p><p>BCCD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>网站漏洞扫描（Vega）实验</span></summary><div class="body"><p>【填空题】选择的默认扫描模块中是否包含扫描XSS漏洞的模块是（ 回答“是”或“否”）</p><p>【正确答案】：是</p><p>BDBD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>综合漏洞探测（Nessus）实验</span></summary><div class="body"><p>【填空题】在Nessus中添加新的扫描策略时，setting type有Basic、Port Scanning、Performance、Advanced四种。（见图5覆盖处，请按标准填写）</p><p>【正确答案】：Performance</p><p>ADABCA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>AWVS工具收集</span></summary><div class="body"><p>ACBAC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>APPSCAN信息收集</span></summary><div class="body"><p>【填空题】本次爬区页面使用的扫描模式是（填写“完全扫描”或“仅探索”或“仅测试”）仅探索</p><p>【正确答案】：仅探索</p><p>CCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>BurpSuite信息收集</span></summary><div class="body"><p>BBACD</p></div></details>
+
+<h2 id="实验2"><a href="#实验2" class="headerlink" title="实验2"></a>实验2<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png"/></span></h2><h3 id="KALI应用课程"><a href="#KALI应用课程" class="headerlink" title="KALI应用课程"></a>KALI应用课程</h3><h4 id="kalli信息收集"><a href="#kalli信息收集" class="headerlink" title="kalli信息收集"></a>kalli信息收集</h4><details class="tag-plugin folding" child="codeblock"><summary><span>Kali-安全渗透测试一般流程实验</span></summary><div class="body"><p>CBBDD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-信息搜集之GoogleHack实验</span></summary><div class="body"><p>ABDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-信息搜集之目标获取实验</span></summary><div class="body"><p>【填空题】使用 Dig 命令对163.com进行测试时，AUTHORITY SECTION 的type类型是 SOA （见图6覆盖处，请按标准填写）</p><p>【正确答案】：SOA</p><p>【填空题】在使用dnsenum对163.com进行测试时，其结果中主机地址（Host’s addresses）信息的类型是 A （见图13覆盖处，请按标准填写）</p><p>【正确答案】：A</p><p>DBDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-信息搜集之主机探测实验</span></summary><div class="body"><p>【填空题】使用命令dmitry 163.com，查看其网站的端口信息时，可以得到其网站的80端口状态为 open （见图11覆盖处，请按标准填写）</p><p>【正确答案】：open</p><p>【填空题】使用wafw00f <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 命令查看waf防护时，其结果中出现 “the site http：&#x2F;&#x2F;<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> seems to be behind a WAF”,表明存在waf产品防护。（见图14覆盖处，请按标准填写）</p><p>【正确答案】：behind</p><p>CDDA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-信息搜集之主机扫描实验</span></summary><div class="body"><p>【填空题】nmap扫描结果中，21端口的服务SERVICE是 ftp （见图14覆盖处，请按标准填写）</p><p>【正确答案】：ftp</p><p>CCCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-信息搜集之指纹识别实验</span></summary><div class="body"><p>【填空题】以telnet 命令连接端口进行探测时，结果中可以看出ftp服务器软件及版本信息为：FileZilla Server version 0.9.46 beta（见图2覆盖处，请按标准填写）.</p><p>【正确答案】：FileZilla</p><p>【填空题】在查看p0f截取的数据时，可以得到其参数params&#x3D; none（见图8覆盖处，请按标准填写）</p><p>【正确答案】：none</p><p>DDCC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-信息搜集之协议分析实验</span></summary><div class="body"><p>【填空题】使用命令sslscan <a target="_blank" rel="noopener" href="http://www.alipay.com/">www.alipay.com</a> 查看支付宝证书信息时，结果中Testing SSL server <a target="_blank" rel="noopener" href="http://www.alipay.com/">www.alipay.com</a> on port 443是测试SSL服务器使用的端口号（见图10覆盖处，请按标准填写）</p><p>【正确答案】：443</p><p>CABD</p></div></details>
+
+<h4 id="Kali漏洞分析"><a href="#Kali漏洞分析" class="headerlink" title="Kali漏洞分析"></a>Kali漏洞分析</h4><details class="tag-plugin folding" child="codeblock"><summary><span>Kali- 漏洞分析之OpenVAS安装实验</span></summary><div class="body"><p>DDBA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之OpenVAS使用实验</span></summary><div class="body"><p>【填空题】查看漏洞结果中远程攻击目标有http：&#x2F;&#x2F;100.100.0.15&#x2F;vicnum&#x2F; test.php （见图19覆盖处，请按标准填写，IP以实际实验为准）</p><p>【正确答案】：test.php</p><p>DBDD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之扫描工具实验</span></summary><div class="body"><p>【填空题】使用lynis命令查看系统信息时，其结果中报告版本Report Version为 1.0（见图10覆盖处，请按标准填写）</p><p>【正确答案】：1.0</p><p>【填空题】在漏洞检测结果中，可以得到记录的主机名Assuming the OS is是linux（见图12覆盖处，请按标准填写）</p><p>【正确答案】：linux</p><p>DBBC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之WEB爬行实验</span></summary><div class="body"><p>【填空题】在对目标机进行dirb命令进行目录扫描结果中，其列表文件位置为WORDLIST_FILES:&#x2F;usr&#x2F;share&#x2F;dirb&#x2F; wordlists&#x2F;common.txt（见图10覆盖处，请按标准填写）</p><p>【正确答案】：wordlists</p><p>【填空题】工具Vega的扫描漏洞结果中，可以看到SQL注入漏洞中http：&#x2F;&#x2F;100.100.0.16&#x2F; WackoPicko&#x2F;users&#x2F;login.php的Method为POST（见图22覆盖处，请按标准填写，IP以实际实验为准）</p><p>【正确答案】：POST</p><p>DACD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之WEB漏洞扫描（一）实验</span></summary><div class="body"><p>【填空题】可以看到目标机DavTestDir_sg28HqTdwIX6bG文件中新上传的文件后缀为asp、 aspx、cfm、cgi、html、jhtml、jsp、php、pl、shtml、txt。（见图10覆盖处，请按标准填写）</p><p>【正确答案】：aspx</p><p>【填空题】使用 “–version”的命令结果中，可以得到其版本为0.2 （见图13覆盖处，请按标准填写）</p><p>【正确答案】：0.2</p><p>【填空题】全面扫描结果中，可以看到其扫描方法Method为GET（见图23覆盖处，请按标准填写）</p><p>【正确答案】：GET</p><p>CABDCD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之WEB漏洞扫描（二）实验</span></summary><div class="body"><p>【填空题】关于joomscan结果中可以看到，joomscan版本 0.0.7？。（见图4覆盖处，请按标准填写）</p><p>【正确答案】：0.0.7</p><p>【填空题】在浏览器中查看报告信息，可以得到发现的漏洞数目为4（见图30覆盖处，请按标准填写）</p><p>【正确答案】：4</p><p>DDCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之数据库评估（一）实验</span></summary><div class="body"><p>【填空题】破解成功后，可以看到目标服务器的用户名为 root，密码为hongya。（见图13覆盖处，请按标准填写）</p><p>【正确答案】：root</p><p>CDDD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之数据库评估（二）实验</span></summary><div class="body"><p>【填空题】查看版本信息是，可以得到目标操作系统为32位（见图2覆盖处，请按标准填写）</p><p>【正确答案】：32</p><p>【填空题】请将图12中覆盖处的内容写出来mysql（见图14中覆盖处，请按标准填写）</p><p>【正确答案】：mysql</p><p>【填空题】请将图中覆盖处的内容写出来V4FP（见图17中覆盖处，请按标准填写）</p><p>【正确答案】：V4FP</p><p>CBDD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之Web应用代理实验</span></summary><div class="body"><p>【填空题】Burp拦截结果中，可以看到其Accept-Language为en- US，en；q&#x3D;0.5。（见图7覆盖处，请按标准填写）</p><p>【正确答案】：US</p><p>【填空题】报告结果中可以看到中等警报Medium个数为 3 （见图26覆盖处，请按标准填写）</p><p>【正确答案】：3</p><p>DBCDB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之BurpSuite实验</span></summary><div class="body"><p>【填空题】在burp拦截的数据中，看可以看到登陆请求数据包的投递地址为http：&#x2F;&#x2F;100.100.0.36&#x2F;admin&#x2F; login .asp（见图10覆盖处，请按标准填写）</p><p>【正确答案】：login</p><p>【填空题】破解结果中， 可以看到密码为qwerasdf的状态状态Status是302 ，其返回长度不同于其他返回数据包，很有可能是猜解出来的密码。（见图19覆盖处，请按标准填写）</p><p>【正确答案】：302</p><p>【填空题】成功登录后台管理后，点击分类管理，可以看到有三个模块：大类管理、小类管理、 类别转移（见图22覆盖处，请按标准填写）</p><p>【正确答案】：类别转移</p><p>DCDDD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞分析之Fuzz工具实验</span></summary><div class="body"><p>DACBD</p></div></details>
+
+<h4 id="Kali密码攻击"><a href="#Kali密码攻击" class="headerlink" title="Kali密码攻击"></a>Kali密码攻击</h4><details class="tag-plugin folding" child="codeblock"><summary><span>Kali- 密码攻击之在线攻击工具实验</span></summary><div class="body"><p>【填空题】使用findmyhash破解密码结果中可知结果为 1（见图12覆盖处，请按标准填写）</p><p>【正确答案】：1</p><p>【填空题】命令破解ssh的结果中，可以得到目标机100.100.0.16的用户名:root，密码：123456，其服务是ssh，端口为22（见图20覆盖处，请按标准填写）</p><p>【正确答案】：22</p><p>【填空题】在medusa暴力破解结果中，可以得到User：root，password： 123456（见图22覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>【填空题】枚举结果中可以得到其candidate为“123456”，size为30（见图33覆盖处，请按标准填写）</p><p>【正确答案】：30</p><p>DDDCCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-密码攻击之离线攻击工具（一）实验</span></summary><div class="body"><p>【填空题】创建结果中可以看到生成659TB大的文件，一共有 66155263819776 行。（见图3覆盖处，请按标准填写）</p><p>【正确答案】：66155263819776</p><p>【填空题】破解结果中可以看出，哈希值d111b38c0e73bc867c4bad4023606a0e0df64c2f的原文密码为 password01 （见图19覆盖处，请按标准填写）</p><p>【正确答案】：password01</p><p>【填空题】判断结果中，可以得到哈希值2132f297a5a7a5a743894a0e4a801fc3的加密方式可能为MD2 、MD5、MD4、Double MD5等。（见图22覆盖处，请按标准填写）</p><p>【正确答案】：MD2</p><p>【填空题】从输出的信息中，可以看到6bcec2ba2597f089189735afeaa300d4哈希值可能是使用MD5加密的。（见图25覆盖处，请按标准填写）</p><p>【正确答案】：MD5</p><p>【填空题】查看破解结果，可以看到John成功破解了1个账户密码，其用户名为 root，密码为123456。（见图30覆盖处，请按标准填写）</p><p>【正确答案】：root</p><p>【填空题】破解结果中，可以看到一个账户密码破解成功，即User：root，Password： 123456（见图34覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>CCCBDA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-密码攻击之离线攻击工具（二）实验</span></summary><div class="body"><p>【填空题】结果中可以得到哈希值：ab56b4d92b40713acc5af89985d4b786的 破解结果是 abcde（见图覆盖处，请标准填写）</p><p>【正确答案】：abcde</p><p>【填空题】实验中正确载入哈希值之后，可以看到LM Pwd2为empty（见图11覆盖处，请按标准填写）</p><p>【正确答案】：empty</p><p>【填空题】破解成功后，可以按到LM Pwd 1是 123456 （见图12覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>DECD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-密码攻击之哈希传递攻击实验</span></summary><div class="body"><p>【填空题】从返回的哈希值中可以看到第一个用户为 Administrator（见图4覆盖处，请按标准填写）</p><p>【正确答案】：Administrator</p><p>EDAD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-无线安全分析工具实验</span></summary><div class="body"><p>EDCB</p></div></details>
+
+<h4 id="Kali漏洞利用"><a href="#Kali漏洞利用" class="headerlink" title="Kali漏洞利用"></a>Kali漏洞利用</h4><details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞利用之检索与利用实验</span></summary><div class="body"><p>【填空题】在相关的漏洞描述中， 可以看到mssql7.0的远程DOS漏洞路径为：&#x2F;usr&#x2F;share&#x2F;exploitdb&#x2F;platforms&#x2F;.&#x2F;windows&#x2F;dos&#x2F; 562图4覆盖处，请按标准填写）</p><p>【正确答案】：562</p><p>ADBD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞利用之Metasploit基础实验</span></summary><div class="body"><p>【填空题】在预配置模块中，可以看到模块有auxiliary、exploit、payload和post（见图6覆盖处，请按标准填写）</p><p>【正确答案】：post</p><p>【填空题】目标机访问<code>http://100.100.0.15:8080/EXxX3ns4</code>时，查看其PDF内容为：Hello World !（见图23覆盖处，请按标准填写）</p><p>【正确答案】：World</p><p>DACADD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞利用之Meterpreter介绍实验</span></summary><div class="body"><p>【填空题】show命令的使用说明结果中，可以得到其可用的模板有all,encoders,nops,exploits,payloads,auxiliary,plugins,info,options.（见图5覆盖处，请按标准填写）</p><p>【正确答案】：payloads</p><p>【填空题】使用命令“sysinfo”查看系统信息时，可以得到目标机OS信息 3.10.0 （见图14覆盖处，请按标准填写）</p><p>【正确答案】：3.10.0</p><p>ABDDDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞利用之Metasploit渗透测试实验</span></summary><div class="body"><p>DEAB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞利用之BeEF实验</span></summary><div class="body"><p>【填空题】结果中可以看到beef主页检测到在线主机IP为127.0.0.1（即本机），点击右边“Details”查看详细信息，可以知道其浏览器版本Browser Version为 31（见图4覆盖处，请按标准填写）</p><p>【正确答案】：31</p><p>【填空题】实验发起攻击后，可以看到返回值为hongyaa，攻击成功。（见图7覆盖处，请按标准填写）</p><p>【正确答案】：hongyaa</p><p>【填空题】进入配置文件查看到其中的pass这是与metasploit通信约定的密码，其默认为 abc123（见图16覆盖处，请按标准填写）</p><p>【正确答案】：abc123</p><p>BADBB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-漏洞利用之SET实验</span></summary><div class="body"><p>【填空题】点击查看登陆记录，可以看到其PersistentCookie状态为 yes（见图9覆盖处，请按标准填写）</p><p>【正确答案】：yes</p><p>BABABD</p></div></details>
+
+<h4 id="Kali权限维持"><a href="#Kali权限维持" class="headerlink" title="Kali权限维持"></a>Kali权限维持</h4><details class="tag-plugin folding" child="codeblock"><summary><span>Kali-嗅探欺骗与中间人攻击实验</span></summary><div class="body"><p>【填空题】其配置完成页面中，可以看到信息GROUP 2：ANY (all the hosts in the list)（见图8覆盖处，请按标准填写）</p><p>【正确答案】：ANY</p><p>【填空题】目标机登陆后，操作机中得到信息DHCP：【FA:16:3E:4E:93:4C】REQUEST 100.100.0.8（见图10覆盖处，请按标准填写，目标IP及MAC地址以实验为准）</p><p>【正确答案】：REQUEST</p><p>BCCDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-权限维持之后门实验</span></summary><div class="body"><p>【填空题】可以看到webshell的代码已经被处理过，其代码为$b&#x3D;strrev(“edoced_4”. 6esab”)。（见图2覆盖处，请按标准填写）</p><p>【正确答案】：6esab</p><p>【填空题】连接成功后，使用whoami命令查看目标机操作用户是，其结果为www-data（见图5覆盖处，请按标准填写）</p><p>【正确答案】：www-data</p><p>【填空题】连接端使用命令whoami查看用户，可以看到其结果为root（见图7覆盖处，请按标准填写）</p><p>【正确答案】：root</p><p>DBCD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-权限维持之Tunnel实验</span></summary><div class="body"><p>ADDD</p></div></details>
+
+<h4 id="Kali测试分析"><a href="#Kali测试分析" class="headerlink" title="Kali测试分析"></a>Kali测试分析</h4><details class="tag-plugin folding" child="codeblock"><summary><span>Kali-逆向工程工具实验</span></summary><div class="body"><p>DABBDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-压力测试工具实验</span></summary><div class="body"><p>【填空题】使用inviteflood进行攻击是可以看到用到目标主机的端口为 5060 （见图1覆盖处，请按标准填写）</p><p>【正确答案】：5060</p><p>【填空题】结果可以看到其攻击是将4569端口从4569端口泛洪10000次。（见图2覆盖处，请按标准填写）</p><p>【正确答案】：4569</p><p>DDCDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-数字取证工具实验</span></summary><div class="body"><p>【填空题】显示的测试项目结果中，可以看到其路径有&#x2F;usr&#x2F;sbin&#x2F;chkrootkit（见图4覆盖处，请按标准填写）</p><p>【正确答案】：sbin</p><p>【填空题】文件信息中可以看到文件VistaSP0x64适用于Windows Vista SP0 x64。（见图7覆盖处，请按标准填写）</p><p>【正确答案】：SP0</p><p>【填空题】计算aaa的档案结果中，可以得到结果e4773f6627362b74b185fa03ce37783a *aaa（见图12覆盖处，请按标准填写）</p><p>【正确答案】：*aaa</p><p>BCDCD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Kali-报告工具与系统服务实验</span></summary><div class="body"><p>【填空题】在查看主机开放端口时，可以看目标机开通了21端口，其服务server为ftp （见图11覆盖处，请按标准填写）</p><p>【正确答案】：ftp</p><p>【填空题】扫描完成后可以看到目标机端口25的服务SERVICE为 smtp（见图18覆盖处，请按标准填写）</p><p>【正确答案】：smtp</p><p>BDBDCA</p></div></details>
+
+<h2 id="实验3"><a href="#实验3" class="headerlink" title="实验3"></a>实验3<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png"/></span></h2><h3 id="密码破解课程"><a href="#密码破解课程" class="headerlink" title="密码破解课程"></a>密码破解课程</h3><h4 id="本地密码破解"><a href="#本地密码破解" class="headerlink" title="本地密码破解"></a>本地密码破解</h4><details class="tag-plugin folding" child="codeblock"><summary><span>Windows2003密码破解实验</span></summary><div class="body"><p>【填空题】请写出导出的本地密码散列文件的散列值是____（见图13覆盖处，请按标准填写）</p><p>【正确答案】：12BE6</p><p>【填空题】请使用SAMInside工具破解Windows本地密码散列文件得到的密码写出来是____（见图20覆盖处，请按标准填写）</p><p>【正确答案】：8967584106754</p><p>ADAB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>WindowsXP密码破解实验实验</span></summary><div class="body"><p>【单选题】以下哪个是破解出来“test”用户的密码？</p><p>A. 8967584106754</p><p>B. 896758410675</p><p>C. 9867584106754</p><p>D. 9867584106755</p><p>【正确答案】：A</p><p>ADD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Windows7系统本地密码破解实验</span></summary><div class="body"><p>【填空题】请将使用PwDump7获取的用户散列值结果写出来____（见图9覆盖处，请按标准填写）</p><p>【正确答案】：AD44</p><p>【填空题】请将使用ophcrack工具破解散列值过程中，成功添加彩虹表后“Status”结果写出来____（见图15覆盖处，请按标准填写）</p><p>【正确答案】：on disk</p><p>ABD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Windows系统密码本地查看实验</span></summary><div class="body"><p>【填空题】请将上述被遮盖的查看结果进行写出来____（见图8覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>【填空题】请将上述被遮盖的查看结果进行写出来____（没错，和上题一模一样）</p><p>【正确答案】：123456</p><p>ADAB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Salt型密码散列本地破解实验</span></summary><div class="body"><p>【填空题】请将简单模式的破解结果写入____（见图7覆盖处，请按标准填写）</p><p>【正确答案】：1resu</p><p>【填空题】请将字典模式的破解结果写入____（见图8覆盖处，请按标准填写）</p><p>【正确答案】：just4me</p><p>【填空题】请将暴力模式的破解结果写入 ____</p><p>【正确答案】：38947829</p><p>DDDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Linux系统本地密码破解实验</span></summary><div class="body"><p>【填空题】请将上述被遮盖的破解结果进行写出来____（见图8覆盖处，请按标准填写）</p><p>【正确答案】：$6$6VM</p><p>【填空题】请将上述被遮盖的破解结果进行写出来____（见图10覆盖处，请按标准填写）</p><p>【正确答案】：adminuser</p><p>【填空题】请将上述被遮盖的破解结果进行写出来____（见图11覆盖处，请按标准填写）</p><p>【正确答案】：testpass</p><p>【填空题】请将上述被遮盖的破解结果进行写出来____（见图13覆盖处，请按标准填写）</p><p>【正确答案】：27861</p><p>CDBA CDBD</p></div></details>
+
+<h4 id="远程密码破解"><a href="#远程密码破解" class="headerlink" title="远程密码破解"></a>远程密码破解</h4><details class="tag-plugin folding" child="codeblock"><summary><span>网络服务远程密码破解(Brutus)实验</span></summary><div class="body"><p>【填空题】请将Brutus破解 POP3密码后的结果写入591（见图4覆盖处，请按标准填写）</p><p>【正确答案】：591</p><p>【填空题】使用Bruter破解 POP3 密码形式下用户root的密码写入root1234（见图8覆盖处，请按标准填写）</p><p>【正确答案】：root1234</p><p>【填空题】使用 Bruter 基于密码字典破解MSSQL密码结果写入123456（见图10覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>【填空题】使用 Bruter 基于密码字典破解HTTP密码的结果写入123456（见图17覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>ABAAB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>网络服务远程密码破解（Hydra）实验</span></summary><div class="body"><p>【填空题】请将图2覆盖处使用 hydra 工具基于密码字典破解结果写出来1q2w3e4r</p><p>【正确答案】：1q2w3e4r</p><p>【填空题】请将图3覆盖处基于密码字典破解结果写出来123456</p><p>【正确答案】：123456</p><p>【填空题】请将图4覆盖处使用 hydra 工具基于字典破解结果写出来123456</p><p>【正确答案】：123456</p><p>【填空题】请将图7覆盖处使用 hydra 工具基于密码字典破解结果写出来123456</p><p>【正确答案】：123456</p><p>ABCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>口令破解-01HASH基础实验</span></summary><div class="body"><p>【填空题】请将使用HashCale工具进行文件加密计算后的MD5值写出efd（见图3覆盖处，请按标准填写）</p><p>【正确答案】：efd</p><p>【填空题】请将使用WinMD5工具校验出的MD5值写出4532（见图5覆盖处，请按标准填写）</p><p>【正确答案】：4532</p><p>【填空题】请将加密后的MD5值写出7a57a5a743894a0e（见图7覆盖处，请按标准填写）</p><p>【正确答案】：7a57a5a743894a0e</p><p>【填空题】请将从网页上获得的MD5值写出499d（见图13覆盖处，请按标准填写）</p><p>【正确答案】：499d</p><p>CBA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>口令破解MD5实验</span></summary><div class="body"><p>【填空题】请将“love”的MD5加密后的值填写出来 fe309af0f4d35982（答案见图3遮盖处，请标准填写）</p><p>【正确答案】：fe309af0f4d35982</p><p>DDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>access口令破解实验</span></summary><div class="body"><p>【填空题】请将使用access数据库操作口令破解结果写出来123456（见图3覆盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>ACBAD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Office密码破解实验</span></summary><div class="body"><p>【填空题】请将破解出来的十六进制格式密码写出来3600（见图10覆盖处，请按标准填写）</p><p>【正确答案】：3600</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>wifi密码破解实验</span></summary><div class="body"><p>滑下去点下一实验就行</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>FTP远程密码破解实验</span></summary><div class="body"><p>【填空题】在TCP&#x2F;IP协议中，FTP标准命令TCP端口号为21，Port方式数据端口为20（答案见实验原理，请按标准阿拉伯数字填写）</p><p>【正确答案】：20</p><p>【填空题】在实验中，FTP破解工具通过数据端口和字典破解的结果为123456（答案如图11遮盖处，请按标准填写）</p><p>【正确答案】：123456</p><p>ADCBA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>压缩文件解密实验</span></summary><div class="body"><p>【填空题】请将破解出来的16进制密码结果写出来（6位阿拉伯数字）313233（见图8覆盖处，请按标准填写）</p><p>【正确答案】：313233</p><p>CBA</p></div></details>
+
+<h3 id="SQL注入漏洞攻击"><a href="#SQL注入漏洞攻击" class="headerlink" title="SQL注入漏洞攻击"></a>SQL注入漏洞攻击</h3><h4 id="SQL注入初探"><a href="#SQL注入初探" class="headerlink" title="SQL注入初探"></a>SQL注入初探</h4><details class="tag-plugin folding" child="codeblock"><summary><span>ASPX的SQL基础注入攻击实验</span></summary><div class="body"><p>【填空题】Pangolin程序查看到SQL注入漏洞目标机的数据库名称为master（答案详细见图9覆盖内容）</p><p>【正确答案】：master</p><p>【填空题】Pangolin自定义查询username like ‘admin%’查询到admin用户的密码为admin123（答案详细见图13覆盖内容）</p><p>【正确答案】：admin123</p><p>【填空题】Pangolin 的Dir Tree功能查看到数据库超级管理员sa的密码为123456（答案详细见图19覆盖内容）</p><p>【正确答案】：123456</p><p>BDDDA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>jsp的mysql注入攻击实验</span></summary><div class="body"><p>??</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>PHP的SQL基础注入攻击实验</span></summary><div class="body"><p>【填空题】Pangolin程序查看到SQL注入漏洞目标机的数据库名称为wordpress（答案详细见图9覆盖内容）</p><p>【正确答案】：wordpress</p><p>【填空题】Pangolin自定义查询user_login like CHAR(37, 97, 100, 109, 105, 110, 37)查询到admin用户的email账号为<a href="mailto:&#97;&#x64;&#x6d;&#x69;&#x6e;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#111;&#x72;&#x67;">&#97;&#x64;&#x6d;&#x69;&#x6e;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#101;&#46;&#111;&#x72;&#x67;</a>（答案详细见图14覆盖内容）</p><p>【正确答案】：<a href="mailto:&#97;&#100;&#109;&#105;&#110;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#111;&#x72;&#x67;">&#97;&#100;&#109;&#105;&#110;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#x2e;&#111;&#x72;&#x67;</a></p><p>【填空题】Pangolin查看用户的基本属性，sys用户的主目录为&#x2F;dev（答案详细见图15覆盖内容）</p><p>【正确答案】：&#x2F;dev</p><p>DBDDA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Mutillidae登录认证绕过实验</span></summary><div class="body"><p>【填空题】该实验利用如上方法进行sql注入绕过认证登录的用户名称为admin（答案详细见图8覆盖内容）</p><p>【正确答案】：admin</p><p>【填空题】11</p><p>【正确答案】：1</p><p>【填空题】11</p><p>【正确答案】：1</p><p>3【填空题】11</p><p>【正确答案】：1</p><p>4【填空题】11</p><p>【正确答案】：1</p><p>5【填空题】11</p><p>【正确答案】：1</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Mutillidae读取文件内容实验</span></summary><div class="body"><p>【填空题】file出错信息中查看出错文件的路径为&#x2F;owaspbwa&#x2F;mutillidae-git&#x2F;classes&#x2F;MySQLHandler.php（答案详细见图3覆盖内容,注意大小写）</p><p>【正确答案】：MySQLHandler.php</p><p>ADDDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Mutillidae获取数据库内容实验</span></summary><div class="body"><p>【填空题】该实验利用如上方法查询到当前数据库中“accounts”表的第三条数据列名为password（答案详细见图8覆盖内容）</p><p>【正确答案】：password</p><p>DDDDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>POST方式SQL注入攻击实验</span></summary><div class="body"><p>【填空题】sqlmap扫描wackopicko 库中 users 表的第9个用户是wanda（答案详细见图24覆盖内容）</p><p>【正确答案】：wanda</p><p>【填空题】sqlmap扫描wackopicko 库中 admin 表的第5个用户是bob（答案详细见图27覆盖内容）</p><p>【正确答案】：bob</p><p>ADADC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>GET方式SQL注入攻击实验</span></summary><div class="body"><p>【填空题】sql注入报错法获取到登录的用户名为admin（答案详细见图12覆盖内容）</p><p>【正确答案】：admin</p><p>【填空题】通过绕过waf过滤措施注入获取到admin用户的邮箱为<a href="mailto:&#97;&#x64;&#109;&#x69;&#x6e;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#46;&#x6f;&#114;&#x67;">&#97;&#x64;&#109;&#x69;&#x6e;&#x40;&#x65;&#x78;&#97;&#x6d;&#112;&#108;&#x65;&#46;&#x6f;&#114;&#x67;</a>（答案详细见图16覆盖内容）</p><p>【正确答案】：<a href="mailto:&#97;&#100;&#x6d;&#105;&#110;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#x65;&#x2e;&#111;&#x72;&#x67;">&#97;&#100;&#x6d;&#105;&#110;&#64;&#x65;&#x78;&#x61;&#109;&#x70;&#x6c;&#x65;&#x2e;&#111;&#x72;&#x67;</a></p><p>【填空题】sqlmap扫描到该实验目标机的PHP版本为5.5.9（答案详细见图24覆盖内容）</p><p>【正确答案】：5.5.9</p><p>【填空题】利用sqlmap的tamper脚本获取wordpress库中关于wp_users表的第一个用户名为admin（答案详细见图41覆盖内容）</p><p>【正确答案】：admin</p><p>ADADC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>SQL注入漏洞攻击实验</span></summary><div class="body"><p>【填空题】TamperData查看到Cache-Control取值为private（答案详细见图9覆盖内容）</p><p>【正确答案】：private</p><p>【填空题】sqlmap扫描到该实验目标机的iis版本为6.0（答案详细见图17覆盖内容）</p><p>【正确答案】：6.0</p><p>【填空题】字典猜解获取tb_admin表的admin用户密码为1b7f1c73a481e240（答案详细见图24覆盖内容）</p><p>【正确答案】：1b7f1c73a481e240</p><p>ADADC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>宽字符绕过转义防护的SQL注入攻击实验</span></summary><div class="body"><p>??</p></div></details>
+
+<h4 id="手工SQL注入"><a href="#手工SQL注入" class="headerlink" title="手工SQL注入"></a>手工SQL注入</h4><details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之MySQL注入基础实验</span></summary><div class="body"><p>【填空题】页面出错信息中查看警告文件的路径为&#x2F;var&#x2F;www&#x2F;html&#x2F;zvuldrill&#x2F;search.php（答案详细见图4覆盖内容,注意大小写）</p><p>【正确答案】：search.php</p><p>【填空题】本实验查询到admin的第三个列标题的内容是abc（答案详细见图5覆盖内容）</p><p>【正确答案】：abc</p><p>ADDDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之MySQL手工布尔型注入实验</span></summary><div class="body"><p>【填空题】成功判断出数据库列名后，显示的第二条留言内容为1234（答案详细见图7覆盖内容）</p><p>【正确答案】：1234</p><p>【填空题】爆库得到admin用户的密码为c4da997（答案详细见图15覆盖内容）</p><p>【正确答案】：c4da997</p><p>DADDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之MySQL手工时间型注入实验</span></summary><div class="body"><p>【填空题】访问的网页的类型是html（答案详细见图4覆盖内容）</p><p>【正确答案】：html</p><p>【填空题】时间型注入得到第一行的数据库的名称为dvwa（综合2.8-2.12操作得出或将ascii翻译成所表示的字符）</p><p>【正确答案】：dvwa</p><p>DADDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之MySQL文件读取实验</span></summary><div class="body"><p>【填空题】读取到后台的密码的hash值最后5位值是da997（答案详细见图9覆盖内容）</p><p>【正确答案】：da997</p><p>DDDDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之MySQL手工注入写一句话shell</span></summary><div class="body"><p>【填空题】爆出的网页目录的绝对路径为&#x2F;var&#x2F;www&#x2F;html&#x2F;zvuldrill（答案详细见图3覆盖内容,注意大小写区分）</p><p>【正确答案】：&#x2F;var&#x2F;www&#x2F;html&#x2F;zvuldrill</p><p>【填空题】利用union select..into outfile语句将查询到的内容及一句话木马写入文件,union查询到关于“1”字符的留言第二条的内容为1234（答案详细见图5覆盖内容）</p><p>【正确答案】：1234</p><p>【填空题】查看到search.php最后一句内容，把footer.php包含进现在的文件里来（答案详细见图12覆盖内容）</p><p>【正确答案】：footer.php</p><p>DADDC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之MySQL手工字符型注入实验</span></summary><div class="body"><p>【填空题】成功判断出数据库列名后，显示的第二条留言内容为1234（答案详细见图7覆盖内容）</p><p>【正确答案】：1234</p><p>【填空题】爆库得到admin用户的密码最后5位为da997（答案详细见图13覆盖内容）</p><p>【正确答案】：da997</p><p>DADCC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之MySQL手工宽字节注入实验</span></summary><div class="body"><p>??</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之post手工注入实验</span></summary><div class="body"><p>DADAC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>手工注入之cookie手工注入实验</span></summary><div class="body"><p>【填空题】实验所用的 SQLMap 的版本号为：1.0（见图5覆盖处，请按标准填写）</p><p>【正确答案】：1.0</p><p>【填空题】利用 SQLMap 扫描得到的数据表信息中，被遮挡的数据表为：news（见图8覆盖处，请按标准填写）</p><p>【正确答案】：news</p><p>【填空题】利用 SQLMap 扫描得到的数据表信息中，被遮挡的数据表为：news（见图9覆盖处，请按标准填写）</p><p>【正确答案】：news</p><p>【填空题】利用 SQLMap 扫描得到的字段信息中，被遮挡的字段为：id（见图10覆盖处，请按标准填写）</p><p>【正确答案】：id</p><p>【填空题】利用 SQLMap 扫描得到的字段信息中，被遮挡的字段为：id（见图12覆盖处，请按标准填写）</p><p>【正确答案】：id</p><p>【填空题】利用 SQLMap 扫描得到的用户信息中，被遮挡的用户密码为：admin（见图12覆盖处，请按标准填写）</p><p>【正确答案】：admin</p><p>【填空题】利用 SQLMap 扫描得到的用户信息中，被遮挡的用户密码为：admin（见图14覆盖处，请按标准填写）</p><p>【正确答案】：admin</p><p>DBCAD BBCBA</p></div></details>
+
+<h4 id="SQL注入深入"><a href="#SQL注入深入" class="headerlink" title="SQL注入深入"></a>SQL注入深入</h4><details class="tag-plugin folding" child="codeblock"><summary><span>sql注入--基于错误</span></summary><div class="body"><p>【填空题】一般判断是否存在基于错误的盲注和显错注入，可以输入【　　】，有报错信息，说明存在注入。（直接填写英文符号，填写中文名称不得分）<br>‘</p><p>【正确答案】：’</p><p>【填空题】从报错信息 ‘’1’’) 可以看出$id参数被【　　】包裹着。（答案见步骤4.1，按标准格式填写）<br>(‘’)</p><p>【正确答案】：(‘’)</p><p>ADAB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>宽字节注入</span></summary><div class="body"><p>【填空题】sqlmap的哪个参数可以读取服务端任意文件（请按标准格式填写，注意符号）–file-read</p><p>【正确答案】：–file-read</p><p>ADABB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>sql盲注--基于布尔</span></summary><div class="body"><p>【单选题】sqlmap注入方式technique，基于Boolean的盲注的参数是</p><p>A. Q</p><p>B. B</p><p>C. T</p><p>D. U</p><p>【正确答案】：B</p><p>ABBB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>sql盲注--基于报错</span></summary><div class="body"><p>【填空题】哪个数据库可以使用<code>exp(~(select * from(select database())as a ))</code>查询到数据库名（填写“mariadb”或“mysql”）<br>mysql</p><p>【正确答案】：mysql</p><p>【单选题】本次实验中，管理员密码使用的加密是：</p><p>A. AES</p><p>B. SHA1</p><p>C. MD5</p><p>D. ECC</p><p>【正确答案】：C</p><p>ADAB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>sql盲注--基于时间</span></summary><div class="body"><p>【填空题】sleep(5)表示延时5【　　】（填写时\分\秒\毫秒，不要填写英文字符）<br>秒</p><p>【正确答案】：秒</p><p>DBA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>sql注入导入导出</span></summary><div class="body"><p>【单选题】网址<code>http://192.168.15.86/phpaa/search.php?keywords=1&#39; union select 1,2,3,4,5,6,7,8,0x3c3f70687020406576616c28245f504f53545b6872736166655d293b3f3e,9,10,12,13,14 into outfile &#39;/var/www/html/yjh.php&#39; -- &#39;</code>中，一句话木马是以多少进制的形式存在的</p><p>A. 2</p><p>B. 8</p><p>C. 10</p><p>D. 16</p><p>【正确答案】：D</p><p>BACBB DD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>增删改函数使用及注入防御方法</span></summary><div class="body"><p>【填空题】哪个函数指定了转义字符（答案见原理，按标准格式填写，只填写函数名即可）addslashes()</p><p>【正确答案】：addslashes()</p><p>BCACC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>http头部注入</span></summary><div class="body"><p>【单选题】sleep(5)的时间单位是</p><p>A. ms</p><p>B. s</p><p>C. m</p><p>D. h</p><p>【正确答案】：B</p><p>【填空题】burpsuit中的【】模块可以进行编解码（使用小写英文字符）decoder</p><p>【正确答案】：decoder</p><p>【填空题】sqlmap的哪个选项表示从文件读取数据（按标准格式填写）-r</p><p>【正确答案】：-r</p><p>DCDBB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>堆叠注入</span></summary><div class="body"><p>【填空题】若在步骤2.3，想查看数据库名称，可以把 version() 换为【　　】（使用小写英文字符）<br>database()</p><p>【正确答案】：database()</p><p>【填空题】sqlmap中的哪个选项可以导入文本文件的数据（使用英文符号和字母）<br>-r</p><p>【正确答案】：-r</p><p>BABC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>sqlmap工具使用</span></summary><div class="body"><p>【填空题】哪个选项可以指定字段（按标准格式填写，注意符号）<br>-c</p><p>【正确答案】：-c</p><p>AABCA</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>二次注入</span></summary><div class="body"><p>【单选题】当注册用户时存在用户名字符数限制时，可以使用的工具是？</p><p>A. Vega</p><p>B. BurpSuite</p><p>C. Nmap</p><p>D. SQLmap</p><p>【正确答案】：B</p><p>BACAC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>sqlmap深入</span></summary><div class="body"><p>【填空题】获取shell权限使用的sqlmap参数命令为（请使用标准格式填写）<br>–os-shell</p><p>【正确答案】：–os-shell</p><p>BABBC</p></div></details>
+
+<h3 id="CSRF跨站请求伪造攻击"><a href="#CSRF跨站请求伪造攻击" class="headerlink" title="CSRF跨站请求伪造攻击"></a>CSRF跨站请求伪造攻击</h3><details class="tag-plugin folding" child="codeblock"><summary><span>利用burp生成POC</span></summary><div class="body"><p>答案全是1….</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>CSRF实战cms</span></summary><div class="body"><p>答案还是1….</p></div></details>
+
+<h3 id="Web密码破解攻击"><a href="#Web密码破解攻击" class="headerlink" title="Web密码破解攻击"></a>Web密码破解攻击</h3><details class="tag-plugin folding" child="codeblock"><summary><span>登录表单密码破解攻击（Mutillidae）实验</span></summary><div class="body"><p>【填空题】使用Burp对登录信息进行拦截时，其中数据包格式中login-php-submit-button&#x3D;____（见图16覆盖处，请按标准填写）</p><p>【正确答案】：Login</p><p>DDCC</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>登录表单密码破解攻击（wzaspshop）实验</span></summary><div class="body"><p>【填空题】使用burp对登录信息进行拦截时，其中数据包格式中动作action&#x3D;____（见图11覆盖处，请按标准填写）</p><p>【正确答案】：login</p><p>【填空题】破解结果中， 可以看到密码为qwerasdf的状态返回长度Length是____（见图20覆盖处，请按标准填写）</p><p>【正确答案】：356</p><p>CDCD</p></div></details>
+
+<h2 id="实验4"><a href="#实验4" class="headerlink" title="实验4"></a>实验4<span class="tag-plugin emoji"><img no-lazy="" class="inline lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png"/></span></h2><h3 id="日志清除"><a href="#日志清除" class="headerlink" title="日志清除"></a>日志清除</h3><h4 id="Linux系统日志清除"><a href="#Linux系统日志清除" class="headerlink" title="Linux系统日志清除"></a>Linux系统日志清除</h4><details class="tag-plugin folding" child="codeblock"><summary><span>linux系统日志清除实验</span></summary><div class="body"><p>【填空题】在Linux系统中，使用lastlog命令可以查询每个用户最后一次登录的设备号和时间。（答案参考2.3）</p><p>【正确答案】：lastlog</p><p>【填空题】logtamper后面可以跟三种参数，它们分别是 -h、-m 和 -w</p><p>【正确答案】：-w</p><p>【填空题】logtamper后面跟-m参数可以修改用户最后一次登录日志</p><p>【正确答案】：-m</p><p>ABD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>linux系统清除日志</span></summary><div class="body"><p>DDD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Linux中清除痕迹和隐藏自己</span></summary><div class="body"><p>DDDBC</p></div></details>
+
+<h4 id="Windows系统日志清除"><a href="#Windows系统日志清除" class="headerlink" title="Windows系统日志清除"></a>Windows系统日志清除</h4><details class="tag-plugin folding" child="codeblock"><summary><span>WindowsXP系统日志清除实验</span></summary><div class="body"><p>【填空题】使用elsave -l security -C命令删除所有安全日志，并新添加了一条日志，它的分类是系统事件。（见图30遮盖处，注意事件为517）</p><p>【正确答案】：系统事件</p><p>ABCD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Windows 7系统日志清除实验</span></summary><div class="body"><p>【填空题】在事件查看器中，Windows日志中主要包含“应用程序”、“安全”、“Setup” 、系统以及“转发事件”。 （答案见图9覆盖处，请按标准填写）</p><p>【正确答案】：系统</p><p>【填空题】在Windows中，使用wevtutil.exe cl “Security”命令可以清除安全日志。（答案参考图11，请标准填写）</p><p>【正确答案】：Security</p><p>DCB</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Windows2003系统日志清除实验</span></summary><div class="body"><p>【填空题】在本实验中，清除Windows日志使用了del *.*命令。 （答案见图18处，请标准填写）</p><p>【正确答案】：del *.*</p><p>ACD</p></div></details>
+
+<details class="tag-plugin folding" child="codeblock"><summary><span>Windows2008系统日志清除实验</span></summary><div class="body"><p>【填空题】在Apache日志的语句中，带有“logCheck”进项暴力破解的路径，其请求方式为POST。（见图8覆盖处，请按标准填写）</p><p>【正确答案】：POST</p><p>CBA</p></div></details>
+
+
+
+
+<div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div></section></div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2024/10/09/exam/">Java考试题目汇总</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/10/09/Brush/">刷机资源整合</a></div></section></div>
+
+
+
+
+
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 [@saevio]创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"post","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

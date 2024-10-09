@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta name="referrer" content="no-referrer">
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>saevio</title>
+
+  
+    <meta name="description" content="模块 1 - 4：交换的概念、VLAN 和 VLAN 间路由原文地址  哪个命令显示有关特定接口的自动 MDIX 设置的信息？   显示界面  显示控制器  显示过程  显示运行配置  要检查特定接口的自动 MDIX 设置，应使用带有 phy 关键字的 show controllers ethernet-controller 命令。     如果以太网连接的一端配置为全双工，而连接的另一端配置为半">
+<meta property="og:type" content="website">
+<meta property="og:title" content="saevio">
+<meta property="og:url" content="https://mengchunm.github.io/Cisco/1-4.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="模块 1 - 4：交换的概念、VLAN 和 VLAN 间路由原文地址  哪个命令显示有关特定接口的自动 MDIX 设置的信息？   显示界面  显示控制器  显示过程  显示运行配置  要检查特定接口的自动 MDIX 设置，应使用带有 phy 关键字的 show controllers ethernet-controller 命令。     如果以太网连接的一端配置为全双工，而连接的另一端配置为半">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i211348v1n1_211348.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-001.jpg">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i214998v1n1_207610.jpg">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i215660v1n1_215660.gif">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i215729v1n1_215729.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-002.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i271149v1n1_271147.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-003.jpg">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i297770v1n1_297770.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i331826v1n1_331826.gif">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i212653v1n3_212653.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i212656v1n1_212655.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i212683v1n2_212683.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i212684v1n3_212684.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i212655v1n2_212655.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i215797v1n1_215797.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i223314v1n1_212679.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i212625v1n1_212625.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i209408v1n1_209408.gif">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i283584v1n1_24177.jpg">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i212623v1n4_212623.png">
+<meta property="article:published_time" content="2024-10-09T13:42:25.034Z">
+<meta property="article:modified_time" content="2024-10-09T13:42:25.034Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i211348v1n1_211348.png">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">随笔</a><a class="nav-item" href="/notes/">便签</a><a class="nav-item" href="/more/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"></div></div></widget>
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+
+
+      
+
+
+
+<article class="md-text content page"><h1 id="模块-1-4：交换的概念、VLAN-和-VLAN-间路由"><a href="#模块-1-4：交换的概念、VLAN-和-VLAN-间路由" class="headerlink" title="模块 1 - 4：交换的概念、VLAN 和 VLAN 间路由"></a>模块 1 - 4：交换的概念、VLAN 和 VLAN 间路由</h1><p><a target="_blank" rel="noopener" href="https://ccna7.org/ccna2-v7-0/modules-1-4-switching-concepts-vlans-and-intervlan-routing-exam-answers/">原文地址</a></p>
+<ol>
+<li>哪个命令显示有关特定接口的自动 MDIX 设置的信息？</li>
+</ol>
+<ul>
+<li><p>显示界面</p>
+</li>
+<li><p><span style="color: #ff0000">显示控制器</span></p>
+</li>
+<li><p>显示过程</p>
+</li>
+<li><p>显示运行配置</p>
+<blockquote>
+<p>要检查特定接口的自动 MDIX 设置，应使用带有 phy 关键字的 show controllers ethernet-controller 命令。</p>
+</blockquote>
+</li>
+</ul>
+<ol start="2">
+<li><p>如果以太网连接的一端配置为全双工，而连接的另一端配置为半双工，那么在哪里会观察到后期冲突？</p>
+<ul>
+<li><p>在连接的两端</p>
+</li>
+<li><p>在连接的全双工端</p>
+</li>
+<li><p>仅在串行接口上</p>
+</li>
+<li><p><span style="color: #ff0000">在连接的半双工端</span></p>
+<blockquote>
+<p>全双工通信不会产生冲突。然而，冲突经常发生在半双工操作中。当一个连接有两种不同的双工配置时，半双工端将经历后期冲突。在以太网上发现冲突。串行接口使用以太网以外的技术。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪个命令用于设置 BOOT 环境变量，该变量定义了在交换机上哪里可以找到 IOS 映像文件？</p>
+<ul>
+<li><p>配置注册</p>
+</li>
+<li><p><span style="color: #ff0000">引导系统</span></p>
+</li>
+<li><p>引导加载程序</p>
+</li>
+<li><p>配置</p>
+<blockquote>
+<p>boot系统命令用于设置BOOT环境变量。config-register 和 confreg 命令用于设置配置寄存器。引导加载程序命令支持格式化闪存文件系统、重新安装操作系统软件以及从丢失或忘记的密码中恢复的命令。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>交换机使用什么来定位和加载 IOS 映像？</p>
+<ul>
+<li><p><span style="color: #ff0000">引导环境变量</span></p>
+</li>
+<li><p>IOS镜像文件</p>
+</li>
+<li><p>邮政</p>
+</li>
+<li><p>启动配置</p>
+</li>
+<li><p>非易失性存储器</p>
+<blockquote>
+<p>BOOT 环境变量包含有关在何处查找 IOS 映像文件的信息。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪种协议为远程连接增加了安全性？</p>
+<ul>
+<li><p>FTP</p>
+</li>
+<li><p>HTTP</p>
+</li>
+<li><p>NetBEUI</p>
+</li>
+<li><p>流行音乐</p>
+</li>
+<li><p><span style="color: #ff0000">SSH</span></p>
+<blockquote>
+<p>SSH 允许技术人员安全地连接到远程网络设备以进行监控和故障排除。HTTP 建立网页请求。FTP 管理文件传输。NetBEUI 不在 Internet 上路由。POP 从电子邮件服务器下载电子邮件消息。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>思科 IOS 路由器上的 IPv4 环回接口特征是什么？</p>
+<ul>
+<li><p>需要使用 no shutdown 命令将此接口置于 UP 状态。</p>
+</li>
+<li><p><span style="color: #ff0000">环回接口是路由器内部的逻辑接口。</span></p>
+</li>
+<li><p>一台路由器只能启用一个环回接口。</p>
+</li>
+<li><p>它被分配到一个物理端口，并且可以连接到其他设备。</p>
+<blockquote>
+<p>环回接口是路由器内部的逻辑接口，只要路由器正常工作，它就会自动置于 UP 状态。它没有分配给物理端口，因此永远不能连接到任何其他设备。可以在路由器上启用多个环回接口。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>接收器不会作为残帧丢弃的最小以太网帧大小是多少？</p>
+<ul>
+<li><p><span style="color: #ff0000">64 字节</span></p>
+</li>
+<li><p>512 字节</p>
+</li>
+<li><p>1024 字节</p>
+</li>
+<li><p>1500 字节</p>
+<blockquote>
+<p>最小以太网帧大小为 64 字节。小于 64 字节的帧被视为冲突片段或残帧并被丢弃。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>交换机启动序列中的哪个步骤之后，是执行引导加载程序？</p>
+<ul>
+<li><p>CPU初始化后</p>
+</li>
+<li><p>IOS本地化后</p>
+</li>
+<li><p>Flash 文件系统初始化之后</p>
+</li>
+<li><p><span style="color: #ff0000">POST 执行后</span></p>
+<blockquote>
+<p>正确的启动顺序如下： 1.- 交换机加载并执行 POST。 2.- 交换机加载引导加载程序软件。 3.- 引导加载程序执行低级 CPU 初始化。 4.- 引导加载程序初始化闪存。 5.- 引导加载程序定位并加载默认 IOS 映像。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>添加二层交换机对网络有什么影响？</p>
+<ul>
+<li><p>丢帧数增加</p>
+</li>
+<li><p><span style="color: #ff0000">广播域大小的增加</span></p>
+</li>
+<li><p>网络冲突数量增加</p>
+</li>
+<li><p>碰撞域的大小增加</p>
+<blockquote>
+<p>将第 2 层交换机添加到网络会增加冲突域的数量并增加广播域的大小。第 2 层交换机不会减少广播流量，不会增加网络冲突的数量，也不会增加丢帧的数量。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪一特征能够描述直接转发交换？</p>
+<ul>
+<li><p>转发无错误的片段，因此切换时延迟较低。</p>
+</li>
+<li><p><span style="color: #ff0000">转发帧时不进行任何错误检查。</span></p>
+</li>
+<li><p>仅检查传出帧是否有错误。</p>
+</li>
+<li><p>缓冲用于支持不同的以太网速度。</p>
+<blockquote>
+<p>直通交换通过从 MAC 地址表中读取目标 MAC 地址和相应的交换机端口后立即转发帧来减少延迟。这种交换方法不执行任何错误检查，也不使用缓冲区来支持不同的以太网速度。错误检查和缓冲区是存储转发交换的特性。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>集线器和第 2 层局域网交换机之间最大的区别是什么？</p>
+<ul>
+<li><p><span style="color: #ff0000">集线器扩展了冲突域，交换机划分了冲突域。</span></p>
+</li>
+<li><p>集线器划分冲突域，交换机划分广播域。</p>
+</li>
+<li><p>集线器的每个端口都是一个冲突域，交换机的每个端口都是一个广播域。</p>
+</li>
+<li><p>集线器转发帧，而交换机只转发数据包。</p>
+<blockquote>
+<p>集线器仅在物理层运行，将比特作为线路信号从所有端口转发出去，并扩展网络的冲突域。在数据链路层交换转发帧，每个交换端口是一个单独的冲突域，它创建更多但更小的冲突域。交换机不管理广播域，因为广播帧总是从所有活动端口转发出去。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>关于以太网交换机帧转发决策，哪项陈述是正确的？</p>
+<ul>
+<li><p><span style="color: #ff0000">帧转发决策基于 CAM 表中的 MAC 地址和端口映射。</span></p>
+</li>
+<li><p>直通帧转发确保始终丢弃无效帧。</p>
+</li>
+<li><p>只有具有广播目标地址的帧才会转发出所有活动的交换机端口。</p>
+</li>
+<li><p>无论目标 MAC 地址如何，始终转发单播帧。</p>
+<blockquote>
+<p>直通帧转发最多只能读取帧的前 22 个字节，这不包括帧检查序列，因此可能会转发无效帧。除了广播帧，目标 MAC 地址不在 CAM 中的帧也会从所有活动端口溢出。单播帧并不总是被转发。接收到的帧的目标 MAC 地址与接收它的交换机端口相关联，因为目标存在于连接到该端口的网段上，所以不会转发接收到的帧。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>交换机缓冲区如何影响网络性能？</p>
+<ul>
+<li><p>它们对收到的数据进行错误检查。</p>
+</li>
+<li><p><span style="color: #ff0000">它们存储接收到的帧，从而防止在发生网络拥塞时过早丢弃帧。</span></p>
+</li>
+<li><p>如果速度或双工的自动协商失败，它们会为特定端口提供额外的内存。</p>
+</li>
+<li><p>它们在发生冲突时临时保存数据，直到恢复正常的数据传输。</p>
+<blockquote>
+<p>交换机具有大的帧缓冲区，允许存储等待传输的数据，因此不会丢失数据。此功能非常有用，特别是如果传入流量来自比用于传输的出口端口更快的端口。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪种交换机特性有助于保持本地流量并缓解网络拥塞？</p>
+<ul>
+<li><p><span style="color: #ff0000">高端口密度</span></p>
+</li>
+<li><p>端口速度快</p>
+</li>
+<li><p>大帧缓冲区</p>
+</li>
+<li><p>快速内部切换</p>
+<blockquote>
+<p>具有大量端口（高端口密度）的交换机会减少所需的交换机数量，并将部分流量保留在交换机本地，从而无需在交换机之间发送流量。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪个交换机组件减少了交换机内部的数据包处理时间？</p>
+<ul>
+<li><p><span style="color: #ff0000">ASIC</span></p>
+</li>
+<li><p>双处理器</p>
+</li>
+<li><p>大缓冲区大小</p>
+</li>
+<li><p>存储转发RAM</p>
+<blockquote>
+<p>Cisco 交换机中使用专用集成电路 (ASIC) 来加速交换机操作，以便交换机可以拥有更多的端口，而不会降低交换机性能。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。交换机接收到包含源 MAC 地址 000b.a023.c501 和目标 MAC 地址 0050.0fae.75aa 的第 2 层帧。按它们发生的顺序放置开关步骤。（并非所有选项都被使用。）</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i211348v1n1_211348.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 17"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 17</span></div></div>
+
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-001.jpg" alt="CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 001"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 001</span></div></div>
+
+
+
+<blockquote>
+<p>交换机处理帧的第一步是查看源 MAC 地址是否在 MAC 地址表中。如果地址不存在，交换机会添加它。然后交换机检查目标 MAC 地址并将其与 MAC 地址表进行比较。如果地址在表中，则交换机将帧转发到相应的端口。如果表中缺少地址，交换机会将帧转发到除帧到达的端口之外的所有端口。</p>
+</blockquote>
+</li>
+<li><p>哪些信息从传入帧添加到交换机表？</p>
+<ul>
+<li><p><span style="color: #ff0000">源 MAC 地址和传入端口号</span></p>
+</li>
+<li><p>目标 MAC 地址和传入端口号</p>
+</li>
+<li><p>源 IP 地址和传入端口号</p>
+</li>
+<li><p>目标 IP 地址和传入端口号</p>
+<blockquote>
+<p>当帧进入交换机时，交换机会根据源 MAC 地址“学习”或构建 MAC 地址表。交换机根据目的 MAC 地址转发帧。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪种交换方法可以确保传入帧在转发之前没有错误？</p>
+<ul>
+<li><p>直通</p>
+</li>
+<li><p>FCS</p>
+</li>
+<li><p>无片段</p>
+</li>
+<li><p><span style="color: #ff0000">存储转发</span></p>
+<blockquote>
+<p>交换机用于传输帧的两种方法是存储转发和直通交换。存储转发方法在发送帧之前使用帧校验序列 (FCS) 值对帧执行错误校验。相反，直通式交换会在标头的目标 MAC 地址部分被读取和处理后立即发送帧。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。显示多少个广播域？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i214998v1n1_207610.jpg" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 09"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 09</span></div></div>
+
+<ul>
+<li><p>1</p>
+</li>
+<li><p>4</p>
+</li>
+<li><p><span style="color: #ff0000">8</span></p>
+</li>
+<li><p>16</p>
+</li>
+<li><p>55</p>
+<blockquote>
+<p>路由器定义了一个广播边界，因此两个路由器之间的每条链路都是一个广播域。在图中，路由器之间的 4 条链路构成 4 个广播域。此外，连接到路由器的每个 LAN 都是一个广播域。图中的 4 个 LAN 导致多了 4 个广播域，因此总共有 8 个广播域。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>管理员在管理局域网时应在哪两种情况下禁用 DTP？（选择两个。）</p>
+<ul>
+<li><p><span style="color: #ff0000">将 Cisco 交换机连接到非 Cisco 交换机时</span></p>
+</li>
+<li><p>当邻居交换机使用动态自动的 DTP 模式时</p>
+</li>
+<li><p>当邻居交换机使用动态期望的 DTP 模式时</p>
+</li>
+<li><p><span style="color: #ff0000">在不应该中继的链路上</span></p>
+</li>
+<li><p>在应该动态尝试中继的链路上</p>
+<blockquote>
+<p>Cisco 最佳实践建议在不打算使用中继的链路上以及当 Cisco 交换机连接到非 Cisco 交换机时禁用 DTP。动态中继协商需要 DTP。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪两个特征描述了本地 VLAN？（选择两个。）</p>
+<ul>
+<li><p>设计用于承载用户生成的流量，这种类型的 VLAN 也称为默认 VLAN。</p>
+</li>
+<li><p><span style="color: #ff0000">本机 VLAN 流量将通过中继链路取消标记。</span></p>
+</li>
+<li><p>此 VLAN 是远程管理交换机所必需的。</p>
+</li>
+<li><p>语音流量等高优先级流量使用本地 VLAN。</p>
+</li>
+<li><p><span style="color: #ff0000">本地 VLAN 为中继的两端提供一个通用标识符。</span></p>
+<blockquote>
+<p>本地 VLAN 分配给 802.1Q 中继，以便为中继链路的两端提供通用标识符。无论分配给端口的 VLAN 本地编号是什么，或者如果端口是默认 VLAN 1，当流量通过中继时，端口都不会标记该 VLAN 中的任何帧。在链路的另一端，看不到标签的接收设备知道特定的 VLAN 编号，因为接收设备必须具有准确的本地 VLAN 编号。本机 VLAN 应该是一个未使用的 VLAN，它不同于 VLAN1、默认 VLAN 以及其他 VLAN。数据 VLAN，也称为用户 VLAN，配置为承载用户生成的流量，但高优先级流量（如 VoIP）除外。语音 VLAN 是为 VoIP 流量配置的。管理 VLAN 配置为提供对交换机管理功能的访问。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>在配置了多个 VLAN 的交换机上，哪个命令将仅从交换机中删除 VLAN 100？</p>
+<ul>
+<li><p>Switch#删除flash:vlan.dat</p>
+</li>
+<li><p>Switch(config-if)# no switchport access vlan 100</p>
+</li>
+<li><p>Switch(config-if)# no switchport trunk allowed vlan 100</p>
+</li>
+<li><p><span style="color: #ff0000">Switch(config)# no vlan 100</span></p>
+<blockquote>
+<p>要从交换机中删除所有 VLAN，将使用 delete flash:vlan.dat 命令。要更改为接口分配的 VLAN，将使用 no switchport access vlan 100 接口配置命令。要将 VLAN 100 作为中继上的允许 VLAN 删除，将使用 no switchport trunk allowed vlan 100，但这不会从交换机中删除 VLAN。要删除单个 VLAN，例如 VLAN 100，将使用 no vlan 100 全局配置命令。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员正在查看交换机 S2 上的端口和 VLAN 分配，留意到接口 Gi0&#x2F;1 和 Gi0&#x2F;2 没有包含在输出中。为什么输出中缺少这两个接口？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i215660v1n1_215660.gif" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 08"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 08</span></div></div>
+
+
+
+<ul>
+<li><p>交换机之间存在本地 VLAN 不匹配。</p>
+</li>
+<li><p>没有媒体连接到接口。</p>
+</li>
+<li><p>他们在行政上被关闭。</p>
+</li>
+<li><p><span style="color: #ff0000">它们被配置为中继接口。</span></p>
+<blockquote>
+<p>配置为中继的接口不属于 VLAN，因此不会显示在 show vlan brief 命令的输出中。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>网络包含跨越多台交换机的多个 VLAN。VLAN 20 上的设备发送广播以太网帧时，会发生什么情况？</p>
+<ul>
+<li><p>所有 VLAN 中的所有设备都可以看到该帧。</p>
+</li>
+<li><p>VLAN 20 和管理 VLAN 中的设备会看到该帧。</p>
+</li>
+<li><p><span style="color: #ff0000">只有 VLAN 20 中的设备才能看到该帧。</span></p>
+</li>
+<li><p>只有连接到本地交换机的设备才能看到该帧。</p>
+<blockquote>
+<p>VLAN 创建可以跨越多个 VLAN 段的逻辑广播域。特定 VLAN 上的设备发送的以太网帧只能被同一 VLAN 中的其他设备看到。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。所有工作站都在 VLAN 20 中正确配置。连接到交换机 SW1 的工作站无法将流量发送到 SW2 上的工作站。可以做些什么来解决这个问题？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i215729v1n1_215729.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 07"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 07</span></div></div>
+
+
+
+<ul>
+<li><p><span style="color: #ff0000">在中继链路上允许 VLAN 20。</span></p>
+</li>
+<li><p>在中继两端启用 DTP。</p>
+</li>
+<li><p>将 SW1 上的所有工作站配置为默认 VLAN 的一部分。</p>
+</li>
+<li><p>将 SW2 上的所有工作站配置为本地 VLAN 的一部分。</p>
+<blockquote>
+<p>在两台交换机上启用 DTP 只允许协商中继。图中的“Negotiation of Trunking”行显示 DTP 已启用。该图还显示了本地 VLAN 如何为 1，任何 Cisco 交换机的默认 VLAN 为 1。该图显示 PC 将位于 VLAN 20 中。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>在将分配了交换机端口的 VLAN 删除后，这些端口会发生什么情况？</p>
+<ul>
+<li><p>这些端口被禁用。</p>
+</li>
+<li><p>这些端口被置于中继模式。</p>
+</li>
+<li><p>这些端口被分配给 VLAN1（默认 VLAN）。</p>
+</li>
+<li><p><span style="color: #ff0000">这些端口停止与连接的设备通信。 </span></p>
+<blockquote>
+<p>必须为活动 VLAN 重新配置受影响的端口。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>将 IEEE 802.1Q 标准 VLAN 标记字段与说明相匹配。 （并非所有选项都会用到。）</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-002.png" alt="CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 002"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 002</span></div></div>
+
+
+
+<blockquote>
+<p>IEEE 802.1Q 标准标头包括一个 4 字节的 VLAN 标记：<strong>类型</strong>– 一个 2 字节的值，称为标签协议 ID (TPID) 值。<strong>用户优先级</strong>——支持级别或服务实现的 3 位值。<strong>规范格式标识符 (CFI)</strong> – 一个 1 位标识符，使令牌环帧能够跨以太网链路传送。<strong>VLAN ID (VID)</strong> – 一个 12 位 VLAN 标识号，最多支持 4096 个 VLAN ID。 </p>
+</blockquote>
+</li>
+<li><p>请参见图示。如果使用 Cisco 最佳实践，应在哪种交换机模式下分配端口 G0&#x2F;1？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i271149v1n1_271147.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 04"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 04</span></div></div>
+
+
+
+<ul>
+<li><p>接入</p>
+</li>
+<li><p><span style="color: #ff0000">中继</span></p>
+</li>
+<li><p>本征</p>
+</li>
+<li><p>自动</p>
+<blockquote>
+<p>路由器用于两个 VLAN 之间的路由，因此交换机端口 G0&#x2F;1 需要配置为中继模式。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>将 DTP 模式与其功能配对。（并非全部选项都要用到）。</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-1-4-Switching-Concepts-VLANs-and-InterVLAN-Routing-Exam-Answers-003.jpg" alt="CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 003"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4 交换概念、VLAN 和 VLAN 间路由考试答案 003</span></div></div>
+
+
+
+<blockquote>
+<p>如果相邻接口设置为中继或期望模式，则动态自动模式使该接口成为中继接口。动态期望模式使接口主动尝试将链路转换为中继链路。中继模式将接口置于永久中继模式并协商将相邻链路转换为中继链路。非协商模式可防止接口生成 DTP 帧。</p>
+</blockquote>
+</li>
+<li><p>交换机的Fa0&#x2F;11端口被分配到VLAN 30，如果在Fa0&#x2F;11接口输入命令no switchport access vlan 30，会发生什么情况？</p>
+<ul>
+<li><p>端口 Fa0&#x2F;11 将被关闭。</p>
+</li>
+<li><p>将显示一条错误消息。</p>
+</li>
+<li><p><span style="color: #ff0000">端口 Fa0&#x2F;11 将返回到 VLAN 1。</span></p>
+</li>
+<li><p>VLAN 30 将被删除。</p>
+<blockquote>
+<p>当输入 no switchport access vlan 命令时，端口将返回到默认的 VLAN 1。端口将作为 VLAN 1 的成员保持活动状态，并且 VLAN 30 将保持不变，即使没有其他端口与之关联。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>哪个命令显示 Fa0&#x2F;1 接口的封装类型、语音 VLAN ID 和访问模式 VLAN？</p>
+<ul>
+<li><p>显示 vlan 简介</p>
+</li>
+<li><p><span style="color: #ff0000">显示接口 Fa0&#x2F;1 交换机端口</span></p>
+</li>
+<li><p>显示 mac 地址表接口 Fa0&#x2F;1</p>
+</li>
+<li><p>显示接口中继</p>
+<blockquote>
+<p>show interfaces switchport 命令显示给定端口的以下信息： Switchport 管理模式 操作模式 管理 Trunking Encapsulation 操作 Trunking Encapsulation 协商 Trunking Access Mode VLAN Trunking Native Mode VLAN Administrative Native VLAN tagging Voice VLAN</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。技术人员正在对交换机 SW3 进行编程，以通过端口 Fa0&#x2F;20 管理语音和数据流量。配置有什么问题（如果有的话）？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i297770v1n1_297770.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 02"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 02</span></div></div>
+
+
+
+<ul>
+<li><p>配置没有问题。</p>
+</li>
+<li><p>接口 Fa0&#x2F;20 只能分配一个 VLAN。</p>
+</li>
+<li><p>mls qos trust cos 命令应引用 VLAN 35。</p>
+</li>
+<li><p><span style="color: #ff0000">用于将语音 VLAN 分配给交换机端口的命令不正确。</span></p>
+<blockquote>
+<p>语音 VLAN 应使用 switchport voice vlan 150 命令配置。交换机接口可以配置为支持一个数据 VLAN 和一个语音 VLAN。mls qos trust cos 与接口关联。必须信任语音流量，以便可以使用语音数据包中的字段对其进行分类以实现 QoS。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>在交换机端口上配置语音 VLAN 需要哪四个步骤？（选择四项。）</p>
+<ul>
+<li><p>将接口配置为 IEEE 802.1Q 中继。</p>
+</li>
+<li><p><span style="color: #ff0000">将语音 VLAN 分配给交换机端口。</span></p>
+</li>
+<li><p>在接口上激活生成树 PortFast。</p>
+</li>
+<li><p><span style="color: #ff0000">确保语音流量受信任并带有 CoS 优先级值标记。</span></p>
+</li>
+<li><p><span style="color: #ff0000">将语音 VLAN 分配给交换机端口。</span></p>
+</li>
+<li><p>使用子接口配置交换机端口接口。</p>
+</li>
+<li><p>将数据 VLAN 分配给交换机端口</p>
+</li>
+<li><p><span style="color: #ff0000">在接入模式下配置交换机端口。</span></p>
+<blockquote>
+<p>要添加 IP 电话，应在交换机端口添加以下命令： SW3(config-vlan)# vlan 150 SW3(config-vlan)# name voice SW3(config-vlan)# int fa0&#x2F;20 SW3(config- if)# switchport mode access SW3(config-if)# mls qos trust cos SW3(config-if)# switchport access vlan 150</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。PC1 无法与服务器 1 通信。网络管理员发出 show interfaces trunk 命令开始故障排除。根据此命令的输出可以得出什么结论？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i331826v1n1_331826.gif" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 01"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 01</span></div></div>
+
+
+
+<ul>
+<li><p><span style="color: #ff0000">接口 G0&#x2F;2 未配置为中继。</span></p>
+</li>
+<li><p>VLAN 20 尚未创建。</p>
+</li>
+<li><p>接口 G0&#x2F;1 封装不正确。</p>
+</li>
+<li><p>DTP 模式在接口 G0&#x2F;1 上错误地设置为动态自动。</p>
+<blockquote>
+<p>在 show interfaces trunk 输出中，没有列出 DLS1 的 G0&#x2F;2 接口。这表明该接口可能尚未配置为中继链路。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。路由器 CiscoVille 上的 VLAN 间路由配置中显示错误的原因是什么？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i212653v1n3_212653.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 14"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 14</span></div></div>
+
+
+
+<ul>
+<li><p>gig0&#x2F;0 接口不支持 VLAN 间路由。</p>
+</li>
+<li><p>未配置 no shutdown 命令。</p>
+</li>
+<li><p>CiscoVille 上的 IP 地址不正确。</p>
+</li>
+<li><p><span style="color: #ff0000">封装dot1Q 20命令未配置。  </span></p>
+<blockquote>
+<p>配置 VLAN 间路由的步骤必须按特定顺序完成。在子接口上配置IP地址前，必须先指定encapsulation dot1q VLAN_id命令。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 接口的交换机需要什么命令才能允许 VLAN 间路由？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i212656v1n1_212655.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 12"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 12</span></div></div>
+
+
+
+<ul>
+<li><p>交换端口模式访问</p>
+</li>
+<li><p>没有交换机端口</p>
+</li>
+<li><p><span style="color: #ff0000">交换端口模式中继</span></p>
+</li>
+<li><p>开关端口模式动态可取</p>
+<blockquote>
+<p>当它们被配置为 VLAN 间路由时，路由器不支持交换机使用的动态中继协议。要使单臂路由器配置起作用，连接的交换机必须使用命令 switchport mode trunk 。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>某高中的实验室网络使用 VLAN15，教职员工网络使用 VLAN30。在使用单臂路由器方法时，启用这两个 VLAN 之间的通信需要什么？</p>
+<ul>
+<li><p>需要多层交换机。</p>
+</li>
+<li><p>需要至少有两个 LAN 接口的路由器。</p>
+</li>
+<li><p>需要两组交换机，每组都有为一个 VLAN 配置的端口。</p>
+</li>
+<li><p><span style="color: #ff0000">连接到路由器时，需要一个端口配置为中继的交换机。</span></p>
+<blockquote>
+<p>使用单臂路由器，VLAN 间路由由具有单个路由器接口的路由器执行，该路由器接口连接到配置有中继模式的交换机端口。可以在单个物理路由器接口下配置多个子接口，每个子接口都为一个 VLAN 配置。交换机可以有分配给不同 VLAN 的端口，但这些 VLAN 之间的通信需要路由器的路由功能。多层交换机不用于 VLAN 间路由的单棒路由器方法。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>路由大量 VLAN 时，使用单臂路由器的 VLAN 间路由方法而不是多层交换机的 VLAN 间路由方法，会有哪两种缺点？（请选择两项。）</p>
+<ul>
+<li><p>需要多个 SVI。</p>
+</li>
+<li><p><span style="color: #ff0000">要求专用路由器。</span></p>
+</li>
+<li><p>Router-on-a-stick 需要在相同的子网上配置子接口。</p>
+</li>
+<li><p>单臂路由器要求路由器上有多个物理接口。</p>
+</li>
+<li><p><span style="color: #ff0000">多个子接口可能影响流量速度。</span></p>
+<blockquote>
+<p>使用单臂路由器 VLAN 间路由方法时，需要专用路由器。通过在一个物理接口上使用子接口，只需路由器上的一个物理接口即可在多个 VLAN 之间路由流量。另一方面，由于所有 VLAN 的流量都必须经过相同的物理接口，因此会影响吞吐量。此外，多层交换机可以使用多个 SVI 来执行 VLAN 间路由。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨不同 VLAN 上的 PC 无法通信。根据输出，交换机接口 Gi1&#x2F;1 上的两个配置错误是什么？（选择两个。）</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i212683v1n2_212683.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 11"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 11</span></div></div>
+
+
+
+<ul>
+<li><p><span style="color: #ff0000">Gi1&#x2F;1 位于默认 VLAN 中。</span></p>
+</li>
+<li><p>语音 VLAN 未分配给 Gi1&#x2F;1。</p>
+</li>
+<li><p><span style="color: #ff0000">Gi1&#x2F;1 配置为中继模式。</span></p>
+</li>
+<li><p>在 Gi1&#x2F;1 上开启中继协商。</p>
+</li>
+<li><p>中继封装协议配置错误。</p>
+<blockquote>
+<p>使用传统的 VLAN 间路由方法，连接到路由器的交换机端口应配置为访问模式并分配适当的 VLAN。在这种情况下，Gi1&#x2F;1 接口应处于分配了 VLAN 10 的访问模式。其他选项是交换机上的默认设置，对传统的 VLAN 间路由没有影响。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员正在验证 VLAN 间路由的配置。用户抱怨 PC2 无法与 PC1 通信。根据输出，问题的可能原因是什么？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i212684v1n3_212684.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 10"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 10</span></div></div>
+
+
+
+<ul>
+<li><p>Gi0&#x2F;0 未配置为中继端口。</p>
+</li>
+<li><p>命令接口 GigabitEthernet0&#x2F;0.5 输入错误。</p>
+</li>
+<li><p>接口 Gi0&#x2F;0 上没有配置 IP 地址。</p>
+</li>
+<li><p>没有在子接口上输入 no shutdown 命令。</p>
+</li>
+<li><p><span style="color: #ff0000">encapsulation dot1Q 5 命令包含错误的 VLAN。 </span></p>
+<blockquote>
+<p>在 router-on-a-stick 中，子接口配置要与 encapsulation 命令中的 VLAN 号匹配，这种情况下，VLAN 10 应该使用命令 encapsulation dot1Q 10。由于使用了子接口，因此无需配置 IP在物理接口 Gi0&#x2F;0 上。中继模式是在连接到路由器的交换机端口上配置的。添加子接口时将打开它们。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员已使用上述命令配置路由器 CiscoVille，以提供 VLAN 间路由。连接到路由器 CiscoVille 上的 Gi0&#x2F;0 的交换机上需要什么类型的端口才能允许 VLAN 间路由？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i212655v1n2_212655.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 13"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 13</span></div></div>
+
+
+
+<ul>
+<li><p>路由端口</p>
+</li>
+<li><p>访问端口</p>
+</li>
+<li><p><span style="color: #ff0000">中继端口</span></p>
+</li>
+<li><p>SVI</p>
+<blockquote>
+<p>为了允许单臂路由器配置起作用，交换机必须通过中继端口连接到路由器以承载要路由的 VLAN。SVI 将用于交换机执行 VLAN 间路由的多层交换机上。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员正在为 VLAN 间路由配置 RT1。交换机配置正确且功能正常。Host1、Host2 和 Host3 无法相互通信。根据路由器配置，是什么导致了问题？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i215797v1n1_215797.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 06"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 06</span></div></div>
+
+
+
+<ul>
+<li><p>接口 Fa0&#x2F;0 缺少 IP 地址配置信息。</p>
+</li>
+<li><p><span style="color: #ff0000">子接口上的 IP 地址与 VLAN 不匹配。</span></p>
+</li>
+<li><p>Fa0&#x2F;0 的每个子接口都需要单独的 no shutdown 命令。</p>
+</li>
+<li><p>路由器不支持子接口上的 802.1Q 封装。</p>
+<blockquote>
+<p>由于主机 1（在 VLAN 20 中）的 IP 为 172.18.1.10&#x2F;27，因此应为子接口 Fa0&#x2F;0.1 配置网络 172.168.1.0&#x2F;27 中的 IP 地址。同样，Fa0&#x2F;0.2 应使用网络 172.168.1.64&#x2F;27 中的 IP 地址，Fa0&#x2F;0.3 应使用网络 172.168.1.96&#x2F;27 中的 IP 地址。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。根据 show running-config 命令的输出，为 VLAN 15、30 和 45 实施了单臂路由器配置。VLAN 45 上使用 172.16.45.0 &#x2F;24 网络的 PC 无法连接到 172.16.30.0 &#x2F;24 网络中 VLAN 30 上的 PC。哪个错误最有可能导致此问题？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i223314v1n1_212679.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 05"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 05</span></div></div>
+
+
+
+<ul>
+<li><p>在 GigabitEthernet 0&#x2F;0.45 上配置了错误的 VLAN。</p>
+</li>
+<li><p>GigabitEthernet 0&#x2F;0.30 上缺少 no shutdown 命令。</p>
+</li>
+<li><p>GigabitEthernet 0&#x2F;0 接口缺少 IP 地址。</p>
+</li>
+<li><p><span style="color: #ff0000">在 GigabitEthernet 0&#x2F;0.30 上配置了错误的 IP 地址。</span></p>
+<blockquote>
+<p>子接口 GigabitEthernet 0&#x2F;0.30 的 IP 地址与 VLAN 寻址方案不对应。物理接口 GigabitEthernet 0&#x2F;0 不需要 IP 地址来使子接口起作用。子接口不需要 no shutdown 命令。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>第 3 层交换机上的路由端口有什么特点？</p>
+<ul>
+<li><p>它支持中继。</p>
+</li>
+<li><p><span style="color: #ff0000">它没有分配给 VLAN。</span></p>
+</li>
+<li><p>它通常用作 WAN 链接。</p>
+</li>
+<li><p>不能为其分配 IP 地址。</p>
+<blockquote>
+<p>三层交换机上的路由端口通常用于连接分布层交换机和核心层交换机或三层交换机和路由器之间。此端口没有获得分配给它的 VLAN 或中继命令。相反，该端口使用 IP 地址进行编程。这通常在交换机上配置静态路由或在第 3 层交换机与路由器或另一个第 3 层交换机之间运行路由协议时使用。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员需要为显示的网络配置单臂路由器。如果要路由显示的每个 VLAN 并且每个 VLAN 都有自己的子接口，则必须在路由器上创建多少个子接口？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i212625v1n1_212625.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 15"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 15</span></div></div>
+
+
+
+<ul>
+<li><p>1</p>
+</li>
+<li><p>2</p>
+</li>
+<li><p>3</p>
+</li>
+<li><p><span style="color: #ff0000">4</span></p>
+</li>
+<li><p>5</p>
+<blockquote>
+<p>根据给定的 IP 地址和掩码，PC、打印机、IP 电话和交换机管理 VLAN 都在不同的 VLAN 上。这种情况需要路由器上有四个子接口。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# mdix auto 命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它会自动调整端口以允许设备连接使用直通或交叉电缆。</span></li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它将 IPv6 地址应用于虚拟接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><p>一名技术人员正在配置一台新的思科 2960 交换机。输入命令 <strong>BranchSw(config-if)# ip address 172.18.33.88 255.255.255.0</strong> 的效果是什么？</p>
+<ul>
+<li><span style="color: #ff0000">它将 IPv4 地址应用于虚拟接口。</span></li>
+<li>它将 IPv6 地址应用于虚拟接口。</li>
+<li>它激活虚拟或物理交换机接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它进入全局配置模式。</span></li>
+<li>它进入交换机虚拟接口的配置模式。</li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw# 配置终端命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它进入全局配置模式。</span></li>
+<li>它将运行配置保存到 NVRAM。</li>
+<li>它禁用虚拟或物理交换机接口。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它将启动配置保存到运行配置中。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它禁用虚拟或物理交换机接口。</span></li>
+<li>它将运行配置保存到 NVRAM。</li>
+<li>它激活虚拟或物理交换机接口。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它将启动配置保存到运行配置中。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# shutdown 命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它禁用虚拟或物理交换机接口。</span></li>
+<li>它将 IPv6 地址应用于虚拟接口。</li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# ipv6 address 2001:db8:a2b4:88::1&#x2F;64 命令有什么效果？</p>
+<ul>
+<li><span style="color: #ff0000">它将 IPv6 地址应用于虚拟接口。</span></li>
+<li>它激活虚拟或物理交换机接口。</li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# exit 命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它返回到全局配置模式。</span></li>
+<li>它返回特权模式。</li>
+<li>它为交换机配置默认网关。</li>
+<li>它进入用户模式。</li>
+<li>它将启动配置保存到运行配置中。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw&gt; enable 命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它进入特权模式。</span></li>
+<li>它进入全局配置模式。</li>
+<li>它进入交换机虚拟接口的配置模式。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+</ul>
+</li>
+<li><p>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config-if)# duplex full 命令有什么作用？</p>
+<ul>
+<li><span style="color: #ff0000">它允许数据在接口上同时双向流动。</span></li>
+<li>它允许数据在界面上一次仅沿一个方向流动</li>
+<li>它会自动调整端口以允许设备连接使用直通或交叉电缆。</li>
+<li>它将交换机配置为默认网关。</li>
+<li>当用户远程连接时，它会加密用户模式密码。</li>
+</ul>
+</li>
+<li><p>什么类型的 VLAN 不应该承载语音和网络管理流量？</p>
+<ul>
+<li><span style="color: #ff0000">数据 VLAN</span></li>
+<li>语音 VLAN</li>
+<li>管理 VLAN</li>
+<li>安全 VLAN</li>
+</ul>
+</li>
+<li><p>什么类型的 VLAN 不应该承载语音和网络管理流量？</p>
+<ul>
+<li><span style="color: #ff0000">数据 VLAN</span></li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+<li>语音 VLAN</li>
+</ul>
+</li>
+<li><p>什么类型的 VLAN 旨在预留带宽以确保 IP 电话质量？</p>
+<ul>
+<li><span style="color: #ff0000">语音 VLAN</span></li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+<li>管理 VLAN</li>
+</ul>
+</li>
+<li><p>什么类型的 VLAN 最初是管理 VLAN？</p>
+<ul>
+<li><span style="color: #ff0000">默认 VLAN</span></li>
+<li>本机 VLAN</li>
+<li>数据 VLAN</li>
+<li>管理 VLAN</li>
+</ul>
+</li>
+<li><p>哪种类型的 VLAN 设计为在整个网络中具有小于 150 毫秒的延迟？</p>
+<ul>
+<li><span style="color: #ff0000">语音 VLAN</span></li>
+<li>理想的VLAN</li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+</ul>
+</li>
+<li><p>使用什么类型的 VLAN 将网络划分为用户或设备组？</p>
+<ul>
+<li><span style="color: #ff0000">数据 VLAN</span></li>
+<li>管理 VLAN</li>
+<li>语音 VLAN</li>
+<li>本机 VLAN</li>
+</ul>
+</li>
+<li><p>什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？</p>
+<ul>
+<li><span style="color: #ff0000">管理 VLAN</span></li>
+<li>安全 VLAN</li>
+<li>中继 VLAN</li>
+<li>语音 VLAN</li>
+</ul>
+</li>
+<li><p>什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？</p>
+<ul>
+<li><span style="color: #ff0000">管理 VLAN</span></li>
+<li>语音 VLAN</li>
+<li>安全 VLAN</li>
+<li>本机 VLAN</li>
+</ul>
+</li>
+<li><p>下列哪类 VLAN 支持无标记的流量？</p>
+<ul>
+<li><span style="color: #ff0000">本征 VLAN</span></li>
+<li>语音 VLAN</li>
+<li>安全 VLAN</li>
+<li>管理 VLAN</li>
+</ul>
+</li>
+<li><p>请参见图示。如图所示，网络管理员已配置 R1。当管理员检查串行接口的状态时，该接口显示为管理性关闭。必须在 R1 的串行接口上输入什么附加命令才能启动该接口？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i209408v1n1_209408.gif" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 18"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 18</span></div></div>
+
+
+
+<ul>
+<li><p>IPv6 enable</p>
+</li>
+<li><p>clockrate 128000</p>
+</li>
+<li><p>end</p>
+</li>
+<li><p><span style="color: #ff0000">no shutdown</span></p>
+<blockquote>
+<p>默认情况下，所有路由器接口都关闭。要启动接口，管理员必须在接口模式下发出 no shutdown 命令。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员希望将 Switch1 配置为允许 SSH 连接并禁止 Telnet 连接。网络管理员应如何更改显示的配置以满足需求？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i283584v1n1_24177.jpg" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 03"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 03</span></div></div>
+
+
+
+<ul>
+<li>使用 SSH 版本 1。</li>
+<li>重新配置 RSA 密钥。</li>
+<li>在不同的线路上配置 SSH。</li>
+<li><span style="color: #ff0000">修改传输输入命令。</span></li>
+</ul>
+</li>
+<li><p>哪种解决方案可以帮助大学缓解由于冲突导致的网络拥塞？</p>
+<ul>
+<li><p>连接到两个 Internet 提供商的防火墙</p>
+</li>
+<li><p><span style="color: #ff0000">高端口密度交换机</span></p>
+</li>
+<li><p>带有两个以太网端口的路由器</p>
+</li>
+<li><p>具有三个以太网端口的路由器</p>
+<blockquote>
+<p>交换机提供微分段，因此一个设备不会与另一个网络设备竞争相同的以太网网络带宽，从而实际上消除了冲突。高端口密度交换机为许多设备提供非常快速的连接。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>关于 SVI VLAN 间路由，哪两个陈述是正确的？（选择两个。）</p>
+<ul>
+<li><p><span style="color: #ff0000">使用 SVI 可以更快地交换数据包。</span></p>
+</li>
+<li><p><span style="color: #ff0000">无需连接到路由器。</span></p>
+</li>
+<li><p>虚拟接口支持子接口。</p>
+</li>
+<li><p>SVI 可以捆绑到 EtherChannel 中。</p>
+</li>
+<li><p>SVI 无需在主机中设置默认网关。</p>
+<blockquote>
+<p>SVI VLAN间路由方法比其他方法更快。交换机无需路由器即可路由现有的 VLAN。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>请参见图示。网络管理员正在网络上配置 VLAN 间路由。目前，只使用了一个 VLAN，但很快会添加更多。在图中显示为突出显示的问号的缺失参数是什么？</p>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i212623v1n4_212623.png" alt="CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 16"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 1 - 4：交换概念、VLAN 和 VLAN 间路由考试答案 16</span></div></div>
+
+
+
+<ul>
+<li><p>它标识子接口。</p>
+</li>
+<li><p><span style="color: #ff0000">它标识 VLAN 号。</span></p>
+</li>
+<li><p>它标识本地 VLAN 号。</p>
+</li>
+<li><p>它标识所使用的封装类型。</p>
+</li>
+<li><p>它标识接口上允许的主机数量。</p>
+<blockquote>
+<p>完成的命令将是封装 dot1q 7 。该命令的封装 dot1q 部分启用中继并标识要使用的中继类型。7 标识 VLAN 号。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>使用哪种类型的 VLAN 指定通过中继端口时的未标记流量？</p>
+<ul>
+<li><p>数据</p>
+</li>
+<li><p>默认</p>
+</li>
+<li><p><span style="color: #ff0000">本征</span></p>
+</li>
+<li><p>管理</p>
+<blockquote>
+<p>本地 VLAN 是未在 IEEE 802.1Q 帧头中接收 VLAN 标记的 VLAN。Cisco 最佳实践建议尽可能使用未使用的 VLAN（不是数据 VLAN、VLAN 1 的默认 VLAN 或管理 VLAN）作为本地 VLAN。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>网络管理员在对用户支持票进行故障排除时发出 show vlan brief 命令。将显示什么输出？</p>
+<ul>
+<li><p>设备 MAC 地址的 VLAN 分配和成员资格</p>
+</li>
+<li><p><span style="color: #ff0000">所有交换机端口的 VLAN 分配和成员资格</span></p>
+</li>
+<li><p>VLAN分配和中继封装</p>
+</li>
+<li><p>VLAN 分配和本地 VLAN</p>
+<blockquote>
+<p>show vlan brief 命令将提供显示交换机上所有交换机端口的 VLAN 分配和成员资格的信息。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>打开 PT 活动。执行活动说明中的任务，然后回答问题。</p>
+<p>在 PC1 Web Browser 地址栏输入 10.10.10.1 时显示什么信息？</p>
+<ul>
+<li><p>本地服务器</p>
+</li>
+<li><p>测试服务器</p>
+</li>
+<li><p><span style="color: #ff0000">文件服务器</span></p>
+</li>
+<li><p>思科服务器</p>
+<blockquote>
+<p>检查交换机 SW1 的配置显示接口 Gi0&#x2F;1 未配置为中继。在此接口上发出接口配置命令 switchport mode trunk 将启用 PC1 和 Server1 之间的通信。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+</article>
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 [@saevio]创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"post","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

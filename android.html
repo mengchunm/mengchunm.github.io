@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta name="referrer" content="no-referrer">
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>saevio</title>
+
+  
+    <meta name="description" content="一. 程序阅读题（共9 题，40.0分） (程序阅读题,4.4分)在activity_main.xml文件中，放置了一个Button（其中部分属性设置为android:id&#x3D;”@+id&#x2F;button”）控件用于表示一个按钮。调用按钮的setOnClickListener（）方法，在该方法中通过匿名内部类来实现OnClickListener接口，请补充下面缺失的代码。（注意方法名">
+<meta property="og:type" content="website">
+<meta property="og:title" content="saevio">
+<meta property="og:url" content="https://mengchunm.github.io/android.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="一. 程序阅读题（共9 题，40.0分） (程序阅读题,4.4分)在activity_main.xml文件中，放置了一个Button（其中部分属性设置为android:id&#x3D;”@+id&#x2F;button”）控件用于表示一个按钮。调用按钮的setOnClickListener（）方法，在该方法中通过匿名内部类来实现OnClickListener接口，请补充下面缺失的代码。（注意方法名">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-09T00:26:38.779Z">
+<meta property="article:modified_time" content="2022-12-16T14:06:39.113Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">随笔</a><a class="nav-item" href="/notes/">便签</a><a class="nav-item" href="/more/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E7%A8%8B%E5%BA%8F%E9%98%85%E8%AF%BB%E9%A2%98%EF%BC%88%E5%85%B19-%E9%A2%98%EF%BC%8C40-0%E5%88%86%EF%BC%89"><span class="toc-text">一. 程序阅读题（共9 题，40.0分）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E5%8D%95%E9%80%89%E9%A2%98%EF%BC%88%E5%85%B16-%E9%A2%98%EF%BC%8C20-0%E5%88%86%EF%BC%89"><span class="toc-text">二. 单选题（共6 题，20.0分）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E5%A1%AB%E7%A9%BA%E9%A2%98%EF%BC%88%E5%85%B16-%E9%A2%98%EF%BC%8C10-0%E5%88%86%EF%BC%89"><span class="toc-text">三. 填空题（共6 题，10.0分）</span></a></li></ol></div></div></widget>
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+
+
+      
+
+
+
+<article class="md-text content page"><h2 id="一-程序阅读题（共9-题，40-0分）"><a href="#一-程序阅读题（共9-题，40-0分）" class="headerlink" title="一. 程序阅读题（共9 题，40.0分）"></a>一. 程序阅读题（共9 题，40.0分）</h2><ol>
+<li><p>(程序阅读题,4.4分)在activity_main.xml文件中，放置了一个Button（其中部分属性设置为android:id&#x3D;”@+id&#x2F;button”）控件用于表示一个按钮。调用按钮的setOnClickListener（）方法，在该方法中通过匿名内部类来实现OnClickListener接口，请补充下面缺失的代码。（注意方法名大小写）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    private Button button;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line"></span><br><span class="line">    super.onCreate(savedInstanceState);</span><br><span class="line"></span><br><span class="line">    setContentView(R.layout.activity_main);       //设置Activity对应的布局文件</span><br><span class="line"></span><br><span class="line">    button = (Button) _______1________(R.id.button); //获取界面上的按钮控件</span><br><span class="line"></span><br><span class="line">    //通过匿名内部类来实现OnClickListener接口</span><br><span class="line"></span><br><span class="line">    button.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line"></span><br><span class="line">        @Override</span><br><span class="line">       </span><br><span class="line">        public void _______2_____(View view) &#123;</span><br><span class="line">       </span><br><span class="line">            Toast.makeText(MainActivity.this, &quot;您点击了按钮&quot;,Toast.LENGTH_SHORT).show();</span><br><span class="line">       </span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>正确答案：<br>(1) findViewById<br>(2) onClick</p>
+<ol start="2">
+<li><p>(程序阅读题,4.4分)在activity_main.xml文件中，放置了一个Button（其中部分属性设置为android:id&#x3D;”@+id&#x2F;button”）控件用于表示一个按钮。MainActivity实现了OnLongClickListener 接口，实现了长按按钮弹出Toast的代码。请阅读代码补充下面缺失的代码。（注意方法名大小写）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">2. public class MainActivity extends AppCompatActivity _______1________View.OnLongClickListener &#123;</span><br><span class="line"></span><br><span class="line">    private Button button;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line"></span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">       </span><br><span class="line">        setContentView(R.layout.activity_main);       //设置Activity对应的布局文件</span><br><span class="line">       </span><br><span class="line">        button = (Button) findViewById(R.id.button); //获取界面上的按钮控件</span><br><span class="line">       </span><br><span class="line">        button.___________2____________(this);          //注册监听</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    public boolean ______3__________(View v) &#123;  //实现OnLongClickListener接口中的方法</span><br><span class="line"></span><br><span class="line">        if (v == button) &#123;                   //判断长时间按下的控件是否是button</span><br><span class="line">       </span><br><span class="line">            Toast.makeText(MainActivity.this, &quot;您长时间按下了按钮&quot;,Toast.LENGTH_SHORT).show();</span><br><span class="line">       </span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        return false;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>正确答案：<br>(1) implements<br>(2) setOnLongClickListener<br>(3) onLongClick</p>
+<ol start="3">
+<li><p>(程序阅读题,4.4分)以下代码通过startService（）方法开启服务，请阅读代码并补充确实的代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line"></span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">       </span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">       </span><br><span class="line">        init();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void init()&#123;</span><br><span class="line"></span><br><span class="line">        Button btn_start = (Button) findViewById(R.id.btn_start);</span><br><span class="line">       </span><br><span class="line">        Button btn_stop = (Button) findViewById(R.id.btn_stop);</span><br><span class="line">       </span><br><span class="line">        btn_start.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">       </span><br><span class="line">            @Override</span><br><span class="line">       </span><br><span class="line">            public void ______1_____(View view) &#123;</span><br><span class="line">       </span><br><span class="line">                //开启服务</span><br><span class="line">       </span><br><span class="line">                ___________   intent = new _________(MainActivity.this, MyService.class);</span><br><span class="line">       </span><br><span class="line">                startService(intent);</span><br><span class="line">       </span><br><span class="line">            &#125;</span><br><span class="line">       </span><br><span class="line">        &#125;);</span><br><span class="line">       </span><br><span class="line">        btn_stop.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">       </span><br><span class="line">            @Override</span><br><span class="line">       </span><br><span class="line">            public void onClick(View view) &#123;</span><br><span class="line">       </span><br><span class="line">                //关闭服务</span><br><span class="line">       </span><br><span class="line">                Intent intent = new Intent(MainActivity.this, MyService.class);</span><br><span class="line">       </span><br><span class="line">                __________(intent);</span><br><span class="line">       </span><br><span class="line">            &#125;</span><br><span class="line">       </span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>正确答案：<br>(1) onClick<br>(2) Intent<br>(3) stopService</p>
+<ol start="4">
+<li><p>(程序阅读题,4.4分)在MainActivity 中创建了一个init()方法，在该方法中获取发送求救广播的控件并实现该控件的点击事件。请补充缺失的代码。（注意方法名的大小写）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"> public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    private MyBroadcastReceiver receiver;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line"></span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">       </span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">       </span><br><span class="line">        init();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void init()&#123;</span><br><span class="line"></span><br><span class="line">        receiver = new MyBroadcastReceiver(); //实例化广播接收者</span><br><span class="line">       </span><br><span class="line">        String action = &quot;Help_Stitch&quot;;</span><br><span class="line">       </span><br><span class="line">        IntentFilter intentFilter = new IntentFilter(action);</span><br><span class="line">       </span><br><span class="line">        _________________(receiver,intentFilter); //注册广播</span><br><span class="line">       </span><br><span class="line">        Button btn_help= (Button) findViewById(R.id.btn_help);</span><br><span class="line">       </span><br><span class="line">        btn_help.setOnClickListener(new View.OnClickListener() &#123;</span><br><span class="line">       </span><br><span class="line">            @Override</span><br><span class="line">       </span><br><span class="line">            public void onClick(View view) &#123;</span><br><span class="line">       </span><br><span class="line">                Intent intent = new Intent();</span><br><span class="line">       </span><br><span class="line">                //定义广播的事件类型</span><br><span class="line">       </span><br><span class="line">                intent.setAction(&quot;Help_Stitch&quot;);</span><br><span class="line">       </span><br><span class="line">                sendBroadcast(intent);//发送广播</span><br><span class="line">       </span><br><span class="line">            &#125;</span><br><span class="line">       </span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    protected void onDestroy() &#123;</span><br><span class="line"></span><br><span class="line">        super.onDestroy();</span><br><span class="line">       </span><br><span class="line">        unregisterReceiver(receiver);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>正确答案：<br>(1) registerReceiver</p>
+<ol start="5">
+<li><p>(程序阅读题,4.4分)MyBroadcastReceiver 类继承了BroadcastReceiver ，用于接收发送的广播信息，请补充下面的代码（注意方法名的大小写）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class MyBroadcastReceiver extends BroadcastReceiver &#123;</span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    public void ____________(Context context, Intent intent) &#123;</span><br><span class="line"></span><br><span class="line">        Log.i(&quot;MyBroadcastReceiver&quot;, &quot;自定义的广播接收者,接收到了求救广播事件&quot;);</span><br><span class="line">       </span><br><span class="line">        Log.i(&quot;MyBroadcastReceiver&quot;,intent.getAction());</span><br><span class="line">       </span><br><span class="line">             &#125;</span><br><span class="line">       </span><br><span class="line">             &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>正确答案：<br>(1) onReceive</p>
+</li>
+<li><p>(程序阅读题,4.4分)下面代码创建了一个名为MyService 服务，并重写了服务的声明周期，请补全下面缺失的代码。（注意大小写）<br>public class MyService extends ____________{</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line"></span><br><span class="line">    public void onCreate() &#123;</span><br><span class="line"></span><br><span class="line">        super.onCreate();</span><br><span class="line">       </span><br><span class="line">        Log.i(&quot;MyService&quot;, &quot;创建服务，执行onCreate()方法&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    public int onStartCommand(Intent intent, int flags, int startId) &#123;</span><br><span class="line"></span><br><span class="line">        Log.i(&quot;MyService&quot;, &quot;开启服务，执行onStartCommand()方法&quot;);</span><br><span class="line">       </span><br><span class="line">        return super.onStartCommand(intent, flags, startId);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    public IBinder onBind(Intent intent) &#123;</span><br><span class="line"></span><br><span class="line">        return null;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    public void onDestroy() &#123;</span><br><span class="line"></span><br><span class="line">        super.onDestroy();</span><br><span class="line">       </span><br><span class="line">        Log.i(&quot;MyService&quot;, &quot;关闭服务，执行onDestroy()方法&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>正确答案：<br>(1) Service </p>
+<ol start="7">
+<li>(程序阅读题,4.4分)创建内容观察者代码如下，创建了一个MyObserver  的类，继承了内容观察者，在该类中重写了父类的构造方法。请补全下面的代码（注意大小写）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class MyObserver extends ______________&#123;</span><br><span class="line"></span><br><span class="line">     public MyObserver(Handler handler) &#123;//handler 是一个消息处理器。</span><br><span class="line">    </span><br><span class="line">         super(handler);</span><br><span class="line">    </span><br><span class="line">     &#125;</span><br><span class="line">    </span><br><span class="line">     @Override</span><br><span class="line">    </span><br><span class="line">     //当info表中的数据发生变化时则执行该方法</span><br><span class="line">    </span><br><span class="line">     public void onChange(boolean selfChange) &#123;</span><br><span class="line">    </span><br><span class="line">         Log.i(&quot;监测数据变化&quot;, &quot;有人动了你的数据库！&quot;);</span><br><span class="line">    </span><br><span class="line">         super.onChange(selfChange);</span><br><span class="line">    </span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>正确答案：<br>(1) ContentObserver </p>
+<ol start="8">
+<li><p>(程序阅读题,4.4分)<br>注册内容观察者的代码如下，请补充缺失的代码（注意大小写）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ContentResolver resolver=getContentResolver();//获取ContentResolver 对象</span><br><span class="line">   </span><br><span class="line">     Uri uri = Uri.parse(&quot;content://cn.itcast.contentobserverdb/info&quot;);</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">      </span><br><span class="line">   </span><br><span class="line">      //参数true定义了监测的范围，最后一个参数是一个内容观察者对象</span><br><span class="line">     </span><br><span class="line">      //注册内容观察者，参数uri指向要监测的数据库info表，</span><br><span class="line">     </span><br><span class="line">      resolver.________________(uri, true,new MyObserver(new Handler()));</span><br><span class="line">   </span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+
+
+<p>正确答案：<br>(1) registerContentObserver</p>
+</li>
+<li><p>(程序阅读题,4.8分)<br> 创建SQLite数据库的代码如下，请补充缺失的代码（注意大小写）</p>
+</li>
+</ol>
+  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class MyHelper extends ____1______&#123;</span><br><span class="line">     //构造方法</span><br><span class="line">     public _____2__(Context context) &#123;</span><br><span class="line">         super(context, &quot;itcast.db&quot;, null, 1);</span><br><span class="line">     &#125;</span><br><span class="line">     @Override</span><br><span class="line">     //数据库第一次被创建时调用的方法</span><br><span class="line">     public void onCreate(SQLiteDatabase db) &#123;</span><br><span class="line">         db._____3___(&quot;CREATE TABLE information(_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(20),  phone VARCHAR(20))&quot;);</span><br><span class="line">     &#125;</span><br><span class="line">     @Override</span><br><span class="line">     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) &#123;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>  正确答案：</p>
+<p>(1)SQLiteOpenHelper</p>
+<p>(2) MyHelper</p>
+<p>(3)execSQL</p>
+<h2 id="二-单选题（共6-题，20-0分）"><a href="#二-单选题（共6-题，20-0分）" class="headerlink" title="二. 单选题（共6 题，20.0分）"></a>二. 单选题（共6 题，20.0分）</h2><ol>
+<li><p>(单选题,3.3分)Android项目中的主题和样式资源，通常放在（）目录<br>  A. res&#x2F;drawable<br>B. res&#x2F;layout<br>C. res&#x2F;values<br>D. assets<br>我的答案:C 正确答案: C</p>
+</li>
+<li><p>(单选题,3.3分)关于Logcat，下列说法错误的是（   ）</p>
+<p>  A.主要用于Android程序调试时输出信息</p>
+<p>   B. 可以通过Log.v(),Log.d(),Log.w(),Log.i(),Log.e()输出不同级别的日志<br>   C. 可以通过设置日志输出的tag值来过滤掉不需要的日志信息<br>   D. 与System.out.println()控制台输出相比，使用较为复杂，因此不推荐<br>我的答案:D 正确答案: D</p>
+</li>
+<li><p>(单选题,3.3分)想从ActivityA跳转到ActivityB，下面正确的显式Intent的构造方法是（   ）<br>   A. Intent intent &#x3D; new Intent(ActivityA.class, ActivityB.this);<br>B. Intent intent &#x3D; new Intent(ActivityA.this, ActivityB.class);<br>C. Intent intent &#x3D; new Intent(ActivityB.class, ActivityA.this);<br>D. Intent intent &#x3D; new Intent(ActivityB.this, ActivityA.class);<br>我的答案:B 正确答案: B</p>
+</li>
+<li><p>(单选题,3.3分)Android项目中存放程序代码的位置是（    ）<br>A. res<br>B. gen<br>C. src<br>D. bin<br>我的答案:C 正确答案: C</p>
+</li>
+<li><p>(单选题,3.3分)<br>  下面关于RadioButton控件的描述，正确的是（）。</p>
+<pre><code>A. RadioButton默认为选中状态
+B. RadioButton表示单选按钮
+C. RadioButton表示文本控件
+D. 以上说法都不对
+我的答案:B 正确答案: B
+</code></pre>
+</li>
+<li><p>(单选题,3.5分)<br>  下列选项中，属于为ListView添加适配器的方法的是（）。</p>
+<p>   A. setAdapter()<br>B. setBaseAdapter()<br>C. addAdapter()<br>D. addBaseAdapter()<br>我的答案:A 正确答案: A</p>
+</li>
+</ol>
+<h2 id="三-填空题（共6-题，10-0分）"><a href="#三-填空题（共6-题，10-0分）" class="headerlink" title="三. 填空题（共6 题，10.0分）"></a>三. 填空题（共6 题，10.0分）</h2><ol>
+<li>(填空题,1.6分)<br>请根据下面显示效果，补全布局文件的代码。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line"></span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    </span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">    android:gravity=&quot;______①______&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;______②________</span><br><span class="line"></span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">    android:text=&quot;@string/question_river&quot;</span><br><span class="line">    </span><br><span class="line">    android:textSize=&quot;24sp&quot;</span><br><span class="line">    </span><br><span class="line">    android:gravity=&quot;center&quot;</span><br><span class="line">    </span><br><span class="line">    android:id=&quot;@+id/textview_question&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/______②________&gt;</span><br><span class="line"></span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">    </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">        android:orientation=&quot;horizontal&quot;</span><br><span class="line">    </span><br><span class="line">        android:______③________=&quot;center&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;______④_____</span><br><span class="line">    </span><br><span class="line">            android:id=&quot;@+id/button_pre&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:text=&quot;上一个&quot;&gt;&lt;/______④_____&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;______④_____</span><br><span class="line">    </span><br><span class="line">            android:id=&quot;@+id/button_next&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:text=&quot;下一个&quot;&gt;&lt;/______④_____&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">    </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">        android:orientation=&quot;horizontal&quot;</span><br><span class="line">    </span><br><span class="line">        android:______③________=&quot;center&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;______④_____</span><br><span class="line">    </span><br><span class="line">            android:id=&quot;@+id/button_correct&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:text=&quot;正确&quot;&gt;&lt;/______④_____&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;______④_____</span><br><span class="line">    </span><br><span class="line">            android:id=&quot;@+id/button_wrong&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:text=&quot;错误&quot;&gt;&lt;/______④_____&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line"></span><br><span class="line">&lt;______④_____</span><br><span class="line"></span><br><span class="line">    android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">    android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">    android:text=&quot;______⑤_____&quot;</span><br><span class="line">    </span><br><span class="line">    android:id=&quot;@+id/button_jump_cheat&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/______④_____&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我的答案：<br>(1) center<br>(2) TextView<br>(3) gravity<br>(4) Button<br>(5) 偷看一眼答案<br>正确答案：<br>(1) center<br>(2) TextView<br>(3)gravity<br>(4) Button<br>(5) 偷看一眼答案</p>
+<ol start="2">
+<li>(填空题,1.6分)<br>每个Activity都要经历从创建到销毁的整个过程，请根据下述情景填入其所经历的生命周期方法。</li>
+</ol>
+<p>运行某个App，该App的主Activity会依次运行 onCreate( )→<strong><strong><strong><strong>①________→________②</strong></strong></strong></strong>__;</p>
+<p>单击Home按钮，该主Activity会依次运行 onPause( )→<strong><strong><strong><strong>③</strong></strong></strong></strong>;</p>
+<p>单击最近使用键，再选择该应用重新运行，则该主Activity会依次运行_______④_______→_______⑤_______→onResume( )</p>
+<p>我的答案：<br>(1) onStar()<br>(2) onResume()<br>(3) onStop()<br>(4) onRcstart()<br>(5) onStart()<br>正确答案：</p>
+<p>(1)onStart( )；onStart</p>
+<p>(2)onResume( )； onResume</p>
+<p>(3)onStop( )；onStop</p>
+<p>(4) onRestart( )；onRestart</p>
+<p>(5) onStart( )；onStart</p>
+<ol start="3">
+<li>(填空题,1.6分)<br>请根据下面显示效果，补全布局文件的代码。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line"></span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">    android:background=&quot;#E6E6E6&quot;</span><br><span class="line">    </span><br><span class="line">    android:orientation=&quot;______①______&quot;</span><br><span class="line">    </span><br><span class="line">    android:padding=&quot;10dp&quot;&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;ImageView</span><br><span class="line">    </span><br><span class="line">        android:layout_width=&quot;70dp&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_height=&quot;70dp&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_centerHorizontal=&quot;true&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_gravity=&quot;center_horizontal&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_marginTop=&quot;30dp&quot;</span><br><span class="line">    </span><br><span class="line">        android:src=&quot;@drawable/head&quot; /&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;LinearLayout</span><br><span class="line">    </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">    </span><br><span class="line">        android:background=&quot;@android:color/white&quot;</span><br><span class="line">    </span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;_______②________</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:padding=&quot;10dp&quot;</span><br><span class="line">    </span><br><span class="line">            android:text=&quot;账号:&quot;</span><br><span class="line">    </span><br><span class="line">            android:textColor=&quot;#000&quot;</span><br><span class="line">    </span><br><span class="line">            android:textSize=&quot;20sp&quot; /&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;_____③_______</span><br><span class="line">    </span><br><span class="line">            android:id=&quot;@+id/et_account&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_marginLeft=&quot;5dp&quot;</span><br><span class="line">    </span><br><span class="line">            android:background=&quot;@null&quot;</span><br><span class="line">    </span><br><span class="line">            android:padding=&quot;10dp&quot; /&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;_____④___</span><br><span class="line">    </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_marginTop=&quot;10dp&quot;</span><br><span class="line">    </span><br><span class="line">        android:background=&quot;@android:color/white&quot;</span><br><span class="line">    </span><br><span class="line">        android:orientation=&quot;horizontal&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;TextView</span><br><span class="line">    </span><br><span class="line">            android:id=&quot;@+id/tv_password&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:padding=&quot;10dp&quot;</span><br><span class="line">    </span><br><span class="line">            android:text=&quot;密码:&quot;</span><br><span class="line">    </span><br><span class="line">            android:textColor=&quot;#000&quot;</span><br><span class="line">    </span><br><span class="line">            android:textSize=&quot;20sp&quot; /&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;EditText</span><br><span class="line">    </span><br><span class="line">            android:id=&quot;@+id/et_password&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">            android:layout_marginLeft=&quot;5dp&quot;</span><br><span class="line">    </span><br><span class="line">            android:background=&quot;@null&quot;</span><br><span class="line">    </span><br><span class="line">            android:inputType=&quot;textPassword&quot;</span><br><span class="line">    </span><br><span class="line">            android:padding=&quot;10dp&quot; /&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;/LinearLayout&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;_____⑤_____</span><br><span class="line">    </span><br><span class="line">        android:id=&quot;@+id/btn_login&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">    </span><br><span class="line">        android:layout_marginTop=&quot;25dp&quot;</span><br><span class="line">    </span><br><span class="line">        android:background=&quot;#3C8DC4&quot;</span><br><span class="line">    </span><br><span class="line">        android:text=&quot;登录&quot;</span><br><span class="line">    </span><br><span class="line">        android:textColor=&quot;@android:color/white&quot;</span><br><span class="line">    </span><br><span class="line">        android:textSize=&quot;20sp&quot; /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我的答案：<br>(1) vertical<br>(2) TextView<br>(3) EditText<br>(4) LinearLayout<br>(5) Button<br>正确答案：<br>(1) vertical<br>(2) TextView<br>(3) EditText<br>(4) LinearLayout<br>(5) Button<br>4. (填空题,1.6分)<br>在Android中，AlertDialog对话框用来提示一些重要信息或者显示一些需要用户交互的内容，请根据描述补全</p>
+<p>代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    </span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">    </span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">    </span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    @Override</span><br><span class="line">    </span><br><span class="line">    public void onBackPressed() &#123;</span><br><span class="line">    </span><br><span class="line">        //声明对象</span><br><span class="line">    </span><br><span class="line">        AlertDialog dialog;</span><br><span class="line">    </span><br><span class="line">        AlertDialog.Builder builder =_______①___________ AlertDialog.Builder(this)</span><br><span class="line">    </span><br><span class="line">                .______②_______(&quot;普通对话框&quot;)                      //设置对话框的标题</span><br><span class="line">    </span><br><span class="line">                .setIcon(R.mipmap.ic_launcher)           //设置设置标题图标</span><br><span class="line">    </span><br><span class="line">                .setMessage(&quot;是否确定退出应用？&quot;)           //设置对话框的提示信息</span><br><span class="line">    </span><br><span class="line">                //添加“确定”按钮</span><br><span class="line">    </span><br><span class="line">                .________③__________(&quot;确定&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">    </span><br><span class="line">                    @Override</span><br><span class="line">    </span><br><span class="line">                    public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">    </span><br><span class="line">                        dialog.dismiss();                   //关闭对话框</span><br><span class="line">    </span><br><span class="line">                        MainActivity.this.finish();       //关闭MainActivity</span><br><span class="line">    </span><br><span class="line">                    &#125;</span><br><span class="line">    </span><br><span class="line">                &#125;)</span><br><span class="line">    </span><br><span class="line">                //添加“取消”按钮</span><br><span class="line">    </span><br><span class="line">                .setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() &#123;</span><br><span class="line">    </span><br><span class="line">                    @Override</span><br><span class="line">    </span><br><span class="line">                    public void onClick(DialogInterface dialog, int which) &#123;</span><br><span class="line">    </span><br><span class="line">                        dialog.______④______();</span><br><span class="line">    </span><br><span class="line">                    &#125;</span><br><span class="line">    </span><br><span class="line">                &#125;);</span><br><span class="line">    </span><br><span class="line">        dialog =  builder.create();</span><br><span class="line">    </span><br><span class="line">        dialog.________⑤_________();</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>我的答案：<br>(1) new<br>(2) setTitle<br>(3) setPositiveButton<br>(4) dismiss<br>(5) show<br>正确答案：<br>(1) new<br>(2) setTitle<br>(3) setPositiveButton<br>(4) dismiss<br>(5) show<br>5. (填空题,1.6分)<br>    Dalvik中的Dx工具会把部分class文件转换成（）文件<br>    我的答案：<br>    (1) dex<br>    正确答案：<br>    (1) dex</p>
+<ol start="6">
+<li><p>(填空题,2.0分)发送隐式Intent后，Android 系统会使用（）匹配相应的组件<br> 我的答案：<br> (1) IntentFilter<br> 正确答案：<br> (1) InterFilter<br> 四. 判断题（共5 题，25.0分）</p>
+</li>
+<li><p>(判断题,5.0分)<br> android:textSize属性可以设置TextView中的文本显示的大小。</p>
+<p> A. 对<br> B. 错<br>   我的答案: 对 正确答案: 对</p>
+</li>
+<li><p>(判断题,5.0分)Toast是Android系统提供的轻量级信息提醒机制，用于向用户提示即时消息。<br> A. 对<br> B. 错<br> 我的答案: 对 正确答案: 对</p>
+</li>
+<li><p>(判断题,5.0分)Button控件可以显示文本信息，也可以显示图片资源。<br> A. 对<br> B. 错<br> 我的答案: 对 正确答案: 对</p>
+</li>
+<li><p>(判断题,5.0分)<br> TextView控件用于显示文本信息。</p>
+<p> A. 对<br> B. 错<br>   我的答案: 对 正确答案: 对</p>
+</li>
+<li><p>(判断题,5.0分)<br> 当Toast提示Wifi连接时，会打断用户点击按钮的操作。</p>
+<p> A. 对<br> B. 错<br>  我的答案: 错 正确答案: 错</p>
+</li>
+</ol>
+</article>
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 [@saevio]创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"post","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

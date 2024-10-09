@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta name="referrer" content="no-referrer">
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>saevio</title>
+
+  
+    <meta name="description" content="模块 5 – 6 冗余网络原文地址  哪三个组件组合起来形成一个桥 ID？   端口号  IP地址  扩展系统标识  MAC地址  桥优先  成本    答案解释和提示：组成网桥 ID 的三个组件是网桥优先级、扩展系统 ID 和 MAC 地址。    将 STP 协议与正确的描述相匹配。（并非所有选项都被使用。）     CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 001">
+<meta property="og:type" content="website">
+<meta property="og:title" content="saevio">
+<meta property="og:url" content="https://mengchunm.github.io/Cisco/5-6.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="模块 5 – 6 冗余网络原文地址  哪三个组件组合起来形成一个桥 ID？   端口号  IP地址  扩展系统标识  MAC地址  桥优先  成本    答案解释和提示：组成网桥 ID 的三个组件是网桥优先级、扩展系统 ID 和 MAC 地址。    将 STP 协议与正确的描述相匹配。（并非所有选项都被使用。）     CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 001">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-5-6-Redundant-Networks-Exam-Answers-001.jpg">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-5-6-Redundant-Networks-Exam-Answers-002.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i223533v1n1_223533.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i216434v1n3_Item-216434.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i217690v1n1_217690.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i216436v1n4_Item-216436.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i246277v1n2_246277.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i246279v1n1_246279.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i247497v1n1_247497.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i223430v1n1_Item-223430.jpg">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i217659v1n1_217659.png">
+<meta property="og:image" content="https://ccnav7.net/wp-content/uploads/2020/01/i216435v1n2_Item-216435.png">
+<meta property="article:published_time" content="2024-10-09T13:42:25.035Z">
+<meta property="article:modified_time" content="2024-10-09T13:42:25.035Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-5-6-Redundant-Networks-Exam-Answers-001.jpg">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">随笔</a><a class="nav-item" href="/notes/">便签</a><a class="nav-item" href="/more/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"></div></div></widget>
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+
+
+      
+
+
+
+<article class="md-text content page"><h1 id="模块-5-–-6-冗余网络"><a href="#模块-5-–-6-冗余网络" class="headerlink" title="模块 5 – 6 冗余网络"></a>模块 5 – 6 冗余网络</h1><p><a target="_blank" rel="noopener" href="https://ccna7.org/ccna2-v7-0/modules-5-6-redundant-networks-exam-answers/">原文地址</a></p>
+<ol>
+<li>哪三个组件组合起来形成一个桥 ID？</li>
+</ol>
+<ul>
+<li><p>端口号</p>
+</li>
+<li><p>IP地址</p>
+</li>
+<li><p><span style="color: #ff0000">扩展系统标识</span></p>
+</li>
+<li><p><span style="color: #ff0000">MAC地址</span></p>
+</li>
+<li><p><span style="color: #ff0000">桥优先</span></p>
+</li>
+<li><p>成本</p>
+<p>   <strong>答案解释和提示：</strong>组成网桥 ID 的三个组件是网桥优先级、扩展系统 ID 和 MAC 地址。</p>
+</li>
+</ul>
+<ol start="2">
+<li>将 STP 协议与正确的描述相匹配。（并非所有选项都被使用。）</li>
+</ol>
+   <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-5-6-Redundant-Networks-Exam-Answers-001.jpg" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 001"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 001</span></div></div>
+
+<ol start="3">
+<li>PVST网络中交换机在哪两种端口状态下学习MAC地址和处理BPDU？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>阻塞</p>
+</li>
+<li><p>禁用</p>
+</li>
+<li><p><span style="color: #ff0000">转发</span></p>
+</li>
+<li><p><span style="color: #ff0000">获知</span></p>
+</li>
+<li><p>监听</p>
+<p>   <strong>答案解释和提示：</strong>交换机在学习和转发端口状态下学习 MAC 地址。它们在阻塞、侦听、学习和转发端口状态下接收和处理 BPDU。</p>
+</li>
+</ul>
+<ol start="4">
+<li>如果在 PVST 中没有配置网桥优先级，那么在选举根网桥时会考虑哪些标准？</li>
+</ol>
+<ul>
+<li><p>最低IP地址</p>
+</li>
+<li><p><span style="color: #ff0000">最低 MAC 地址</span></p>
+</li>
+<li><p>最高IP地址</p>
+</li>
+<li><p>最高 MAC 地址</p>
+<p>   <strong>答案解释和提示：</strong>VLAN 的根桥只能是一台交换机。根桥是具有最低 BID 的交换机。BID 由优先级和 MAC 地址确定。如果没有配置优先级，那么所有交换机都使用默认优先级，根桥的选举将基于最低的 MAC 地址。</p>
+</li>
+</ul>
+<ol start="5">
+<li>哪两个网络设计功能需要生成树协议 (STP) 来确保正确的网络运行？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>静态默认路由</p>
+</li>
+<li><p>实施 VLAN 以包含广播</p>
+</li>
+<li><p><span style="color: #ff0000">第 2 层交换机之间的冗余链路</span></p>
+</li>
+<li><p>提供冗余路由的链路状态动态路由</p>
+</li>
+<li><p><span style="color: #ff0000">使用多个第 2 层交换机消除单点故障</span></p>
+<p>   <strong>答案解释和提示：</strong>在设计具有多个互连第 2 层交换机的网络或使用冗余链路消除第 2 层交换机之间的单点故障时，需要生成树协议 (STP) 以确保正确的网络运行。路由是第 3 层功能，与 STP 无关。VLAN 确实减少了广播域的数量，但与第 3 层子网相关，而不是 STP。</p>
+</li>
+</ul>
+<ol start="6">
+<li>第 2 层广播风暴的结果是什么？</li>
+</ol>
+<ul>
+<li><p>当交换机变得拥塞时，路由器将接管帧的转发。</p>
+</li>
+<li><p><span style="color: #ff0000">新流量因无法处理而被交换机丢弃。</span></p>
+</li>
+<li><p>CSMA&#x2F;CD 将使每个主机继续传输帧。</p>
+</li>
+<li><p>ARP 广播请求被返回给发送主机。</p>
+<p>   <strong>答案解释和提示：</strong>当网络充满了在交换机之间循环的广播流量时，每个交换机都会丢弃新流量，因为它无法处理。</p>
+</li>
+</ul>
+<ol start="7">
+<li>将生成树功能与协议类型匹配。（并非所有选项都被使用。）</li>
+</ol>
+   <div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/CCNA2-v7-SRWE-Modules-5-6-Redundant-Networks-Exam-Answers-002.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 002"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 002</span></div></div>
+
+<p>   <strong>答案解释和提示：</strong>MST 是 MSTP (IEEE 802.1s) 的 Cisco 实施。</p>
+<ol start="8">
+<li>当在交换机上发出 show spanning-tree vlan 33 命令时，三个端口显示为转发状态。这些接口在转发状态下可以在哪两个端口角色中起作用？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>禁用</p>
+</li>
+<li><p><span style="color: #ff0000">指定的</span></p>
+</li>
+<li><p><span style="color: #ff0000">根</span></p>
+</li>
+<li><p>备用</p>
+</li>
+<li><p>被封锁</p>
+<p>   <strong>答案解释和提示：</strong>三个端口中的每一个的角色将是指定端口或根端口。处于禁用状态的端口在管理上被禁用。处于阻塞状态的端口是备用端口。</p>
+</li>
+</ul>
+<ol start="9">
+<li>一组交换机连接在 LAN 拓扑中。哪个 STP 网桥优先级值会使交换机被选为根的可能性最小？</li>
+</ol>
+<ul>
+<li><p>4096</p>
+</li>
+<li><p>32768</p>
+</li>
+<li><p><span style="color: #ff0000">61440</span></p>
+</li>
+<li><p>65535</p>
+<p>   <strong>答案解释和提示：</strong>STP 网桥优先级是一个两字节的数字，但只能以 4096 为增量进行自定义。较小的数字是首选，但可用的最大优先级值为 61440。</p>
+</li>
+</ul>
+<p>10.STP 在可扩展网络中的作用是什么？</p>
+<ul>
+<li><p>它减小了故障域的大小以包含故障的影响。</p>
+</li>
+<li><p>它保护企业网络的边缘免受恶意活动的侵害。</p>
+</li>
+<li><p><span style="color: #ff0000">它禁用冗余路径以消除第 2 层环路。</span></p>
+</li>
+<li><p>它结合了多条交换机中继链路作为一条逻辑链路来增加带宽。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>STP 是可扩展网络中的重要组成部分，因为它允许在第 2 层设备之间实现冗余物理连接，而无需创建第 2 层环路。STP 通过禁用第 2 层设备上的接口来防止形成第 2 层环路，因为它们会创建环路。</p>
+<ol start="11">
+<li>生成树的特点是什么？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">它在 Cisco 交换机上默认启用。</span></p>
+</li>
+<li><p>它有一个在第 2 层工作的 TTL 机制。</p>
+</li>
+<li><p>它可以防止第 2 层广播帧的传播。</p>
+</li>
+<li><p>它用于发现有关相邻 Cisco 设备的信息。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>生成树在基于以太网的网络上的第 2 层工作，并且默认启用，但它没有 TTL 机制。生成树的存在是因为第 2 层帧没有 TTL 机制。启用生成树后，第 2 层帧仍会广播，但只能通过由生成树创建的第 2 层网络通过单一路径传输帧。思科发现协议 (CDP) 用于发现有关相邻思科设备的信息。</p>
+<ol start="12">
+<li>哪种生成树标准仅支持一个根桥，以便所有 VLAN 的流量都流经同一路径？</li>
+</ol>
+<ul>
+<li><p>快速 PVST</p>
+</li>
+<li><p><span style="color: #ff0000">802.1D</span></p>
+</li>
+<li><p>MST</p>
+</li>
+<li><p>PVST+</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>MST 是 MSTP 的 Cisco 实现，它是一种 IEEE 标准协议，可提供多达 16 个 RSTP 实例。PVST+ 为网络中配置的每个 VLAN 提供单独的 802.1D 生成树实例。802.1D 是 IEEE 定义的原始 STP 标准，并且只允许一个根桥用于所有 VLAN。802.1w 或 RSTP 可提供更快的收敛速度，但仍对所有 VLAN 仅使用一个 STP 实例。</p>
+<ol start="13">
+<li>生成树协议 (STP) 的目的是什么？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">防止第 2 层环路</span></p>
+</li>
+<li><p>防止路由器上的路由环路</p>
+</li>
+<li><p>创建更小的冲突域</p>
+</li>
+<li><p>创建更小的广播域</p>
+</li>
+<li><p>允许 Cisco 设备交换路由表更新</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>生成树协议 (STP) 通过交换机网络创建一条路径，以防止第 2 层环路。</p>
+<ol start="14">
+<li>哪种协议提供最多 16 个 RSTP 实例，将多个具有相同物理和逻辑拓扑的 VLAN 组合成一个通用 RSTP 实例，并提供对 PortFast、BPDU 保护、BPDU 过滤器、根保护和环路保护的支持？</li>
+</ol>
+<ul>
+<li><p>直通式</p>
+</li>
+<li><p>快速 PVST+</p>
+</li>
+<li><p>PVST+</p>
+</li>
+<li><p><span style="color: #ff0000">MST</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>MST 是 MSTP 的 Cisco 实现，这是一种 IEEE 标准协议，可提供多达 16 个 RSTP 实例，并将许多具有相同物理和逻辑拓扑的 VLAN 组合成一个通用 RSTP 实例。每个实例都支持 PortFast、BPDU 防护、BPDU 过滤器、根防护和环路防护。STP 和 RSTP 假设整个桥接网络只有一个生成树实例，而与 VLAN 的数量无关。PVST+ 为网络中配置的每个 VLAN 提供单独的 802.1D 生成树实例。</p>
+<ol start="15">
+<li>在哪两个 PVST+ 端口状态下学习了 MAC 地址？（选择两个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">转发</span></p>
+</li>
+<li><p>禁用</p>
+</li>
+<li><p><span style="color: #ff0000">学习</span></p>
+</li>
+<li><p>听</p>
+</li>
+<li><p>阻塞</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>学习 MAC 地址并填充 MAC 地址表的两个 PVST+ 端口状态是学习和转发状态。</p>
+<ol start="16">
+<li>用于确定非根网桥上的哪个端口将成为 STP 网络中的根端口的值是多少？</li>
+</ol>
+<ul>
+<li><p>交换机中所有端口的最高 MAC 地址</p>
+</li>
+<li><p>交换机中所有端口的最低 MAC 地址</p>
+</li>
+<li><p>VTP 修订号</p>
+</li>
+<li><p><span style="color: #ff0000">路径成本</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>STP 在每个非根桥上建立一个根端口。根端口是从非根桥到根桥的成本最低的路径，表示到根桥的最佳路径的方向。这主要基于到根网桥的路径成本。</p>
+<ol start="17">
+<li>请参见图示。选举过程完成后，哪台交换机将成为根桥？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i223533v1n1_223533.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 04"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 04</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>S1</p>
+</li>
+<li><p><span style="color: #ff0000">S2</span></p>
+</li>
+<li><p>S3</p>
+</li>
+<li><p>S4</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>根网桥由最低网桥 ID 确定，该 ID 由优先级值和 MAC 地址组成。由于所有交换机的优先级值相同，因此 MAC 地址用于确定根桥。因为 S2 的 MAC 地址最低，所以 S2 成为根网桥。</p>
+<ol start="18">
+<li>关闭生成树并让多条路径通过第 2 层交换机网络有哪两个缺点？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>交换机就像一个集线器。</p>
+</li>
+<li><p>港口安全变得不稳定。</p>
+</li>
+<li><p><span style="color: #ff0000">MAC 地址表变得不稳定。</span></p>
+</li>
+<li><p><span style="color: #ff0000">广播帧被无限期地传输。</span></p>
+</li>
+<li><p>端口安全关闭所有连接设备的端口。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>生成树永远不应该被禁用。没有它，MAC 地址表会变得不稳定，广播风暴会导致网络客户端和交换机无法使用，并且可以将多个单播帧副本传送到终端设备。</p>
+<ol start="19">
+<li>哪个端口角色分配给到达根桥的成本最低的交换机端口？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">根端口</span></p>
+</li>
+<li><p>非指定港口</p>
+</li>
+<li><p>指定港口</p>
+</li>
+<li><p>禁用端口</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>交换机上的根端口是到达根桥的成本最低的端口。</p>
+<ol start="20">
+<li>一个小型公司网络有六个互连的第 2 层交换机。目前所有交换机都使用默认的网桥优先级值。哪个值可用于配置其中一台交换机的网桥优先级，以确保它成为本设计中的根网桥？</li>
+</ol>
+<ul>
+<li><p>1</p>
+</li>
+<li><p><span style="color: #ff0000">28672</span></p>
+</li>
+<li><p>32768</p>
+</li>
+<li><p>34816</p>
+</li>
+<li><p>61440</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>所有 Cisco 交换机的默认网桥优先级值为 32768。范围为 0 到 61440，增量为 4096。因此，值 1 和 34816 无效。将一台交换机配置为较低的值 28672（并且保持所有其他交换机的网桥优先级值不变）将使该交换机成为根网桥。</p>
+<ol start="21">
+<li>请参见图示。管理员尝试通过显示的命令在 S1 和其他两个交换机之间创建 EtherChannel，但未成功。问题是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i216434v1n3_Item-216434.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 10"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 10</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>如果在千兆以太网接口上实施 EtherChannel，则只能将流量发送到两个不同的交换机。</p>
+</li>
+<li><p>如果在第 3 层交换机上实施 EtherChannel，则只能将流量发送到两个不同的交换机。</p>
+</li>
+<li><p><span style="color: #ff0000">流量不能通过同一 EtherChannel 链路发送到两个不同的交换机。</span></p>
+</li>
+<li><p>流量不能发送到两个不同的交换机，而只能发送到两个不同的设备，例如启用 EtherChannel 的服务器和交换机。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>EtherChannel 链路只能在两个交换机之间或在启用了 EtherChannel 的服务器和交换机之间创建。流量不能通过同一 EtherChannel 链路发送到两个不同的交换机。</p>
+<ol start="22">
+<li>下列有关使用 PAgP 创建 EtherChannel 的说法中，哪一项是正确的？</li>
+</ol>
+<ul>
+<li><p>它需要全双工。</p>
+</li>
+<li><p><span style="color: #ff0000">它是思科专有的。</span></p>
+</li>
+<li><p>它需要比 LACP 更多的物理链路。</p>
+</li>
+<li><p>它增加了参与生成树的端口数量。</p>
+</li>
+<li><p>它要求使用偶数个端口（2、4、6 等）进行聚合。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>PAgP 用于将多个端口自动聚合到一个 EtherChannel 捆绑包中，但它仅适用于 Cisco 设备。LACP 可用于 Cisco 和非 Cisco 设备之间的相同目的。PAgP 必须在两端具有相同的双工模式，并且可以使用两个或更多端口。端口数量取决于交换机平台或模块。一条 EtherChannel 聚合链路被生成树算法视为一个端口。</p>
+<ol start="23">
+<li>能够在两台交换机之间配置 EtherChannel 的两个要求是什么？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>涉及的接口需要在交换机上是连续的。</p>
+</li>
+<li><p><span style="color: #ff0000">所有接口都需要以相同的速度工作。</span></p>
+</li>
+<li><p><span style="color: #ff0000">所有接口都需要在相同的双工模式下工作。</span></p>
+</li>
+<li><p>所有接口都需要分配到不同的 VLAN。</p>
+</li>
+<li><p>两端必须存在不同的 VLAN 允许范围。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>EtherChannel 捆绑包中的所有接口都必须分配到相同的 VLAN 或配置为中继。如果允许的 VLAN 范围不同，即使设置为自动或期望模式，接口也不会形成 EtherChannel。</p>
+<ol start="24">
+<li>请参见图示。根据图中所示的输出，关于 EtherChannel 包可以得出什么结论？<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i217690v1n1_217690.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 06"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 06</span></div></div></li>
+</ol>
+<ul>
+<li><p>EtherChannel 捆绑包已关闭。</p>
+</li>
+<li><p>EtherChannel 捆绑包同时在第 2 层和第 3 层运行。</p>
+</li>
+<li><p>两个千兆以太网端口用于形成 EtherChannel。</p>
+</li>
+<li><p><span style="color: #ff0000">思科专有协议用于协商 EtherChannel 链路。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>可以使用两种协议来发送用于尝试建立 EtherChannel 链路的协商帧：PAgP 和 LACP。PAgP 是 Cisco 专有的，LACP 遵循行业标准。</p>
+<ol start="25">
+<li>两个交换机的端口上必须匹配哪两个参数才能在交换机之间创建 PAgP EtherChannel？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>MAC地址</p>
+</li>
+<li><p><span style="color: #ff0000">速度</span></p>
+</li>
+<li><p><span style="color: #ff0000">VLAN信息</span></p>
+</li>
+<li><p>PAgP模式</p>
+</li>
+<li><p>端口号</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>要创建 EtherChannel，两台交换机上的相关端口必须在速度、双工和 VLAN 信息方面匹配。PAgP 模式必须兼容但不一定相等。端口 ID 和 MAC 地址不必匹配。</p>
+<ol start="26">
+<li>EtherChannel 技术中有哪两种负载均衡方法？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>源端口和 IP 到目标端口和 IP 的组合</p>
+</li>
+<li><p><span style="color: #ff0000">源IP到目的IP</span></p>
+</li>
+<li><p>源端口到目的端口</p>
+</li>
+<li><p>源 MAC 和 IP 到目标 MAC 和 IP 的组合</p>
+</li>
+<li><p><span style="color: #ff0000">源 MAC 到目标 MAC</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>根据硬件平台，可以实现一种或多种负载平衡方法。这些方法包括跨物理链路的源 MAC 到目标 MAC 负载平衡或源 IP 到目标 IP 负载平衡。</p>
+<ol start="27">
+<li>配置 EtherChannel 时，哪种模式会强制接口进入端口通道而不交换聚合协议数据包？</li>
+</ol>
+<ul>
+<li><p>积极的</p>
+</li>
+<li><p>汽车</p>
+</li>
+<li><p><span style="color: #ff0000">在</span></p>
+</li>
+<li><p>可取的</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>对于 LACP 和 PAgP，“on”模式将强制接口进入 EtherChannel，而不交换协议数据包。</p>
+<ol start="28">
+<li>请参见图示。在交换机 S1 和 S2 之间配置了 EtherChannel，但接口未形成 EtherChannel。问题是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i216436v1n4_Item-216436.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 08"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 08</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>每个交换机上的接口端口通道号必须不同。</p>
+</li>
+<li><p>交换机端口未配置速度和双工模式。</p>
+</li>
+<li><p>交换机端口必须配置为接入端口，每个端口都分配有一个 VLAN。</p>
+</li>
+<li><p><span style="color: #ff0000">未在每个接口上为 EtherChannel 配置相同的允许 VLAN 范围。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>配置 EtherChannel 链路的指导原则是： 形成 EtherChannel 的接口可以在物理上不连续，并且位于不同的模块上。 EtherChannel 中的接口必须以相同的速度和相同的双工模式运行。 EtherChannel 中的接口必须分配到相同的 VLAN，或配置为中继。 EtherChannel 中的接口必须支持相同的 VLAN 允许范围。</p>
+<ol start="29">
+<li>哪种模式配置设置允许在交换机 SW1 和 SW2 之间形成 EtherChannel 链路而不发送协商流量？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">SW1：开启</span><br><span style="color: #ff0000">SW2：开启</span></p>
+</li>
+<li><p>SW1：理想<br>SW2：理想</p>
+</li>
+<li><p>SW1：自动<br>SW2：<br>在两个交换机上启用自动中继</p>
+</li>
+<li><p>SW1：自动<br>SW2：<br>在两个交换机上启用自动 PortFast</p>
+</li>
+<li><p>SW1：被动</p>
+<pre><code>SW2：主动
+</code></pre>
+</li>
+</ul>
+<p>​    </p>
+<p><strong>答案解释和提示：</strong>仅当在链路的另一侧检测到 PAgP 设备时，auto channel-group 关键字才启用 PAgP。如果使用 auto 关键字，则形成 EtherChannel 链路的唯一方法是对端连接的设备配置有 desired 关键字。PortFast 和中继技术与形成 EtherChannel 链路无关。即使在双方都配置为所需模式时可以形成 EtherChannel，但 PAgP 处于活动状态，并且 PAgP 消息在链路上不断发送，从而减少了可用于用户流量的带宽量。</p>
+<ol start="30">
+<li>哪两种通道组模式会使用 PAgP 将接口置于协商状态？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>开启</p>
+</li>
+<li><p><span style="color: #ff0000">期望</span></p>
+</li>
+<li><p>主动</p>
+</li>
+<li><p><span style="color: #ff0000">自动</span></p>
+</li>
+<li><p>被动</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>为 PAgP 配置接口时，可以使用三种模式：on、desired 和 auto。仅需要并自动将接口置于协商状态。主动和被动状态用于配置 LACP 而不是 PAgP。</p>
+<ol start="31">
+<li>网络管理员已在通过四个 TRUNK 链路连接的两台交换机之间配置了 EtherChannel。如果其中一个 TRUNK 链路的接口变为 down 状态，则 EtherChannel 会发生什么？</li>
+</ol>
+<ul>
+<li><p>EtherChannel 将转换为关闭状态。</p>
+</li>
+<li><p>生成树协议将重新计算剩余的中继链路。</p>
+</li>
+<li><p><span style="color: #ff0000">EtherChannel 将保持正常运行。</span></p>
+</li>
+<li><p>生成树协议会将失败的物理接口转换为转发模式。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>EtherChannel 通过将多个中继链路捆绑到一个逻辑连接中来提供冗余。EtherChannel 中的一条物理链路发生故障不会导致拓扑发生变化，因此无需通过生成树进行重新计算。只有一条物理链路必须保持运行，EtherChannel 才能继续运行。</p>
+<ol start="32">
+<li>请参见图示。网络管理员正在配置两台交换机 SW1 和 SW2 之间的 EtherChannel 链路。哪个语句描述了命令在 SW1 和 SW2 上发出后的效果？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i246277v1n2_246277.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 03"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 03</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p><span style="color: #ff0000">EtherChannel 无法建立。</span></p>
+</li>
+<li><p>EtherChannel 无需协商即可建立。</p>
+</li>
+<li><p>EtherChannel 是在 SW1 发起链路请求后建立的。</p>
+</li>
+<li><p>EtherChannel 是在 SW2 发起链路请求后建立的。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>接口 GigabitEthernet 0&#x2F;1 和 GigabitEthernet 0&#x2F;2 为 EtherChannel 链路配置为“开启”。此模式强制接口在没有 PAgP 或 LACP 的情况下进行通道。仅当另一端也设置为“on”时，才会建立 EtherChannel。但是，SW2 侧的模式设置为 PAgP 合意。因此不会建立 EtherChannel 链路。</p>
+<ol start="33">
+<li>请参见图示。网络管理员正在配置两台交换机 SW1 和 SW2 之间的 EtherChannel 链路。但是，无法建立 EtherChannel 链路。配置中的哪些更改可以解决问题？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i246279v1n1_246279.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 02"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 02</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>将 SW1 EtherChannel 模式配置为打开。</p>
+</li>
+<li><p>将 SW2 EtherChannel 模式配置为打开。</p>
+</li>
+<li><p>将 SW2 EtherChannel 模式配置为自动。</p>
+</li>
+<li><p><span style="color: #ff0000">将 SW2 EtherChannel 模式配置为理想状态。 </span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>EtherChannel 模式必须在每一侧都兼容，链路才能正常工作。PAgP 协议的三种模式是 on、desirable 和 auto。LACP 协议的三种模式是开启、主动和被动。兼容模式包括on-on、auto-desirable、desirable-desirable、主动-被动和主动-主动。任何其他组合都不会形成 EtherChannel 链接。</p>
+<ol start="34">
+<li>一位网络管理员在两台交换机之间配置了一个具有三个接口的 EtherChannel 链路。如果三个接口之一关闭，结果如何？</li>
+</ol>
+<ul>
+<li><p>EtherChannel 失败。</p>
+</li>
+<li><p><span style="color: #ff0000">其余两个接口继续负载均衡流量。</span></p>
+</li>
+<li><p>其余两个接口成为两个交换机之间的独立链路。</p>
+</li>
+<li><p>一个接口成为数据流量的活动链路，另一个成为备份链路。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>EtherChannel 创建一个被视为一个逻辑链路的聚合。它提供了冗余，因为整个链路是一个逻辑连接。通道内一条物理链路的丢失不会导致拓扑结构发生变化；EtherChannel 保持正常运行。</p>
+<ol start="35">
+<li>哪项陈述描述了 EtherChannel 的特性？</li>
+</ol>
+<ul>
+<li><p>它最多可以组合 4 个物理链路。</p>
+</li>
+<li><p>它可以捆绑混合类型的 100 Mb&#x2F;s 和 1Gb&#x2F;s 以太网链路。</p>
+</li>
+<li><p>它由交换机和路由器之间的多个并行链路组成。</p>
+</li>
+<li><p><span style="color: #ff0000">它是通过组合多个物理链路制成的，这些物理链路被视为两个交换机之间的一条链路。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>一个 EtherChannel 是通过组合多个（相同类型的）以太网物理链路形成的，因此它们被视为一个逻辑链路并被配置为一个逻辑链路。它提供了两个交换机之间的聚合链路。目前，每个 EtherChannel 最多可以包含八个兼容配置的以太网端口。</p>
+<ol start="36">
+<li>网络管理员正在使用命令 SW1(config-if-range)# channel-group 1 mode auto 在交换机 SW1 和 SW2 之间配置 EtherChannel 链路。必须在 SW2 上使用哪个命令来启用此 EtherChannel？</li>
+</ol>
+<ul>
+<li><p>SW2(config-if-range)# 通道组 1 模式开启</p>
+</li>
+<li><p>SW2(config-if-range)# 通道组 1 模式激活</p>
+</li>
+<li><p>SW2(config-if-range)# 通道组 1 模式被动</p>
+</li>
+<li><p><span style="color: #ff0000">SW2(config-if-range)# 通道组 1 模式可取</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>使用 LACP 或 PAgP 在 SW1 和 SW2 之间建立 EtherChannel 的可能组合如下： PAgP on on auto LACP 开启 主动 主动 被动 主动在 EtherChannel 的每一侧选择的 EtherChannel 模式必须兼容才能启用它。</p>
+<ol start="37">
+<li>哪种技术是允许交换机自动将物理端口捆绑到单个逻辑链路中的开放协议标准？</li>
+</ol>
+<ul>
+<li><p>多链路 PPP</p>
+</li>
+<li><p>桌面排版</p>
+</li>
+<li><p><span style="color: #ff0000">LACP</span></p>
+</li>
+<li><p>PAgP</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>LACP，即链路聚合控制协议，由 IEEE 802.3ad 定义，是一种开放标准协议。LACP 允许交换机自动将交换机端口捆绑到单个逻辑链路中以增加带宽。PAgP 或端口聚合协议执行类似的功能，但它是 Cisco 专有协议。DTP 是动态中继协议，用于在交换机之间自动和动态地建立中继。多链路 PPP 用于跨多个串行接口对 PPP 流量进行负载平衡。</p>
+<ol start="38">
+<li>在两台交换机之间配置中继 EtherChannel 有什么要求？</li>
+</ol>
+<ul>
+<li><p>参与的接口必须在交换机上物理上连续。</p>
+</li>
+<li><p><span style="color: #ff0000">两台交换机上允许的 VLAN 范围必须相同。</span></p>
+</li>
+<li><p>参与的接口必须位于交换机上的同一模块上。</p>
+</li>
+<li><p>参与的接口必须在两台交换机上分配相同的 VLAN 号。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>要成功启用中继 EtherChannel，所有接口上允许的 VLAN 范围必须匹配；否则，无法形成 EtherChannel。EtherChannel 中涉及的接口不必在物理上是连续的，也不必在同一模块上。因为 EtherChannel 是一个中继通道，所以参与接口被配置为中继模式，而不是访问模式。</p>
+<ol start="39">
+<li>请参见图示。网络管理员在交换机 S1 上发出了 show etherchannel summary 命令。可以得出什么结论？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i247497v1n1_247497.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 01"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 01</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>EtherChannel 已暂停。</p>
+</li>
+<li><p><span style="color: #ff0000">EtherChannel 不起作用。</span></p>
+</li>
+<li><p>端口聚合协议 PAgP 配置错误。</p>
+</li>
+<li><p>FastEthernet 端口 Fa0&#x2F;1、Fa0&#x2F;2 和 Fa0&#x2F;3 不加入 EtherChannel。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>EtherChannel 状态显示为 (SD)，表示它是第 2 层 EtherChannel，状态为 D 或 down。由于 EtherChannel 已关闭，因此通道组中的接口状态为单机。在 S1 上配置了 PAgP，但没有指示在 S1 上是否配置正确。问题也可能是相邻交换机 EtherChannel 配置。</p>
+<ol start="40">
+<li>哪个语句描述了 EtherChannel 实现？</li>
+</ol>
+<ul>
+<li><p>EtherChannel 仅在第 2 层运行。</p>
+</li>
+<li><p>PAgP 不能与 EtherChannel 结合使用。</p>
+</li>
+<li><p><span style="color: #ff0000">中继端口可以是 EtherChannel 捆绑包的一部分。</span></p>
+</li>
+<li><p>EtherChannel 最多可以支持十个单独的链路。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>通过使用 PAgP 或 LACP 协议，最多可以将 16 个链路分组到一个 EtherChannel 中。EtherChannel 可以配置为第 2 层捆绑包或第 3 层捆绑包。配置第 3 层捆绑包超出了本课程的范围。如果中继端口是 EtherChannel 捆绑包的一部分，则捆绑包中的所有端口都必须是中继端口，并且所有这些端口上的本地 VLAN 必须相同。最佳实践是将配置应用到端口通道接口。然后配置会自动应用于各个端口。</p>
+<ol start="41">
+<li>使用 LACP 有哪个两个优点？（选择两项。）</li>
+</ol>
+<ul>
+<li><p>LACP 可以在一个以太通道内混合使用快速以太网和千兆以太网。</p>
+</li>
+<li><p>在多个交换机上部署 VLAN 时，无需配置中继接口。</p>
+</li>
+<li><p><span style="color: #ff0000">它允许直连的交换机协商以太通道链路。</span></p>
+</li>
+<li><p>它提供了一个模拟环境，可以测试链路聚合。</p>
+</li>
+<li><p>它减少了交换机上需要配置的总量。</p>
+</li>
+<li><p><span style="color: #ff0000">它支持使用多个厂商的设备。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>链路聚合控制协议 (LACP) 允许直接连接的多供应商交换机协商 EtherChannel 链路。LACP 通过检测每一端的配置并确保它们兼容，从而可以在需要时启用 EtherChannel 链路，从而帮助创建 EtherChannel 链路。</p>
+<ol start="42">
+<li>EtherChannel 具有哪两项优势？（请选择两项。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">配置 EtherChannel 接口能够让物理链路的配置保持一致性。</span></p>
+</li>
+<li><p>负载平衡发生在配置为不同 EtherChannel 的链路之间。</p>
+</li>
+<li><p>EtherChannel 使用升级的物理链路来提供更大的带宽。</p>
+</li>
+<li><p><span style="color: #ff0000">生成树协议将 EtherChannel 中的物理链路视为一个逻辑连接。</span></p>
+</li>
+<li><p>生成树协议通过将 EtherChannel 中的故障接口转换为转发状态来确保冗余。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>一个逻辑接口的 EtherChannel 配置可确保 EtherChannel 中物理链路的配置一致性。EtherChannel 使用现有交换机端口提供更高的带宽，而无需对物理接口进行任何升级。负载平衡方法在属于同一 Etherchannel 的链路之间实现。由于 EtherChannel 将捆绑的物理链路视为一个逻辑连接，因此如果捆绑的物理链路之一发生故障，则不需要重新计算生成树。如果物理接口发生故障，STP 无法将发生故障的接口转换为转发状态。</p>
+<ol start="43">
+<li>交换机配置为运行 STP。什么术语描述了一个默认值为 32,768 的字段，并且是选择根桥时的初始决定因素？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">桥优先</span></li>
+<li>BPDU</li>
+<li>网桥ID</li>
+<li>扩展系统标识</li>
+</ul>
+<ol start="44">
+<li>交换机配置为运行 STP。什么术语描述了所有路径计算的参考点？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">根桥</span></li>
+<li>根端口</li>
+<li>指定港口</li>
+<li>备用端口</li>
+</ul>
+<ol start="45">
+<li>交换机配置为运行 STP。什么术语描述了用于指定 VLAN ID 的字段？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">扩展系统标识</span></li>
+<li>端口号</li>
+<li>MAC地址</li>
+<li>桥优先</li>
+</ul>
+<ol start="46">
+<li>交换机配置为运行 STP。哪个术语描述了在总成本方面最接近根桥的交换机端口？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">根端口</span></li>
+<li>指定港口</li>
+<li>备用端口</li>
+<li>禁用</li>
+</ul>
+<ol start="47">
+<li>交换机配置为运行 STP。哪个术语描述了在总成本方面最接近根桥的交换机端口？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">根端口</span></li>
+<li>指定港口</li>
+<li>备用端口</li>
+<li>根桥</li>
+</ul>
+<ol start="48">
+<li>交换机配置为运行 STP。什么术语描述了所有路径计算的参考点？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">根网桥</span></li>
+<li>根端口</li>
+<li>指定端口</li>
+<li>disabled</li>
+</ul>
+<ol start="49">
+<li>交换机配置为运行 STP。什么术语描述了允许在网络上转发流量的非根端口？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">指定港口</span></li>
+<li>备用端口</li>
+<li>禁用</li>
+<li>根端口</li>
+</ul>
+<ol start="50">
+<li>交换机配置为运行 STP。什么术语描述了允许在网络上转发流量的非根端口？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">指定港口</span></li>
+<li>备用端口</li>
+<li>禁用</li>
+<li>专用端口</li>
+</ul>
+<ol start="51">
+<li>交换机配置为运行 STP。什么术语描述了用于指定 VLAN ID 的字段？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">扩展系统标识</span></li>
+<li>端口号</li>
+<li>桥优先</li>
+<li>网桥ID</li>
+</ul>
+<ol start="52">
+<li>交换机配置为运行 STP。什么术语描述了一个默认值为 32,768 的字段，并且是选择根桥时的初始决定因素？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">桥优先</span></li>
+<li>MAC地址</li>
+<li>扩展系统标识</li>
+<li>网桥ID</li>
+</ul>
+<ol start="53">
+<li>请参见图示。在这个启用 RSTP 的网络中，端口 A、B、C 和 D 可能的端口角色是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i223430v1n1_Item-223430.jpg" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 05"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 05</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>替代，根，指定，根</p>
+</li>
+<li><p>指定，根，备用，根</p>
+</li>
+<li><p><span style="color: #ff0000">备用，指定，根，根</span></p>
+</li>
+<li><p>指定的, 备用, 根, 根</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>因为S1是根桥，B是指定端口，C和D是根端口。RSTP 支持一种新的端口类型，即处于丢弃状态的备用端口，在这种情况下可以是端口 A。</p>
+<ol start="54">
+<li>请参见图示。哪种交换技术允许聚合每个接入层交换机链路以在每个第 2 层交换机和第 3 层交换机之间提供更多带宽？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i217659v1n1_217659.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 07"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 07</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>HSRP</p>
+</li>
+<li><p>PortFast</p>
+</li>
+<li><p>中继</p>
+</li>
+<li><p><span style="color: #ff0000">以太通道</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>PortFast 用于减少端口通过生成树算法所花费的时间，以便设备可以更快地开始发送数据。中继可以与 EtherChannel 一起实施，但单独的中继并不能聚合交换机链路。HSRP 用于在到第 3 层设备的两个不同连接之间对流量进行负载平衡，以实现默认网关冗余。HSRP 不像 EtherChannel 那样在第 2 层或第 3 层聚合链路。</p>
+<ol start="55">
+<li>请参见图示。管理员希望使用端口聚合协议在两台交换机之间形成 EtherChannel。如果交换机 S1 配置为自动模式，应在 S2 上配置哪种模式以形成 EtherChannel？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://ccnav7.net/wp-content/uploads/2020/01/i216435v1n2_Item-216435.png" alt="CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 09"/></div><div class="image-meta"><span class="image-caption center">CCNA2 v7 SRWE - 模块 5 - 6 冗余网络考试答案 09</span></div></div>
+
+<p>​    </p>
+<ul>
+<li><p>开启</p>
+</li>
+<li><p>自动</p>
+</li>
+<li><p><span style="color: #ff0000">期望</span></p>
+</li>
+<li><p>关闭</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当两个开关都处于开启模式或其中一个处于自动或期望模式而另一个处于期望模式时，将通过 PAgP 形成一个 EtherChannel。</p>
+<ol start="56">
+<li><p>打开 PT 活动。执行活动说明中的任务，然后回答问题。</p>
+<p>在 SW1 上发出的哪组配置命令将成功完成 SW1 和 SW2 之间的 EtherChannel 链路？</p>
+</li>
+</ol>
+<ul>
+<li><p>接口端口通道 1<br>不关闭</p>
+</li>
+<li><p><span style="color: #ff0000">接口 GigabitEthernet0&#x2F;1</span><br><span style="color: #ff0000">通道组 1 模式可取</span></p>
+</li>
+<li><p>接口 GigabitEthernet0&#x2F;1<br>没有关闭</p>
+</li>
+<li><p>接口 GigabitEthernet0&#x2F;2</p>
+<pre><code>通道组 2 模式可取
+</code></pre>
+</li>
+</ul>
+<p>​    </p>
+<p><strong>答案解释和提示：</strong>在 SW1 上发出 show running-configuration 命令显示接口 GigabitEthernet0&#x2F;1 缺少通道组 1 模式所需命令，该命令将竞争接口 GigabitEthernet0&#x2F;1 和接口 GigabitEthernet0&#x2F;2 的 EtherChannel 配置。</p>
+</article>
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 [@saevio]创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"post","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta name="referrer" content="no-referrer">
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>saevio</title>
+
+  
+    <meta name="description" content="模拟考试原文地址  技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config)#interface VLAN88 命令有什么作用？   它进入交换机虚拟接口的配置模式。 它将 IPv4 地址应用于虚拟接口。 它将 IPv6 地址应用于虚拟接口。 它允许在交换机物理接口上配置 IPv6 地址。 它更新关联端口的 MAC 地址表。   如果 show ip interf">
+<meta property="og:type" content="website">
+<meta property="og:title" content="saevio">
+<meta property="og:url" content="https://mengchunm.github.io/Cisco/%E6%A8%A1%E6%8B%9F%E8%80%83%E8%AF%95.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="模拟考试原文地址  技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config)#interface VLAN88 命令有什么作用？   它进入交换机虚拟接口的配置模式。 它将 IPv4 地址应用于虚拟接口。 它将 IPv6 地址应用于虚拟接口。 它允许在交换机物理接口上配置 IPv6 地址。 它更新关联端口的 MAC 地址表。   如果 show ip interf">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i215024v1n1_215024/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i211587v1n1_211587/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i211586v1n1_question205/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-001/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i254770v1n2_254770/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i212661v1n3_212661/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-002/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i284503v1n1_284503/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i221269v1n1_221269/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-003png/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i215830v1n1_215830/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-004png/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i273090v1n1_item-273090/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i349105v8n1_349105/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-005/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i283589v1n1_209391/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-006/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i210868v1n2_210868/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i282903v1n1_routing5/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i344612v1n2_routing/">
+<meta property="article:published_time" content="2024-10-09T13:42:25.042Z">
+<meta property="article:modified_time" content="2024-10-09T13:42:25.042Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i215024v1n1_215024/">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">随笔</a><a class="nav-item" href="/notes/">便签</a><a class="nav-item" href="/more/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"></div></div></widget>
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+
+
+      
+
+
+
+<article class="md-text content page"><h1 id="模拟考试"><a href="#模拟考试" class="headerlink" title="模拟考试"></a>模拟考试</h1><p><a target="_blank" rel="noopener" href="https://ccna7.org/ccna2-v7-0/ccna2-v7-srwe-v7-srwe-practice-final-exam-answers/">原文地址</a></p>
+<ol>
+<li>技术人员正在配置新的 Cisco 2960 交换机。发出 BranchSw(config)#interface VLAN88 命令有什么作用？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">它进入交换机虚拟接口的配置模式。</span></li>
+<li>它将 IPv4 地址应用于虚拟接口。</li>
+<li>它将 IPv6 地址应用于虚拟接口。</li>
+<li>它允许在交换机物理接口上配置 IPv6 地址。</li>
+<li>它更新关联端口的 MAC 地址表。</li>
+</ul>
+<ol start="2">
+<li>如果 show ip interface 命令显示接口已关闭且线路协议已关闭，则哪个问题很明显？</li>
+</ol>
+<ul>
+<li><p>发生封装不匹配。</p>
+</li>
+<li><p><span style="color: #ff0000">未将电缆连接到端口。</span></p>
+</li>
+<li><p>接口上没有发出 no shutdown 命令。</p>
+</li>
+<li><p>IP 地址与接口上配置的地址有冲突。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>如果没有使用 no shutdown 命令启动接口，则接口状态显示为管理性关闭。重复的 IP 地址不会导致接口关闭。通常使用 show interfaces 命令发现封装错误。</p>
+<ol start="3">
+<li>在什么情况下第 2 层交换机会配置 IP 地址？</li>
+</ol>
+<ul>
+<li><p>当二层交换机需要将用户流量转发到另一台设备时</p>
+</li>
+<li><p>当二层交换机是用户流量的默认网关时</p>
+</li>
+<li><p><span style="color: #ff0000">当需要远程管理二层交换机时</span></p>
+</li>
+<li><p>当第 2 层交换机使用路由端口时</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>第 2 层交换机可以配置 IP 地址，以便管理员可以远程管理它们。第 3 层交换机可以在路由端口上使用 IP 地址。第 2 层交换机不需要配置 IP 地址来转发用户流量或充当默认网关。</p>
+<ol start="4">
+<li>将两个或多个交换机连接在一起会产生什么结果？</li>
+</ol>
+<ul>
+<li><p>广播域的数量增加了。</p>
+</li>
+<li><p><span style="color: #ff0000">广播域的大小增加了。</span></p>
+</li>
+<li><p>减少了冲突域的数量。</p>
+</li>
+<li><p>碰撞域的大小增加。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当两个或更多交换机连接在一起时，广播域的大小会增加，冲突域的数量也会增加。只有添加路由器时，广播域的数量才会增加。</p>
+<ol start="5">
+<li>请参见图示。如果交换机 SW1 上的 MAC 地址表为空，从 PCA 发送的帧如何转发到 PCC？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i215024v1n1_215024/" alt="CCNA2 SRWE 练习期末考试答案 v7 12"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 12</span></div></div>
+
+<p>   CCNA2 SRWE 练习期末考试答案 v7 12</p>
+<ul>
+<li><p>SW1 在交换机的所有端口上泛洪帧，不包括到交换机 SW2 的互连端口和帧进入交换机的端口。</p>
+</li>
+<li><p><span style="color: #ff0000">SW1 将帧泛洪到 SW1 上的所有端口上，不包括帧进入交换机的端口。</span></p>
+</li>
+<li><p>SW1 将帧直接转发到 SW2。SW2 将帧泛洪到连接到 SW2 的所有端口，不包括帧进入交换机的端口。</p>
+</li>
+<li><p>SW1 丢弃该帧，因为它不知道目标 MAC 地址。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>交换机上电时，MAC地址表为空。交换机通过检查传入帧的源 MAC 地址来构建 MAC 地址表。交换机根据在帧头中找到的目的 MAC 地址进行转发。如果交换机在 MAC 地址表中没有条目或目标 MAC 地址不在交换机表中，则交换机会将帧转发到除将帧引入交换机的端口之外的所有端口。</p>
+<ol start="6">
+<li>可以帮助缓解网络拥塞的两个交换机特性是什么？（选择两个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">快速内部切换</span></p>
+</li>
+<li><p>帧校验序列（FCS）校验</p>
+</li>
+<li><p><span style="color: #ff0000">大帧缓冲区</span></p>
+</li>
+<li><p>低端口密度</p>
+</li>
+<li><p>存储转发交换</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>有助于缓解网络拥塞的交换机特性包括快速端口速度、快速内部交换、大帧缓冲区和高端口密度。</p>
+<ol start="7">
+<li>一家小型出版公司的网络设计使得当在 LAN 上发送广播时，有 200 台设备接收传输的广播。网络管理员如何减少接收广播流量的设备数量？</li>
+</ol>
+<ul>
+<li><p>添加更多交换机，以便在特定交换机上使用更少的设备。</p>
+</li>
+<li><p>将交换机替换为每个交换机具有更多端口的交换机。这将允许在特定交换机上使用更多设备。</p>
+</li>
+<li><p><span style="color: #ff0000">将 LAN 分割成更小的 LAN 并在它们之间路由。</span></p>
+</li>
+<li><p>将至少一半的交换机替换为集线器以减小广播域的大小。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>通过将一个大网络分成两个较小的网络，网络管理员创建了两个较小的广播域。现在在网络上发送广播时，广播只会发送到同一以太网 LAN 上的设备。另一个 LAN 将不会收到广播。</p>
+<ol start="8">
+<li>请参见图示。DLS1 通过中继链路连接到另一个交换机 DLS2。连接到 DLS1 的主机无法与连接到 DLS2 的主机通信，即使它们都在 VLAN 99 中。应将哪个命令添加到 DLS1 上的 Fa0&#x2F;1 以更正问题？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i211587v1n1_211587/" alt="CCNA2 SRWE 练习期末考试答案 v7 14"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 14</span></div></div>
+
+<p>   CCNA2 SRWE 练习期末考试答案 v7 14</p>
+<ul>
+<li><p>交换机端口无协商</p>
+</li>
+<li><p>开关端口模式动态自动</p>
+</li>
+<li><p><span style="color: #ff0000">交换机端口中继本机 vlan 66</span></p>
+</li>
+<li><p>交换机端口中继允许 vlan 添加 99</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>配置 802.1Q 中继链路时，本地 VLAN 必须在链路两侧匹配，否则将生成 CDP 错误消息，并且来自或去往本地 VLAN 的流量将无法正确处理。</p>
+<ol start="9">
+<li>请参见图示。PC-A 和 PC-B 都在 VLAN 60 中。PC-A 无法与 PC-B 通信。问题是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i211586v1n1_question205/" alt="CCNA2 SRWE 练习期末考试答案 v7 15"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 15</span></div></div>
+
+<p>   CCNA2 SRWE 练习期末考试答案 v7 15</p>
+<ul>
+<li><p>本机 VLAN 应为 VLAN 60。</p>
+</li>
+<li><p>正在从链路中修剪本机 VLAN。</p>
+</li>
+<li><p>中继已使用 switchport nonegotiate 命令进行配置。</p>
+</li>
+<li><p><span style="color: #ff0000">PC-A 使用的 VLAN 不在中继上允许的 VLAN 列表中。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>由于 PC-A 和 PC-B 连接到不同的交换机，它们之间的流量必须通过中继链路。可以配置干线，使它们只允许特定 VLAN 的流量通过链路。在这种情况下，VLAN 60（与 PC-A 和 PC-B 关联的 VLAN）不允许通过链路，如 show interfaces trunk 的输出所示。</p>
+<ol start="10">
+<li>什么类型的 VLAN 专门为 SSH、Telnet、HTTPS、HHTP 和 SNMP 等网络流量配置？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">管理 VLAN</span></li>
+<li>中继 VLAN</li>
+<li>安全 VLAN</li>
+<li>语音 VLAN</li>
+</ul>
+<ol start="11">
+<li>哪种类型的流量是为本地 VLAN 设计的？</li>
+</ol>
+<ul>
+<li><p>用户生成</p>
+</li>
+<li><p>标记</p>
+</li>
+<li><p><span style="color: #ff0000">未标记</span></p>
+</li>
+<li><p>管理</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>本地 VLAN 承载未标记的流量，即不来自 VLAN 的流量。数据 VLAN 承载用户生成的流量。管理 VLAN 承载管理流量。</p>
+<ol start="12">
+<li>将 DTP 模式与其功能相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-001/" alt="CCNA2 SRWE 练习期末考试答案 v7 001"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 001</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 001
+</code></pre>
+<p><strong>答案解释和提示：</strong>如果相邻接口设置为中继或期望模式，则动态自动模式使该接口成为中继接口。动态期望模式使接口主动尝试将链路转换为中继链路。中继模式将接口置于永久中继模式并协商将相邻链路转换为中继链路。非协商模式可防止接口生成 DTP 帧。</p>
+<ol start="13">
+<li>网络管理员正在使用单臂路由器方法来配置 VLAN 间路由。交换机端口 Gi1&#x2F;1 用于连接路由器。应该输入哪个命令来为任务准备此端口？</li>
+</ol>
+<ul>
+<li><p>Switch(config)# interface gigabitethernet 1&#x2F;1<br>Switch(config-if)# spanning-tree vlan 1</p>
+</li>
+<li><p>Switch(config)# interface gigabitethernet 1&#x2F;1<br>Switch(config-if)# spanning-tree portfast</p>
+</li>
+<li><p><span style="color: #ff0000">Switch(config)# interface gigabitethernet 1&#x2F;1 </span><br><span style="color: #ff0000">Switch(config-if)# switchport mode trunk</span></p>
+</li>
+<li><p>Switch(config)# interface gigabitethernet 1&#x2F;1</p>
+<pre><code>Switch(config-if)# switchport access vlan 1
+</code></pre>
+</li>
+</ul>
+<p>​    </p>
+<p><strong>答案解释和提示：</strong>使用单臂路由器方法，连接到路由器的交换机端口必须配置为中继模式。这可以通过命令 Switch(config-if)# switchport mode trunk 来完成。其他选项不会将交换机端口置于中继模式。</p>
+<ol start="14">
+<li>请参见图示。该配置显示了网络管理员为 VLAN 间路由输入的命令。但是，主机 H1 无法与 H2 通信。VLAN 间配置的哪一部分会导致问题？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i254770v1n2_254770/" alt="CCNA2 SRWE 练习期末考试答案 v7 09"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 09</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 09
+</code></pre>
+<ul>
+<li><p>中继</p>
+</li>
+<li><p>两个交换机 FastEthernet 端口上的端口模式</p>
+</li>
+<li><p><span style="color: #ff0000">VLAN 配置</span></p>
+</li>
+<li><p>路由器端口配置</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>默认情况下，所有 Cisco 交换机端口都分配给 VLAN 1。对于 VLAN 实施，端口 Fa0&#x2F;1 和 Fa0&#x2F;2 应分别分配给 VLAN 10 和 VLAN 20。S1 上缺少的命令如下： switchport access vlan 10 和 switchport access vlan 20 。</p>
+<ol start="15">
+<li>请参见图示。VLAN 10、VLAN 20 和 VLAN 30 之间的 VLAN 间通信不成功。问题是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i212661v1n3_212661/" alt="CCNA2 SRWE 练习期末考试答案 v7 13"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 13</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 13
+</code></pre>
+<ul>
+<li><p>访问接口没有 IP 地址，每个接口都应该配置一个 IP 地址。</p>
+</li>
+<li><p><span style="color: #ff0000">交换机接口 FastEthernet0&#x2F;1 配置为接入接口，应配置为中继接口。</span></p>
+</li>
+<li><p>交换机接口 FastEthernet0&#x2F;1 配置为不协商，应配置为协商。</p>
+</li>
+<li><p>交换机接口 FastEthernet0&#x2F;2、FastEthernet0&#x2F;3 和 FastEthernet0&#x2F;4 配置为不协商，应配置为协商。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>要将所有 VLAN 转发到路由器，必须使用 switchport mode trunk 命令将交换机接口 Fa0&#x2F;1 配置为中继接口。</p>
+<ol start="16">
+<li>PVST+ 的优势是什么？</li>
+</ol>
+<ul>
+<li><p>PVST+ 对网络中的所有交换机需要更少的 CPU 周期。</p>
+</li>
+<li><p>与使用 CST 的传统 STP 实施相比，PVST+ 减少了带宽消耗。</p>
+</li>
+<li><p>PVST+ 通过自动选择根网桥优化网络性能。</p>
+</li>
+<li><p><span style="color: #ff0000">PVST+ 通过负载共享优化网络性能。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>PVST+ 可实现最佳负载平衡。然而，这是通过手动配置交换机来完成的，这些交换机被选为网络上不同 VLAN 的根网桥。不会自动选择根网桥。此外，为每个 VLAN 设置生成树实例实际上会消耗更多带宽，并且会增加网络中所有交换机的 CPU 周期。</p>
+<ol start="17">
+<li>哪三个组件组合起来形成一个桥 ID？</li>
+</ol>
+<ul>
+<li><p>端口号</p>
+</li>
+<li><p>IP地址</p>
+</li>
+<li><p><span style="color: #ff0000">扩展系统标识</span></p>
+</li>
+<li><p><span style="color: #ff0000">MAC地址</span></p>
+</li>
+<li><p><span style="color: #ff0000">桥优先</span></p>
+</li>
+<li><p>成本</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>组成网桥 ID 的三个组件是网桥优先级、扩展系统 ID 和 MAC 地址。</p>
+<ol start="18">
+<li>将生成树功能与协议类型匹配。（并非所有选项都被使用。）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-002/" alt="CCNA2 SRWE 练习期末考试答案 v7 002"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 002</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 002
+</code></pre>
+<p><strong>答案解释和提示：</strong>MST 是 MSTP (IEEE 802.1s) 的 Cisco 实施。</p>
+<ol start="19">
+<li>请参见图示。根据显示的命令输出，EtherChannel 的状态是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i284503v1n1_284503/" alt="CCNA2 SRWE 练习期末考试答案 v7 04"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 04</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 04
+</code></pre>
+<ul>
+<li><p>EtherChannel 是动态的，使用端口 Fa0&#x2F;10 和 Fa0&#x2F;11 作为被动端口。</p>
+</li>
+<li><p>协议字段为空表明 EtherChannel 已关闭。</p>
+</li>
+<li><p>如 FastEthernet 端口的 P 标志所示，EtherChannel 部分功能。</p>
+</li>
+<li><p><span style="color: #ff0000">如命令输出中的 SU 和 P 标志所示，EtherChannel 正在使用中且正常运行。  </span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>命令输出显示端口通道为 SU，表示第 2 层并在使用中；并且 FastEthernet 0&#x2F;10 和 0&#x2F;11 接口捆绑在端口通道中，如 P 标志所示。使用 channel-group 1 mode on 命令配置 EtherChannel 将导致命令输出中的 Protocol 字段为空。</p>
+<ol start="20">
+<li>请参见图示。网络管理员正在对 EtherChannel 问题进行故障排除。使用什么命令来产生展示的输出？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i221269v1n1_221269/" alt="CCNA2 SRWE 练习期末考试答案 v7 10"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 10</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 10
+</code></pre>
+<ul>
+<li><p><span style="color: #ff0000">显示接口 fastethernet 0&#x2F;11 etherchannel</span></p>
+</li>
+<li><p>显示 etherchannel 端口通道</p>
+</li>
+<li><p>显示以太通道摘要</p>
+</li>
+<li><p>显示接口端口通道 11</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>show interfaces fastethernet 0&#x2F;11 etherchannel 命令将显示 FastEthernet 0&#x2F;11 接口的 EtherChannel 信息。显示的信息包括所属的端口通道、当前模式、通道组等信息。</p>
+<ol start="21">
+<li>哪个命令将启动捆绑两个物理接口以通过 LACP 创建 EtherChannel 组的过程？</li>
+</ol>
+<ul>
+<li><p>通道组 2 模式自动</p>
+</li>
+<li><p>接口端口通道 2</p>
+</li>
+<li><p>通道组 1 模式可取</p>
+</li>
+<li><p><span style="color: #ff0000">接口范围 GigabitEthernet 0&#x2F;4 – 5</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>要指定 EtherChannel 组中的接口，请对使用的接口范围使用 interface range interface 全局配置命令。interface range GigabitEthernet 0&#x2F;4 – 5 命令是正确的选项，因为它为 EtherChannel 组指定了两个接口。</p>
+<ol start="22">
+<li>管理员已配置 DHCPv4 中继路由器并发出以下命令：</li>
+</ol>
+<pre><code>Router(config)# interface g0/0
+Router(config-if)# ip address 10.0.1.1 255.255.255.0
+Router(config-if)# no shutdown
+Router(config-if)# exit
+Router(config)# ip dhcp pool RELAY
+路由器（dhcp-config）#结束
+
+ 客户端未从 DHCPv4 服务器接收 IP 参数。什么是可能的原因？
+</code></pre>
+<ul>
+<li><p>池不能命名为“RELAY”。</p>
+</li>
+<li><p>路由器配置为 DHCPv4 客户端。</p>
+</li>
+<li><p>使用的子网掩码的 IP 地址不正确。</p>
+</li>
+<li><p><span style="color: #ff0000">缺少 ip helper-address 命令。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>该路由器应使用 ip helper-address 命令配置，后跟 DHCPv4 服务器的 IP 地址，因为该路由器旨在用作中继代理。ip dhcp pool RELAY 命令只是命名 DHCPv4 池，并没有启用中继功能。</p>
+<ol start="23">
+<li>一家小型咖啡店为顾客提供免费无线网络连接。该网络包括一个无线路由器和一个连接到本地电话公司的 DSL 调制解调器。通常使用什么方法来配置与电话公司的连接？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">将无线路由器中的 WAN 连接设置为 DHCP 客户端。</span></p>
+</li>
+<li><p>将 DSL 调制解调器设置为 DHCP 客户端，以从无线路由器获取公共 IP 地址。</p>
+</li>
+<li><p>将无线路由器和 DSL 调制解调器之间的连接设置为专用 IP 网络。</p>
+</li>
+<li><p>将 DSL 调制解调器设置为电话公司的 DHCP 客户端和内部连接的 DHCP 服务器。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在 SOHO 环境中，无线路由器通过 DSL 或电缆调制解调器连接到 ISP。无线路由器和 ISP 站点之间的 IP 地址通常由 ISP 通过 DHCP 分配。DSL 调制解调器不管理 IP 地址分配。</p>
+<ol start="24">
+<li>将用途与其 DHCP 消息类型相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-003png/" alt="CCNA2 SRWE练习期末考试答案v7 003png"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE练习期末考试答案v7 003png</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 003
+</code></pre>
+<p><strong>答案解释和提示：</strong>DHCPDISCOVER 消息用于识别网络上的任何 DHCP 服务器。服务器使用 DHCPOFFER 消息向客户端提供租约。DHCPREQUEST 消息用于标识特定的 DHCP 服务器和客户端正在接受的租约。<br />服务器使用 DHCPACK 消息来完成与客户端的成功租约。<br />DHCPNAK 消息是当提供的租约不再有效时使用。</p>
+<ol start="25">
+<li>网络管理员正在为公司实施 DHCPv6。管理员使用接口命令 ipv6 nd managed-config-flag 将路由器配置为发送 M 标志为 1 的 RA 消息。这个配置会对客户端的运行产生什么影响？</li>
+</ol>
+<ul>
+<li><p>客户端必须使用 RA 消息中包含的信息。</p>
+</li>
+<li><p><span style="color: #ff0000">客户端必须使用 DHCPv6 服务器提供的所有配置信息。</span></p>
+</li>
+<li><p>客户端必须使用 DHCPv6 服务器提供的前缀和前缀长度，并生成随机接口 ID。</p>
+</li>
+<li><p>客户端必须使用 RA 消息提供的前缀和前缀长度，并从 DHCPv6 服务器获取附加信息。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在有状态的 DHCPv6 配置下，通过将 M 标志设置为 1（通过接口命令 ipv6 nd managed-config-flag ）表示，动态 IPv6 地址分配由 DHCPv6 服务器管理。客户端必须从 DHCPv6 服务器获取所有配置信息。</p>
+<ol start="26">
+<li>请参见图示。R1 LAN 网络上的用户无法从配置的有状态 DHCPv6 服务器接收 IPv6 地址。路由器 R1 上的有状态 DHCPv6 配置缺少什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i215830v1n1_215830/" alt="CCNA2 SRWE 练习期末考试答案 v7 11"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 11</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 11
+</code></pre>
+<ul>
+<li><p>路由器 R1 上尚未全局启用 IPv6。</p>
+</li>
+<li><p>DHCPv6 池尚未绑定到 LAN 接口。</p>
+</li>
+<li><p><span style="color: #ff0000">FA0&#x2F;0 接口缺少通知客户端使用有状态 DHCPv6 的命令。</span></p>
+</li>
+<li><p>DHCPv6 池与接口 FA0&#x2F;0 上配置的 IPv6 地址不匹配。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在为有状态 DHCPv6 配置路由器接口时，路由器必须能够通知主机 PC 从有状态 DHCPv6 服务器接收 IPv6 寻址。接口命令是 ipv6 nd managed-config-flag</p>
+<ol start="27">
+<li>将 FHRP 协议与适当的描述相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-004png/" alt="CCNA2 SRWE练习期末考试答案v7 004png"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE练习期末考试答案v7 004png</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 004
+</code></pre>
+<p><strong>答案解释和提示：</strong>GLBP，一种 Cisco 专有的 FHRP，除了冗余之外还提供负载共享。HSRP 思科专有的 FHRP，通过使用活动设备和备用设备提供冗余。VRRP，一种开放标准 FHRP，通过使用虚拟路由器主设备和一个或多个备份来提供冗余。Distractor，一种传统的开放标准 FHRP，允许 IPv4 主机发现网关路由器。</p>
+<ol start="28">
+<li>一位网络工程师正在为 LAN 配置一个冗余的第一跳，以更好地利用可用的网络资源。工程师应该实施哪种协议？</li>
+</ol>
+<ul>
+<li><p>FHRP</p>
+</li>
+<li><p><span style="color: #ff0000">GLBP</span></p>
+</li>
+<li><p>HSRP</p>
+</li>
+<li><p>VRRP</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>网关负载平衡协议 (GLBP) 在一组冗余路由器之间提供负载共享，同时还保护来自故障路由器或电路的数据流量。</p>
+<ol start="29">
+<li>哪个术语描述了 Cisco 交换机在基于 802.1X 端口的访问控制中的作用？</li>
+</ol>
+<ul>
+<li><p>代理人</p>
+</li>
+<li><p>请求者</p>
+</li>
+<li><p><span style="color: #ff0000">验证器</span></p>
+</li>
+<li><p>认证服务器</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>802.1X 基于端口的身份验证为网络中的设备定义了特定角色： 客户端（请求者）——请求访问 LAN 和交换服务的设备 交换机（身份验证器）——根据客户端的身份验证状态控制对网络的物理访问 身份验证服务器 - 执行客户端的实际身份验证</p>
+<ol start="30">
+<li>哪种思科解决方案有助于防止 ARP 欺骗和 ARP 中毒攻击？</li>
+</ol>
+<ul>
+<li><p>港口安全</p>
+</li>
+<li><p>DHCP 侦听</p>
+</li>
+<li><p>IP 源保护</p>
+</li>
+<li><p><span style="color: #ff0000">动态 ARP 检查</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>思科提供解决方案来帮助缓解第 2 层攻击。解决方案包括： IP Source Guard (IPSG) – 防止 MAC 和 IP 地址欺骗攻击 动态 ARP 检查 (DAI) – 防止 ARP 欺骗和 ARP 中毒攻击 DHCP Snooping – 防止 DHCP 饥饿和 SHCP 欺骗攻击 Port Security – 防止多种类型包括 MAC 表溢出攻击和 DHCP 饥饿攻击的攻击</p>
+<ol start="31">
+<li>哪项语句描述了 MAC 地址表已满时交换机的行为？</li>
+</ol>
+<ul>
+<li><p>它将帧视为未知单播并将所有传入帧泛洪到交换机上的所有端口。</p>
+</li>
+<li><p><span style="color: #ff0000">它将帧视为未知单播并将所有传入帧泛洪到本地 VLAN 内的所有端口。</span></p>
+</li>
+<li><p>它将帧视为未知单播并将所有传入帧泛洪到冲突域内的所有端口。</p>
+</li>
+<li><p>它将帧视为未知单播并将所有传入帧泛洪到多个交换机的所有端口。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当 MAC 地址表已满时，交换机将帧视为未知单播，并开始将所有传入流量泛洪到仅在本地 VLAN 内的所有端口。</p>
+<ol start="32">
+<li>请参见图示。管理员想要在交换机 S1 的接口上启用端口安全，但该命令被拒绝。可以得出什么结论？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i273090v1n1_item-273090/" alt="CCNA2 SRWE 练习期末考试答案 v7 08"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 08</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 08
+</code></pre>
+<ul>
+<li><p>必须使用 switchport mode trunk 命令初始配置接口。</p>
+</li>
+<li><p>该接口最初需要配置一个 IP 地址。</p>
+</li>
+<li><p><span style="color: #ff0000">接口必须初始配置 switchport mode access 命令。</span></p>
+</li>
+<li><p>接口需要预先配置 no shutdown 命令。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>要启用端口安全性，请在访问端口上使用 switchport port-security 接口配置命令。默认情况下，二层交换机端口设置为动态自动（trunking on）；因此，必须先将端口配置为访问端口，然后才能启用端口安全性。</p>
+<ol start="33">
+<li>启用 MAC 地址的粘性学习后，需要采取什么措施来防止在关联接口出现故障时动态学习的 MAC 地址丢失？</li>
+</ol>
+<ul>
+<li><p>关闭接口，然后使用 no shutdown 命令再次启用它。</p>
+</li>
+<li><p>为违规保护模式配置端口安全。</p>
+</li>
+<li><p>重启交换机。</p>
+</li>
+<li><p><span style="color: #ff0000">将运行配置复制到启动配置。  </span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>启用粘性学习后，动态学习的 MAC 地址将存储在 RAM 中的运行配置中，并且在交换机重新启动或接口出现故障时将丢失。为了防止学习到的 MAC 地址丢失，管理员可以将运行配置保存到 NVRAM 中的启动配置中。</p>
+<ol start="34">
+<li>请参见图示。网络管理员正在交换机 SW1 上配置 DAI。输入展示的命令的结果是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i349105v8n1_349105/" alt="CCNA2 SRWE 练习期末考试答案 v7 02"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 02</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 02
+</code></pre>
+<ul>
+<li><p>DAI 将仅验证 IP 地址。</p>
+</li>
+<li><p><span style="color: #ff0000">DAI 将仅验证目标 MAC 地址。</span></p>
+</li>
+<li><p>DAI 将按照指定的顺序验证源 MAC 地址和目标 MAC 地址以及 IP 地址。当一组参数有效时，允许ARP包通过。</p>
+</li>
+<li><p>DAI 将按照指定的顺序验证源 MAC 地址和目标 MAC 地址以及 IP 地址。如果所有参数都有效，则允许 ARP 数据包通过。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>DAI 可以配置为检查目标 MAC、源 MAC 和 IP 地址。但是，只能配置一个 ip arp Inspection validate 命令。输入多个 ip arp Inspection validate 命令会覆盖之前的命令。</p>
+<ol start="35">
+<li>应该在交换机的哪个端口上配置动态 ARP 检测 (DAI)？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">到另一个交换机的上行链路端口</span></p>
+</li>
+<li><p>任何不受信任的端口</p>
+</li>
+<li><p>仅访问端口</p>
+</li>
+<li><p>在禁用 DHCP 侦听的任何端口上</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>必须在配置了 DAI 的端口上启用 DHCP 侦听，因为 DAI 需要 DHCP 侦听表才能运行。只有一个受信任的接口，例如交换机之间的上行链路端口，被配置为实现 DAI。所有访问端口都是不受信任的。</p>
+<ol start="36">
+<li>防止 VLAN 跳跃攻击的最佳方法是什么？</li>
+</ol>
+<ul>
+<li><p>在所有非中继端口上禁用 STP。</p>
+</li>
+<li><p>在所有中继链路上使用 ISL 封装。</p>
+</li>
+<li><p>使用 VLAN 1 作为中继端口上的本地 VLAN。</p>
+</li>
+<li><p><span style="color: #ff0000">禁用中继端口的中继协商，并将非中继端口静态设置为接入端口。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>VLAN 跳跃攻击依赖于攻击者能够创建与交换机的中继链路。禁用 DTP 并将面向用户的端口配置为静态访问端口有助于防止这些类型的攻击。禁用生成树协议 (STP) 不会消除 VLAN 跳跃攻击。</p>
+<ol start="37">
+<li>无线网卡可以使用哪两种方法来发现 AP？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>发送 ARP 请求广播</p>
+</li>
+<li><p>发送多播帧</p>
+</li>
+<li><p><span style="color: #ff0000">发送探测请求</span></p>
+</li>
+<li><p>发起三次握手</p>
+</li>
+<li><p><span style="color: #ff0000">接收广播信标帧</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>无线设备可以使用两种方法来发现和注册接入点：被动模式和主动模式。在被动模式下，AP 发送一个包含 SSID 和其他无线设置的广播信标帧。在主动模式下，必须手动为无线设备配置 SSID，然后设备广播探测请求。</p>
+<ol start="38">
+<li>一名员工使用手机无线连接到公司网络。然后，员工将手机配置为无线接入点，允许新员工连接到公司网络。哪种类型的安全威胁最能描述这种情况？</li>
+</ol>
+<ul>
+<li><p>开裂</p>
+</li>
+<li><p>拒绝服务</p>
+</li>
+<li><p><span style="color: #ff0000">恶意接入点</span></p>
+</li>
+<li><p>欺骗</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>将手机配置为无线接入点意味着手机现在是恶意接入点。该员工允许用户在不通过公司接入点连接的情况下访问网络，从而在不知不觉中破坏了公司网络的安全性。破解是从网络上存储或传输的数据中获取密码的过程。拒绝服务攻击是指向联网设备（例如服务器）发送大量数据，以阻止对服务器的合法访问。欺骗是指看似合法的网络设备或用户的攻击者获得对网络或数据的访问权限。</p>
+<ol start="39">
+<li>推荐哪种 WLAN 身份验证和加密组合作为家庭用户的最佳实践？</li>
+</ol>
+<ul>
+<li><p>WEP 和 TKIP</p>
+</li>
+<li><p><span style="color: #ff0000">WPA2 和 AES</span></p>
+</li>
+<li><p>EAP 和 AES</p>
+</li>
+<li><p>WPA 和 PSK</p>
+</li>
+<li><p>WEP 和 RC4</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>WPA2 是认证行业标准 802.11i 的 Wi-Fi 联盟版本。WEP 和 WPA 都不具备 WPA2 提供的身份验证级别。AES 作为加密标准与 WPA2 保持一致，并且比 TKIP 或 RC4 更强。PSK 是指预共享密码，一种可供 WPA 或 WPA2 使用的身份验证方法。EAP 旨在用于使用 RADIUS 服务器的企业网络。</p>
+<ol start="40">
+<li>禁用 SSID 广播和更改无线接入点上的默认 SSID 的原因是什么？</li>
+</ol>
+<ul>
+<li><p>任何拥有默认 SSID 的人都可以访问接入点并更改配置。</p>
+</li>
+<li><p>禁用 SSID 广播可以释放射频带宽并增加接入点的数据吞吐量。</p>
+</li>
+<li><p>接入点停止广播自己的 MAC 地址，从而防止未经授权的无线客户端连接到网络。</p>
+</li>
+<li><p><span style="color: #ff0000">然后，无线客户端必须手动配置 SSID 以连接到无线网络。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>SSID 是无线网络的名称。更改默认 SSID 会强制设备用户手动输入 SSID 才能访问网络。广播 SSID 不允许其他设备访问配置，或发现设备的 MAC 地址。SSID 广播不影响射频带宽。</p>
+<ol start="41">
+<li>某大学的网络管理员正在使用 WPA2 Enterprise 身份验证配置 WLAN 安全性。部署此类身份验证时需要哪个服务器？</li>
+</ol>
+<ul>
+<li><p>AAA</p>
+</li>
+<li><p>DHCP</p>
+</li>
+<li><p>SNMP</p>
+</li>
+<li><p><span style="color: #ff0000">半径</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>WAP2 Enterprise 提供比 WPA2 PSK 更安全的用户身份验证。WPA2 Enterprise 不是为所有用户使用预共享密钥来访问 WLAN，而是要求用户在访问 WLAN 之前输入自己的用户名和密码凭据进行身份验证。部署 WPA2 Enterprise 身份验证需要 RADIUS 服务器。</p>
+<ol start="42">
+<li>网络管理员正在配置 WLC 以向办公楼中的用户提供 WLAN 访问。在测试新创建的 WLAN 时，管理员看不到来自无线设备的 SSID。什么是可能的原因？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">需要启用新的 WLAN。</span></p>
+</li>
+<li><p>RADUIS 服务器无法运行。</p>
+</li>
+<li><p>WLAN 安全设置不正确。</p>
+</li>
+<li><p>尚未为新 WLAN 配置 AP。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在 WLC 上创建和配置新的 WLAN 后，应先启用它，然后用户才能访问它。</p>
+<ol start="43">
+<li>使用 WLC 升级和部署最新固件映像到所有 AP 时有什么潜在问题？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">用户将无法使用 WLAN。</span></p>
+</li>
+<li><p>两个乐队中只有一个乐队可以同时工作。</p>
+</li>
+<li><p>旧的 802.11 标准可能不再受支持。</p>
+</li>
+<li><p>用户名和密码必须手动输入 AP，以便在升级期间继续进行 WLAN 身份验证。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当 AP 执行固件升级时，用户将与 WLAN 和 Internet 断开连接，直到升级完成。在恢复正常的网络操作之前，无线路由器可能需要重新启动几次。</p>
+<ol start="44">
+<li>将动态路由协议组件与特征匹配。（并非所有选项都被使用。）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-005/" alt="CCNA2 SRWE 练习期末考试答案 v7 005"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 005</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 005
+</code></pre>
+<p><strong>答案解释和提示：</strong>动态路由协议的三个组成部分包括：<strong>数据结构<strong><strong>路由协议消息</strong></strong>算法</strong></p>
+<ol start="45">
+<li>配置 IPv6 默认静态路由时使用什么地址和前缀长度？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">::&#x2F;0</span></p>
+</li>
+<li><p>::1&#x2F;128</p>
+</li>
+<li><p>0.0.0.0&#x2F;0</p>
+</li>
+<li><p>FF02::1&#x2F;8</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>默认静态路由的 IPv6 地址和前缀是 ::&#x2F;0。这表示地址中的所有零和零前缀长度。</p>
+<ol start="46">
+<li><p>未设置最后的网关。 172.18.109.0&#x2F;26 有不同的子网，7 个子网，3 个掩码 O 172.18.109.0&#x2F;26 [110&#x2F;10] 通过 172.18.32.1, 00:00:24, Serial0&#x2F;0&#x2F;0 O 172.18.109.64&#x2F;26 [110&#x2F; 20] 通过 172.18.32.6、00:00:56、串行 0&#x2F;0&#x2F;1 O 172.18.109.128&#x2F;26 [110&#x2F;10] 通过 172.18.32.1、00:00:24、串行 0&#x2F;0&#x2F;0 C 172.18。 109.192&#x2F;27直连，GigabitEthernet0&#x2F;0 L 172.18.109.193&#x2F;27直连，GigabitEthernet0&#x2F;0 C 172.18.109.224&#x2F;27直连，GigabitEthernet0&#x2F;1 L 172.18.109.225&#x2F;27直连，GigabitEthernet0&#x2F;1 172.1 .32.0&#x2F;24 可变子网划分，4 个子网，2 个掩码 C 172.18.32.0&#x2F;30 直接连接，Serial0&#x2F;0&#x2F;0 L 172.18.32.2&#x2F;32 直连，Serial0&#x2F;0&#x2F;0 C 172.18.32.4&#x2F;30 直连，Serial0&#x2F;0&#x2F;1 L 172.18.32.5&#x2F;32 直连，Serial0&#x2F;0&#x2F;1 S 172.18.33.0&#x2F; 26 [1&#x2F;0] 通过 172.18.32.1, 00:00:24, Serial0&#x2F;0&#x2F;0 R1#</p>
+<p>请参见图示。哪个接口将是转发目标 IP 地址为 172.18.109.152 的数据包的出口接口？</p>
+</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">串行0&#x2F;0&#x2F;0</span></li>
+<li>千兆以太网0&#x2F;0</li>
+<li>千兆以太网0&#x2F;1</li>
+<li>无，数据包将被丢弃。</li>
+</ul>
+<ol start="47">
+<li>思科快速转发 (CEF) 的两个特点是什么？（选择两个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">根据 FIB 和邻接表中的信息转发数据包。</span></p>
+</li>
+<li><p>当数据包到达路由器接口时，它被转发到控制平面，CPU 将目标地址与匹配的路由表条目匹配。</p>
+</li>
+<li><p>当数据包到达路由器接口时，它会被转发到控制平面，CPU 在控制平面中搜索快速交换缓存中的匹配项。</p>
+</li>
+<li><p>使用这种交换方法，数据包的流信息存储在快速交换缓存中，以便将未来的数据包转发到同一目的地，而无需 CPU 干预。</p>
+</li>
+<li><p><span style="color: #ff0000">这是 Cisco 路由器和多层交换机上最快的转发机制。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>思科快速转发 (CEF) 构建了转发信息库 (FIB) 和邻接表，以便能够比传统的数据包转发方法更快地路由数据包。</p>
+<ol start="48">
+<li>请参见图示。将描述与路由表条目匹配。（并非所有选项都被使用。）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i283589v1n1_209391/" alt="CCNA2 SRWE 练习期末考试答案 v7 05"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 05</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 05
+</code></pre>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/ccna2-srwe-practice-final-exam-answers-v7-006/" alt="CCNA2 SRWE 练习期末考试答案 v7 006"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 006</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 006
+</code></pre>
+<p><strong>答案解释和提示：</strong>路由源协议 &#x3D; D（即 EIGRP） 目标网络 &#x3D; 10.3.0.0 度量 &#x3D; 21024000 管理距离 &#x3D; 1 下一跳 &#x3D; 172.16.2.2 路由时间戳 &#x3D; 00:22:15</p>
+<ol start="49">
+<li>请参见图示。路由器 R1 通过 192.168.0.32 网络与 ISP 路由器具有 OSPF 邻居关系。当 OSPF 链路出现故障时，192.168.0.36 网络链路应作为备份。浮动静态路由命令 ip route 0.0.0.0 0.0.0.0 S0&#x2F;0&#x2F;1 100 在 R1 上发出，现在流量正在使用备用链路，即使 OSPF 链路已启动且正常运行。应该对静态路由命令进行哪些更改，以便流量仅在启动时使用 OSPF 链路？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i210868v1n2_210868/" alt="CCNA2 SRWE 练习期末考试答案 v7 01"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 01</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 01
+</code></pre>
+<ul>
+<li><p>添加下一跳邻居地址 192.168.0.36。</p>
+</li>
+<li><p>将管理距离更改为 1。</p>
+</li>
+<li><p>将目标网络更改为 192.168.0.34。</p>
+</li>
+<li><p><span style="color: #ff0000">将管理距离更改为 120。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当前浮动静态路由的问题是管理距离设置得太低。管理距离需要高于 OSPF 的 110，以便路由器仅在启动时使用 OSPF 链路。</p>
+<ol start="50">
+<li>哪个命令会创建有效的 IPv6 默认路由？</li>
+</ol>
+<ul>
+<li><p>ipv6 路由 ::&#x2F;0 fe80::1</p>
+</li>
+<li><p>ipv6 路由 2001:db8:acad:1::&#x2F;64 ::1</p>
+</li>
+<li><p><span style="color: #ff0000">ipv6 路由 ::&#x2F;0 2001:db8:acad:2::a</span></p>
+</li>
+<li><p>ipv6 路由 ::&#x2F;128 2001:db8:acad:1::1</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>默认路由的正确前缀和前缀长度是 ::&#x2F;0，它匹配任何地址。::&#x2F;128 仅匹配全零的特定地址。创建使用链路本地地址作为下一跳的静态路由时，还必须指定退出接口以使路由有效。</p>
+<ol start="51">
+<li><p>考虑以下命令：</p>
+<p>ip 路由 192.168.10.0 255.255.255.0 10.10.10.2 5</p>
+<p>命令末尾的 5 是什么意思？</p>
+</li>
+</ol>
+<ul>
+<li><p>公制</p>
+</li>
+<li><p>退出界面</p>
+</li>
+<li><p><span style="color: #ff0000">行政距离</span></p>
+</li>
+<li><p>到 192.168.10.0&#x2F;24 网络的最大跳数</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>命令末尾的 5 表示管理距离。此值将添加到浮动静态路由或仅在首选路由关闭时才出现在路由表中的路由。命令末尾的 5 表示为静态路由配置的管理距离。该值表示当首选路由（管理距离小于 5）关闭时，浮动静态路由将出现在路由表中。</p>
+<ol start="52">
+<li><p>请参见图示。R2 的路由表如下：</p>
+<p>未设置最后的网关</p>
+<p>10.0.0.0&#x2F;30 被划分子网，2 个子网 C 10.0.0.0 直连，Serial0&#x2F;0&#x2F;0 C 10.0.0.4 直连，Serial0&#x2F;0&#x2F;1 192.168.10.0&#x2F;26 被划分子网，3 个子网 S 192.168.10.0直连，Serial0&#x2F;0&#x2F;0 C 192.168.10.64 直连，FastEthernet0&#x2F;0 S 192.168.10.128 [1&#x2F;0] via 10.0.0.6</p>
+<p>路由器 R2 将如何处理发往 192.168.10.129 的数据包？</p>
+</li>
+</ol>
+<ul>
+<li><p>丢包</p>
+</li>
+<li><p>将数据包发送到接口 Serial0&#x2F;0&#x2F;0</p>
+</li>
+<li><p><span style="color: #ff0000">将数据包发送到接口 Serial0&#x2F;0&#x2F;1</span></p>
+</li>
+<li><p>将数据包发送到接口 FastEthernet0&#x2F;0</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当使用下一跳地址配置静态路由时（如 192.168.10.128 网络的情况），show ip route 命令的输出会将路由列为“通过”特定 IP 地址。路由器必须查找该 IP 地址以确定将数据包发送出去的接口。因为 10.0.0.6 的 IP 地址是网络 10.0.0.4 的一部分，路由器将数据包从接口 Serial0&#x2F;0&#x2F;1 发送出去。</p>
+<ol start="53">
+<li>一位初级技术人员正在向 LAN 路由器添加路由。对新网络上设备的跟踪路由显示路径错误和无法访问状态。应该做什么或检查什么？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">检查新静态路由上的出口接口的配置。</span></li>
+<li>验证到服务器的静态路由是否存在于路由表中。</li>
+<li>检查浮动静态路由的配置，调整AD。</li>
+<li>创建到该网络的浮动静态路由。</li>
+</ul>
+<ol start="54">
+<li>请参见图示。主机路由 2001:DB8:CAFE:4::1&#x2F;128 是如何安装在路由表中的？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i282903v1n1_routing5/" alt="CCNA2 SRWE 练习期末考试答案 v7 07"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 07</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 07
+</code></pre>
+<ul>
+<li><p>在活动接口上配置 IP 地址时会自动安装路由。</p>
+</li>
+<li><p>该路由是从另一个路由器动态学习的。</p>
+</li>
+<li><p><span style="color: #ff0000">路线是由管理员手动输入的。</span></p>
+</li>
+<li><p>该路由是由路由器 R1 动态创建的。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>主机路由是具有 128 位掩码的 IPv6 路由。主机路由可以在路由器接口上配置 IP 地址时自动安装在路由表中，如果创建静态路由，则可以手动安装。</p>
+<ol start="55">
+<li>请参见图示。当一个数据包到达 R1 的 Serial0&#x2F;0&#x2F;0 接口时，目标 IP 地址为 PC1，会发生哪两个事件？（选择两个）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-practice-final-exam-answers/i344612v1n2_routing/" alt="CCNA2 SRWE 练习期末考试答案 v7 03"/></div><div class="image-meta"><span class="image-caption center">CCNA2 SRWE 练习期末考试答案 v7 03</span></div></div>
+
+<pre><code>CCNA2 SRWE 练习期末考试答案 v7 03
+</code></pre>
+<ul>
+<li><p>路由器 R1 会将数据包转发到 Gig0&#x2F;0。</p>
+</li>
+<li><p><span style="color: #ff0000">路由器 R1 会将数据包转发到 Gig0&#x2F;1。</span></p>
+</li>
+<li><p>路由器 R1 会将数据包转发到 S0&#x2F;0&#x2F;0。</p>
+</li>
+<li><p>路由器 R1 将解封装数据包并将其封装在 PPP 帧中。</p>
+</li>
+<li><p><span style="color: #ff0000">路由器 R1 将解封装数据包并将其封装在以太网帧中。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>路由器将在路由表中查找目标网络并定位出口接口以将数据包转发到目标。出接口确定后，路由器会将数据包封装成正确的帧类型。</p>
+</article>
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 [@saevio]创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"post","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

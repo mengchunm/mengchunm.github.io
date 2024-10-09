@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0">
+  <meta charset="utf-8">
+  
+
+  <meta name="referrer" content="no-referrer">
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>saevio</title>
+
+  
+    <meta name="description" content="模块 10 – 13 第 2 层安全和 WLAN原文地址  哪种身份验证方法将用户名和密码存储在路由器中并且非常适合小型网络？   本地AAA  RADIUS 上的本地 AAA  TACACS+ 上的本地 AAA  基于服务器的 AAA  基于服务器的 AAA over RADIUS  基于服务器的 AAA over TACACS+   答案解释和提示：在具有少量网络设备的小型网络中，可以使用本地">
+<meta property="og:type" content="website">
+<meta property="og:title" content="saevio">
+<meta property="og:url" content="https://mengchunm.github.io/Cisco/10-13.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="模块 10 – 13 第 2 层安全和 WLAN原文地址  哪种身份验证方法将用户名和密码存储在路由器中并且非常适合小型网络？   本地AAA  RADIUS 上的本地 AAA  TACACS+ 上的本地 AAA  基于服务器的 AAA  基于服务器的 AAA over RADIUS  基于服务器的 AAA over TACACS+   答案解释和提示：在具有少量网络设备的小型网络中，可以使用本地">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-01/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-02/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-04/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-05/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-001/">
+<meta property="og:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-03/">
+<meta property="article:published_time" content="2024-10-09T13:42:25.034Z">
+<meta property="article:modified_time" content="2024-10-09T13:42:25.034Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-01/">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='page'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item" href="/">随笔</a><a class="nav-item" href="/notes/">便签</a><a class="nav-item" href="/more/">更多</a></nav>
+</header>
+
+
+<div class="widgets">
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"></div></div></widget>
+
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+  
+
+<header class="header mobile-only"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+
+
+      
+
+
+
+<article class="md-text content page"><h1 id="模块-10-–-13-第-2-层安全和-WLAN"><a href="#模块-10-–-13-第-2-层安全和-WLAN" class="headerlink" title="模块 10 – 13 第 2 层安全和 WLAN"></a>模块 10 – 13 第 2 层安全和 WLAN</h1><p><a target="_blank" rel="noopener" href="https://ccna7.org/ccna2-v7-0/modules-10-13-l2-security-and-wlans-exam-answers/">原文地址</a></p>
+<ol>
+<li>哪种身份验证方法将用户名和密码存储在路由器中并且非常适合小型网络？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">本地AAA</span></p>
+</li>
+<li><p>RADIUS 上的本地 AAA</p>
+</li>
+<li><p>TACACS+ 上的本地 AAA</p>
+</li>
+<li><p>基于服务器的 AAA</p>
+</li>
+<li><p>基于服务器的 AAA over RADIUS</p>
+</li>
+<li><p>基于服务器的 AAA over TACACS+</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在具有少量网络设备的小型网络中，可以使用本地数据库以及存储在网络设备上的用户名和密码来实现 AAA 身份验证。使用 TACACS+ 或 RADIUS 协议的身份验证将需要专用的 ACS 服务器，尽管此身份验证解决方案在大型网络中可以很好地扩展。</p>
+<ol start="2">
+<li>AAA 使用哪两种协议根据用户名和密码的中央数据库对用户进行身份验证？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>NTP</p>
+</li>
+<li><p><span style="color: #ff0000">TACACS+</span></p>
+</li>
+<li><p>SSH</p>
+</li>
+<li><p>HTTPS</p>
+</li>
+<li><p><span style="color: #ff0000">半径</span></p>
+</li>
+<li><p>章</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>通过使用 TACACS+ 或 RADIUS，AAA 可以从集中存储在服务器（如 Cisco ACS 服务器）上的用户名和密码数据库对用户进行身份验证。</p>
+<ol start="3">
+<li>DHCP 饥饿攻击的结果是什么？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">合法客户端无法租用 IP 地址。</span></p>
+</li>
+<li><p>客户端从恶意 DHCP 服务器接收 IP 地址分配。</p>
+</li>
+<li><p>攻击者向客户端提供不正确的 DNS 和默认网关信息。</p>
+</li>
+<li><p>分配给合法客户端的 IP 地址被劫持。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>DCHP 饥饿攻击由攻击者发起，目的是为 DHCP 客户端创建 DoS。为了实现这一目标，攻击者使用一种工具发送许多 DHCPDISCOVER 消息来租用整个可用 IP 地址池，从而拒绝合法主机使用它们。</p>
+<ol start="4">
+<li>关于网络设备上的 CDP 和 LLDP 等发现协议的最佳实践是什么？</li>
+</ol>
+<ul>
+<li><p>使用开放标准 LLDP 而不是 CDP。</p>
+</li>
+<li><p><span style="color: #ff0000">在不需要的所有接口上禁用这两种协议。</span></p>
+</li>
+<li><p>使用 CDP 和 LLDP 的默认路由器设置。</p>
+</li>
+<li><p>在边缘设备上启用 CDP，在内部设备上启用 LLDP。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>两种发现协议都可以为黑客提供敏感的网络信息。它们不应在边缘设备上启用，如果不需要，应在全局或每个接口的基础上禁用。CDP 默认启用。</p>
+<ol start="5">
+<li>应该使用哪种协议来缓解使用 Telnet 远程管理网络设备的漏洞？</li>
+</ol>
+<ul>
+<li><p>SCP</p>
+</li>
+<li><p><span style="color: #ff0000">SSH</span></p>
+</li>
+<li><p>TFTP</p>
+</li>
+<li><p>SNMP</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>Telnet 使用纯文本在网络中进行通信。如果数据传输被截获，用户名和密码可以被捕获。SSH 对两个网络设备之间的数据通信进行加密。TFTP 和 SCP 用于通过网络传输文件。SNMP 用于网络管理解决方案。</p>
+<ol start="6">
+<li>哪项语句描述了 MAC 地址表已满时交换机的行为？</li>
+</ol>
+<ul>
+<li><p>它将帧视为未知单播并将所有传入帧泛洪到交换机上的所有端口。</p>
+</li>
+<li><p><span style="color: #ff0000">它将帧视为未知单播并将所有传入帧泛洪到本地 VLAN 内的所有端口。</span></p>
+</li>
+<li><p>它将帧视为未知单播并将所有传入帧泛洪到冲突域内的所有端口。</p>
+</li>
+<li><p>它将帧视为未知单播并将所有传入帧泛洪到多个交换机的所有端口。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当 MAC 地址表已满时，交换机将帧视为未知单播，并开始将所有传入流量泛洪到仅在本地 VLAN 内的所有端口。</p>
+<ol start="7">
+<li>交换机上的哪个功能使其容易受到 VLAN 跳跃攻击？</li>
+</ol>
+<ul>
+<li><p>默认为所有端口启用混合双工模式</p>
+</li>
+<li><p>内容可寻址内存空间的有限大小</p>
+</li>
+<li><p>默认为所有端口启用混合端口带宽支持</p>
+</li>
+<li><p><span style="color: #ff0000">默认为所有端口启用自动中继端口功能</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>VLAN 跳跃攻击使来自一个 VLAN 的流量可以在没有路由的情况下被另一个 VLAN 看到。在基本的 VLAN 跳跃攻击中，攻击者利用了大多数交换机端口默认启用的自动中继端口功能。</p>
+<ol start="8">
+<li>交换机上的哪些功能或配置使其容易受到 VLAN 双重标记攻击？</li>
+</ol>
+<ul>
+<li><p>默认为所有端口启用混合双工模式</p>
+</li>
+<li><p>内容可寻址内存空间的有限大小</p>
+</li>
+<li><p>默认为所有端口启用自动中继端口功能</p>
+</li>
+<li><p><span style="color: #ff0000">中继端口的native VLAN与用户VLAN相同</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>双标记（或双封装）VLAN 跳跃攻击利用了大多数交换机上的硬件运行方式。大多数交换机只执行一级 802.1Q 解封装，这允许攻击者在帧内嵌入隐藏的 802.1Q 标签。此标记允许将帧转发到原始 802.1Q 标记未指定的 VLAN。双封装 VLAN 跳跃攻击的一个重要特征是，即使中继端口被禁用，它也能正常工作，因为主机通常会在不是中继链路的网段上发送帧。这种类型的攻击是单向的，并且仅当攻击者连接到与中继端口的本地 VLAN 位于同一 VLAN 中的端口时才有效。</p>
+<ol start="9">
+<li>AAA 的哪个组件用于确定用户可以访问哪些资源以及允许用户执行哪些操作？</li>
+</ol>
+<ul>
+<li><p>审计</p>
+</li>
+<li><p>会计</p>
+</li>
+<li><p><span style="color: #ff0000">授权</span></p>
+</li>
+<li><p>验证</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>AAA 中的组件之一是授权。用户通过 AAA 认证后，授权服务确定用户可以访问哪些资源以及允许用户执行哪些操作。</p>
+<ol start="10">
+<li>AAA 的哪个组件允许管理员跟踪访问网络资源的个人以及对这些资源所做的任何更改？</li>
+</ol>
+<ul>
+<li><p>可访问性</p>
+</li>
+<li><p><span style="color: #ff0000">会计</span></p>
+</li>
+<li><p>验证</p>
+</li>
+<li><p>授权</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>AAA 的组成部分之一是会计。通过 AAA 对用户进行身份验证后，AAA 服务器会详细记录经过身份验证的用户在设备上执行的操作。</p>
+<ol start="11">
+<li>在 802.1X 身份验证过程中，哪个设备被视为请求者？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">请求身份验证的客户端</span></p>
+</li>
+<li><p>控制网络访问的交换机</p>
+</li>
+<li><p>正在执行客户端身份验证的身份验证服务器</p>
+</li>
+<li><p>用作默认网关的路由器</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>802.1X 认证过程中涉及的设备如下： 请求者，即请求网络访问 的客户端 认证者，即客户端连接的交换机，实际控制物理网络访问 认证服务器，它执行实际的身份验证</p>
+<ol start="12">
+<li>请参见图示。交换机 S1 上的 Fa0&#x2F;2 接口已使用 switchport port-security mac-address 0023.189d.6456 命令配置，并且已连接工作站。Fa0&#x2F;2 接口关闭的原因可能是什么？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-01/" alt="CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 01"/></div><div class="image-meta"><span class="image-caption center">CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 01</span></div></div>
+
+<p>   01</p>
+<ul>
+<li><p>S1 和 PC1 之间的连接是通过交叉电缆。</p>
+</li>
+<li><p>S1的Fa0&#x2F;24接口配置了与Fa0&#x2F;2接口相同的MAC地址。</p>
+</li>
+<li><p>S1 已经配置了 switchport port-security 老化命令。</p>
+</li>
+<li><p><span style="color: #ff0000">连接Fa0&#x2F;2接口的PC1的MAC地址不是配置的MAC地址。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>Fa0&#x2F;2 的安全违规计数器已增加（SecurityViolation 列中的 1 证明了这一点）。端口 Fa0&#x2F;2 上允许的最安全地址是 1，并且该地址是手动输入的。因此，PC1 的 MAC 地址必须与为端口 Fa0&#x2F;2 配置的 MAC 地址不同。终端设备和交换机之间的连接，以及路由器和交换机之间的连接，都是使用直通电缆进行的。</p>
+<ol start="13">
+<li><p>请参见图示。端口 Fa0&#x2F;2 已正确配置。IP电话和PC正常工作。如果网络管理员有以下目标，哪种交换机配置最适合端口 Fa0&#x2F;2？ 任何人都不允许断开 IP 电话或 PC 并连接其他有线设备。</p>
+<p>如果连接了不同的设备，则端口 Fa0&#x2F;2 将关闭。</p>
+<p>交换机应自动检测 IP 电话和 PC 的 MAC 地址，并将这些地址添加到运行配置中。</p>
+</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-02/" alt="CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 02"/></div><div class="image-meta"><span class="image-caption center">CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 02</span></div></div>
+
+<p>   02</p>
+<ul>
+<li><p>SWA(config-if)# switchport port-security<br>SWA(config-if)# switchport port-security mac-address sticky</p>
+</li>
+<li><p>SWA(config-if)# switchport port-security mac-address sticky<br>SWA(config-if)# switchport port-security maximum 2</p>
+</li>
+<li><p><span style="color: #ff0000">SWA(config-if)# switchport port-security </span><br><span style="color: #ff0000">SWA(config-if)# switchport port-security maximum 2 </span><br><span style="color: #ff0000">SWA(config-if)# switchport port-security mac-address sticky</span></p>
+</li>
+<li><p>SWA(config-if)# switchport port-security</p>
+<pre><code>SWA(config-if)# switchport port-security maximum 2
+  
+SWA(config-if)# switchport port-security mac-address sticky
+  
+SWA(config-if)# switchport port-security违规限制
+</code></pre>
+</li>
+</ul>
+<p>​      </p>
+<p><strong>答案解释和提示：</strong>端口安全违规的默认模式是关闭端口，因此不需要 switchport port-security违规命令。必须输入 switchport port-security 命令，不带任何其他选项来启用端口的端口安全性。然后，可以添加额外的端口安全选项。</p>
+<ol start="14">
+<li>请参见图示。交换机 S1 的 Fa 0&#x2F;12 接口上已配置端口安全。当 PC1 连接到具有应用配置的交换机 S1 时会发生什么操作？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-04/" alt="CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 04"/></div><div class="image-meta"><span class="image-caption center">CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 04</span></div></div>
+
+
+<ul>
+<li><p>来自 PC1 的帧将被丢弃，并且将创建一条日志消息。</p>
+</li>
+<li><p>来自 PC1 的帧将被丢弃，并且不会有违规记录。</p>
+</li>
+<li><p><span style="color: #ff0000">来自 PC1 的帧将导致接口立即关闭，并生成一个日志条目。</span></p>
+</li>
+<li><p>来自 PC1 的帧将被转发到其目的地，并且将创建一个日志条目。</p>
+</li>
+<li><p>来自 PC1 的帧将被转发到其目的地，但不会创建日志条目。</p>
+</li>
+<li><p>由于缺少交换机端口端口安全违规命令，来自 PC1 的帧将被转发。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>已为端口 fa0&#x2F;12 输入了单个允许的 MAC 地址的手动配置。PC1 具有不同的 MAC 地址，连接后将导致端口关闭（默认操作），自动创建日志消息，并且违规计数器增加。建议使用默认的关闭操作，因为如果正在进行攻击，restrict 选项可能会失败。</p>
+<ol start="15">
+<li>网络管理员正在 Cisco 交换机上配置端口安全性。公司安全策略规定，当违规发生时，应丢弃具有未知源地址的数据包，并且不应发送通知。接口应该配置哪种违规模式？</li>
+</ol>
+<ul>
+<li><p>离开</p>
+</li>
+<li><p>严格</p>
+</li>
+<li><p><span style="color: #ff0000">保护</span></p>
+</li>
+<li><p>关闭</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在 Cisco 交换机上，可以将接口配置为三种违规模式之一，指定发生违规时要采取的操作： 保护 - 丢弃具有未知源地址的数据包，直到删除足够数量的安全 MAC 地址，或者最大允许地址数增加。没有发生安全违规的通知。 限制 - 丢弃具有未知源地址的数据包，直到删除足够数量的安全 MAC 地址，或增加最大允许地址的数量。在此模式下，会通知已发生安全违规。 Shutdown – 接口立即变为错误禁用状态，端口 LED 熄灭。</p>
+<ol start="16">
+<li>在启用 PortFast 的接口上启用 BPDU 防护可以获得哪些安全优势？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">防止恶意交换机添加到网络中</span></p>
+</li>
+<li><p>防止第 2 层环路</p>
+</li>
+<li><p>强制放置根桥</p>
+</li>
+<li><p>防止缓冲区溢出攻击</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>BPDU 防护立即错误禁用接收 BPDU 的端口。这可以防止恶意交换机被添加到网络中。BPDU 防护应仅应用于所有最终用户端口。</p>
+<ol start="17">
+<li>通过将未使用的 VLAN 指定为本地 VLAN，可以防止哪种类型的 VLAN 跳跃攻击？</li>
+</ol>
+<ul>
+<li><p>DTP 欺骗</p>
+</li>
+<li><p>DHCP 欺骗</p>
+</li>
+<li><p><span style="color: #ff0000">VLAN 双重标记</span></p>
+</li>
+<li><p>DHCP 饥饿</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>作为 VLAN 跳跃攻击的一部分，欺骗 DTP 消息会强制交换机进入中继模式，但即使中继端口被禁用，VLAN 双重标记仍然有效。将本地 VLAN 从默认 VLAN 更改为未使用的 VLAN 可降低此类攻击的可能性。DHCP 欺骗和 DHCP 饥饿利用 DHCP 消息交换中的漏洞。</p>
+<ol start="18">
+<li>请参见图示。PC1 和 PC2 应该能够从 DHCP 服务器获得 IP 地址分配。作为 DHCP 侦听配置的一部分，应将交换机之间的多少端口分配为可信端口？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-05/" alt="CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 05"/></div><div class="image-meta"><span class="image-caption center">CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 05</span></div></div>
+
+
+
+<ul>
+<li><p>1</p>
+</li>
+<li><p>3</p>
+</li>
+<li><p>5</p>
+</li>
+<li><p><span style="color: #ff0000">7</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>DHCP Snooping 配置包括构建 DHCP Snooping 绑定数据库和在交换机上分配必要的可信端口。可信端口指向合法的 DHCP 服务器。在此网络设计中，由于 DHCP 服务器连接到 AS3，因此应将 7 个交换机端口分配为可信端口，一个在 AS3 上指向 DHCP 服务器，一个在 DS1 上指向 AS3，一个在 DS2 上指向 AS3，并且两个 AS1 上的连接和 AS2（朝向 DS1 和 DS2），共 7 个。</p>
+<ol start="19">
+<li>IT 安全专家在 Cisco 交换机的交换机端口上启用端口安全。在将交换机端口配置为使用不同的违规模式之前，使用的默认违规模式是什么？</li>
+</ol>
+<ul>
+<li><p>严格</p>
+</li>
+<li><p>禁用</p>
+</li>
+<li><p>保护</p>
+</li>
+<li><p><span style="color: #ff0000">关闭</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>如果在交换机端口上启用端口安全时未指定违规模式，则安全违规模式默认为关闭。</p>
+<ol start="20">
+<li><p>网络管理员在交换机 SW1 上输入以下命令。</p>
+<p>SW1(config)# interface range fa0&#x2F;5 – 10 SW1(config-if)# ip dhcp snooping limit rate 6</p>
+<p>输入这些命令后有什么作用？</p>
+</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">FastEthernet 端口 5 到 10 每秒最多可以接收 6 条 DHCP 发现消息。</span></p>
+</li>
+<li><p>FastEthernet 端口 5 到 10 每秒最多可以接收 6 条任何类型的 DHCP 消息。</p>
+</li>
+<li><p>如果任何 FastEthernet 端口 5 到 10 每秒接收超过 6 条 DHCP 消息，该端口将被关闭。</p>
+</li>
+<li><p>如果任何 FastEthernet 端口 5 到 10 每秒接收超过 6 条 DHCP 消息，该端口将继续运行，并将向网络管理员发送一条错误消息。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>配置 DHCP snooping 时，应使用 ip dhcp snooping limit rate interface 配置命令对不信任端口每秒可以接收的 DHCP 发现消息数进行限速。当一个端口接收到的消息多于允许的速率时，多余的消息将被丢弃。</p>
+<ol start="21">
+<li>网络管理员正在使用命令 ip arp Inspection validate src-mac 在交换机上配置 DAI。这个配置命令的目的是什么？</li>
+</ol>
+<ul>
+<li><p>它根据 MAC 地址表检查以太网报头中的源 MAC 地址。</p>
+</li>
+<li><p>它根据用户配置的 ARP ACL 检查以太网报头中的源 MAC 地址。</p>
+</li>
+<li><p>它检查以太网报头中的源 MAC 地址与 ARP 正文中的目标 MAC 地址。</p>
+</li>
+<li><p><span style="color: #ff0000">它检查以太网报头中的源 MAC 地址与 ARP 正文中的发送者 MAC 地址。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>DAI 可以配置为检查目标或源 MAC 和 IP 地址： 目标 MAC – 检查以太网报头中的目标 MAC 地址与 ARP 正文中的目标 MAC 地址。 源 MAC — 检查以太网报头中的源 MAC 地址与 ARP 正文中的发送者 MAC 地址。 IP 地址 – 检查 ARP 正文中是否存在无效和意外 IP 地址，包括地址 0.0.0.0、255.255.255.255 和所有 IP 多播地址。</p>
+<ol start="22">
+<li>哪两条命令可用于在交换机上启用 BPDU 防护？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>S1(config)# 生成树 bpduguard 默认值</p>
+</li>
+<li><p><span style="color: #ff0000">S1(config-if)# spanning-tree bpduguard enable</span></p>
+</li>
+<li><p>S1(config-if)# 启用生成树 bpduguard</p>
+</li>
+<li><p>S1(config-if)# spanning-tree portfast bpduguard</p>
+</li>
+<li><p><span style="color: #ff0000">S1(config)# spanning-tree portfast bpduguard default</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>可以使用 spanning-tree portfast bpduguard default 全局配置命令在所有启用 PortFast 的端口上启用 BPDU 防护。或者，可以通过使用 spanning-tree bpduguard enable interface 配置命令在启用 PortFast 的端口上启用 BPDU 防护。</p>
+<ol start="23">
+<li>作为新安全策略的一部分，网络上的所有交换机都配置为自动学习每个端口的 MAC 地址。所有运行配置都会在每个工作日的开始和结束时保存。下班后数小时，一场严重的雷暴导致停电时间延长。当交换机重新联机时，动态学习的 MAC 地址将被保留。哪个端口安全配置启用了此功能？</li>
+</ol>
+<ul>
+<li><p>自动保护 MAC 地址</p>
+</li>
+<li><p>动态安全 MAC 地址</p>
+</li>
+<li><p>静态安全 MAC 地址</p>
+</li>
+<li><p><span style="color: #ff0000">粘性安全 MAC 地址</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>使用粘性安全 MAC 寻址，可以动态学习或手动配置 MAC 地址，然后将其存储在地址表中并添加到运行配置文件中。相反，动态安全 MAC 寻址提供仅存储在地址表中的动态学习 MAC 寻址。</p>
+<ol start="24">
+<li>AP可以定期广播哪种类型的管理帧？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">信标</span></p>
+</li>
+<li><p>探测请求</p>
+</li>
+<li><p>验证</p>
+</li>
+<li><p>探测响应</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>信标是唯一可以由 AP 定期广播的管理帧。探测、认证和关联帧仅在关联（或重新关联）过程中使用。</p>
+<ol start="25">
+<li>哪种类型的无线天线最适合在走廊或大型会议室等大型开放空间提供覆盖？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">全向</span></p>
+</li>
+<li><p>定向的</p>
+</li>
+<li><p>八木</p>
+</li>
+<li><p>盘子</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>全向天线在天线周围以 360 度模式发送无线电信号。这为位于接入点周围任何地方的设备提供了覆盖。碟形天线、定向天线和八木天线将无线电信号集中在一个方向，使其不太适合覆盖大面积开放区域。</p>
+<ol start="26">
+<li>SSID 伪装的优势是什么？</li>
+</ol>
+<ul>
+<li><p>它在无需担心知道 SSID 的公共场所提供免费 Internet 访问。</p>
+</li>
+<li><p><span style="color: #ff0000">客户端必须手动识别 SSID 才能连接到网络。</span></p>
+</li>
+<li><p>SSID 很难被发现，因为 AP 不会广播它们。</p>
+</li>
+<li><p>这是保护无线网络的最佳方式。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>SSID 隐藏是一种弱安全功能，由 AP 和某些无线路由器通过允许禁用 SSID 信标帧来执行。虽然客户端必须手动识别要连接到网络的 SSID，但可以很容易地发现 SSID。保护无线网络的最佳方式是使用身份验证和加密系统。SSID 伪装不能在公共场所提供免费的 Internet 访问，但在这种情况下可以使用开放系统身份验证。</p>
+<ol start="27">
+<li>无线网卡用来发现 AP 的两种方法是什么？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>发送 ARP 请求</p>
+</li>
+<li><p>发送广播帧</p>
+</li>
+<li><p><span style="color: #ff0000">发送探测请求</span></p>
+</li>
+<li><p>发起三次握手</p>
+</li>
+<li><p><span style="color: #ff0000">接收广播信标帧</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>无线设备可以使用两种方法来发现和注册接入点：被动模式和主动模式。在被动模式下，AP 发送一个包含 SSID 和其他无线设置的广播信标帧。在主动模式下，必须手动为无线设备配置 SSID，然后设备广播探测请求。</p>
+<ol start="28">
+<li>网络工程师将使用哪种无线网络拓扑为整个大学建筑提供无线网络？</li>
+</ol>
+<ul>
+<li><p>特别指定</p>
+</li>
+<li><p>热点</p>
+</li>
+<li><p><span style="color: #ff0000">基础设施</span></p>
+</li>
+<li><p>混合模式</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>Ad hoc 模式（也称为独立基本服务集或 IBSS）用于对等无线网络，例如使用蓝牙时。当启用具有蜂窝数据访问权限的智能手机或平板电脑来创建个人无线热点时，就会出现 ad hoc 拓扑的变体。混合模式允许较旧的无线 NIC 连接到可以使用较新无线标准的接入点。</p>
+<ol start="29">
+<li>什么是需要 RADIUS 服务器对无线用户进行身份验证的无线安全模式？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">企业</span></p>
+</li>
+<li><p>个人的</p>
+</li>
+<li><p>共享密钥</p>
+</li>
+<li><p>WEP</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>WPA 和 WPA2 有两种类型：个人和企业。Personal 用于家庭和小型办公网络。共享密钥允许三种不同的身份验证技术：(1) WEP、(2) WPA 和 (3) 802.11i&#x2F;WPA2。WEP 是一种加密方法。</p>
+<ol start="30">
+<li>哪两个 IEEE 802.11 无线标准仅在 5 GHz 范围内运行？（选择两个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">802.11a</span></p>
+</li>
+<li><p>802.11b</p>
+</li>
+<li><p>802.11g</p>
+</li>
+<li><p>802.11n</p>
+</li>
+<li><p><span style="color: #ff0000">802.11ac</span></p>
+</li>
+<li><p>802.11ad</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>802.11a 和 802.11ac 标准仅在 5 GHZ 范围内运行。802.11b 和 802.11g 标准仅在 2.4 GHz 范围内运行。802.11n 标准在 2.4 和 5 GHz 范围内运行。802.11ad 标准在 2.4、5 和 60 GHz 范围内运行。</p>
+<ol start="31">
+<li>技术人员正在将无线路由器上的信道配置为 1、6 或 11。调整信道的目的是什么？</li>
+</ol>
+<ul>
+<li><p>禁用 SSID 的广播</p>
+</li>
+<li><p>启用不同的 802.11 标准</p>
+</li>
+<li><p>提供更强大的安全模式</p>
+</li>
+<li><p><span style="color: #ff0000">避免来自附近无线设备的干扰</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>选择通道 1、6 和 11，因为它们相隔 5 个通道。从而最大限度地减少对相邻信道的干扰。频道频率会干扰主频率两侧的频道。所有无线设备都需要在不相邻的频道上使用。</p>
+<ol start="32">
+<li>在参加会议时，参与者正在使用笔记本电脑进行网络连接。当嘉宾演讲者尝试连接到网络时，膝上型电脑无法显示任何可用的无线网络。接入点必须在哪种模式下运行？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">积极的</span></p>
+</li>
+<li><p>混合</p>
+</li>
+<li><p>打开</p>
+</li>
+<li><p>被动的</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>Active 是一种用于配置接入点的模式，因此客户端必须知道 SSID 才能连接到接入点。AP 和无线路由器可以在混合模式下运行，这意味着支持多种无线标准。开放是接入点的一种身份验证模式，它对客户端的可用无线网络列表没有影响。当接入点配置为被动模式时，会广播 SSID，以便无线网络的名称将出现在客户端可用网络列表中。</p>
+<ol start="33">
+<li>需要网络管理员升级对建筑物中最终用户的无线访问。为了提供高达 1.3 Gb&#x2F;s 的数据速率并仍然向后兼容旧设备，应该实施哪种无线标准？</li>
+</ol>
+<ul>
+<li><p>802.11n</p>
+</li>
+<li><p><span style="color: #ff0000">802.11ac</span></p>
+</li>
+<li><p>802.11g</p>
+</li>
+<li><p>802.11b</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>802.11ac 提供高达 1.3 Gb&#x2F;s 的数据速率，并且仍然向后兼容 802.11a&#x2F;b&#x2F;g&#x2F;n 设备。802.11g 和 802.11n 是较旧的标准，无法达到 1Gb&#x2F;s 以上的速度。802.11ad 是一种较新的标准，可提供高达 7 Gb&#x2F;s 的理论速度。</p>
+<ol start="34">
+<li>一家公司最近实施了 802.11n 无线网络。一些用户抱怨无线网络太慢。哪种解决方案是提高无线网络性能的最佳方法？</li>
+</ol>
+<ul>
+<li><p>更换连接速度较慢的计算机上的无线网卡。</p>
+</li>
+<li><p><span style="color: #ff0000">在 2.4 GHz 和 5 GHz 频段之间拆分流量。</span></p>
+</li>
+<li><p>禁用接入点上的 DHCP 并将静态地址分配给无线客户端。</p>
+</li>
+<li><p>升级无线接入点上的固件。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>因为有些用户抱怨网络太慢，所以正确的选择是拆分流量，让两个网络同时使用不同的频率。更换无线网卡不一定能纠正网络速度变慢的问题，而且对公司来说可能代价高昂。DHCP 与静态寻址应该不会对网络速度慢造成影响，并且让所有用户为其无线连接分配静态寻址将是一项艰巨的任务。升级无线接入点上的固件总是一个好主意。但是，如果某些用户的网络连接速度较慢，这很可能不会显着提高网络性能。</p>
+<ol start="35">
+<li>一名技术人员即将在一家小型分支机构安装和配置无线网络。技术人员在打开无线路由器电源后应立即采取的第一项安全措施是什么？</li>
+</ol>
+<ul>
+<li><p>在无线路由器和连接的无线设备上配置加密。</p>
+</li>
+<li><p>禁用无线网络 SSID 广播。</p>
+</li>
+<li><p><span style="color: #ff0000">更改无线路由器的默认用户名和密码。</span></p>
+</li>
+<li><p>在无线路由器上启用 MAC 地址过滤。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>技术人员为保护新无线网络而应采取的第一项措施是更改无线路由器的默认用户名和密码。下一步通常是配置加密。然后，一旦初始无线主机组连接到网络，MAC 地址过滤将启用，SSID 广播将禁用。这将防止新的未经授权的主机发现并连接到无线网络。</p>
+<ol start="36">
+<li>在 Cisco 3504 WLC 仪表板上，哪个选项可以访问完整的功能菜单？</li>
+</ol>
+<ul>
+<li><p>盗贼</p>
+</li>
+<li><p><span style="color: #ff0000">先进的</span></p>
+</li>
+<li><p>接入点</p>
+</li>
+<li><p>网络摘要</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当用户登录到 WLC 时，会显示 Cisco 3504 WLC 仪表板。它提供了一些基本设置和菜单，用户可以快速访问以实现各种常用配置。通过单击高级按钮，用户将访问高级摘要页面并访问 WLC 的所有功能。</p>
+<ol start="37">
+<li>在 Cisco 3504 WLC 摘要页面（高级 &gt; 摘要）上，哪个选项卡允许网络管理员访问和配置 WLAN 以获得特定的安全选项，例如 WPA2？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">无线局域网</span></p>
+</li>
+<li><p>安全</p>
+</li>
+<li><p>无线的</p>
+</li>
+<li><p>管理</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>Cisco 3504 WLC 高级摘要页面中的 WLAN 选项卡允许用户访问 WLAN 的配置，包括安全性、QoS 和策略映射。</p>
+<ol start="38">
+<li>可以使用哪种协议来监控网络？</li>
+</ol>
+<ul>
+<li><p>AAA</p>
+</li>
+<li><p><span style="color: #ff0000">SNMP</span></p>
+</li>
+<li><p>DHCP</p>
+</li>
+<li><p>半径</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>简单网络管理协议 (SNMP) 用于监控网络。</p>
+<ol start="39">
+<li>网络管理员在一家小型律师事务所部署了无线路由器。员工笔记本电脑加入 WLAN 并在 10.0.10.0&#x2F;24 网络中接收 IP 地址。无线路由器上使用了哪种服务来允许员工笔记本电脑访问互联网？</li>
+</ol>
+<ul>
+<li><p>域名系统</p>
+</li>
+<li><p><span style="color: #ff0000">NAT</span></p>
+</li>
+<li><p>DHCP</p>
+</li>
+<li><p>半径</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>第一个八位位组中带有 10 的任何地址都是私有 IPv4 地址，不能在 Internet 上路由。无线路由器将使用称为网络地址转换 (NAT) 的服务将私有 IPv4 地址转换为互联网可路由的 IPv4 地址，以便无线设备访问互联网。</p>
+<ol start="40">
+<li>可以在无线路由器上使用哪种服务来确定不同类型应用程序之间的网络流量优先级，从而使语音和视频数据优先于电子邮件和 Web 数据？</li>
+</ol>
+<ul>
+<li><p>NAT</p>
+</li>
+<li><p><span style="color: #ff0000">服务质量</span></p>
+</li>
+<li><p>域名系统</p>
+</li>
+<li><p>DHCP</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>许多无线路由器都有用于配置服务质量 (QoS) 的选项。通过配置 QoS，某些时间敏感的流量类型（例如语音和视频）优先于时间不敏感的流量（例如电子邮件和 Web 浏览）。</p>
+<ol start="41">
+<li>在 Cisco 3500 系列 WLC 上创建新 WLAN 之前需要执行哪个步骤？</li>
+</ol>
+<ul>
+<li><p>创建一个新的 SSID。</p>
+</li>
+<li><p><span style="color: #ff0000">创建一个新的 VLAN 接口。</span></p>
+</li>
+<li><p>构建或拥有一个可用的 SNMP 服务器。</p>
+</li>
+<li><p>构建或拥有可用的 RADIUS 服务器。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>Cisco 3500 系列 WLC 上配置的每个新 WLAN 都需要自己的 VLAN 接口。因此，在创建新的 WLAN 之前，需要先创建一个新的 VLAN 接口。</p>
+<ol start="42">
+<li>一位网络工程师正在对使用最新 802.11 标准的新部署的无线网络进行故障排除。当用户访问流视频等高带宽业务时，无线网络性能较差。为了提高性能，网络工程师决定配置一个 5 Ghz 频段的 SSID，并训练用户将该 SSID 用于流媒体服务。为什么该解决方案可以提高该类型服务的无线网络性能？</li>
+</ol>
+<ul>
+<li><p>5 GHz 频段具有更大的范围，因此很可能是无干扰的。</p>
+</li>
+<li><p>要求用户切换到 5 GHz 频段进行流媒体播放是不方便的，并且会导致访问这些服务的用户减少。</p>
+</li>
+<li><p><span style="color: #ff0000">5 GHz 频段比 2.4 GHz 频段拥有更多频道且不那么拥挤，这使得它更适合流媒体。</span></p>
+</li>
+<li><p>唯一可以切换到 5 GHz 频段的用户将是那些拥有最新无线 NIC 的用户，这将减少使用率。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>无线范围由接入点天线和输出功率决定，而不是由使用的频带决定。在这种情况下，所有用户都拥有符合最新标准的无线网卡，因此所有人都可以访问 5 GHz 频段。虽然有些用户可能会觉得切换到 5 Ghz 频段访问流媒体服务不方便，但更多的频道，而不是更少的用户，将提高网络性能。</p>
+<ol start="43">
+<li>网络管理员正在努力提高双频无线路由器的 WLAN 性能。实现流量拆分结果的简单方法是什么？</li>
+</ol>
+<ul>
+<li><p>要求所有无线设备使用 802.11n 标准。</p>
+</li>
+<li><p>检查并保持更新无线路由器的固件。</p>
+</li>
+<li><p><span style="color: #ff0000">确保 2.4 GHz 和 5 GHz 频段使用不同的 SSID。</span></p>
+</li>
+<li><p>将 Wi-Fi 范围扩展器添加到 WLAN，并将 AP 和范围扩展器设置为服务不同的频段。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>默认情况下，双频路由器和 AP 在 2.4GHz 频段和 5GHz 频段使用相同的网络名称。对流量进行分段的最简单方法是重命名其中一个无线网络。</p>
+<ol start="44">
+<li>网络管理员正在 Cisco 3500 系列 WLC 上配置 RADIUS 服务器连接。配置需要共享密码。什么是</li>
+</ol>
+<ul>
+<li><p>共享密码的目的是什么？</p>
+</li>
+<li><p>它允许用户验证和访问 WLAN。</p>
+</li>
+<li><p>RADIUS 服务器使用它来验证 WLAN 用户。</p>
+</li>
+<li><p><span style="color: #ff0000">它用于对 WLAN 上的用户数据进行身份验证和加密。</span></p>
+</li>
+<li><p>它用于加密 WLC 和 RADIUS 服务器之间的消息。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>RADIUS 协议使用安全功能来保护 RADIUS 服务器和客户端之间的通信。共享密钥是 WLC 和 RADIUS 服务器之间使用的密码。它不适用于最终用户。</p>
+<ol start="45">
+<li>笔记本电脑无法连接到无线接入点。应首先采取哪两个故障排除步骤？（选择两个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">确保已启用无线网卡。</span></p>
+</li>
+<li><p>确保已连接笔记本电脑天线。</p>
+</li>
+<li><p><span style="color: #ff0000">确保选择了无线 SSID。</span></p>
+</li>
+<li><p>确保选择了正确的网络媒体。</p>
+</li>
+<li><p>确保为正确的频率配置了 NIC。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>除非最近实施了维修，否则无线笔记本电脑通常不连接天线。如果启用了无线 NIC，将使用正确的媒体无线电。当 NIC 检测到接入点时，会自动使用正确的频率。</p>
+<ol start="46">
+<li>如果为家庭无线 AP 实施最佳实践，则需要更改哪三个参数？（选择三个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">SSID</span></p>
+</li>
+<li><p><span style="color: #ff0000">接入点密码</span></p>
+</li>
+<li><p>天线频率</p>
+</li>
+<li><p>无线信标时间</p>
+</li>
+<li><p><span style="color: #ff0000">无线网络密码</span></p>
+</li>
+<li><p>无线客户端操作系统密码</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>将 AP 从包装箱中取出后，应设置默认设备密码、SSID 和安全参数（无线网络密码）。可以调整无线天线的频率，但这不是必需的。信标时间通常未配置。无线客户端操作系统密码不受家庭无线网络配置的影响。</p>
+<ol start="47">
+<li>哪个访问控制组件、实现或协议控制用户可以在网络上做什么？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">授权</span></li>
+<li>验证</li>
+<li>会计</li>
+<li>802.1X</li>
+</ul>
+<ol start="48">
+<li>哪个访问控制组件、实施或协议是在本地实施还是作为基于服务器的解决方案实施？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">验证</span></li>
+<li>授权</li>
+<li>会计</li>
+<li>802.1X</li>
+</ul>
+<ol start="49">
+<li>哪个访问控制组件、实现或协议审核用户在网络上执行的操作？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">会计</span></li>
+<li>授权</li>
+<li>802.1X</li>
+<li>验证</li>
+</ul>
+<ol start="50">
+<li>哪个访问控制组件、实施或协议限制通过可公开访问的交换机端口进行 LAN 访问？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">802.1X</span></li>
+<li>会计</li>
+<li>授权</li>
+<li>验证</li>
+</ul>
+<ol start="51">
+<li>哪个访问控制组件、实现或协议记录用户配置的 EXEC 和配置命令？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">会计</span></li>
+<li>802.1X</li>
+<li>授权</li>
+<li>验证</li>
+</ul>
+<ol start="52">
+<li>哪个访问控制组件、实现或协议控制允许谁访问网络？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">验证</span></li>
+<li>授权</li>
+<li>会计</li>
+<li>802.1X</li>
+</ul>
+<ol start="53">
+<li>哪个访问控制组件、实现或协议收集和报告使用数据？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">会计</span></li>
+<li>授权</li>
+<li>802.1X</li>
+<li>验证</li>
+</ul>
+<ol start="54">
+<li>哪个访问控制组件、实现或协议通过 PASS 或 FAIL 消息指示客户端请求服务的成功或失败？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">授权</span></li>
+<li>会计</li>
+<li>验证</li>
+<li>802.1X</li>
+</ul>
+<ol start="55">
+<li>哪个访问控制组件、实现或协议基于请求者、验证者和验证服务器的设备角色？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">802.1X</span></li>
+<li>会计</li>
+<li>授权</li>
+<li>验证</li>
+</ul>
+<ol start="56">
+<li>哪个访问控制组件、实现或协议基于用户名和密码？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">验证</span></li>
+<li>授权</li>
+<li>会计</li>
+<li>802.1X</li>
+</ul>
+<ol start="57">
+<li>哪种类型的无线网络使用发射器来覆盖广阔的地理区域？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线广域网</span></li>
+<li>无线城域网</li>
+<li>无线局域网</li>
+<li>无线个域网</li>
+</ul>
+<ol start="58">
+<li>哪种类型的无线网络通常使用蓝牙或 ZigBee 设备？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线个域网</span></li>
+<li>无线局域网</li>
+<li>无线城域网</li>
+<li>无线广域网</li>
+</ul>
+<ol start="59">
+<li>哪种类型的无线网络使用发射器在大城市区域提供无线服务？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线城域网</span></li>
+<li>无线局域网</li>
+<li>无线广域网</li>
+<li>无线个域网</li>
+</ul>
+<ol start="60">
+<li>哪种类型的无线网络适合在家中或办公室使用？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线局域网</span></li>
+<li>无线城域网</li>
+<li>无线个域网</li>
+<li>无线广域网</li>
+</ul>
+<ol start="61">
+<li>哪种类型的无线网络经常使用安装在建筑物上的设备？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线城域网</span></li>
+<li>无线广域网</li>
+<li>无线局域网</li>
+<li>无线个域网</li>
+</ul>
+<ol start="62">
+<li>哪种类型的无线网络适合国家和全球通信？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线广域网</span></li>
+<li>无线城域网</li>
+<li>无线局域网</li>
+<li>无线个域网</li>
+</ul>
+<ol start="63">
+<li>哪种类型的无线网络使用发射器覆盖中型网络，通常长达 300 英尺（91.4 米）？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线局域网</span></li>
+<li>无线个域网</li>
+<li>无线城域网</li>
+<li>无线广域网</li>
+</ul>
+<ol start="64">
+<li>哪种类型的无线网络基于 802.11 标准和 2.4-GHz 或 5-GHz 射频？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线局域网</span></li>
+<li>无线城域网</li>
+<li>无线个域网</li>
+<li>无线广域网</li>
+</ul>
+<ol start="65">
+<li>哪种类型的无线网络适合为城市或地区提供无线接入？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线城域网</span></li>
+<li>无线局域网</li>
+<li>无线广域网</li>
+<li>无线个域网</li>
+</ul>
+<ol start="66">
+<li>哪种类型的无线网络将低功率发射器用于短距离网络，通常为 20 到 30 英尺（6 到 9 米）？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">无线个域网</span></li>
+<li>无线局域网</li>
+<li>无线城域网</li>
+<li>无线广域网</li>
+</ul>
+<ol start="67">
+<li>将 AAA 的每个功能组件与其描述相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-001/" alt="CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 001"/></div><div class="image-meta"><span class="image-caption center">CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 001</span></div></div>
+
+
+
+<ol start="68">
+<li>哪两个思科解决方案有助于防止 DHCP 饥饿攻击？（选择两个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">港口安全</span></p>
+</li>
+<li><p>IP 源保护</p>
+</li>
+<li><p><span style="color: #ff0000">DHCP 侦听</span></p>
+</li>
+<li><p>网络安全设备</p>
+</li>
+<li><p>动态 ARP 检查</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>思科提供的解决方案有助于缓解第 2 层攻击，包括： IP Source Guard (IPSG) – 防止 MAC 和 IP 地址欺骗攻击 动态 ARP 检查 (DAI) – 防止 ARP 欺骗和 ARP 中毒攻击 DHCP Snooping – 防止 DHCP 饥饿和 SHCP 欺骗攻击 端口安全 – 防止多种类型的攻击，包括 MAC 表溢出攻击和 DHCP 饥饿攻击 Web 安全设备 (WSA) 是一种针对基于 Web 的威胁的缓解技术。</p>
+<ol start="69">
+<li>缓解 VLAN 攻击的三种技术是什么？（选择三个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">禁用 DTP。</span></p>
+</li>
+<li><p><span style="color: #ff0000">手动启用中继。</span></p>
+</li>
+<li><p><span style="color: #ff0000">将本机 VLAN 设置为未使用的 VLAN。</span></p>
+</li>
+<li><p>启用 BPDU 防护。</p>
+</li>
+<li><p>启用源保护。</p>
+</li>
+<li><p>使用专用 VLAN。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>可以通过禁用动态中继协议 (DTP)、手动将端口设置为中继模式以及将中继链路的本机 VLAN 设置为未使用的 VLAN 来减轻 VLAN 攻击。</p>
+<ol start="70">
+<li>请参见图示。从显示的信息中可以确定端口安全性的哪些方面？</li>
+</ol>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-modules-10-13-l2-security-and-wlans-exam-answers/ccna-2-srwe-v7-modules-10-13-l2-security-and-wlans-exam-answers-03/" alt="CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 03"/></div><div class="image-meta"><span class="image-caption center">CCNA 2 SRWE v7 模块 10 – 13 – L2 安全和 WLAN 考试答案 03</span></div></div>
+
+
+
+<ul>
+<li><p>端口已关闭。</p>
+</li>
+<li><p>该端口有两个连接的设备。</p>
+</li>
+<li><p><span style="color: #ff0000">端口违例模式是启用端口安全的任何端口的默认设置。</span></p>
+</li>
+<li><p>该端口具有为端口安全配置的第 2 层交换机端口支持的最大 MAC 地址数。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>如果已为特定交换机端口输入了 switchport port-security 命令（没有选项），则端口安全行仅显示启用状态。如果发生端口安全违规，则会出现不同的错误消息，例如 Secure-shutdown 。支持的最大 MAC 地址数为 50。Maximum MAC Addresses 行用于显示可以学习的 MAC 地址数（在本例中为 2）。Sticky MAC Addresses 行显示只有一台设备已被交换机自动连接和学习。当一个端口由两个带单独笔记本电脑的隔间共享人员共享时，可以使用此配置。</p>
+<ol start="71">
+<li>某高校的网络管理员正在配置 WLAN 用户认证流程。无线用户需要输入将由服务器验证的用户名和密码凭证。哪台服务器会提供这样的服务？</li>
+</ol>
+<ul>
+<li><p>AAA</p>
+</li>
+<li><p>NAT</p>
+</li>
+<li><p>SNMP</p>
+</li>
+<li><p><span style="color: #ff0000">半径</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>远程身份验证拨入用户服务 (RADIUS) 是一种协议和服务器软件，可为组织提供基于用户的身份验证。当 WLAN 配置为使用 RADIUS 服务器时，用户将输入用户名和密码凭证，这些凭证在 RADIUS 服务器验证后才允许进入 WLAN。</p>
+<ol start="72">
+<li>技术人员正在对包含 802.11b 和 802.11g 设备的慢速 WLAN 进行故障排除。网络上部署了新的 802.11n&#x2F;ac 双频路由器，以取代旧的 802.11g 路由器。技术人员可以做些什么来解决无线速度慢的问题？</li>
+</ol>
+<ul>
+<li><p>更改 SSID。</p>
+</li>
+<li><p>将设备配置为使用不同的通道。</p>
+</li>
+<li><p><span style="color: #ff0000">在 802.11n 2.4 GHz 频段和 5 GHz 频段之间拆分无线流量。</span></p>
+</li>
+<li><p>更新新路由器上的固件。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在 802.11n 2.4 GHz 频段和 5 GHz 频段之间拆分无线流量将允许 802.11n 将这两个频段用作两个独立的无线网络来帮助管理流量，从而提高无线性能。</p>
+<ol start="73">
+<li>公司手册规定员工的办公室不能有微波炉。相反，所有员工都必须使用位于员工食堂的微波炉。公司试图避免哪些无线安全风险？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">意外干扰</span></p>
+</li>
+<li><p>配置不正确的设备</p>
+</li>
+<li><p>截取数据</p>
+</li>
+<li><p>恶意接入点</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>拒绝服务攻击可能是由于设备配置不当而导致 WLAN 失效。来自微波炉和无绳电话等设备的意外干扰会影响 WLAN 的安全性和性能。中间人攻击可以让攻击者拦截数据。恶意接入点可能允许未经授权的用户访问无线网络。</p>
+<ol start="74">
+<li>CAPWAP协议在企业无线网络中提供什么功能？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">CAPWAP 提供接入点和无线 LAN 控制器之间无线用户流量的封装和转发。</span></p>
+</li>
+<li><p>CAPWAP 提供接入点和无线客户端之间的无线用户流量加密。</p>
+</li>
+<li><p>CAPWAP 在使用 IPv6 寻址的接入点和使用 IPv4 寻址的无线客户端之间提供连接。</p>
+</li>
+<li><p>CAPWAP 在传输控制协议 (TCP) 端口上创建隧道，以允许 WLC 配置自主接入点。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>CAPWAP 是一种 IEEE 标准协议，使 WLC 能够管理多个 AP 和 WLAN。CAPWAP 还负责封装和转发 AP 和 WLC 之间的 WLAN 客户端流量。</p>
+<ol start="75">
+<li><p>打开 PT 活动。执行活动说明中的任务，然后回答问题。</p>
+<p>如果交换机 S1 接口 Fa0&#x2F;1 上存在端口安全违规，会发生什么事件？</p>
+</li>
+</ol>
+<ul>
+<li><p>发送通知。</p>
+</li>
+<li><p>系统日志消息被记录。</p>
+</li>
+<li><p><span style="color: #ff0000">源地址未知的数据包将被丢弃。</span></p>
+</li>
+<li><p>接口将进入错误禁用状态。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>可以通过发出 show port-security interface <int> 命令查看违规模式。接口 FastEthernet 0&#x2F;1 配置了保护违规模式。如果存在违规，接口 FastEthernet 0&#x2F;1 将丢弃 MAC 地址未知的数据包。</p>
+</article>
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 [@saevio]创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.19.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.19.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"post","path":"/search.json","content":true,"codeblock":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
