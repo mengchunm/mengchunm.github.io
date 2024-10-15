@@ -1,0 +1,834 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1" theme-name="Stellar" theme-version="1.29.1">
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  
+  <title>网络管理期末总结 - saevio</title>
+
+  
+    <meta name="description" content="备考资料">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络管理期末总结">
+<meta property="og:url" content="https://saevio.cn/2023/10/10/network%20design/index.html">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="备考资料">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://article.biliimg.com/bfs/article/92e73c7f58f7de3ee7b0d1f20432695a54d8b001.png">
+<meta property="og:image" content="c:/Users/saevio/AppData/Local/Temp/WeChat%20Files/26d92b7905a3833c22329ff3af66b75.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210705174925978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210705174935424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210705174943739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210705174959357.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://article.biliimg.com/bfs/article/809bcf99ae1bc886425bf2dd66394872cfbc8402.png">
+<meta property="article:published_time" content="2023-10-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-10-15T03:16:53.805Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://article.biliimg.com/bfs/article/92e73c7f58f7de3ee7b0d1f20432695a54d8b001.png">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.29.1">
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  
+</head>
+<body>
+
+<div class="l_body s:aa content tech" id="start" layout="post" ><aside class="l_left"><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+<div class="nav-area">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+<nav class="menu dis-select"></nav>
+</div>
+<div class="widgets">
+
+
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2023/07/20/fakelocation/"><span class="title">指点天下及学习通签到</span></a><a class="item title" href="/2023/10/10/ffmpeg/"><span class="title">音视频下载&剪辑</span></a><a class="item title" href="/2023/08/10/Android%20studio/"><span class="title">Android studio</span></a><a class="item title" href="/2022/03/20/first/"><span class="title">第一篇文章</span></a><a class="item title" href="/2023/01/25/Brush/"><span class="title">刷机资源整合</span></a><a class="item title" href="/2023/10/10/network%20design/"><span class="title">网络管理期末总结</span></a><a class="item title" href="/2023/10/10/Network%20Security%20Technology/"><span class="title">信息安全技术实验</span></a><a class="item title" href="/2023/06/10/java/"><span class="title">java学习</span></a><a class="item title" href="/2022/09/20/%E8%92%B2%E5%85%AC%E8%8B%B1%E5%A5%B3%E5%AD%A9/"><span class="title">蒲公英女孩（The Dandelion Girl）</span></a><a class="item title" href="/2022/07/15/exam/"><span class="title">Java考试题目汇总</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2023-10-09T16:00:00.000Z">2023-10-10</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-15T03:16:53.805Z">2024-10-15</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>网络管理期末总结</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>备考资料</p>
+<span id="more"></span><!-- more -->
+
+
+<meta name="referrer" content="no-referrer">
+
+<ol>
+<li><p>网络存储结构大致分为（）<br>A . 直连式存储(DAS)</p>
+<p>B . 网络附加存储(NAS)</p>
+<p>C . 区域存储网络(SAN)</p>
+<p>D . 间接式存储</p>
+</li>
+</ol>
+<blockquote>
+<p>ABC</p>
+</blockquote>
+<ol start="2">
+<li><p>现在出厂的网络设备都符合IPv4 通用的路由标准，还强调兼容性的原因是()<br>A.不同品牌的网络设备不能互联互通</p>
+<p>B.不同品牌的网络设备互联时可能会造成性能一定的下降</p>
+<p>C.只要符合标准，不同的网络设备完全相互兼容，可以随意混杂使用</p>
+<p>D.只是要求而已，只要兼容，可以互换</p>
+</li>
+</ol>
+<blockquote>
+<p>不同品牌的网络设备互联时可能会造成性能一定的下降</p>
+</blockquote>
+<ol start="3">
+<li><p>A类IP地址大型网络</p>
+<p>B类IP地址中型网络</p>
+<p>C类IP地址小型网络</p>
+<p>保留IP地址局域网 </p>
+</li>
+<li><p>常见服务器分为哪几种?</p>
+<p>A.塔式服务器 </p>
+<p>B机架式服务器 </p>
+<p>C刀片式服务器 </p>
+<p>D.机柜式服务器</p>
+</li>
+<li><p>网络拓扑结构分层设计中,哪一层不能部署网络安全策略,必须采用冗余设计</p>
+<p>A.核心层</p>
+<p>B.汇聚层</p>
+<p>C.接入层 （哪一层做接入时的授权鉴别操作）</p>
+<p>D.用户终端</p>
+<blockquote>
+<p>核心层</p>
+<p>核心层设备要避免做什么设置？</p>
+<p><strong>哪一层必须采用冗余设计？</strong></p>
+<p>核心层</p>
+<p>哪一层做NAT转换？</p>
+<p>汇聚层</p>
+<p>三层中，那一层部署网络安全的操作？哪一层执行网络访问控制？<br>核心层、接入层</p>
+</blockquote>
+</li>
+<li><p>数据库系统对服务器的技术需求不包括</p>
+<p>A.CPU 处理能力强 </p>
+<p>B.l&#x2F;0 处理能力强 </p>
+<p>C.稳定性高 </p>
+<p>D.内存大</p>
+<blockquote>
+<p>内存大</p>
+</blockquote>
+</li>
+<li><p><strong>数字矩阵</strong> </p>
+<p>• 实现对输入视频图像的切换输出</p>
+<p>• 一个M×N矩阵：表示可以同时支持M路图像输入和N路图像输出。这里需要强调的是必须要做到任意，即任意的一个输入和任意的一个输出</p>
+</li>
+<li><p>常用网络技术，级联和堆叠的区别，优缺点</p>
+<p><strong>级联</strong>：指在两台交换机的端口之间连接网线，将交换机连接在一起，实现相互之间的通信</p>
+<p>可解决一台交换机端口数量不足的问题，也能够延伸网络的覆盖范围</p>
+<p><strong>堆叠</strong>：堆叠是把交换机的背板带宽通过专用模块聚集在一起，这使堆叠交换机的总背板带宽是几台堆叠交换机的背板带宽之和，从而使得堆叠交换机集合能够作为一个整体进行管理</p>
+<p>不是所有的交换机都可以堆叠，只有可管理的、模块化的特定交换机才具有堆叠管理功能</p>
+<p>vpn，渗透树协议，链路聚合，DNS，DHCP，NAT</p>
+</li>
+<li><p>可以通过下列哪个现象判断出其为优质网线。</p>
+<p>A.高温下外胶皮直接燃烧冒黑烟</p>
+<p>B.铜芯细</p>
+<p>C.网线很硬</p>
+<p>D.外胶皮不易燃</p>
+<blockquote>
+<p>外胶皮不易燃</p>
+</blockquote>
+</li>
+<li><p>高校校园网的特点有<br>A.宽带宽。<br>B.多功能整合。<br>C.专业性强。<br>D.封闭</p>
+<blockquote>
+<p>宽带宽<br>多功能整合<br>专业性强</p>
+</blockquote>
+</li>
+<li><p>碰撞广播域偏向于广播</p>
+</li>
+</ol>
+<p>​	广播域数量限制在200</p>
+<p>1-5 10-300 100-200 500-600</p>
+<ol start="13">
+<li><p>摄像头分为哪四类：枪式摄像头，半球形摄像头，高速球形摄像头，带云台摄像头</p>
+<p><strong>类型和适用场合</strong> </p>
+<p>• 枪式：变焦范围大，适用于室外</p>
+<p>• 半球式：固定，适用于室内，监控某一特定区域</p>
+<p>• 球式：开阔区域的监控，多角度、大范围的监控</p>
+<p>马路，楼顶，室内</p>
+</li>
+<li><p>无线路由器放置的位置最好在()。<br>A.地面 B.天花板 C.卫生间 D最西端墙<br>解答<br>天花板</p>
+</li>
+<li><p>超5类双绞线的RJ-45 接口使用的正确线序为</p>
+<p>A.白橙、橙、白绿、蓝、白蓝、绿、白棕、棕 </p>
+<p>B.白橙、橙白绿、绿、白蓝、蓝、白棕、棕 </p>
+<p>C.橙、白橙、绿、白绿蓝、白蓝、棕、白棕 </p>
+<p>D.白绿、绿、蓝、白蓝、白橙、橙白棕、棕<br>解答<br>白橙、橙、白绿、蓝、白蓝、绿、白棕、棕</p>
+</li>
+<li><p>一个机房有64台计算机,下列( )的设备选用较合适</p>
+<p>A.2台32端口的交换机 </p>
+<p>B.3 台24端口交换机 </p>
+<p>C.1台64端口交换机 </p>
+<p>D.1台40端口交换机<br>解答<br>B</p>
+</li>
+<li><p>一个机房有48台计算机，下列 ( B) 的设备选用较合适<br>A 一台40端口交换机<br>B 2台24端口交换机<br>C 一台48端口的交换机<br>D 1台64端口交换机</p>
+</li>
+<li><p>招标文件通常由下列哪一方制订(每人干什么的)<br>A投标公司<br>B 招标方<br>C 监理方<br>D 政府主管部门</p>
+<blockquote>
+<p>招标方</p>
+</blockquote>
+</li>
+<li><p>网络工程4个定义</p>
+</li>
+<li><p>信息插座与电源插座的间距不小于20cm的原因是</p>
+<p>A.防止漏电 </p>
+<p>B.减少电磁干扰 </p>
+<p>C.施工方便 </p>
+<p>D.经验<br>解答<br>减少电磁干扰</p>
+</li>
+<li><p>使用电缆测试仪测量网线时,主控端顺序正常.副控端8个指示灯都亮但顺序错乱,最可能的原因是:<br>A.网线两端的接线顺序不同 </p>
+<p>B.网线一端接触不良 </p>
+<p>C.电缆测试仪故障 </p>
+<p>D.电池电量不足<br>解答<br>网线两端的接线顺序不同</p>
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2></li>
+<li><p>线缆在桥架内垂直敷设时，在线缆的上端和每间隔1.5m处应固定在桥架的支架上；水平敷设时，在线缆的首、尾、转弯及每间隔5～10m处进行固定。 </p>
+</li>
+<li><p>设计网络时的基本原则是先设计核心层,再设计汇聚层,最后接入层。<br>解答<br>错误</p>
+</li>
+<li><p>PC机内存与服务器内存能通用<br>解答<br>错误</p>
+</li>
+<li><p>当你作为乙方 甲方领导要换届了 加快 延缓 停止<br> <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://article.biliimg.com/bfs/article/92e73c7f58f7de3ee7b0d1f20432695a54d8b001.png" alt="image-20230516200134878"></p>
+</li>
+<li><p>交换机隔离冲突域，路由器隔离广播域和冲突域</p>
+</li>
+<li><p>通用cpu和超大规模集成电路哪一个性能更好，超大规模集成电路VLSI好</p>
+</li>
+<li><p><strong>机柜的容量单位</strong>是?<br>A.U B.F C.O D.P<br>解答<br>U</p>
+</li>
+<li><p>英译汉</p>
+</li>
+<li><p>【填空题】 Premises Distribution System（PDS）的通常汉译为<strong>综合布线系统</strong></p>
+<p>网络工程4个阶段CDEF</p>
+<p>启动</p>
+<p>规划Development</p>
+<p>实施Execution</p>
+<p>收尾</p>
+<p><strong>综合布线系统的专业名词</strong></p>
+<p>建筑物布线系统（PDS，PremisesDistribution System）</p>
+<p><strong>综合布线系统（GCS， GenericCabling System）</strong></p>
+<p>开放式布线系统(OCS，Open CablingSystems)</p>
+<p>结构化综合布线系统(SCS，StructuredCabling Systems）</p>
+<p>Integrated Wiring System（疑问）</p>
+<h2 id="综合布线系统"><a href="#综合布线系统" class="headerlink" title="综合布线系统"></a>综合布线系统</h2><p><strong>综合布线系统的组成：六个子系统</strong></p>
+<ol>
+<li>工作区（Work area Subsystem）</li>
+<li>水平支干线（Horizontal Subsystem）</li>
+<li>垂直主干线（Backbone Subsystem）</li>
+<li>设备间（Equipment Subsystem）</li>
+<li>管理（Administration Subsystem）</li>
+<li>建筑群（Building Group System）</li>
+</ol>
+<p>RFID</p>
+<p>子网划分</p>
+<p>案例题</p>
+</li>
+</ol>
+<p>结构化布线系统是由哪些子系统组成的?试根据结构化布线系统的示意图，说明每个子2.<br>系统的功能及其相互之间关系。<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="C:/Users/saevio/AppData/Local/Temp/WeChat%20Files/26d92b7905a3833c22329ff3af66b75.jpg" alt="26d92b7905a3833c22329ff3af66b75"></p>
+<p>一、工作区子系统<br>　　一个独立的需要设置终端的区域，即一个工作区，工作区子系统应由(水平)布线系统的信息插座，延伸到工作站终端设备处的连接电缆及适配器组成。<br>　<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20210705174925978.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>二、水平(布线)子系统<br>　　配线子系统由工作区用的信息插座，每层配线设备至信息插座的配线电缆、楼层配线设备和跳线等组成。</p>
+<p>　　<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20210705174935424.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>三、垂直(干线)子系统<br>　　干线子系统应由设备间的配线设备和跳线以及设备间至各楼层配线间的连接电缆组成。<br>　　<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20210705174943739.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>四、设备间子系统<br>　　设备间是在每一幢大楼的适当地点设置进线设备、<strong>进行网络管理以及管理人员值班的场所</strong>。设备间子系统由综合布线系统的建筑物进线设备、电话、数据、计算机等各种主机设备及其保安配线设备等组成。<br>　　<br>五、管理子系统<br>　　管理子系统设置在每层配线设备的房间内。管理子系统应由交接间的配线设备，输入&#x2F;输出设备等组成，管理子系统也可应用于设备间子系统。<br>　　<br>六、建筑群子系统<br>　　建筑群子系统由两个及两个以上建筑物的电话、数据、电视系统组成一个建筑群综合布线系统，<strong>包括连接各建筑物之间的缆线和配线设备(CD)</strong>,组成建筑群子系统。<br>　　<img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img-blog.csdnimg.cn/20210705174959357.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JsYWNrX3p0NjY2,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>路由器交换机四个使用原则，结合案例</p>
+<h2 id="交换机和路由器的区别是什么"><a href="#交换机和路由器的区别是什么" class="headerlink" title="交换机和路由器的区别是什么"></a>交换机和路由器的区别是什么</h2><p>1.端口数小于24选路由器，大于24选交换机</p>
+<p>2.路经选择，多条路径通向外网选路由器,一条反之</p>
+<p>3.选择协议，路由器通过DHCP表进行IP地址分配，交换机无</p>
+<p>路由器可以处理TCP&#x2F;IP,根据IP寻址</p>
+<p>4.介质: 交换机只能用双绞线，路由器可以用多种网络介质</p>
+<h2 id="存储容量计算"><a href="#存储容量计算" class="headerlink" title="存储容量计算"></a>存储容量计算</h2><p><strong>存储容量&#x3D;码流×时间×视频路数÷8&#x3D;N(Byte)</strong></p>
+<p><strong>时间&#x3D;监控天数x24小时x3600秒</strong></p>
+<p>8个摄像头，码流512kbps，每天定时录像12小时，录像资料保留15天，需要多大的存储空间?<br>存储容量 &#x3D;码流x时间x视频路数÷8 &#x3D;N(Byte)<br>&#x3D; 码流x(监控天数x12小时x3600秒)x视频路数÷8<br>&#x3D;512x(15x12x3600) x8÷8<br>&#x3D;331776000(kB)<br>&#x3D;331776000:1024&#x3D;225MB</p>
+<h2 id="布线线缆长度计算"><a href="#布线线缆长度计算" class="headerlink" title="布线线缆长度计算"></a>布线线缆长度计算</h2><p><strong>楼层总线缆长度：</strong></p>
+<p><strong>C&#x3D;[0.55(L+S)+2倍楼层高度] x n</strong></p>
+<p><strong>线缆箱数：</strong><br><strong>所需箱数 &#x3D; 信息插座数量&#x2F;(每箱长度÷水平线平均长度)</strong><br><strong>水平线平均长度&#x3D; 0.55(L+S)+2倍楼层高度</strong></p>
+<p>楼层高4.5米，信息点距离配线间最远距离80m，最短距离18m，每箱网线长度303m，全楼1200个信息插座需要网线多少箱?</p>
+<h2 id="子网划分"><a href="#子网划分" class="headerlink" title="子网划分"></a>子网划分</h2><p>一个C类地址192.168.143.0，网内可有至多140台主机。要将该网分成6个子网，每个子网能容纳25台机器</p>
+<p>解:考虑到要去除两个保留的特殊子网地址，至少需要8个子网则n&#x3D;3，新的子网掩码为: 192.168.143&#x2F;27，而每个子网可容纳的主机数量为25-2&#x3D;30</p>
+<p>子网划分:</p>
+<p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://article.biliimg.com/bfs/article/809bcf99ae1bc886425bf2dd66394872cfbc8402.png" alt="image-20230516204307523"></p>
+<p>假设你是网管，</p>
+
+<div class="article-footer fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    </div>
+</article>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/10/10/ffmpeg/">音视频下载&剪辑</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/10/10/Network%20Security%20Technology/">信息安全技术实验</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>快来参与讨论吧~</p>
+
+    </section>
+    <section class='body cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="mengchunm/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">saevio</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E6%96%AD"><span class="toc-text">判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E5%B8%83%E7%BA%BF%E7%B3%BB%E7%BB%9F"><span class="toc-text">综合布线系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%92%8C%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">交换机和路由器的区别是什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%AE%B9%E9%87%8F%E8%AE%A1%E7%AE%97"><span class="toc-text">存储容量计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%83%E7%BA%BF%E7%BA%BF%E7%BC%86%E9%95%BF%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="toc-text">布线线缆长度计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%90%E7%BD%91%E5%88%92%E5%88%86"><span class="toc-text">子网划分</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+<script type="text/javascript">
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"post","path":"/search.json","content":true,"codeblock":true,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+  };
+  const deps = {
+    jquery: `https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js`,
+    marked: `https://cdn.jsdelivr.net/npm/marked@13.0.1/lib/marked.umd.min.js`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+    
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      let retryTimes = 3;
+      utils.onLoading(el);
+      function req() {
+        return new Promise((resolve, reject) => {
+          let status = 0; // 0 等待 1 完成 2 超时
+          let timer = setTimeout(() => {
+            if (status === 0) {
+              status = 2;
+              timer = null;
+              reject('请求超时');
+              if (retryTimes == 0) {
+                onFailure();
+              }
+            }
+          }, 5000);
+          fetch(url).then(function(response) {
+            if (status !== 2) {
+              clearTimeout(timer);
+              resolve(response);
+              timer = null;
+              status = 1;
+            }
+            if (response.ok) {
+              return response.json();
+            }
+            throw new Error('Network response was not ok.');
+          }).then(function(data) {
+            retryTimes = 0;
+            utils.onLoadSuccess(el);
+            callback(data);
+          }).catch(function(error) {
+            if (retryTimes > 0) {
+              retryTimes -= 1;
+              setTimeout(() => {
+                req();
+              }, 5000);
+            } else {
+              utils.onLoadFailure(el);
+              onFailure();
+            }
+          });
+        });
+      }
+      req();
+    },
+  };
+</script>
+
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+
+<!-- required -->
+<script src="/js/main.js?v=1.29.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    applyThemeToGiscus(theme)
+  }
+
+  const applyThemeToGiscus = (theme) => {
+    theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    }
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  const el = document.querySelector('#comments #beaudar');
+  util.viewportLazyload(el, load_beaudar, false);
+
+  function load_beaudar() {
+    if (!el) return;
+    try {
+      el.innerHTML = '';
+    } catch (error) {
+      console.error(error);
+    }
+    const script = document.createElement('script');
+    script.src = 'https://beaudar.lipk.org/client.js';
+    script.async = true;
+    for (const key of Object.keys(el.attributes)) {
+      const attr = el.attributes[key];
+      if (['class', 'id'].includes(attr.name) === false) {
+        script.setAttribute(attr.name, attr.value);
+      }
+    }
+    el.appendChild(script);
+  }
+</script>
+
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+</script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error)';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('ds-memos');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3.1/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
