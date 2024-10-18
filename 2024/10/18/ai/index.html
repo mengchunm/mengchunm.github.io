@@ -17,21 +17,23 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>第一篇文章 - saevio</title>
+  <title>AI项目部署 - saevio</title>
 
   
-    <meta name="description" content="这是窝的第一篇文章诶!">
+    <meta name="description" content="记录一些关于近期学习的ai项目的部署使用方法和细节（主要为开源本地项目）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇文章">
-<meta property="og:url" content="https://saevio.cn/2022/03/20/first/index.html">
+<meta property="og:title" content="AI项目部署">
+<meta property="og:url" content="https://saevio.cn/2024/10/18/ai/index.html">
 <meta property="og:site_name" content="saevio">
-<meta property="og:description" content="这是窝的第一篇文章诶!">
+<meta property="og:description" content="记录一些关于近期学习的ai项目的部署使用方法和细节（主要为开源本地项目）">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-03-19T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-10-15T03:18:20.799Z">
+<meta property="og:image" content="https://article.biliimg.com/bfs/new_dyn/6ce87faf5b705d2c00f57d024807f69264587936.png">
+<meta property="article:published_time" content="2024-10-17T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-10-18T07:41:55.314Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://article.biliimg.com/bfs/new_dyn/6ce87faf5b705d2c00f57d024807f69264587936.png">
   
   
   
@@ -81,29 +83,62 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2022-03-19T16:00:00.000Z">2022-03-20</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-15T03:18:20.799Z">2024-10-15</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-10-17T16:00:00.000Z">2024-10-18</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-18T07:41:55.314Z">2024-10-18</time></span></div></div></div>
     
     <div class="bottom only-title">
       
       <div class="text-area">
-        <h1 class="text title"><span>第一篇文章</span></h1>
+        <h1 class="text title"><span>AI项目部署</span></h1>
         
       </div>
     </div>
     
   </div>
-  </div><article class="md-text content"><p>这是窝的第一篇文章诶!</p>
-<span id="more"></span><!-- more -->
-
-<p>超链接测试：<br><a target="_blank" rel="noopener" href="https://baidu.com/">百度</a><br>外链测试：</p>
-<div class="tag-plugin link dis-select"><a class="link-card plain" title="充充&nbsp;-&nbsp;一个贼牛逼的大佬" href="https://charxd.netlify.app/" target="_blank" rel="external nofollow noopener noreferrer" cardlink autofill="icon"><div class="left"><span class="title">充充&nbsp;-&nbsp;一个贼牛逼的大佬</span><span class="cap link footnote">https://charxd.netlify.app/</span></div><div class="right"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/link/8f277b4ee0ecd.svg"></div></div></a></div>
-
-<p>引用标签:</p>
-<p>test</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;hello world&quot;</span>);</span><br></pre></td></tr></table></figure>
+  </div><article class="md-text content"><p>记录一些关于近期学习的ai项目的部署使用方法和细节（主要为开源本地项目）</p>
+<span id="more"></span>
 
 
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3>
+
+
+
+<h2 id="AI音频"><a href="#AI音频" class="headerlink" title="AI音频"></a>AI音频</h2><h3 id="FunAudioLLM"><a href="#FunAudioLLM" class="headerlink" title="FunAudioLLM"></a>FunAudioLLM</h3><p>这是阿里的一个有关语音识别与合成的项目<br>项目介绍：<a target="_blank" rel="noopener" href="https://fun-audio-llm.github.io/">https://fun-audio-llm.github.io</a><br>具体分为两个项目：SenseVoice和CosyVoice<br>目前只学习了Sensevoice（ASR语音识别）<br>学习视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Mi421a7Wm">https://www.bilibili.com/video/BV1Mi421a7Wm</a><br>学习笔记：<a target="_blank" rel="noopener" href="https://note.youdao.com/s/Q1uvbi5Y">https://note.youdao.com/s/Q1uvbi5Y</a></p>
+<h3 id="Gpt-sovits"><a href="#Gpt-sovits" class="headerlink" title="Gpt-sovits"></a>Gpt-sovits</h3><p>这个项目可以将一段正常说话的语音按文字切分提取出来</p>
+<p>可以实现文字转模拟音色语音的效果（文字生成语音）</p>
+<p>缺点是声音情感较弱，大量运用于人机视频配音（如麦克阿瑟，家人们谁懂啊）</p>
+<p>主要是b站花儿不哭大佬研发</p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/RVC-Boss/GPT-SoVITS">https://github.com/RVC-Boss/GPT-SoVITS</a></p>
+<p>教程视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV12g4y1m7Uw">https://www.bilibili.com/video/BV12g4y1m7Uw</a></p>
+<p>教程文档：<a target="_blank" rel="noopener" href="http://www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e">www.yuque.com/baicaigongchang1145haoyuangong/ib3g1e</a></p>
+<p>不会编程的可以使用训练推理整合包：<br><a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1OE5qL0KreO-ASHwm6Zl9gA?pwd=mqpi">https://pan.baidu.com/s/1OE5qL0KreO-ASHwm6Zl9gA?pwd=mqpi</a><br><a target="_blank" rel="noopener" href="https://drive.uc.cn/s/a1fd91ae0a4f4">https://drive.uc.cn/s/a1fd91ae0a4f4</a></p>
+<p>推理时用到的</p>
+<h3 id="SVC项目"><a href="#SVC项目" class="headerlink" title="SVC项目"></a>SVC项目</h3><p>Singing Voice Conversion（歌声转换）</p>
+<p>常见的开源的SVC项目大概有So-VITS-SVC，RVC，DDSP-SVC，Diffusion-SVC，Diff-SVC，ReFlow-VAE-SVC</p>
+<p><strong>项目性能比较</strong></p>
+<p>主观效果评级（质量中等，时长超过 1h 的唱歌数据，推理源较好的情况下）：</p>
+<p>SOV &gt; ReFlow &gt; DDSP6.0</p>
+<p>主观效果评级（高质量，时长超过 1h 的说话数据，推理源较好的情况下）：</p>
+<p>DDSP6.0 &gt; ReFlow &gt;&gt;&gt;&gt;&gt; SOV</p>
+<p>训练速度（由快到慢）：</p>
+<p>DDSP ≈ ReFlow &gt; SOV</p>
+<p><strong>省流助手</strong></p>
+<p>高配置，高质量数据集，首选 sovits；</p>
+<p>一般配置，数据集较短，首选 ReFlow；</p>
+<p>低配置，或者语音数据集，你没得选 (˃̶͈̀௰˂̶͈́) ddsp 欢迎您</p>
+<h4 id="RVC"><a href="#RVC" class="headerlink" title="RVC"></a>RVC</h4><p>这个项目可用于快速训练他人声线</p>
+<p>实时推理模仿他人声线（变声器）</p>
+<p>由于变声器这个特点，被大量制作成套皮变声器骗钱，也有拿训练模型高价卖钱的</p>
+<p>配置要求较低，需要有一段原始声音以进行模仿</p>
+<p>也是花儿不哭大佬研发</p>
+<p>教程文档：<a target="_blank" rel="noopener" href="https://www.yuque.com/baicaigongchang1145haoyuangong/imh23d">https://www.yuque.com/baicaigongchang1145haoyuangong/imh23d</a></p>
+<p>项目地址：<a target="_blank" rel="noopener" href="https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI">https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI</a></p>
+<h4 id="so-vits-svc"><a href="#so-vits-svc" class="headerlink" title="so-vits-svc"></a>so-vits-svc</h4><p>这是一个提取声线翻唱的项目，学习中</p>
+<p>（翻唱模拟）</p>
+<p>教程文档：<a target="_blank" rel="noopener" href="https://www.yuque.com/baicaigongchang1145haoyuangong/np18f4">https://www.yuque.com/baicaigongchang1145haoyuangong/np18f4</a></p>
+<h2 id="AI图像-amp-视频"><a href="#AI图像-amp-视频" class="headerlink" title="AI图像&amp;视频"></a>AI图像&amp;视频</h2><h3 id="stable-diffusion"><a href="#stable-diffusion" class="headerlink" title="stable-diffusion"></a>stable-diffusion</h3><p>这是一个AI绘画项目</p>
+<h2 id="AI文本"><a href="#AI文本" class="headerlink" title="AI文本"></a>AI文本</h2><h3 id="本地模型："><a href="#本地模型：" class="headerlink" title="本地模型："></a>本地模型：</h3><h4 id="ollama"><a href="#ollama" class="headerlink" title="ollama"></a>ollama</h4><h3 id="图形化界面："><a href="#图形化界面：" class="headerlink" title="图形化界面："></a>图形化界面：</h3><h4 id="SillyTavern小酒馆："><a href="#SillyTavern小酒馆：" class="headerlink" title="SillyTavern小酒馆："></a>SillyTavern小酒馆：</h4><p>角色卡</p>
+<p>云部署</p>
+<h4 id="Dify知识库："><a href="#Dify知识库：" class="headerlink" title="Dify知识库："></a>Dify知识库：</h4><p><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://article.biliimg.com/bfs/new_dyn/6ce87faf5b705d2c00f57d024807f69264587936.png" alt="GIzHz9NbUAAa8_X"></p>
+
 <div class="article-footer fs14">
     <section id="license">
       <div class="header"><span>许可协议</span></div>
@@ -112,7 +147,7 @@
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2022/05/11/Cisco/">Cisco答案</a></div><div class="item" id="next"></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/10/10/ffmpeg/">音视频下载&剪辑</a></div></section></div>
 
 
 
@@ -141,7 +176,7 @@
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li></ol></div><div class="widget-footer">
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#AI%E9%9F%B3%E9%A2%91"><span class="toc-text">AI音频</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FunAudioLLM"><span class="toc-text">FunAudioLLM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gpt-sovits"><span class="toc-text">Gpt-sovits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SVC%E9%A1%B9%E7%9B%AE"><span class="toc-text">SVC项目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RVC"><span class="toc-text">RVC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#so-vits-svc"><span class="toc-text">so-vits-svc</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AI%E5%9B%BE%E5%83%8F-amp-%E8%A7%86%E9%A2%91"><span class="toc-text">AI图像&amp;视频</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stable-diffusion"><span class="toc-text">stable-diffusion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AI%E6%96%87%E6%9C%AC"><span class="toc-text">AI文本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%A8%A1%E5%9E%8B%EF%BC%9A"><span class="toc-text">本地模型：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ollama"><span class="toc-text">ollama</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2%EF%BC%9A"><span class="toc-text">图形化界面：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SillyTavern%E5%B0%8F%E9%85%92%E9%A6%86%EF%BC%9A"><span class="toc-text">SillyTavern小酒馆：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Dify%E7%9F%A5%E8%AF%86%E5%BA%93%EF%BC%9A"><span class="toc-text">Dify知识库：</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer">
 
 <a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M10.46 1.25h3.08c1.603 0 2.86 0 3.864.095c1.023.098 1.861.3 2.6.752a5.75 5.75 0 0 1 1.899 1.899c.452.738.654 1.577.752 2.6c.095 1.004.095 2.261.095 3.865v1.067c0 1.141 0 2.036-.05 2.759c-.05.735-.153 1.347-.388 1.913a5.75 5.75 0 0 1-3.112 3.112c-.805.334-1.721.408-2.977.43a10.81 10.81 0 0 0-.929.036c-.198.022-.275.054-.32.08c-.047.028-.112.078-.224.232c-.121.166-.258.396-.476.764l-.542.916c-.773 1.307-2.69 1.307-3.464 0l-.542-.916a10.605 10.605 0 0 0-.476-.764c-.112-.154-.177-.204-.224-.232c-.045-.026-.122-.058-.32-.08c-.212-.023-.49-.03-.93-.037c-1.255-.021-2.171-.095-2.976-.429A5.75 5.75 0 0 1 1.688 16.2c-.235-.566-.338-1.178-.389-1.913c-.049-.723-.049-1.618-.049-2.76v-1.066c0-1.604 0-2.86.095-3.865c.098-1.023.3-1.862.752-2.6a5.75 5.75 0 0 1 1.899-1.899c.738-.452 1.577-.654 2.6-.752C7.6 1.25 8.857 1.25 10.461 1.25M6.739 2.839c-.914.087-1.495.253-1.959.537A4.25 4.25 0 0 0 3.376 4.78c-.284.464-.45 1.045-.537 1.96c-.088.924-.089 2.11-.089 3.761v1c0 1.175 0 2.019.046 2.685c.045.659.131 1.089.278 1.441a4.25 4.25 0 0 0 2.3 2.3c.515.214 1.173.294 2.429.316h.031c.398.007.747.013 1.037.045c.311.035.616.104.909.274c.29.17.5.395.682.645c.169.232.342.525.538.856l.559.944a.52.52 0 0 0 .882 0l.559-.944c.196-.331.37-.624.538-.856c.182-.25.392-.476.682-.645c.293-.17.598-.24.909-.274c.29-.032.639-.038 1.037-.045h.032c1.255-.022 1.913-.102 2.428-.316a4.25 4.25 0 0 0 2.3-2.3c.147-.352.233-.782.278-1.441c.046-.666.046-1.51.046-2.685v-1c0-1.651 0-2.837-.089-3.762c-.087-.914-.253-1.495-.537-1.959a4.25 4.25 0 0 0-1.403-1.403c-.464-.284-1.045-.45-1.96-.537c-.924-.088-2.11-.089-3.761-.089h-3c-1.651 0-2.837 0-3.762.089" clip-rule="evenodd"/><path fill="currentColor" d="M9 11a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0"/></svg><span>参与讨论</span></a></div></widget>
 </div></aside><div class='float-panel blur'>
