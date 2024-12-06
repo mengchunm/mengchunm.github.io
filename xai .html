@@ -20,15 +20,15 @@
   <title>saevio</title>
 
   
-    <meta name="description" content="AI 聊天助手                   :root {             --background-gradient: linear-gradient(135deg, rgba(240, 248, 255, 0.6), rgba(255, 240, 245, 0.6));             --header-gradient: linear">
+    <meta name="description" content="XAI Chat                   :root {             --background-gradient: linear-gradient(135deg, rgba(240, 248, 255, 0.6), rgba(255, 240, 245, 0.6));             --header-gradient: linea">
 <meta property="og:type" content="website">
 <meta property="og:title" content="saevio">
-<meta property="og:url" content="https://saevio.cn/xai.html">
+<meta property="og:url" content="https://saevio.cn/xai%20.html">
 <meta property="og:site_name" content="saevio">
-<meta property="og:description" content="AI 聊天助手                   :root {             --background-gradient: linear-gradient(135deg, rgba(240, 248, 255, 0.6), rgba(255, 240, 245, 0.6));             --header-gradient: linear">
+<meta property="og:description" content="XAI Chat                   :root {             --background-gradient: linear-gradient(135deg, rgba(240, 248, 255, 0.6), rgba(255, 240, 245, 0.6));             --header-gradient: linea">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-12-05T08:15:52.568Z">
-<meta property="article:modified_time" content="2024-12-05T08:15:52.568Z">
+<meta property="article:published_time" content="2024-12-06T01:09:56.730Z">
+<meta property="article:modified_time" content="2024-12-06T01:07:19.759Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -80,9 +80,9 @@
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 
   <span class="sep"></span>
-  <a class="cap breadcrumb" href="/xai.html"></a>
+  <a class="cap breadcrumb" href="/xai%20.html"></a>
   </div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-05T08:15:52.568Z">2024-12-05</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-05T08:15:52.568Z">2024-12-05</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-12-06T01:09:56.730Z">2024-12-06</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-12-06T01:07:19.759Z">2024-12-06</time></span></div></div></div>
     
   </div>
   </div><article class="md-text content"><!DOCTYPE html>
@@ -90,7 +90,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 聊天助手</title>
+    <title>XAI Chat</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         :root {
@@ -108,30 +108,34 @@
             transition: all 0.3s ease;
         }
 
+        html, body {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Inter', 'Arial', sans-serif;
             background: var(--background-gradient);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            background-attachment: fixed;
             line-height: 1.6;
             color: var(--text-color);
-            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
         }
 
-        .chat-wrapper {
+        .chat-container {
             width: 100%;
-            max-width: 480px;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
             background-color: rgba(255, 255, 255, 0.7);
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 90vh;
-            max-height: 720px;
             backdrop-filter: blur(10px);
+            overflow: hidden;
         }
 
         .chat-header {
@@ -160,22 +164,24 @@
             opacity: 0.7;
         }
 
-        #chat-container {
+        #chat-content {
             flex-grow: 1;
             overflow-y: auto;
-            padding: 15px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.3);
+            max-height: 60vh;
         }
 
         .message {
-            max-width: 80%;
+            max-width: 85%;
             margin: 10px 0;
             padding: 12px 15px;
             border-radius: 15px;
             clear: both;
             word-wrap: break-word;
             position: relative;
-            animation: fadeIn 0.3s ease;
+            white-space: pre-wrap;
+            line-height: 1.4;
         }
 
         .user-message {
@@ -194,15 +200,18 @@
             border-bottom-left-radius: 5px;
         }
 
-        .message-input-area {
+        .message-input-wrapper {
             display: flex;
-            padding: 10px;
+            padding: 15px 20px;
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(5px);
+            align-items: flex-end;
         }
 
         #message-input {
             flex-grow: 1;
+            min-height: 50px;
+            max-height: 200px;
             padding: 12px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 25px;
@@ -210,11 +219,9 @@
             outline: none;
             background: rgba(255, 255, 255, 0.7);
             font-size: 16px;
-        }
-
-        #message-input:focus {
-            border-color: rgba(173, 216, 230, 0.5);
-            box-shadow: 0 0 0 3px rgba(173, 216, 230, 0.1);
+            resize: none;
+            overflow-y: auto;
+            line-height: 1.4;
         }
 
         #send-button {
@@ -229,41 +236,34 @@
             justify-content: center;
             cursor: pointer;
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            align-self: flex-end;
         }
 
         #send-button:hover {
             transform: scale(1.05);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @media (max-width: 600px) {
+            .chat-container {
+                width: 95%;
+                max-width: 100%;
+            }
 
-        /* 滚动条样式 */
-        #chat-container::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        #chat-container::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.05);
-        }
-
-        #chat-container::-webkit-scrollbar-thumb {
-            background: rgba(173, 216, 230, 0.5);
-            border-radius: 3px;
+            #chat-content {
+                max-height: 70vh;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="chat-wrapper">
+    <div class="chat-container">
         <div class="chat-header">
             <i class="fas fa-robot ai-icon"></i>
             <h1>XAI Chat</h1>
         </div>
-        <div id="chat-container"></div>
-        <div class="message-input-area">
-            <input type="text" id="message-input" placeholder="输入您的问题...">
+        <div id="chat-content"></div>
+        <div class="message-input-wrapper">
+            <textarea id="message-input" placeholder="输入您的问题..." rows="1"></textarea>
             <button id="send-button">
                 <i class="fas fa-paper-plane"></i>
             </button>
@@ -271,20 +271,32 @@
     </div>
 
     <script>
-        const chatContainer = document.getElementById('chat-container');
+        const chatContent = document.getElementById('chat-content');
         const messageInput = document.getElementById('message-input');
         const sendButton = document.getElementById('send-button');
 
         const API_ENDPOINT = 'https://api.x.ai/v1/chat/completions';
         const API_TOKEN = 'xai-NZXwwhL41K4E1Up2KoNDbXOSLwaR5hIbecJHL8VQonomYxac22KxscnXs6R1eg8i2CAN5qx8bvo6g9cg';
 
+        // Auto-resize textarea
+        messageInput.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
         function addMessage(content, isUser = true) {
             const messageElement = document.createElement('div');
             messageElement.classList.add('message');
             messageElement.classList.add(isUser ? 'user-message' : 'ai-message');
-            messageElement.textContent = content;
-            chatContainer.appendChild(messageElement);
-            chatContainer.scrollTop = chatContainer.scrollHeight;
+            
+            if (isUser) {
+                messageElement.textContent = content;
+            } else {
+                messageElement.innerHTML = content.replace(/\n{2,}/g, '\n');
+            }
+            
+            chatContent.appendChild(messageElement);
+            chatContent.scrollTop = chatContent.scrollHeight;
         }
 
         async function sendMessage() {
@@ -293,6 +305,7 @@
 
             addMessage(userMessage);
             messageInput.value = '';
+            messageInput.style.height = 'auto';
 
             try {
                 const response = await fetch(API_ENDPOINT, {
@@ -327,7 +340,8 @@
 
         sendButton.addEventListener('click', sendMessage);
         messageInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
                 sendMessage();
             }
         });
