@@ -1,0 +1,2344 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>saevio</title>
+
+  
+    <meta name="description" content="期末考试原文地址  请参见图示。在这个启用 RSTP 的网络中，端口 A、B、C 和 D 可能的端口角色是什么？      CCNA 2 v7 SRWE 期末考试答案 13  指定的, 备用的, 根, 根  指定，根，备用，根  替代的，根，指定的，根  替代的，指定的，根，根   答案解释和提示：因为S1是根桥，B是指定端口，C和D是根端口。RSTP 支持一种新的端口类型，即处于丢弃状态的备用端">
+<meta property="og:type" content="website">
+<meta property="og:title" content="saevio">
+<meta property="og:url" content="https://saevio.cn/Cisco/%E6%9C%9F%E6%9C%AB%E6%8A%80%E8%83%BD%E8%80%83%E8%AF%95/">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="期末考试原文地址  请参见图示。在这个启用 RSTP 的网络中，端口 A、B、C 和 D 可能的端口角色是什么？      CCNA 2 v7 SRWE 期末考试答案 13  指定的, 备用的, 根, 根  指定，根，备用，根  替代的，根，指定的，根  替代的，指定的，根，根   答案解释和提示：因为S1是根桥，B是指定端口，C和D是根端口。RSTP 支持一种新的端口类型，即处于丢弃状态的备用端">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+<meta property="article:published_time" content="2024-10-09T13:42:25.041Z">
+<meta property="article:modified_time" content="2024-10-09T13:42:25.041Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://saevio.cn/Cisco/%E6%9C%9F%E6%9C%AB%E6%8A%80%E8%83%BD%E8%80%83%E8%AF%95/","author":{"@type":"Person","name":"saevio","sameAs":[],"image":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png"},"name":"saevio","description":"期末考试原文地址\n\n请参见图示。在这个启用 RSTP 的网络中，端口 A、B、C 和 D 可能的端口角色是什么？\n\n\n   CCNA 2 v7 SRWE 期末考试答案 13\n\n指定的, 备用的, 根, 根\n\n指定，根，备用，根\n\n替代的，根，指定的，根\n\n替代的，指定的，根，根\n\n\n答案解释和提示：因为S1是根桥，B是指定端口，C和D是根端口。RSTP 支持一种新的端口类型，即处于丢弃状态的...","url":"https://saevio.cn/Cisco/%E6%9C%9F%E6%9C%AB%E6%8A%80%E8%83%BD%E8%80%83%E8%AF%95/","keywords":"博客"}</script>
+  
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="page" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="文档" href="/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="社交" href="/more/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2024/10/18/ai/"><span class="title">AI项目部署</span></a><a class="item title" href="/2023/02/03/software/"><span class="title">常用工具合集</span></a><a class="item title" href="/2023/10/10/ffmpeg/"><span class="title">音视频下载&剪辑</span></a><a class="item title" href="/2023/07/20/fakelocation/"><span class="title">指点天下及学习通签到</span></a><a class="item title" href="/2023/10/10/Network%20Security%20Technology/"><span class="title">信息安全技术实验</span></a><a class="item title" href="/2023/08/10/Android%20studio/"><span class="title">Android studio</span></a><a class="item title" href="/2023/10/10/network%20design/"><span class="title">网络管理期末总结</span></a><a class="item title" href="/2023/01/25/Brush/"><span class="title">刷机资源整合</span></a><a class="item title" href="/2023/06/10/java/"><span class="title">java学习</span></a><a class="item title" href="/2022/03/20/first/"><span class="title">第一篇文章</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+
+  <span class="sep"></span>
+  <a class="cap breadcrumb" href="/Cisco/%E6%9C%9F%E6%9C%AB%E6%8A%80%E8%83%BD%E8%80%83%E8%AF%95/"></a>
+  </div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2024-10-09T13:42:25.041Z">2024-10-09</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2024-10-09T13:42:25.041Z">2024-10-09</time></span></div></div></div>
+    
+  </div>
+  </div><article class="md-text content"><h1 id="期末考试"><a href="#期末考试" class="headerlink" title="期末考试"></a>期末考试</h1><p><a target="_blank" rel="noopener" href="https://ccna7.org/ccna2-v7-0/ccna-2-v7-0-final-exam-answers-full-switching-routing-and-wireless-essentials/">原文地址</a></p>
+<ol>
+<li>请参见图示。在这个启用 RSTP 的网络中，端口 A、B、C 和 D 可能的端口角色是什么？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-13/" alt="CCNA 2 v7 SRWE 期末考试答案 13"></p>
+<p>   CCNA 2 v7 SRWE 期末考试答案 13</p>
+<ul>
+<li><p>指定的, 备用的, 根, 根</p>
+</li>
+<li><p>指定，根，备用，根</p>
+</li>
+<li><p>替代的，根，指定的，根</p>
+</li>
+<li><p><span style="color: #ff0000">替代的，指定的，根，根</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>因为S1是根桥，B是指定端口，C和D是根端口。RSTP 支持一种新的端口类型，即处于丢弃状态的备用端口，在这种情况下可以是端口 A。</p>
+<ol start="2">
+<li>请参见图示。当帧从工作站发送到默认网关时，使用哪个目标 MAC 地址？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-10/" alt="CCNA 2 v7 SRWE 期末考试答案 10"></p>
+<p>   CCNA 2 v7 SRWE 期末考试答案 10</p>
+<ul>
+<li><p><span style="color: #ff0000">虚拟路由器的MAC地址</span></p>
+</li>
+<li><p>转发路由器和备用路由器的 MAC 地址</p>
+</li>
+<li><p>备用路由器的MAC地址</p>
+</li>
+<li><p>转发路由器的MAC地址</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>虚拟路由器的 IP 地址充当所有工作站的默认网关。因此，地址解析协议返回给工作站的 MAC 地址将是虚拟路由器的 MAC 地址。</p>
+<ol start="3">
+<li><p>远程访问网络设备的安全配置选项是什么？</p>
+<ul>
+<li><span style="color: #ff0000">配置 SSH。</span></li>
+<li>配置 802.1x。</li>
+<li>配置 ACL 并将其应用于 VTY 线路。</li>
+<li>配置 Telnet。</li>
+</ul>
+</li>
+<li><p>主机使用 DHCPv6 或 SLAAC 进程生成 IPv6 地址后，主机如何验证该地址是否唯一并因此可用？</p>
+<ul>
+<li><p>主机检查学习地址的本地邻居缓存，如果地址没有被缓存，它被认为是唯一的。</p>
+</li>
+<li><p><span style="color: #ff0000">主机向 DHCP 或 SLAAC 获知的地址发送 ICMPv6 邻居请求消息，如果没有返回邻居通告，则认为该地址是唯一的。</span></p>
+</li>
+<li><p>主机向 DHCPv6 或 SLAAC 获知的地址发送 ICMPv6 回显请求消息，如果没有返回回复，则认为该地址是唯一的。</p>
+</li>
+<li><p>主机向本地链路发送 ARP 广播，如果没有主机发送回复，则认为该地址是唯一的。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p><strong>答案解释和提示：</strong>在主机可以实际配置和使用通过 SLAAC 或 DHCP 获知的 IPv6 地址之前，主机必须验证没有其他主机已经在使用该地址。为了验证该地址确实是唯一的，主机向该地址发送一个 ICMPv6 邻居请求。如果没有返回邻居通告，则主机认为该地址是唯一的并在接口上配置它。</p>
+<ol start="5">
+<li>请参见图示。主机 A 向主机 B 发送了一个数据包。当数据包到达主机 B 时，该数据包的源 MAC 和 IP 地址是什么？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-02/" alt="CCNA 2 v7 SRWE 期末考试答案 02"><br>CCNA 2 v7 SRWE 期末考试答案 02</p>
+<ul>
+<li><p><span style="color: #ff0000">源 MAC：00E0.FE91.7799</span><br>   <span style="color: #ff0000">源 IP：10.1.1.10</span></p>
+</li>
+<li><p>源 MAC：00E0.FE91.7799<br>   源 IP：10.1.1.1</p>
+</li>
+<li><p>源 MAC：00E0.FE10.17A3<br>   源 IP：10.1.1.10</p>
+</li>
+<li><p>源MAC：00E0.FE10.17A3<br>   源IP：192.168.1.1</p>
+</li>
+<li><p>源MAC：00E0.FE91.7799</p>
+<p>源IP：192.168.1.1</p>
+<p><strong>解释：</strong>当数据包穿越网络时，第 2 层地址将随着数据包的解封装和重新封装而在每一跳发生变化，但第 3 层地址将保持不变。</p>
+</li>
+</ul>
+<ol start="6">
+<li><p>在将四台 PC 连接到交换机端口、配置 SSID 并为小型办公网络设置身份验证属性后，技术人员成功地测试了连接到交换机和 WLAN 的所有 PC 的连接性。然后在将设备连接到 Internet 之前在设备上配置防火墙。什么类型的网络设备包含所有描述的功能？</p>
+<ul>
+<li>独立无线接入点</li>
+<li>防火墙设备</li>
+<li>转变</li>
+<li><span style="color: #ff0000">无线路由器</span></li>
+</ul>
+</li>
+<li><p>哪种无线加密方式最安全？</p>
+<ul>
+<li><span style="color: #ff0000">带有 AES 的 WPA2</span></li>
+<li>带有 TKIP 的 WPA2</li>
+<li>WEP</li>
+<li>水协</li>
+</ul>
+</li>
+<li><p>将描述与正确的 VLAN 类型相匹配。（并非所有选项都被使用。）</p>
+</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2020/10/CCNA-2-v6-RSE-Final-Exam-Answers-Form-A-2018-2019-003.png" alt="img"></p>
+<p>   CCNA 2 v7 SRWE 期末考试答案 003</p>
+<p><strong>答案解释和提示：</strong>数据 VLAN 配置为承载用户生成的流量。默认 VLAN 是在加载默认配置的交换机初始启动后所有交换机端口所属的 VLAN。将本地 VLAN 分配给 802.1Q 中继端口，并在其上放置未标记的流量。管理 VLAN 是配置为访问交换机管理功能的任何 VLAN。为其分配了 IP 地址和子网掩码，允许通过 HTTP、Telnet、SSH 或 SNMP 管理交换机。</p>
+<ol start="9">
+<li>请参见图示。一位网络管理员使用 EtherChannel 技术将两台交换机连接在一起。如果 STP 正在运行，最终结果是什么？</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2020/10/CCNA-2-v7-SRWE-Final-Exam-Answers-000.png" alt="CCNA 2 v7 SRWE 期末考试答案 000"></p>
+<p>   CCNA 2 v7 SRWE 期末考试答案 000</p>
+<ul>
+<li><p>交换机将负载平衡并利用两个 EtherChannel 转发数据包。</p>
+</li>
+<li><p>两个端口通道都将关闭。</p>
+</li>
+<li><p>由此产生的循环将产生广播风暴。</p>
+</li>
+<li><p><span style="color: #ff0000">STP 将阻止冗余链路之一。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>Cisco 交换机支持在两个交换机之间协商通道的两种协议：LACP 和 PAgP。PAgP 是 Cisco 专有的。在所示拓扑中，交换机使用冗余链路相互连接。缺省情况下，交换机设备上启用 STP。STP 将阻塞冗余链路以防止环路。</p>
+<ol start="10">
+<li>缓解 VLAN 攻击的三种技术是什么？（选择三个。）</li>
+</ol>
+<ul>
+<li><p>启用 BPDU 防护。</p>
+</li>
+<li><p><span style="color: #ff0000">将本机 VLAN 设置为未使用的 VLAN。</span></p>
+</li>
+<li><p>使用专用 VLAN。</p>
+</li>
+<li><p><span style="color: #ff0000">禁用 DTP。</span></p>
+</li>
+<li><p>启用源保护。</p>
+</li>
+<li><p><span style="color: #ff0000">手动启用中继。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>可以通过禁用动态中继协议 (DTP)、手动将端口设置为中继模式以及将中继链路的本机 VLAN 设置为未使用的 VLAN 来减轻 VLAN 攻击。</p>
+<ol start="11">
+<li>管理员正在尝试从交换机中删除配置。管理员使用命令erase startup-config 并重新加载交换机后，发现交换机上仍然存在VLAN 10 和100。为什么没有删除这些 VLAN？</li>
+</ol>
+<ul>
+<li><p>除非交换机处于 VTP 客户端模式，否则无法删除这些 VLAN。</p>
+</li>
+<li><p>只能使用 no vlan 10 和 no vlan 100 命令从交换机中删除这些 VLAN。</p>
+</li>
+<li><p>这些 VLAN 是无法删除的默认 VLAN。</p>
+</li>
+<li><p><span style="color: #ff0000">由于这些 VLAN 存储在闪存中名为 vlan.dat 的文件中，因此必须手动删除该文件。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>标准范围的 VLAN (1-1005) 存储在一个名为 vlan.dat 的文件中，该文件位于闪存中。清除启动配置并重新加载交换机不会自动删除这些 VLAN。必须手动从闪存中删除 vlan.dat 文件，然后重新加载交换机。</p>
+<ol start="12">
+<li>请参见图示。IT 技术人员将输入哪个静态路由来创建到 172.16.1.0 网络的备份路由，该路由仅在主要 RIP 学习路由失败时使用？</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2020/10/CCNA-2-v7-SRWE-Final-Exam-Answers-20.png" alt="CCNA 2 v7 SRWE 期末考试答案 20"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 20
+</code></pre>
+<ul>
+<li><p>ip 路由 172.16.1.0 255.255.255.0 s0&#x2F;0&#x2F;0</p>
+</li>
+<li><p>ip 路由 172.16.1.0 255.255.255.0 s0&#x2F;0&#x2F;0 91</p>
+</li>
+<li><p>ip 路由 172.16.1.0 255.255.255.0 s0&#x2F;0&#x2F;0 111</p>
+</li>
+<li><p><span style="color: #ff0000">ip 路由 172.16.1.0 255.255.255.0 s0&#x2F;0&#x2F;0 121</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>备份静态路由称为浮动静态路由。浮动静态路由的管理距离大于另一个静态路由或动态路由的管理距离。</p>
+<ol start="13">
+<li>请参见图示。除了将流量定向到网络 10.10.0.0&#x2F;16 和 10.20.0.0&#x2F;16 的静态路由外，Router HQ 还配置了以下命令：ip route 0.0.0.0 0.0.0.0 serial 0&#x2F;1&#x2F;1</span> 的目的是什么这个命令？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-05/" alt="CCNA 2 v7 SRWE 期末考试答案 05"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 05
+</code></pre>
+<ul>
+<li>来自 10.10.0.0&#x2F;16 网络的数据包将被转发到网络 10.20.0.0&#x2F;16，来自 10.20.0.0&#x2F;16 网络的数据包将被转发到网络 10.10.0.0&#x2F;16。</li>
+<li>从 Internet 接收的数据包将转发到连接到 R1 或 R2 的 LAN 之一。</li>
+<li><span style="color: #ff0000">目标网络不是 10.10.0.0&#x2F;16 或不是 10.20.0.0&#x2F;16 或不是直连网络的数据包将被转发到 Internet。</span></li>
+<li>发往不在总部路由表中的网络的数据包将被丢弃。</li>
+</ul>
+<ol start="14">
+<li>请参见图示。网络管理员正在网络上配置 VLAN 间路由。目前，只使用了一个 VLAN，但很快会添加更多。在图中显示为突出显示的问号的缺失参数是什么？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-04/" alt="CCNA 2 v7 SRWE 期末考试答案 04"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 04
+</code></pre>
+<ul>
+<li><p>它标识接口上允许的主机数量。</p>
+</li>
+<li><p>它标识所使用的封装类型。</p>
+</li>
+<li><p>它标识子接口。</p>
+</li>
+<li><p>它标识本地 VLAN 号。</p>
+</li>
+<li><p><span style="color: #ff0000">它标识 VLAN 号。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>完成的命令将是封装 dot1q 7 。该命令的封装 dot1q 部分启用中继并标识要使用的中继类型。7 标识 VLAN 号。</p>
+<ol start="15">
+<li>将链路状态与接口和协议状态相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<p>![CCNA 2 v7 SRWE 期末考试答案 002](.&#x2F;CCNA 2 v7.0 Final Exam Answers Full – Switching, Routing and Wireless Essentials - ICT Community_files&#x2F;CCNA-2-v7-SRWE-Final-Exam-Answers-002.png)</p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 002
+
+**解释：**login 和 password cisco 命令用于 Telnet 交换机配置，而不是 SSH 配置。
+</code></pre>
+<ol start="16">
+<li>请参见图示。如果交换机 SW1 上的 MAC 地址表为空，从 PCA 发送的帧如何转发到 PCC？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-07/" alt="CCNA 2 v7 SRWE 期末考试答案 07"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 07
+</code></pre>
+<ul>
+<li><p>SW1 将帧直接转发到 SW2。SW2 将帧泛洪到连接到 SW2 的所有端口，不包括帧进入交换机的端口。</p>
+</li>
+<li><p>SW1 在交换机的所有端口上泛洪帧，不包括到交换机 SW2 的互连端口和帧进入交换机的端口。</p>
+</li>
+<li><p>SW1 丢弃该帧，因为它不知道目标 MAC 地址。</p>
+</li>
+<li><p><span style="color: #ff0000">SW1 将帧泛洪到 SW1 上的所有端口上，不包括帧进入交换机的端口。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>交换机上电时，MAC地址表为空。交换机通过检查传入帧的源 MAC 地址来构建 MAC 地址表。交换机根据在帧头中找到的目的 MAC 地址进行转发。如果交换机在 MAC 地址表中没有条目或目标 MAC 地址不在交换机表中，则交换机会将帧转发到除将帧引入交换机的端口之外的所有端口。</p>
+<ol start="17">
+<li>将 DHCP 消息类型与 DHCPv4 进程的顺序相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<p>![CCNA 2 SRWE v7 模块 7 – 9 – 可用且可靠的网络考试答案 007](.&#x2F;CCNA 2 v7.0 Final Exam Answers Full – Switching, Routing and Wireless Essentials - ICT Community_files&#x2F;CCNA-2-SRWE-v7-Modules-7-–-9-–-Available-and-Reliable-Networks-Exam-Answers-007.png)</p>
+<pre><code>CCNA 2 SRWE v7 模块 7 – 9 – 可用且可靠的网络考试答案 007
+</code></pre>
+<p><strong>答案解释和提示：</strong>广播 DHCPDISCOVER 消息在网络上查找 DHCPv4 服务器。当 DHCPv4 服务器收到 DHCPDISCOVER 消息时，它会保留一个可用的 IPv4 地址租给客户端，并将单播 DHCPOFFER 消息发送给请求客户端。当客户端从服务器接收到 DHCPOFFER 时，它会发回一个 DHCPREQUEST。在接收到 DHCPREQUEST 消息时，服务器会回复一个单播 DHCPACK 消息。DHCPREPLY 和 DHCPINFORMATION-REQUEST 是 DHCPv6 消息。</p>
+<ol start="18">
+<li>网络管理员正在配置 WLAN。为什么管理员要禁用 SSID 的广播功能？</li>
+</ol>
+<ul>
+<li>降低外部设备（如微波炉）的干扰风险</li>
+<li>降低未经授权的接入点被添加到网络中的风险</li>
+<li>通过使用加密为无线流量提供隐私和完整性</li>
+<li><span style="color: #ff0000">以消除外人扫描该地区可用的 SSID</span></li>
+</ul>
+<ol start="19">
+<li>与动态路由相比，在路由器上使用静态路由有哪两个优点？（选择两个。）</li>
+</ol>
+<ul>
+<li>当拓扑发生变化时，它们会自动切换到目标网络的路径。</li>
+<li>它们提高了发现相邻网络的效率。</li>
+<li><span style="color: #ff0000">他们使用更少的路由器资源。</span></li>
+<li><span style="color: #ff0000">它们提高了网络安全性。</span></li>
+<li>当网络拓扑发生变化时，它们收敛的时间更短。</li>
+</ul>
+<ol start="20">
+<li>请参见图示。哪个路由被配置为使用下一跳地址到特定网络的静态路由？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-17/" alt="CCNA 2 v7 SRWE 期末考试答案 17"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 17
+</code></pre>
+<ul>
+<li><p>S 0.0.0.0&#x2F;0 [1&#x2F;0] 通过 10.16.2.2</p>
+</li>
+<li><p>S 10.17.2.0&#x2F;24 直连，Serial 0&#x2F;0&#x2F;0</p>
+</li>
+<li><p>C 10.16.2.0&#x2F;24 直连，Serial0&#x2F;0&#x2F;0</p>
+</li>
+<li><p><span style="color: #ff0000">S 10.17.2.0&#x2F;24 [1&#x2F;0] 通过 10.16.2.2</span></p>
+<pre><code>**解释：**路由表中的 C 表示接口已启动并分配了 IP 地址。路由表中的 S 表示使用 ip route 命令安装了路由。显示的两个路由表条目是到特定目的地（10.17.2.0 网络）的静态路由。具有表示静态路由的 S 和 [1/0] 的条目是使用下一跳地址配置的。另一个入口（S 10.17.2.0/24 直接连接，Serial 0/0/0）是使用出口接口配置的静态路由。带有 0.0.0.0 路由的条目是默认静态路由，用于将数据包发送到路由表中未明确列出的任何目标网络。
+</code></pre>
+</li>
+</ul>
+<ol start="21">
+<li>请参见图示。转发 IPv6 目标地址为 2001:DB8:ACAD:E:240:BFF:FED4:9DD2 的数据包的度量标准是什么？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-03/" alt="CCNA 2 v7 SRWE 期末考试答案 03"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 03
+</code></pre>
+<ul>
+<li><p>90</p>
+</li>
+<li><p>128</p>
+</li>
+<li><p>2170112</p>
+</li>
+<li><p>2681856</p>
+</li>
+<li><p><span style="color: #ff0000">2682112</span></p>
+</li>
+<li><p>3193856</p>
+<pre><code>**解释：**IPv6 目的地址 2001:DB8:ACAD:E:240:BFF:FED4:9DD2 属于 2001:DB8:ACAD:E::/64 的网络。在路由表中，转发数据包的路由以 Serial 0/0/1 作为出口接口，以 2682112 作为成本。
+</code></pre>
+</li>
+</ul>
+<ol start="22">
+<li>路由器上配置了静态路由。但是，目标网络不再存在。管理员应该如何从路由表中删除静态路由？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">使用 no ip route 命令删除路由。</span></li>
+<li>更改该路由的管理距离。</li>
+<li>没有。静态路由会自行消失。</li>
+<li>更改该路由的路由度量。</li>
+</ul>
+<ol start="23">
+<li>哪两个陈述是多层交换机上路由端口的特征？（选择两项。）</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">在交换网络中，它们大多配置在核心层和分布层的交换机之间。</span></li>
+<li>它们用于点对多点链路。</li>
+<li><span style="color: #ff0000">它们不与特定的 VLAN 关联。</span></li>
+<li>它们支持子接口，例如 Cisco IOS 路由器上的接口。</li>
+<li>必须输入 interface vlan <vlan number> 命令才能在路由端口上创建 VLAN。</li>
+</ul>
+<ol start="24">
+<li>请参见图示。尝试输入路由器 RTA 中显示的配置后，管理员收到错误消息，并且 VLAN 20 上的用户报告他们无法访问 VLAN 30 上的用户。是什么导致了问题？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-01/" alt="CCNA 2 v7 SRWE 期末考试答案 01"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 01
+</code></pre>
+<ul>
+<li>应该在 Fa0&#x2F;0.20 和 Fa0&#x2F;0.30 上发出 no shutdown 命令。</li>
+<li>Fa0&#x2F;0 上没有可用作默认网关的地址。</li>
+<li>Dot1q 不支持子接口。</li>
+<li><span style="color: #ff0000">RTA 为 VLAN 20 和 VLAN 30 使用相同的子网。</span></li>
+</ul>
+<ol start="25">
+<li>请参见图示。在根桥选举过程完成后，哪个中继链路不会转发任何流量？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-14/" alt="CCNA 2 v7 SRWE 期末考试答案 14"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 14
+</code></pre>
+<ul>
+<li>中继线1</li>
+<li><span style="color: #ff0000">中继线2</span></li>
+<li>中继线3</li>
+<li>主干4</li>
+</ul>
+<ol start="26">
+<li>网络管理员正在准备在生产网络上实施 Rapid PVST+。交换机接口上的 Rapid PVST+ 链路类型如何确定？</li>
+</ol>
+<ul>
+<li><p>只有配置了 PortFast 才能确定链接类型。</p>
+</li>
+<li><p>链路类型只能在配置了单个 VLAN 的接入端口上配置。</p>
+</li>
+<li><p><span style="color: #ff0000">链接类型是自动确定的。</span></p>
+</li>
+<li><p>链路类型必须使用特定的端口配置命令进行配置。</p>
+<pre><code>**解释：**实施 Rapid PVST+ 时，会自动确定链路类型，但可以手动指定。链接类型可以是点对点、共享或边缘。
+</code></pre>
+</li>
+</ul>
+<ol start="27">
+<li>哪两种类型的生成树协议会导致次优流量，因为它们假设整个桥接网络只有一个生成树实例？（选择两个。）</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">直通式</span></li>
+<li>快速 PVST+</li>
+<li>MSTP</li>
+<li>PVST+</li>
+<li><span style="color: #ff0000">RSTP</span></li>
+</ul>
+<ol start="28">
+<li>当进入交换机的帧的源 MAC 地址出现在与不同端口关联的 MAC 地址表中时，会发生什么动作？</li>
+</ol>
+<ul>
+<li>交换机会清除整个 MAC 地址表。</li>
+<li><span style="color: #ff0000">交换机替换旧条目并使用更新的端口。</span></li>
+<li>交换机更新条目的刷新计时器。</li>
+<li>交换机将帧从指定端口转发出去。</li>
+</ul>
+<ol start="29">
+<li>网络管理员在交换机上配置端口安全功能。安全策略指定每个访问端口最多允许两个 MAC 地址。当达到最大 MAC 地址数时，将丢弃具有未知源 MAC 地址的帧，并向系统日志服务器发送通知。每个访问端口应该配置哪种安全违规模式？</li>
+</ol>
+<ul>
+<li>警告</li>
+<li><span style="color: #ff0000">严格</span></li>
+<li>关闭</li>
+<li>保护</li>
+</ul>
+<ol start="30">
+<li>启用 BPDU 防护可以缓解哪种网络攻击？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">网络上的流氓交换机</span></p>
+</li>
+<li><p>网络上的恶意 DHCP 服务器</p>
+</li>
+<li><p>MAC地址欺骗</p>
+</li>
+<li><p>CAM 表溢出攻击</p>
+<pre><code>**解释：**有几种推荐的 STP 稳定性机制来帮助缓解 STP 操纵攻击： PortFast – 用于立即将配置为访问或中继端口的接口从阻塞状态带入转发状态。适用于所有最终用户端口。BPDU 防护 – 立即错误禁用接收 BPDU 的端口。应用于所有最终用户端口。BPDU 的接收可能是未经授权尝试将交换机添加到网络的一部分。根保护——防止交换机成为根交换机。应用于不应该设置根交换机的所有端口。环路防护——检测单向链路以防止备用或根端口成为指定端口。适用于所有已指定或可能变为未指定的端口。
+</code></pre>
+</li>
+</ul>
+<ol start="31">
+<li>网络管理员使用 spanning-tree portfast bpduguard default 全局配置命令在交换机上启用 BPDU 防护。但是，BPDU 防护并未在所有接入端口上激活。问题的原因是什么？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">PortFast 未在所有访问端口上配置。</span></li>
+<li>接入端口属于不同的VLAN。</li>
+<li>BPDU Guard 需要在接口配置命令模式下激活。</li>
+<li>配置了根保护的接入端口不能配置BPDU保护。</li>
+</ul>
+<ol start="32">
+<li>一个新的第 3 层交换机连接到路由器，并且正在为 VLAN 间路由进行配置。配置所需的五个步骤中的三个是什么？（选择三项。） *</li>
+</ol>
+<ul>
+<li>创建 SVI 接口</span></li>
+<li><span style="color: #ff0000">创建 VLAN</span></li>
+<li>安装静态路由</li>
+<li>调整路由度量</li>
+<li><span style="color: #ff0000">实现路由协议</span></li>
+<li>修改默认 VLAN</li>
+<li><span style="color: #ff0000">将端口分配给 VLAN</span></li>
+</ul>
+<ol start="33">
+<li>一家公司正在波士顿郊区的配送设施中部署无线网络。仓库很大，需要使用多个访问点。由于公司的一些设备仍以 2.4GHz 运行，网络管理员决定部署 802.11g 标准。多个接入点上的哪些信道分配将确保无线信道不重叠？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">频道 1、6 和 11</span></li>
+<li>通道 2、6 和 10</li>
+<li>频道 1、5 和 9</li>
+<li>频道 1、7 和 13</li>
+</ul>
+<ol start="34">
+<li>哪种无线身份验证方法依赖于 RADIUS 身份验证服务器？</li>
+</ol>
+<ul>
+<li>WEP</li>
+<li><span style="color: #ff0000">WPA2 企业版</span></li>
+<li>WPA 个人</li>
+<li>WPA2 个人</li>
+</ul>
+<ol start="35">
+<li>管理员注意到在其中一个分支路由器上丢弃了大量数据包。应该做什么或检查什么？</li>
+</ol>
+<ul>
+<li>使用 AD 1 创建到相同位置的额外静态路由。</li>
+<li><span style="color: #ff0000">检查路由表以查找丢失的静态路由。</span></li>
+<li>创建到所有内部网络的静态路由和到 Internet 的默认路由。</li>
+<li>检查默认路由的统计信息是否过饱和。</li>
+</ul>
+<ol start="36">
+<li>将步骤编号与 HSRP 故障转移过程中发生的阶段顺序相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<p>![CCNA 2 SRWE v7 模块 7 – 9 – 可用且可靠的网络考试答案 005](.&#x2F;CCNA 2 v7.0 Final Exam Answers Full – Switching, Routing and Wireless Essentials - ICT Community_files&#x2F;CCNA-2-SRWE-v7-Modules-7-–-9-–-Available-and-Reliable-Networks-Exam-Answers-005.png)</p>
+<pre><code>CCNA 2 SRWE v7 模块 7 – 9 – 可用且可靠的网络考试答案 005
+</code></pre>
+<p><strong>答案解释和提示：</strong>Hot Standby Router Protocol (HSRP) 是 Cisco 专有的协议，旨在允许第一跳 IPv4 设备的透明故障转移。</p>
+<ol start="37">
+<li>在什么情况下技术人员会使用 show interfaces switch 命令？</li>
+</ol>
+<ul>
+<li><p>确定是否启用了远程访问</p>
+</li>
+<li><p>当终端设备可以访问本地设备，但不能访问远程设备时</p>
+</li>
+<li><p>确定特定接口上直接连接的网络设备的 MAC 地址</p>
+</li>
+<li><p><span style="color: #ff0000">当数据包从特定的直接连接的主机被丢弃时</span></p>
+<pre><code>**解释：**show interfaces 命令可用于检测媒体错误，查看是否正在发送和接收数据包，并确定是否发生了任何 runts、giant、CRC、接口重置或其他错误。远程网络的可达性问题可能是由错误配置的默认网关或其他路由问题引起的，而不是交换机问题。show mac address-table 命令显示直接连接设备的 MAC 地址。
+</code></pre>
+</li>
+</ul>
+<ol start="38">
+<li>请参见图示。如果默认网关路由器和 DNS 服务器的 IP 地址正确，那么配置问题是什么？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-08/" alt="CCNA 2 v7 SRWE 期末考试答案 08"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 08
+</code></pre>
+<ul>
+<li><p>default-router 和 dns-server 命令需要配置子网掩码。</p>
+</li>
+<li><p>DNS 服务器和默认网关路由器应该在同一个子网中。</p>
+</li>
+<li><p>DNS服务器的IP地址不包含在排除地址列表中。</p>
+</li>
+<li><p><span style="color: #ff0000">默认网关路由器的 IP 地址不包含在排除地址列表中。</span></p>
+<pre><code>**解释：**在此配置中，排除的地址列表应包括分配给默认网关路由器的地址。所以命令应该是ip dhcp exclude-address 192.168.10.1 192.168.10.9。
+</code></pre>
+</li>
+</ul>
+<ol start="39">
+<li><p>请参见图示。网络管理员向网络添加了一个新子网，并且需要该子网上的主机从 DHCPv4 服务器接收 IPv4 地址。</p>
+<p>哪两条命令将允许新子网上的主机从 DHCP4 服务器接收地址？（选择两个。）</p>
+</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-19/" alt="CCNA 2 v7 SRWE 期末考试答案 19"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 19
+</code></pre>
+<ul>
+<li>R2(config-if)# ip helper-address 10.2.0.250</li>
+<li>R1(config)#接口 G0&#x2F;1</li>
+<li><span style="color: #ff0000">R1(config-if)# ip helper-address 10.2.0.250</span></li>
+<li><span style="color: #ff0000">R1(config)#接口 G0&#x2F;0</span></li>
+<li>R1(config-if)# ip helper-address 10.1.0.254</li>
+<li>R2(config)# 接口 G0&#x2F;0</li>
+</ul>
+<ol start="40">
+<li>请参见图示。R1 的配置如图所示。但是，PC1 无法接收 IPv4 地址。有什么问题？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-09/" alt="CCNA 2 v7 SRWE 期末考试答案 09"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 09
+</code></pre>
+<ul>
+<li><p>R1 未配置为 DHCPv4 服务器。</p>
+</li>
+<li><p>DHCP 服务器必须安装在与接收 IP 地址的主机相同的 LAN 中。</p>
+</li>
+<li><p><span style="color: #ff0000">ip helper-address 命令应用于错误的接口。</span></p>
+</li>
+<li><p>ip address dhcp 命令未在接口 Gi0&#x2F;1 上发出。</p>
+<pre><code>**解释：**ip helper-address 命令必须在接口 Gi0/0 上应用。此命令必须存在于包含 DHCPv4 客户端 PC1 的 LAN 接口上，并且必须指向正确的 DHCPv4 服务器。
+</code></pre>
+</li>
+</ul>
+<ol start="41">
+<li>哪种网络攻击试图通过阻止客户端获得 DHCP 租约来为客户端创建 DoS？</li>
+</ol>
+<ul>
+<li><p>CAM 表攻击</p>
+</li>
+<li><p>IP地址欺骗</p>
+</li>
+<li><p>DHCP 欺骗</p>
+</li>
+<li><p><span style="color: #ff0000">DHCP 饥饿</span></p>
+<pre><code>**解释：**DCHP 饥饿攻击由攻击者发起，目的是为 DHCP 客户端创建 DoS。为了实现这一目标，攻击者使用一种发送许多 DHCPDISCOVER 消息的工具来租用整个可用 IP 地址池，从而拒绝合法主机使用它们。
+</code></pre>
+</li>
+</ul>
+<ol start="42">
+<li>一位网络安全分析师正在使用 macof 工具来评估部署在组织骨干网络中的交换机的配置。分析师在此次评估中针对的是哪种类型的 LAN 攻击？</li>
+</ol>
+<ul>
+<li>VLAN 双重标记</li>
+<li><span style="color: #ff0000">MAC地址表溢出</span></li>
+<li>VLAN 跳跃</li>
+<li>DHCP 欺骗</li>
+</ul>
+<ol start="43">
+<li>交换机使用哪些信息来填充 MAC 地址表？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">源 MAC 地址和传入端口</span></p>
+</li>
+<li><p>目标 MAC 地址和传入端口</p>
+</li>
+<li><p>源 MAC 地址和传出端口</p>
+</li>
+<li><p>源 MAC 地址和目标 MAC 地址以及传出端口</p>
+</li>
+<li><p>源 MAC 地址和目标 MAC 地址以及传入端口</p>
+</li>
+<li><p>目标 MAC 地址和传出端口</p>
+<pre><code>**解释：**为了维护 MAC 地址表，交换机使用传入数据包的源 MAC 地址和数据包进入的端口。目的地址用于选择传出端口。
+</code></pre>
+</li>
+</ul>
+<ol start="44">
+<li>哪项陈述描述了多个 Cisco LAN 交换机互连后的结果？</li>
+</ol>
+<ul>
+<li><p>每台交换机有一个广播域和一个冲突域。</p>
+</li>
+<li><p><span style="color: #ff0000">广播域扩展到所有交换机。</span></p>
+</li>
+<li><p>每个交换机存在一个冲突域。</p>
+</li>
+<li><p>连接交换机的分段上的帧冲突增加。</p>
+<pre><code>**解释：**在 Cisco LAN 交换机中，微分段可以让每个端口代表一个单独的段，因此每个交换机端口代表一个单独的冲突域。当多个交换机互连时，这一事实不会改变。但是，LAN 交换机不过滤广播帧。广播帧被洪泛到所有端口。互连的交换机形成了一个大的广播域。
+</code></pre>
+</li>
+</ul>
+<ol start="45">
+<li>将转发特征与其类型相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<p>![CCNA 2 v7 SRWE 期末考试答案 005](.&#x2F;CCNA 2 v7.0 Final Exam Answers Full – Switching, Routing and Wireless Essentials - ICT Community_files&#x2F;CCNA-2-v7-SRWE-Final-Exam-Answers-005.png)</p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 005
+</code></pre>
+<ol start="46">
+<li>哪种 IPv6 前缀分配方法依赖于 RA 消息中包含的前缀？</li>
+</ol>
+<ul>
+<li>EUI-64</li>
+<li>有状态 DHCPv6</li>
+<li>静止的</li>
+<li><span style="color: #ff0000">SLAAC</span></li>
+</ul>
+<ol start="47">
+<li>在 Cisco 3504 WLC 摘要页面（高级 &gt; 摘要）上，哪个选项卡允许网络管理员使用 WPA2 策略配置特定 WLAN？</li>
+</ol>
+<ul>
+<li>管理</li>
+<li><span style="color: #ff0000">无线局域网</span></li>
+<li>安全</li>
+<li>无线的</li>
+</ul>
+<ol start="48">
+<li>一家小型广告公司的网络管理员正在使用 WPA2 PSK 方法配置 WLAN 安全性。办公室用户需要哪些凭据才能将他们的笔记本电脑连接到 WLAN？</li>
+</ol>
+<ul>
+<li>与 AP 上的密钥匹配的密钥</li>
+<li>在 AP 上配置的用户名和密码</li>
+<li><span style="color: #ff0000">用户密码</span></li>
+<li>通过 Active Directory 服务的公司用户名和密码</li>
+</ul>
+<ol start="49">
+<li>哪两个默认无线路由器设置会影响网络安全？（选择两个。）</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-15/" alt="CCNA 2 v7 SRWE 期末考试答案 15"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 15
+</code></pre>
+<ul>
+<li><p><span style="color: #ff0000">SSID 是广播的。</span></p>
+</li>
+<li><p>MAC 地址过滤已启用。</p>
+</li>
+<li><p>WEP 加密已启用。</p>
+</li>
+<li><p>自动选择无线频道。</p>
+</li>
+<li><p><span style="color: #ff0000">设置了众所周知的管理员密码。</span></p>
+<pre><code>**解释：**无线路由器的默认设置通常包括广播 SSID 和使用众所周知的管理密码。这两者都对无线网络构成了安全风险。默认情况下未设置 WEP 加密和 MAC 地址过滤。无线信道的自动选择不会带来安全风险。
+</code></pre>
+</li>
+</ul>
+<ol start="50">
+<li>请参见图示。根据展示的配置和输出，为什么缺少 VLAN 99？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-21/" alt="CCNA 2 v7 SRWE 期末考试答案 21"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 21
+</code></pre>
+<ul>
+<li>因为 VLAN 99 上存在布线问题</li>
+<li>因为 VLAN 1 已经启动，交换机上只能有一个管理 VLAN</li>
+<li><span style="color: #ff0000">因为尚未创建 VLAN 99</span></li>
+<li>因为 VLAN 99 不是有效的管理 VLAN</li>
+</ul>
+<ol start="51">
+<li>哪三对中继模式将在两台 Cisco 交换机之间建立功能中继链路？（选择三个。）</li>
+</ol>
+<ul>
+<li>访问 - 中继</li>
+<li>动态自动 - 动态自动</li>
+<li><span style="color: #ff0000">动态可取 - 动态可取</span></li>
+<li><span style="color: #ff0000">动态理想 - 动态自动</span></li>
+<li><span style="color: #ff0000">动态可取 - 主干</span></li>
+<li>访问 - 动态自动</li>
+</ul>
+<ol start="52">
+<li>在将 Cisco 交换机移至新的 VTP 管理域之前应采取哪三个步骤？（选择三个。）</li>
+</ol>
+<ul>
+<li><p>重置 VTP 计数器以允许交换机与域中的其他交换机同步。</p>
+</li>
+<li><p>从新域中的 VTP 服务器下载 VTP 数据库。</p>
+</li>
+<li><p><span style="color: #ff0000">选择正确的 VTP 模式和版本。</span></p>
+</li>
+<li><p><span style="color: #ff0000">重启交换机。</span></p>
+</li>
+<li><p>配置域中的 VTP 服务器以识别新交换机的 BID。</p>
+</li>
+<li><p><span style="color: #ff0000">使用新管理域的名称配置交换机。</span></p>
+<pre><code>**解释：**将新交换机添加到 VTP 域时，为交换机配置新域名、正确的 VTP 模式、VTP 版本号和密码至关重要。具有更高修订号的交换机可以传播无效 VLAN 并擦除有效 VLAN，从而阻止多个设备在有效 VLAN 上的连接。
+</code></pre>
+</li>
+</ul>
+<ol start="53">
+<li>选择三种 PAgP 信道建立模式。（选择三个。）</li>
+</ol>
+<ul>
+<li>积极的</li>
+<li>被动的</li>
+<li><span style="color: #ff0000">可取的</span></li>
+<li><span style="color: #ff0000">在</span></li>
+<li><span style="color: #ff0000">汽车</span></li>
+<li>阻塞</li>
+</ul>
+<ol start="54">
+<li>请参见图示。可以在 R1 上输入哪个静态路由命令将流量转发到连接到 R2 的 LAN？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-11/" alt="CCNA 2 v7 SRWE 期末考试答案 11"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 11
+</code></pre>
+<ul>
+<li>ipv6 路由 2001:db8:12:10::&#x2F;64 S0&#x2F;0&#x2F;0 fe80::2</li>
+<li><span style="color: #ff0000">ipv6 路由 2001:db8:12:10::&#x2F;64 S0&#x2F;0&#x2F;1 fe80::2</span></li>
+<li>ipv6 路由 2001:db8:12:10::&#x2F;64 S0&#x2F;0&#x2F;1 2001:db8:12:10::1</li>
+<li>ipv6 路由 2001:db8:12:10::&#x2F;64 S0&#x2F;0&#x2F;0</li>
+</ul>
+<ol start="55">
+<li>请参见图示。R1 配置了静态路由命令 ip route 209.165.200.224 255.255.255.224 S0&#x2F;0&#x2F;0，因此网络 172.16.0.0&#x2F;16 上的用户无法访问 Internet 上的资源。应如何更改此静态路由以允许来自 LAN 的用户流量到达 Internet？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-18/" alt="CCNA 2 v7 SRWE 期末考试答案 18"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 18
+</code></pre>
+<ul>
+<li><p>添加下一跳邻居地址209.165.200.226。</p>
+</li>
+<li><p><span style="color: #ff0000">将目标网络和掩码更改为 0.0.0.0 0.0.0.0。</span></p>
+</li>
+<li><p>将退出接口更改为 S0&#x2F;0&#x2F;1。</p>
+</li>
+<li><p>添加管理距离 254。</p>
+<pre><code>**解释：**R1 上的静态路由被错误地配置了错误的目标网络和掩码。正确的目标网络和掩码是 0.0.0.0 0.0.0.0。
+</code></pre>
+</li>
+</ul>
+<ol start="56">
+<li>请参见图示。当前路由器 R1 使用从 Branch2 获知的 EIGRP 路由到达 10.10.0.0&#x2F;16 网络。如果 R1 和 Branch2 之间的链路断开，哪个浮动静态路由会创建到 10.10.0.0&#x2F;16 网络的备份路由？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-16/" alt="CCNA 2 v7 SRWE 期末考试答案 16"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 16
+</code></pre>
+<ul>
+<li><p>ip 路由 10.10.0.0 255.255.0.0 串行 0&#x2F;0&#x2F;0 100</p>
+</li>
+<li><p>ip 路由 10.10.0.0 255.255.0.0 209.165.200.226 100</p>
+</li>
+<li><p><span style="color: #ff0000">ip 路由 10.10.0.0 255.255.0.0 209.165.200.225 100</span></p>
+</li>
+<li><p>ip 路由 10.10.0.0 255.255.0.0 209.165.200.225 50</p>
+<pre><code>**解释：**浮动静态路由的管理距离需要大于路由表中活动路由的管理距离。路由器 R1 使用管理距离为 90 的 EIGRP 路由到达 10.10.0.0/16 网络。要成为备用路由，浮动静态路由的管理距离必须大于 90，并且下一跳地址必须与 Branch1 的串行接口 IP 地址对应。
+</code></pre>
+</li>
+</ul>
+<ol start="57">
+<li>请参见图示。网络工程师正在网络上配置 IPv6 路由。路由器 HQ 上发出的哪个命令会配置到 Internet 的默认路由，以将数据包转发到路由表中未列出的 IPv6 目标网络？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-06/" alt="CCNA 2 v7 SRWE 期末考试答案 06"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 06
+</code></pre>
+<ul>
+<li><span style="color: #ff0000">ipv6 路由 ::&#x2F;0 串行 0&#x2F;1&#x2F;1</span></li>
+<li>ipv6 路由 ::1&#x2F;0 串行 0&#x2F;1&#x2F;1</li>
+<li>ipv6 路由 ::&#x2F;0 串行 0&#x2F;0&#x2F;0</li>
+<li>ip 路由 0.0.0.0 0.0.0.0 串行 0&#x2F;1&#x2F;1</li>
+</ul>
+<ol start="58">
+<li>如果活动路由器发生故障，什么协议或技术使用备用路由器承担数据包转发责任？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">HSRP</span></li>
+<li>以太通道</li>
+<li>VTP</li>
+<li>桌面排版</li>
+</ul>
+<ol start="59">
+<li>在交换机上输入 ip arp Inspection vlan 10 配置命令有什么作用？</li>
+</ol>
+<ul>
+<li>它在交换机上启用全局 DHCP 侦听。</li>
+<li>它指定端口上允许的最大 L2 地址数。</li>
+<li><span style="color: #ff0000">它在以前配置了 DHCP 侦听的特定交换机接口上启用 DAI。</span></li>
+<li>它在所有启用 PortFast 的端口上全局启用 BPDU 保护。</li>
+</ul>
+<ol start="60">
+<li>请参见图示。网络管理员正在检查交换机 S1 的配置。已实施哪种协议将多个物理端口组合成一个逻辑链路？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-12/" alt="CCNA 2 v7 SRWE 期末考试答案 12"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 12
+</code></pre>
+<ul>
+<li>桌面排版</li>
+<li>LACP</li>
+<li><span style="color: #ff0000">PAgP</span></li>
+<li>直通式</li>
+</ul>
+<ol start="61">
+<li>一段时间以来，成功的 VLAN 间路由已在具有跨多个交换机的多个 VLAN 的网络上运行。当交换机间的中继链路发生故障并且生成树协议启动备份中继链路时，报告两个 VLAN 上的主机可以访问之前可以访问的部分网络资源，但不能访问所有网络资源。所有其他 VLAN 上的主机都没有这个问题。这个问题最可能的原因是什么？</li>
+</ol>
+<ul>
+<li>备份链路上允许的 VLAN 配置不正确。</li>
+<li><span style="color: #ff0000">备份中继接口上的受保护边缘端口功能已被禁用。</span></li>
+<li>链路上的动态中继协议失败。</li>
+<li>当中继链路发生故障时，VLAN 间路由也失败。</li>
+</ul>
+<ol start="62">
+<li>请参见图示。管理员正尝试在路由器 R1 上安装 IPv6 静态路由以访问连接到路由器 R2 的网络。输入静态路由命令后，仍然无法连接到网络。静态路由配置出现了什么错误？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-23/" alt="CCNA 2 v7 SRWE 期末考试答案 23"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 23
+</code></pre>
+<ul>
+<li><p><span style="color: #ff0000">界面不对。</span></p>
+</li>
+<li><p>下一跳地址不正确。</p>
+</li>
+<li><p>网络前缀不正确。</p>
+</li>
+<li><p>目标网络不正确。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>在此示例中，静态路由中的接口不正确。该接口应该是R1上的出口接口，即s0&#x2F;0&#x2F;0。</p>
+<ol start="63">
+<li>什么协议或技术使用源 IP 到目标 IP 作为负载平衡机制？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">以太通道</span></li>
+<li>VTP</li>
+<li>直通式</li>
+<li>桌面排版</li>
+</ul>
+<ol start="64">
+<li>请参见图示。路由器 R1 通过 192.168.0.32 网络与 ISP 路由器具有 OSPF 邻居关系。当 OSPF 链路出现故障时，192.168.0.36 网络链路应作为备份。浮动静态路由命令 ip route 0.0.0.0 0.0.0.0 S0&#x2F;0&#x2F;1 100 在 R1 上发出，现在流量正在使用备用链路，即使 OSPF 链路已启动且正常运行。应该对静态路由命令进行哪些更改，以便流量仅在启动时使用 OSPF 链路？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-24/" alt="CCNA 2 v7 SRWE 期末考试答案 24"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 24
+</code></pre>
+<ul>
+<li><p><span style="color: #ff0000">将管理距离更改为 120。</span></p>
+</li>
+<li><p>将管理距离更改为 1。</p>
+</li>
+<li><p>添加下一跳邻居地址 192.168.0.36。</p>
+</li>
+<li><p>将目标网络更改为 192.168.0.34。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>当前浮动静态路由的问题是管理距离设置得太低。管理距离需要高于 OSPF 的 110，以便路由器仅在启动时使用 OSPF 链路。</p>
+<ol start="65">
+<li>哪种类型的静态路由配置了更大的管理距离，以便为从动态路由协议学习到的路由提供备份路由？</li>
+</ol>
+<ul>
+<li><p>标准静态路由</p>
+</li>
+<li><p>默认静态路由</p>
+</li>
+<li><p><span style="color: #ff0000">浮动静态路由</span></p>
+</li>
+<li><p>汇总静态路由</p>
+<pre><code>**解释：**静态路由有四种基本类型。浮动静态路由是在主路由丢失时放入路由表的备份路由。一条汇总静态路由将多条路由聚合为一条，减少了路由表的数量。标准静态路由是手动输入路由表的路由。默认静态路由创建最后的网关。
+</code></pre>
+</li>
+</ul>
+<ol start="66">
+<li>哪个选项显示正确配置的 IPv4 默认静态路由？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">ip 路由 0.0.0.0 0.0.0.0 S0&#x2F;0&#x2F;0</span></p>
+</li>
+<li><p>ip 路由 0.0.0.0 255.0.0.0 S0&#x2F;0&#x2F;0</p>
+</li>
+<li><p>ip 路由 0.0.0.0 255.255.255.0 S0&#x2F;0&#x2F;0</p>
+</li>
+<li><p>ip 路由 0.0.0.0 255.255.255.255 S0&#x2F;0&#x2F;0</p>
+<pre><code>**解释：**静态路由 ip route 0.0.0.0 0.0.0.0 S0/0/0 被视为默认静态路由，将匹配所有目标网络。
+</code></pre>
+</li>
+</ul>
+<ol start="67">
+<li>哪个命令将启动捆绑两个物理接口以通过 LACP 创建 EtherChannel 组的过程？</li>
+</ol>
+<ul>
+<li><p>通道组 2 模式自动</p>
+</li>
+<li><p>通道组 1 模式可取</p>
+</li>
+<li><p>接口端口通道 2</p>
+</li>
+<li><p><span style="color: #ff0000">接口范围 GigabitEthernet 0&#x2F;4 – 5</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>要指定 EtherChannel 组中的接口，请对使用的接口范围使用 interface range interface 全局配置命令。interface range GigabitEthernet 0&#x2F;4 – 5 命令是正确的选项，因为它为 EtherChannel 组指定了两个接口。</p>
+<ol start="68">
+<li>攻击者发起 MAC 地址溢出攻击的主要原因是什么？</li>
+</ol>
+<ul>
+<li>这样攻击者就可以在交换机上执行任意代码</li>
+<li>使交换机停止转发流量</li>
+<li><span style="color: #ff0000">这样攻击者就可以看到发往其他主机的帧</span></li>
+<li>使合法主机无法获取MAC地址</li>
+</ul>
+<ol start="69">
+<li>发起 VLAN 跳跃攻击的方法是什么？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">引入流氓交换机并启用中继</span></li>
+<li>用 MAC 地址淹没交换机</li>
+<li>从攻击主机发送欺骗性 IP 地址</li>
+<li>发送欺骗的本机 VLAN 信息</li>
+</ul>
+<ol start="70">
+<li>请参见图示。所有显示的交换机都是 Cisco 2960 交换机，具有相同的默认优先级并以相同的带宽运行。哪三个端口将成为 STP 指定端口？（选择三个。）</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-25/" alt="CCNA 2 v7 SRWE 期末考试答案 25"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 25
+</code></pre>
+<ul>
+<li><span style="color: #ff0000">fa0&#x2F;21</span></li>
+<li><span style="color: #ff0000">fa0&#x2F;10</span></li>
+<li><span style="color: #ff0000">fa0&#x2F;13</span></li>
+<li>fa0&#x2F;9</li>
+<li>fa0&#x2F;20</li>
+<li>fa0&#x2F;11</li>
+</ul>
+<ol start="71">
+<li>由网络设备生成并发送到 SNMP 服务器的 SNMP 日志消息的通用术语是什么？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">陷阱</span></li>
+<li>审计</li>
+<li>致谢</li>
+<li>警告</li>
+</ul>
+<ol start="72">
+<li>一名技术人员正在对速度较慢的 WLAN 进行故障排除，并决定使用拆分流量的方法。必须配置哪两个参数才能做到这一点？（选择两个。）</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">为时间不敏感的基本互联网流量配置 2.4 GHz 频段。</span></li>
+<li>将两个网络的安全模式配置为 WPA Personal TKIP&#x2F;AES。</li>
+<li>将安全模式配置为一个网络的 WPA Personal TKIP&#x2F;AES 和另一个网络的 WPA2 Personal AES</li>
+<li>为两个拆分网络配置一个通用 SSID。</li>
+<li><span style="color: #ff0000">为流媒体和时间敏感流量配置 5 GHz 频段。</span></li>
+</ul>
+<ol start="73">
+<li>公司安全策略要求动态学习所有 MAC 地址并将其添加到 MAC 地址表和每台交换机的运行配置中。哪个端口安全配置可以实现这一点？</li>
+</ol>
+<ul>
+<li><p>自动保护 MAC 地址</p>
+</li>
+<li><p>动态安全 MAC 地址</p>
+</li>
+<li><p>静态安全 MAC 地址</p>
+</li>
+<li><p><span style="color: #ff0000">粘性安全 MAC 地址</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>使用粘性安全 MAC 寻址，可以动态学习或手动配置 MAC 地址，然后将其存储在地址表中并添加到运行配置文件中。相反，动态安全 MAC 寻址提供仅存储在地址表中的动态学习 MAC 寻址。</p>
+<ol start="74">
+<li>用于链接本地地址的 IPv6 前缀是什么？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">FE80::&#x2F;10</span></li>
+<li>FF01::&#x2F;8</li>
+<li>FC00::&#x2F;7</li>
+<li>2001::&#x2F;3</li>
+</ul>
+<ol start="75">
+<li>当进入交换机的帧具有不在 MAC 地址表中的单播目标 MAC 地址时会发生什么操作？</li>
+</ol>
+<ul>
+<li>交换机会重置所有 MAC 地址表条目的刷新计时器。</li>
+<li>交换机更新条目的刷新计时器。</li>
+<li>交换机替换旧条目并使用更新的端口。</li>
+<li><span style="color: #ff0000">交换机会将帧转发到除传入端口之外的所有端口。</span></li>
+</ul>
+<ol start="76">
+<li>一个新的交换机将被添加到远程办公室的现有网络中。网络管理员不希望远程办公室的技术人员能够向交换机添加新的 VLAN，但交换机应该接收来自 VTP 域的 VLAN 更新。必须执行哪两个步骤才能在新交换机上配置 VTP 以满足这些条件？（选择两个。）</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">在新交换机上配置现有的 VTP 域名。</span></li>
+<li>将两台交换机的所有端口都配置为访问模式。</li>
+<li>启用 VTP 修剪。</li>
+<li>在新交换机上配置 IP 地址。</li>
+<li><span style="color: #ff0000">将新交换机配置为 VTP 客户端。</span></li>
+</ul>
+<ol start="77">
+<li>请参见图示。假设两台交换机上的端口 Fa0&#x2F;4 配置为承载多个 VLAN 的流量，哪三台主机会收到来自主机 A 的 ARP 请求？（选择三个。）</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-27/" alt="CCNA 2 v7 SRWE 期末考试答案 27"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 27
+</code></pre>
+<ul>
+<li><p><span style="color: #ff0000">主机 F</span></p>
+</li>
+<li><p>主机B</p>
+</li>
+<li><p><span style="color: #ff0000">主机D</span></p>
+</li>
+<li><p>主机G</p>
+</li>
+<li><p><span style="color: #ff0000">主机C</span></p>
+</li>
+<li><p>主机E</p>
+<pre><code>**解释：**ARP 请求作为广播发送出去。这意味着 ARP 请求仅在特定 VLAN 中发送。VLAN 1 主机只会听到来自 VLAN 1 上的主机的 ARP 请求。VLAN 2 主机只会听到来自 VLAN 2 上的主机的 ARP 请求。
+</code></pre>
+</li>
+</ul>
+<ol start="78">
+<li>技术人员正在为具有多个 WLAN 的小公司配置路由器，并且不需要动态路由协议的复杂性。应该做什么或检查什么？</li>
+</ol>
+<ul>
+<li>检查浮动静态路由的配置，调整AD。</li>
+<li>创建到该网络的浮动静态路由。</li>
+<li>验证任何边缘路由器路由表中都没有默认路由。</li>
+<li><span style="color: #ff0000">创建到所有内部网络的静态路由和到 Internet 的默认路由。</span></li>
+</ul>
+<ol start="79">
+<li>使用拆分媒体访问控制 (MAC) 时，WLC 执行哪两项功能？（选择两个。）</li>
+</ol>
+<ul>
+<li>数据包确认和重传</li>
+<li><span style="color: #ff0000">帧转换到其他协议</span></li>
+<li><span style="color: #ff0000">漫游客户端的关联和重新关联</span></li>
+<li>信标和探测响应</li>
+<li>帧队列和数据包优先级</li>
+</ul>
+<ol start="80">
+<li>请参见图示。网络管理员将路由器 R1 和 R2 配置为 HSRP 组 1 的一部分。重新加载路由器后，Host1 上的用户抱怨缺少与 Internet 的连接网络管理员在两台路由器上发出 show standby brief 命令以验证 HSRP操作。此外，管理员还观察了 Host1 上的 ARP 表。为了获得与 Internet 的连接，应在 Host1 上的 ARP 表中看到哪个条目？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-28/" alt="CCNA 2 v7 SRWE 期末考试答案 28"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 28
+</code></pre>
+<ul>
+<li><p>R1的IP地址和MAC地址</p>
+</li>
+<li><p>HSRP 组 1 的虚拟 IP 地址和 R1 的 MAC 地址</p>
+</li>
+<li><p>HSRP 组 1 的虚拟 IP 地址和 R2 的 MAC 地址</p>
+</li>
+<li><p><span style="color: #ff0000">HSRP 组 1 的虚拟 IP 地址和虚拟 MAC 地址</span></p>
+<pre><code>**解释：**主机将向默认网关（即虚拟 IP 地址）发送 ARP 请求。来自 HSRP 路由器的 ARP 回复包含虚拟 MAC 地址。主机 ARP 表将包含虚拟 IP 到虚拟 MAC 的映射。
+</code></pre>
+</li>
+</ul>
+<ol start="81">
+<li>网络管理员正在为远程管理访问配置新的 Cisco 交换机。该任务必须在交换机上配置哪三项？（选择三个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">IP地址</span></p>
+</li>
+<li><p><span style="color: #ff0000">默认网关</span></p>
+</li>
+<li><p>默认 VLAN</p>
+</li>
+<li><p><span style="color: #ff0000">vty 线</span></p>
+</li>
+<li><p>VTP 域</p>
+</li>
+<li><p>环回地址</p>
+<pre><code>**解释：**要启用远程管理访问，必须为 Cisco 交换机配置 IP 地址和默认网关。此外，必须配置 vty 线路以启用 Telnet 或 SSH 连接。环回地址、默认 VLAN 和 VTP 域配置对于远程交换机管理来说不是必需的。
+</code></pre>
+</li>
+</ul>
+<ol start="82">
+<li>请参见图示。关于 R1 上显示的配置可以得出什么结论？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-26/" alt="CCNA 2 v7 SRWE 期末考试答案 26"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 26
+</code></pre>
+<ul>
+<li><span style="color: #ff0000">R1 配置为 DHCPv4 中继代理。</span></li>
+<li>R1 将向本地 DHCPv4 客户端发送消息以联系位于 10.10.10.8 的 DHCPv4 服务器。</li>
+<li>R1 将代表本地 DHCPv4 客户端广播 DHCPv4 请求。</li>
+<li>R1 作为 DHCPv4 服务器运行。</li>
+</ul>
+<ol start="83">
+<li>如果 DHCPv4 客户端从多个 DHCP 服务器接收到多个 DHCPOFFER，它会采取什么操作？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">它发送一个 DHCPREQUEST 来标识客户端正在接受的租赁提议。</span></li>
+<li>它发送一个 DHCPNAK 并重新开始 DHCP 过程。</li>
+<li>它同时接受 DHCPOFFER 消息并发送 DHCPACK。</li>
+<li>它丢弃这两个提议并发送一个新的 DHCPDISCOVER。</li>
+</ul>
+<ol start="84">
+<li>应该禁用什么协议来帮助减轻 VLAN 攻击？</li>
+</ol>
+<ul>
+<li>直通式</li>
+<li>CDP</li>
+<li><span style="color: #ff0000">桌面排版</span></li>
+<li>ARP</li>
+</ul>
+<ol start="85">
+<li>为什么在使用动态 ARP 检查功能时需要 DHCP 侦听？</li>
+</ol>
+<ul>
+<li><p>它使用 MAC 地址表来验证默认网关 IP 地址。</p>
+</li>
+<li><p>它将 ARP 请求重定向到 DHCP 服务器进行验证。</p>
+</li>
+<li><p>它依赖于 DHCP 侦听设置的受信任和不受信任端口的设置。</p>
+</li>
+<li><p><span style="color: #ff0000">它使用 MAC 地址到 IP 地址绑定数据库来验证 ARP 数据包。</span></p>
+<pre><code>**解释：**DAI 依赖于 DHCP 侦听。DHCP snooping 侦听 DHCP 消息交换并建立有效元组（MAC 地址、IP 地址、VLAN 接口）的绑定数据库。启用 DAI 后，如果发送方 MAC 地址和发送方 IP 地址与 DHCP 侦听绑定数据库中的条目不匹配，则交换机会丢弃 ARP 数据包。但是，它可以通过静态映射来克服。当主机配置静态 IP 地址、无法运行 DHCP 侦听或网络中的其他交换机不运行动态 ARP 检查时，静态映射很有用。静态映射将 IP 地址与 VLAN 上的 MAC 地址相关联。
+</code></pre>
+</li>
+</ul>
+<ol start="86">
+<li>要获得交换网络的生成树状态的概览，网络工程师会在交换机上发出 show spanning-tree 命令。此命令将显示哪两项信息？（选择两个。）</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">端口在所有 VLAN 中的作用。</span></li>
+<li><span style="color: #ff0000">根桥 BID。</span></li>
+<li>每个根端口上接收到的广播数。</li>
+<li>管理 VLAN 接口的 IP 地址。</li>
+<li>本机 VLAN 端口的状态。</li>
+</ul>
+<ol start="87">
+<li>WLAN 工程师使用具有 DTLS 功能的 CAPWAP 协议部署了一个 WLC 和五个无线 AP，以保护网络设备的控制平面。在测试无线网络时，WLAN 工程师注意到数据流量在 WLC 和 AP 之间以纯文本形式交换，并且没有被加密。最可能的原因是什么？</li>
+</ol>
+<ul>
+<li><p>DTLS 仅通过身份验证提供数据安全性，不为在无线 LAN 控制器 (WLC) 和接入点 (AP) 之间移动的数据提供加密。</p>
+</li>
+<li><p>数据加密需要在每个接入点 (AP) 上安装 DTLS 许可证，然后才能在无线 LAN 控制器 (WLC) 上启用。</p>
+</li>
+<li><p><span style="color: #ff0000">尽管默认启用 DTLS 以保护 CAPWAP 控制通道，但默认情况下对数据通道禁用它。</span></p>
+</li>
+<li><p>DTLS 是一种仅在接入点 (AP) 和无线客户端之间提供安全性的协议。</p>
+<pre><code>**解释：**DTLS 是一种在 AP 和 WLC 之间提供安全性的协议。它允许他们使用加密进行通信，并防止窃听或篡改。 默认情况下启用 DTLS 以保护 CAPWAP 控制通道，但默认情况下禁用数据通道。默认情况下，AP 和 WLC 之间交换的所有 CAPWAP 管理和控制流量都经过加密和保护，以提供控制平面隐私并防止中间人 (MITM) 攻击。
+</code></pre>
+</li>
+</ul>
+<ol start="88">
+<li>请参见图示。网络管理员如图所示配置两台交换机。但是，主机 C 无法 ping 主机 D，主机 E 无法 ping 主机 F。管理员应该采取什么操作来启用此通信？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-29/" alt="CCNA 2 v7 SRWE 期末考试答案 29"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 29
+</code></pre>
+<ul>
+<li>将主机 A 和 B 与 VLAN 10 而非 VLAN 1 关联。</li>
+<li><span style="color: #ff0000">将任一中继端口配置为动态期望模式。</span></li>
+<li>将 switchport nonegotiate 命令添加到 SW2 的配置中。</li>
+<li>在拓扑中包含路由器。</li>
+<li>从中继中删除本地 VLAN。</li>
+</ul>
+<ol start="89">
+<li>当进入交换机的帧的源 MAC 地址不在 MAC 地址表中时，会发生什么动作？</li>
+</ol>
+<ul>
+<li>交换机替换旧条目并使用更新的端口。</li>
+<li>交换机为目的 MAC 地址和出端口添加一个 MAC 地址表条目。</li>
+<li>交换机更新条目的刷新计时器。</li>
+<li><span style="color: #ff0000">交换机将 MAC 地址和传入端口号添加到表中。</span></li>
+</ul>
+<ol start="90">
+<li>技术人员正在使用 SOHO 无线路由器为小型企业配置无线网络。如果路由器配置了 WPA2，使用哪两种身份验证方法？（选择两项。）**</li>
+</ol>
+<ul>
+<li>AES</li>
+<li>TKIP</li>
+<li><span style="color: #ff0000">个人的</span></li>
+<li>WEP</li>
+<li><span style="color: #ff0000">企业</span></li>
+</ul>
+<ol start="91">
+<li>网络管理员正在 Cisco 3500 系列 WLC 上添加新的 WLAN。管理员应该使用哪个选项卡来创建用于新 WLAN 的新 VLAN 接口？</li>
+</ol>
+<ul>
+<li>无线局域网</li>
+<li><span style="color: #ff0000">控制器</span></li>
+<li>无线的</li>
+<li>管理</li>
+</ul>
+<ol start="92">
+<li>请参见图示。从输出中可以得出哪两个结论？（选择两个。）</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-30/" alt="CCNA 2 v7 SRWE 期末考试答案 30"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 30
+</code></pre>
+<ul>
+<li><span style="color: #ff0000">端口通道 ID 为 2。</span></li>
+<li>该捆绑包完全可操作。</li>
+<li>端口通道是第 3 层通道。</li>
+<li>使用的负载平衡方法是源端口到目标端口。</li>
+<li><span style="color: #ff0000">EtherChannel 已关闭。</span></li>
+</ul>
+<ol start="93">
+<li>哪三个陈述准确描述了 Cisco 2960 交换机上的双工和速度设置？（选择三个。）</li>
+</ol>
+<ul>
+<li>默认情况下，速度设置为 100 Mb&#x2F;s，双工模式设置为自动协商。</li>
+<li><span style="color: #ff0000">自动协商失败可能会导致连接问题。</span></li>
+<li><span style="color: #ff0000">可以手动配置每个交换机端口的双工和速度设置。</span></li>
+<li><span style="color: #ff0000">当速度设置为 1000 Mb&#x2F;s 时，交换机端口将以全双工模式运行。</span></li>
+<li>默认情况下，自动协商功能处于禁用状态。</li>
+<li>在集线器上启用自动协商将防止在将集线器连接到交换机时端口速度不匹配。</li>
+</ul>
+<ol start="94">
+<li>请参见图示。第 3 层交换机为三个 VLAN 路由并连接到路由器以实现 Internet 连接。哪两种配置将应用于交换机？（选择两个。）</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-31/" alt="CCNA 2 v7 SRWE 期末考试答案 31"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 31
+</code></pre>
+<ul>
+<li>(config)# interface fastethernet0&#x2F;4<br>(config-if)# switchport mode trunk</li>
+<li>(config)# interface vlan 1<br>(config-if)# ip address 192.168.1.2 255.255.255.0<br>(config-if)# no shutdown</li>
+<li><span style="color: #ff0000">(config)# ip 路由</span></li>
+<li><span style="color: #ff0000">(config)# interface gigabitethernet 1&#x2F;1 </span><br><span style="color: #ff0000">(config-if)# no switchport </span><br><span style="color: #ff0000">(config-if)# ip address 192.168.1.2 255.255.255.252</span></li>
+<li>(config)# interface gigabitethernet1&#x2F;1<br>(config-if)# switchport mode trunk</li>
+</ul>
+<ol start="95">
+<li>请参见图示。考虑到主电源刚刚恢复。PC3 发出广播 IPv4 DHCP 请求。SW1 会将这个请求转发到哪个端口？</li>
+</ol>
+<p><img src="https://infraexam.com/ccna2-v7/ccna-2-srwe-switching-routing-and-wireless-essentials-version-7-00-srwe-final-exam-answers/ccna-2-v7-srwe-final-exam-answers-32/" alt="CCNA 2 v7 SRWE 期末考试答案 32"></p>
+<pre><code>CCNA 2 v7 SRWE 期末考试答案 32
+</code></pre>
+<ul>
+<li>仅到 Fa0&#x2F;1</li>
+<li>仅对 Fa0&#x2F;1、Fa0&#x2F;2 和 Fa0&#x2F;4</li>
+<li>至 Fa0&#x2F;1、Fa0&#x2F;2、Fa0&#x2F;3 和 Fa0&#x2F;4</li>
+<li><span style="color: #ff0000">仅连接到 Fa0&#x2F;1、Fa0&#x2F;2 和 Fa0&#x2F;3</span></li>
+<li>仅到 Fa0&#x2F;1 和 Fa0&#x2F;2</li>
+</ul>
+<ol start="96">
+<li>关于第 2 层交换机如何确定如何转发帧的说法正确的是？</li>
+</ol>
+<ul>
+<li><p>只有具有广播目标地址的帧才会转发出所有活动的交换机端口。</p>
+</li>
+<li><p><span style="color: #ff0000">帧转发决策基于 CAM 表中的 MAC 地址和端口映射。</span></p>
+</li>
+<li><p>直通帧转发确保始终丢弃无效帧。</p>
+</li>
+<li><p>无论目标 MAC 地址如何，始终转发单播帧。</p>
+<pre><code>**解释：**直通帧转发最多只能读取帧的前 22 个字节，这不包括帧检查序列，因此可能会转发无效帧。除了广播帧，目标 MAC 地址不在 CAM 中的帧也会从所有活动端口溢出。单播帧并不总是被转发。接收到的帧的目标 MAC 地址与接收它的交换机端口相关联，因为目标存在于连接到该端口的网段上，所以不会转发接收到的帧。
+</code></pre>
+</li>
+</ul>
+<ol start="97">
+<li>员工无法连接到其中一个内部网络上的服务器。应该做什么或检查什么？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">使用“show ip interface brief”命令查看接口是否关闭。</span></li>
+<li>验证任何边缘路由器路由表中都没有默认路由。</li>
+<li>检查默认路由的统计信息是否过饱和。</li>
+<li>创建到所有内部网络的静态路由和到 Internet 的默认路由。</li>
+</ul>
+<ol start="98">
+<li>什么协议或技术要求交换机处于服务器模式或客户端模式？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">VTP</span></li>
+<li>以太通道</li>
+<li>HSRP</li>
+<li>桌面排版</li>
+</ul>
+<ol start="99">
+<li>在交换机上输入shutdown配置命令有什么作用？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">它禁用未使用的端口。</span></li>
+<li>它在特定交换机接口上启用 portfast。</li>
+<li>它在非中继接口上禁用 DTP。</li>
+<li>它在特定端口上启用 BPDU 防护。</li>
+</ul>
+<ol start="100">
+<li>使用下一跳链路本地地址配置 IPv6 静态路由时还需要什么？**</li>
+</ol>
+<ul>
+<li>邻居路由器接口上的网络号和子网掩码</li>
+<li>邻居路由器的ip地址</li>
+<li><span style="color: #ff0000">接口编号和类型</span></li>
+<li>行政距离</li>
+</ul>
+<ol start="101">
+<li>一位初级技术人员正在向 LAN 路由器添加路由。对新网络上设备的跟踪路由显示路径错误和无法访问状态。应该做什么或检查什么？</li>
+</ol>
+<ul>
+<li>验证任何边缘路由器路由表中都没有默认路由。</li>
+<li>创建到该网络的浮动静态路由。</li>
+<li>检查浮动静态路由的配置，调整AD。</li>
+<li><span style="color: #ff0000">检查新静态路由上的出口接口的配置。</span></li>
+</ul>
+<ol start="102">
+<li>一位网络工程师正在对使用最新 802.11 标准的新部署的无线网络进行故障排除。当用户访问流视频等高带宽业务时，无线网络性能较差。为了提高性能，网络工程师决定配置一个 5 Ghz 频段的 SSID，并训练用户将该 SSID 用于流媒体服务。为什么该解决方案可以提高该类型服务的无线网络性能？</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">5 GHz 频段比 2.4 GHz 频段拥有更多频道且不那么拥挤，这使得它更适合流媒体。</span></p>
+</li>
+<li><p>唯一可以切换到 5 GHz 频段的用户将是那些拥有最新无线 NIC 的用户，这将减少使用率。</p>
+</li>
+<li><p>要求用户切换到 5 GHz 频段进行流媒体播放是不方便的，并且会导致访问这些服务的用户减少。</p>
+</li>
+<li><p>5 GHz 频段具有更大的范围，因此很可能是无干扰的。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>无线范围由接入点天线和输出功率决定，而不是由使用的频带决定。在这种情况下，所有用户都拥有符合最新标准的无线网卡，因此所有人都可以访问 5 GHz 频段。虽然有些用户可能会觉得切换到 5 Ghz 频段访问流媒体服务不方便，但更多的频道，而不是更少的用户，将提高网络性能。</p>
+<ol start="103">
+<li>应该在哪些交换机端口上启用 BPDU 保护以增强 STP 稳定性？</li>
+</ol>
+<ul>
+<li>只有被选为指定端口的端口</li>
+<li>仅连接到相邻交换机的端口</li>
+<li><span style="color: #ff0000">所有启用 PortFast 的端口</span></li>
+<li>所有非根端口的中继端口</li>
+</ul>
+<ol start="104">
+<li>如果禁用 Cisco 快速转发，路由器将如何以不同方式处理静态路由？</li>
+</ol>
+<ul>
+<li>串行点对点接口将需要完全指定的静态路由以避免路由不一致。</li>
+<li>它不会执行递归查找。</li>
+<li>不需要使用退出接口的静态路由。</li>
+<li><span style="color: #ff0000">以太网多路访问接口将需要完全指定的静态路由以避免路由不一致。</span></li>
+</ul>
+<ol start="105">
+<li>什么协议或技术允许数据通过冗余交换链路传输？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">直通式</span></li>
+<li>VTP</li>
+<li>以太通道</li>
+<li>桌面排版</li>
+</ul>
+<ol start="106">
+<li>PC 已将 RS 消息发送到连接到同一网络的 IPv6 路由器。路由器将向客户端发送哪两条信息？（选择两个。）</li>
+</ol>
+<ul>
+<li><p><span style="color: #ff0000">字首</span></p>
+</li>
+<li><p>域名</p>
+</li>
+<li><p>点分十进制格式的子网掩码</p>
+</li>
+<li><p>行政距离</p>
+</li>
+<li><p>DNS 服务器 IP 地址</p>
+</li>
+<li><p><span style="color: #ff0000">前缀长度</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>路由器是 IPv6 全路由器组的一部分并收到 RS 消息。它生成一个包含本地网络前缀和前缀长度的 RA（例如，2001:db8:acad:1::&#x2F;64）</p>
+<ol start="107">
+<li>哪两种 VTP 模式允许在本地交换机上创建、修改和删除 VLAN？（选择两个。）</li>
+</ol>
+<ul>
+<li>分配</li>
+<li>掌握</li>
+<li><span style="color: #ff0000">服务器</span></li>
+<li>客户</li>
+<li><span style="color: #ff0000">透明</span></li>
+<li>奴隶</li>
+</ul>
+<ol start="108">
+<li>请参见图示。路由器 R1 将如何处理目标 IPv6 地址为 2001:db8:cafe:5::1 的数据包？</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2021/03/CyberOps-Associate-Version-1.0-CyberOps-Associate-1.0-Practice-Final-Exam-Answers-02.png" alt="CyberOps Associate（1.0 版）- CyberOps Associate 1.0 练习期末考试答案 02"></p>
+<pre><code> CyberOps Associate（1.0 版）– CyberOps Associate 1.0 练习期末考试答案 02
+</code></pre>
+<ul>
+<li><p>将数据包转发出去 GigabitEthernet0&#x2F;0</p>
+</li>
+<li><p><span style="color: #ff0000">将数据包转发出去 Serial0&#x2F;0&#x2F;0</span></p>
+</li>
+<li><p>将数据包转发出去 GigabitEthernet0&#x2F;1</p>
+</li>
+<li><p>丢包</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>路由 ::&#x2F;0 是 0000:0000:0000:0000:0000:0000:0000:0000&#x2F;0 默认路由的压缩形式。如果在路由表中找不到更具体的路由，则使用默认路由。</p>
+<ol start="109">
+<li>使用 AAA 和集中式服务器可以解决的本地数据库方法保护设备访问的缺点是什么？</li>
+</ol>
+<ul>
+<li><p>没有能力提供问责制。</p>
+</li>
+<li><p>由于没有用户名，它非常容易受到暴力攻击。</p>
+</li>
+<li><p>密码只能以纯文本形式存储在运行配置中。</p>
+</li>
+<li><p><span style="color: #ff0000">必须在每台设备上本地配置用户帐户，这是一种不可扩展的身份验证解决方案。</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>保护设备访问的本地数据库方法使用在路由器本地配置的用户名和密码。这允许管理员跟踪谁登录到设备以及何时登录。密码也可以在配置中加密。但是，必须在该帐户应有权访问的每台设备上配置帐户信息，这使得该解决方案很难扩展。</p>
+<ol start="110">
+<li>哪三个 Wi-Fi 标准在 2.4GHz 频率范围内运行？（选择三个。）</li>
+</ol>
+<ul>
+<li>802.11ac</li>
+<li>802.11a</li>
+<li><span style="color: #ff0000">802.11n</span></li>
+<li><span style="color: #ff0000">802.11b</span></li>
+<li><span style="color: #ff0000">802.11g</span></li>
+</ul>
+<ol start="111">
+<li>哪个命令会在 R2 上创建静态路由以到达 PC B？</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2021/03/CCNA-2-v7-SRWE-Final-Exam-Answers-34.png" alt="CCNA 2 v7 SRWE 期末考试答案 34"></p>
+<pre><code> CCNA 2 v7 SRWE 期末考试答案 34
+</code></pre>
+<ul>
+<li><p>R2(config)# ip 路由 172.16.2.0 255.255.255.0 172.16.2.254</p>
+</li>
+<li><p><span style="color: #ff0000">R2(config)# ip 路由 172.16.2.0 255.255.255.0 172.16.3.1</span></p>
+</li>
+<li><p>R2(config)# ip 路由 172.16.2.1 255.255.255.0 172.16.3.1</p>
+</li>
+<li><p>R2(config)# ip 路由 172.16.3.0 255.255.255.0 172.16.2.254</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>正确的语法是： router(config)# ip route destination-network destination-mask {next-hop-ip-address | exit-interface} 如果使用本地出口接口而不是下一跳 IP 地址，则该路由将在路由表中显示为直连路由而不是静态路由。因为要到达的网络是172.16.2.0，下一跳IP地址是172.16.3.1，所以命令是R2(config)# ip route 172.16.2.0 255.255.255.0 172.16.3.1</p>
+<ol start="112">
+<li>在交换机上输入 switchport mode access 配置命令有什么作用？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">它在非中继接口上禁用 DTP。</span></li>
+<li>它禁用未使用的端口。</li>
+<li>它手动启用中继链路。</li>
+<li>它在特定端口上启用 BPDU 防护。</li>
+</ul>
+<ol start="113">
+<li>请参见图示。输出中显示的哪个语句允许路由器 R1 响应无状态 DHCPv6 请求？</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2021/03/CCNA-2-v7-SRWE-Final-Exam-Answers-35.png" alt="CCNA 2 v7 SRWE 期末考试答案 35"></p>
+<pre><code> CCNA 2 v7 SRWE 期末考试答案 35
+</code></pre>
+<ul>
+<li><p><span style="color: #ff0000">ipv6 nd other-config-flag</span></p>
+</li>
+<li><p>ipv6 dhcp 服务器 LAN1</p>
+</li>
+<li><p>前缀委托 2001:DB8:8::&#x2F;48 00030001000E84244E70</p>
+</li>
+<li><p>ipv6 单播路由</p>
+</li>
+<li><p>dns 服务器 2001:DB8:8::8</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>接口命令 ipv6 nd other-config-flag 允许在此接口上发送 RA 消息，指示可以从无状态 DHCPv6 服务器获得附加信息。</p>
+<ol start="114">
+<li>请参见图示。网络管理员正在交换机 SWC 上配置端口安全功能。管理员发出命令 show port-security interface fa 0&#x2F;2 来验证配置。从显示的输出中可以得出什么结论？（选择三个。）</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2021/03/CCNA-2-v7-SRWE-Final-Exam-Answers-36.png" alt="CCNA 2 v7 SRWE 期末考试答案 36"></p>
+<pre><code> CCNA 2 v7 SRWE 期末考试答案 36
+</code></pre>
+<ul>
+<li>该端口配置为中继链路。</li>
+<li><span style="color: #ff0000">此端口当前已启动。</span></li>
+<li>该接口的交换机端口模式为接入模式。</li>
+<li>在此接口上检测到三个安全违规行为。</li>
+<li><span style="color: #ff0000">当前没有设备连接到此端口。</span></li>
+<li><span style="color: #ff0000">安全违规将导致此端口立即关闭。</span></li>
+</ul>
+<ol start="115">
+<li>网络管理员使用第 2 层交换机对网络进行分段的两个原因是什么？（选择两个。）</li>
+</ol>
+<ul>
+<li><p>将 ARP 请求消息与网络的其余部分隔离开来</p>
+</li>
+<li><p>创建更多广播域</p>
+</li>
+<li><p><span style="color: #ff0000">提高用户带宽</span></p>
+</li>
+<li><p>消除虚电路</p>
+</li>
+<li><p>创建更少的冲突域</p>
+</li>
+<li><p><span style="color: #ff0000">隔离段之间的流量</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>交换机具有在直接连接的发送和接收网络设备之间创建临时点对点连接的能力。两个设备在传输过程中具有全带宽全双工连接。</p>
+<ol start="116">
+<li>当进入交换机的帧在 MAC 地址表中出现单播目的 MAC 地址时会发生什么动作？</li>
+</ol>
+<ul>
+<li>交换机会重置所有 MAC 地址表条目的刷新计时器。</li>
+<li><span style="color: #ff0000">交换机将帧从指定端口转发出去。</span></li>
+<li>交换机更新条目的刷新计时器。</li>
+<li>交换机会将帧转发到除传入端口之外的所有端口。</li>
+</ul>
+<ol start="117">
+<li>网络管理员正在使用单臂路由器模型来配置交换机和路由器以实现 VLAN 间路由。在连接路由器的交换机端口上应该进行什么配置？</li>
+</ol>
+<ul>
+<li><p>将该端口配置为中继端口，并将其分配给 VLAN1。</p>
+</li>
+<li><p>将其配置为中继端口并仅允许未标记的流量。</p>
+</li>
+<li><p><span style="color: #ff0000">将该端口配置为 802.1q 中继端口。</span></p>
+</li>
+<li><p>将该端口配置为接入端口和VLAN1的成员。</p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>交换机上连接路由器接口的端口应配置为中继端口。一旦它成为中继端口，它就不再属于任何特定的 VLAN，并且会转发来自各个 VLAN 的流量。</p>
+<ol start="118">
+<li>在交换机上输入 switchport port-security 配置命令有什么作用？</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">它在交换机上启用全局端口安全性。</span></li>
+<li>它动态学习 L2 地址并将其复制到运行配置中。</li>
+<li>它限制每秒在接口上接收的发现消息的数量。</li>
+<li>它在接口上启用端口安全性。</li>
+</ul>
+<ol start="119">
+<li>LAN 上的用户无法访问公司 Web 服务器，但可以访问其他地方。应该做什么或检查什么？</li>
+</ol>
+<ul>
+<li>确保已从公司边缘路由器中删除旧的默认路由。</li>
+<li><span style="color: #ff0000">验证到服务器的静态路由是否存在于路由表中。</span></li>
+<li>创建到该网络的浮动静态路由。</li>
+<li>检查浮动静态路由的配置，调整AD。</li>
+</ul>
+<ol start="120">
+<li>请参见图示。网络管理员正在为路由器 R1 配置 IPv6 地址分配。根据部分配置，管理员打算实施哪种 IPv6 全球单播地址分配方案？</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2021/03/CCNA-2-v7-SRWE-Final-Exam-Answers-37.png" alt="CCNA 2 v7 SRWE 期末考试答案 37"></p>
+<pre><code> CCNA 2 v7 SRWE 期末考试答案 37
+</code></pre>
+<ul>
+<li>手动配置</li>
+<li><span style="color: #ff0000">有状态的</span></li>
+<li>无国籍</li>
+<li>SLAAC</li>
+</ul>
+<ol start="121">
+<li>将步骤与每个交换机引导顺序描述相匹配。（并非所有选项都被使用。）</li>
+</ol>
+<p><img src="https://infraexam.com/wp-content/uploads/2021/03/CCNA-2-v7-SRWE-Final-Exam-Answers-006.png" alt="CCNA 2 v7 SRWE 期末考试答案 006"></p>
+<pre><code> CCNA 2 v7 SRWE 期末考试答案 006
+</code></pre>
+<p><strong>答案解释和提示：</strong>步骤如下： 1. 执行 POST 2. 从 ROM 加载引导加载程序 3. CPU 寄存器初始化 4. 闪存文件系统初始化 5. 加载 IOS 6. 将开关控制转移到 IOS</p>
+<ol start="122">
+<li>什么协议或技术禁用冗余路径以消除第 2 层环路？</li>
+</ol>
+<ul>
+<li>以太通道</li>
+<li>桌面排版</li>
+<li><span style="color: #ff0000">直通式</span></li>
+<li>VTP</li>
+</ul>
+<ol start="123">
+<li>在AAA过程中，什么时候会实施授权？</li>
+</ol>
+<ul>
+<li><p>在确定用户可以访问哪些资源之后立即</p>
+</li>
+<li><p>在 AAA 客户端向集中式服务器发送身份验证信息后立即</p>
+</li>
+<li><p>AAA会计和审计收到详细报告后立即</p>
+</li>
+<li><p><span style="color: #ff0000">在针对 AAA 数据源成功认证后立即</span></p>
+</li>
+</ul>
+<p><strong>答案解释和提示：</strong>AAA 授权在用户通过特定 AAA 数据源的身份验证后立即实施。</p>
+<ol start="124">
+<li>哪两种协议用于提供基于服务器的 AAA 身份验证？（选择两个。）</li>
+</ol>
+<ul>
+<li><span style="color: #ff0000">TACACS+</span></li>
+<li><span style="color: #ff0000">半径</span></li>
+<li>SNMP</li>
+<li>802.1x</li>
+<li>SSH</li>
+</ul>
+</article>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">saevio</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95"><span class="toc-text">期末考试</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
