@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>saevio</title>
-  <icon>https://www.gravatar.com/avatar/029d105e488c9255f2c8ae58f697feb4</icon>
+  <icon>https://www.gravatar.com/avatar/466358b391cc73bf3544071b401ea17b</icon>
   <subtitle>welcome to my Blog. | ( ˙꒳​˙)</subtitle>
   <link href="https://mengchunm.github.io/atom.xml" rel="self"/>
   
@@ -11,7 +11,7 @@
   
   <author>
     <name>saevio</name>
-    <email>1127499339@qq.com</email>
+    <email>saevio@qq.com</email>
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
