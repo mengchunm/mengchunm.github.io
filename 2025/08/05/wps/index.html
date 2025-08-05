@@ -1,0 +1,921 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>WPS多维表格 - saevio</title>
+
+  
+    <meta name="description" content="记录一下wps多维表格公式和js脚本相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WPS多维表格">
+<meta property="og:url" content="https://saevio.cn/2025/08/05/wps/">
+<meta property="og:site_name" content="saevio">
+<meta property="og:description" content="记录一下wps多维表格公式和js脚本相关">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+<meta property="article:published_time" content="2025-08-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-05T02:53:08.156Z">
+<meta property="article:author" content="saevio">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+  
+  
+  <meta name="keywords" content="博客">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="saevio" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+
+
+  
+    <link rel="shortcut icon" href="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"saevio","sameAs":[],"image":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png"},"dateCreated":"2025-08-05T00:00:00+08:00","dateModified":"2025-08-05T10:53:08+08:00","datePublished":"2025-08-05T00:00:00+08:00","description":"记录一下wps多维表格公式和js脚本相关\n","headline":"WPS多维表格","mainEntityOfPage":{"@type":"WebPage","@id":"https://saevio.cn/2025/08/05/wps/"},"publisher":{"@type":"Organization","name":"saevio","sameAs":[],"image":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png","logo":{"@type":"ImageObject","url":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png"}},"url":"https://saevio.cn/2025/08/05/wps/","thumbnailUrl":"https://images.weserv.nl/?url=https://i0.hdslb.com/bfs/openplatform/367b61347aae11ec9d9a6e92d80a568504be25d8.png","image":1}</script>
+  
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">saevio</div><div class="sub normal cap">welcome to my Blog.</div><div class="sub hover cap" style="opacity:0"> ( ˙꒳​˙)</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="文档" href="/wiki/" style="color:#3DC550"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M14.25 4.48v3.057c0 .111 0 .27.02.406a.936.936 0 0 0 .445.683a.96.96 0 0 0 .783.072c.13-.04.272-.108.378-.159L17 8.005l1.124.534c.106.05.248.119.378.16a.958.958 0 0 0 .783-.073a.936.936 0 0 0 .444-.683c.021-.136.021-.295.021-.406V3.031c.113-.005.224-.01.332-.013C21.154 2.98 22 3.86 22 4.933v11.21c0 1.112-.906 2.01-2.015 2.08c-.97.06-2.108.179-2.985.41c-1.082.286-1.99 1.068-3.373 1.436c-.626.167-1.324.257-1.627.323V5.174c.32-.079 1.382-.203 1.674-.371c.184-.107.377-.216.576-.323m5.478 8.338a.75.75 0 0 1-.546.91l-4 1a.75.75 0 0 1-.364-1.456l4-1a.75.75 0 0 1 .91.546" clip-rule="evenodd"/><path fill="currentColor" d="M18.25 3.151c-.62.073-1.23.18-1.75.336a8.2 8.2 0 0 0-.75.27v3.182l.75-.356l.008-.005a1.13 1.13 0 0 1 .492-.13c.047 0 .094.004.138.01c.175.029.315.1.354.12l.009.005l.749.356V3.647z"/><path fill="currentColor" d="M12 5.214c-.334-.064-1.057-.161-1.718-.339C8.938 4.515 8.05 3.765 7 3.487c-.887-.234-2.041-.352-3.018-.412C2.886 3.007 2 3.9 2 4.998v11.146c0 1.11.906 2.01 2.015 2.079c.97.06 2.108.179 2.985.41c.486.129 1.216.431 1.873.726c1.005.451 2.052.797 3.127 1.034z" opacity=".5"/><path fill="currentColor" d="M4.273 12.818a.75.75 0 0 1 .91-.545l4 1a.75.75 0 1 1-.365 1.455l-4-1a.75.75 0 0 1-.545-.91m.909-4.545a.75.75 0 1 0-.364 1.455l4 1a.75.75 0 0 0 .364-1.455z"/></svg></a><a class="nav-item" title="社交" href="/more/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/08/05/wps/"><span class="title">WPS多维表格</span></a><a class="item title" href="/2024/10/18/ai/"><span class="title">AI项目部署</span></a><a class="item title" href="/2023/02/03/software/"><span class="title">常用工具合集</span></a><a class="item title" href="/2023/10/10/ffmpeg/"><span class="title">音视频下载&剪辑</span></a><a class="item title" href="/2023/07/20/fakelocation/"><span class="title">指点天下及学习通签到</span></a><a class="item title" href="/2023/10/10/Network%20Security%20Technology/"><span class="title">信息安全技术实验</span></a><a class="item title" href="/2023/08/10/Android%20studio/"><span class="title">Android studio</span></a><a class="item title" href="/2023/10/10/network%20design/"><span class="title">网络管理期末总结</span></a><a class="item title" href="/2023/01/25/Brush/"><span class="title">刷机资源整合</span></a><a class="item title" href="/2023/06/10/java/"><span class="title">java学习</span></a></div></widget>
+</div>
+
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-04T16:00:00.000Z">2025-08-05</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-05T02:53:08.156Z">2025-08-05</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>WPS多维表格</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>记录一下wps多维表格公式和js脚本相关</p>
+<meta name="referrer" content="no-referrer">
+<span id="more"></span>
+
+
+<h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><h4 id="多维表公式案例共享表："><a href="#多维表公式案例共享表：" class="headerlink" title="多维表公式案例共享表："></a>多维表公式案例共享表：</h4><p>多维表函数列表<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cryI4BWCOzis">https://kdocs.cn/l/cryI4BWCOzis</a></p>
+<p>秒懂智能编号<a target="_blank" rel="noopener" href="https://kdocs.cn/l/csywN1I7IoGB">https://kdocs.cn/l/csywN1I7IoGB</a></p>
+<p>多维表字符串提取<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cn7wbyGrYo1N">https://kdocs.cn/l/cn7wbyGrYo1N</a></p>
+<p>多维表TEXT函数技巧<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cmEIOU8rjJ43">https://kdocs.cn/l/cmEIOU8rjJ43</a></p>
+<p>emoji表情<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cuUbJRWe8UuA">https://kdocs.cn/l/cuUbJRWe8UuA</a></p>
+<p>易经学习工具<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cowtbtZdKBLW">https://kdocs.cn/l/cowtbtZdKBLW</a></p>
+<p>父记录还能这么玩<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cgryU5KLbi4I">https://kdocs.cn/l/cgryU5KLbi4I</a></p>
+<p>父子级联树<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cvt7gu4IJOY3">https://kdocs.cn/l/cvt7gu4IJOY3</a></p>
+<h4 id="ai提示词："><a href="#ai提示词：" class="headerlink" title="ai提示词："></a>ai提示词：</h4><p>修改提示词模板，填写函数要求在”<strong>编写多维表格函数：</strong>“</p>
+<p>例如：</p>
+<blockquote>
+<p>IF([@在岗状态]&#x3D;”在岗”,CONCAT(“剩余”,[@当月在岗人数]*10-[@在岗分数计算],”分”),””)<br>新增当计算分数为负数时，输出为“分数池不足（-xx 分）”</p>
+</blockquote>
+<p><strong>提示词：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">编写多维表格函数：</span><br><span class="line"></span><br><span class="line">用原字段表示公式，例如[@可分配分数]，不要替代。</span><br><span class="line">[@可分配分数]表示该行字段，[可分配分数]表示整列字段</span><br><span class="line">只能用以下函数类型：</span><br><span class="line"></span><br><span class="line">TODAY,MONTH,DATEDIF,DAY,HOUR,MINUTE,NOW,SECOND,WEEKDAY,WEEKDAY,WEEKNUM,WORKDAY,YEAR,DATE,DAYS360,NETWORKDAYS,NETWORKDAYS.PLUS,EDATE,EOMONTH</span><br><span class="line">OR,IF,AND,ISBLANK,NOT,IFERROR,IFS</span><br><span class="line">MID,CONCAT,LEFT,FIND,LEN,REPLACE,RIGHT,SEARCH,SUBSTITUTE,TRIM,CHAR,CONCATENATE,T,UPPER,TEXT,NUMBERSTRING,MIDB,FINDB,SEARCHB,FILTER,UNIQUE,SORT,SORTBY</span><br><span class="line">AVERAGE,AVERAGEIF,AVERAGEIFS,COUNTBLANK,COUNTIFS,LARGE,MAXIFS,SMALL,SUM,SUMIFS,RANK,ROUNDDOWN,ROUND,ROUNDUP,MIN,INT,MOD,MAX,EVEN,ODD,EXP,LOG,POWER,SQRT,VALUE,XLOOKUP</span><br></pre></td></tr></table></figure>
+
+<h3 id="Javascript脚本"><a href="#Javascript脚本" class="headerlink" title="Javascript脚本"></a>Javascript脚本</h3><h4 id="新版api："><a href="#新版api：" class="headerlink" title="新版api："></a>新版api：</h4><p>官方文档：</p>
+<p>api字段：<a target="_blank" rel="noopener" href="https://open.wps.cn/documents/app-integration-dev/guide/dbsheet/Api/Sheet.html">https://open.wps.cn/documents/app-integration-dev/guide/dbsheet/Api/Sheet.html</a></p>
+<p>api文档：<a target="_blank" rel="noopener" href="https://open.wps.cn/documents/app-integration-dev/guide/dbsheet/Api/api-instro.html">https://open.wps.cn/documents/app-integration-dev/guide/dbsheet/Api/api-instro.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://airsheet.wps.cn/docs/apiV2/overview.html">https://airsheet.wps.cn/docs/apiV2/overview.html</a> (不是很全)</p>
+<h4 id="老版api（很难用，别用）"><a href="#老版api（很难用，别用）" class="headerlink" title="老版api（很难用，别用）"></a>老版api（很难用，别用）</h4><p>官方文档：</p>
+<p><a target="_blank" rel="noopener" href="https://airsheet.wps.cn/docs/api/dbsheet/Field.html">https://airsheet.wps.cn/docs/api/dbsheet/Field.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://open.wps.cn/documents/app-integration-dev/guide/dbsheet/AirScript/AirScript-build-in.html">https://open.wps.cn/documents/app-integration-dev/guide/dbsheet/AirScript/AirScript-build-in.html</a></p>
+<p>老版api教程</p>
+<p>b站(部分付费)：<a target="_blank" rel="noopener" href="https://www.bilibili.com/cheese/play/ep1212770">https://www.bilibili.com/cheese/play/ep1212770</a></p>
+<p>小红书：<a target="_blank" rel="noopener" href="https://www.xiaohongshu.com/user/profile/5f20562a000000000101c2c0?xsec_token=ABfsbU0Nv267F51svgj85KNNALVBHcuZbgn7mVsDBvRPA=&xsec_source=pc_note">https://www.xiaohongshu.com/user/profile/5f20562a000000000101c2c0?xsec_token=ABfsbU0Nv267F51svgj85KNNALVBHcuZbgn7mVsDBvRPA=&amp;xsec_source=pc_note</a></p>
+<h4 id="ai提示词：-1"><a href="#ai提示词：-1" class="headerlink" title="ai提示词："></a>ai提示词：</h4><p>由于大部分api都是wps私有的，不像公式那样具有通用性，提示词字典目前还在编写中</p>
+<p>目前可采用借鉴参考写法，例如：</p>
+<blockquote>
+<p>修改函数，从”@数据表”字段获取数据表信息，”@视图”字段获取视图信息<br>执行const res&#x3D;Application.Sheets(“@数据表”).Views(“@视图”).ViewShare.SetEnable(true)后<br>获取Application.Sheets(“@数据表”).Views(“@视图”).ViewShare.ShareUrl，修改前缀后填入到”@链接”字段</p>
+</blockquote>
+<blockquote>
+<p>参考以下两个函数，编写查询数据表所有sheets id和views id<br>在代码前添加本次修改说明</p>
+<ul>
+<li>修改说明 :</li>
+</ul>
+<p>*&#x2F;</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">参考以下两个函数，编写查询数据表所有sheets id和views id</span><br><span class="line">在代码前添加本次修改说明</span><br><span class="line"> * 修改说明 :</span><br><span class="line"></span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sheet id查询：</span><br><span class="line">function main() &#123;</span><br><span class="line">  if (Application.Sheets &amp;&amp; typeof Application.Sheets.Count === &#x27;number&#x27;) &#123;</span><br><span class="line">    const totalSheets = Application.Sheets.Count;</span><br><span class="line">    console.log(`Found $&#123;totalSheets&#125; sheets.`);</span><br><span class="line"></span><br><span class="line">    for (let i = 1; i &lt;= totalSheets; i++) &#123;</span><br><span class="line">      const sheet = Application.Sheets(i);</span><br><span class="line">      console.log(`Sheet $&#123;i&#125;: Name = &quot;$&#123;sheet.Name&#125;&quot;, ID = &quot;$&#123;sheet.Id&#125;&quot;`);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main();</span><br><span class="line"></span><br><span class="line">视图id查询：</span><br><span class="line">function main() &#123;</span><br><span class="line">  // 获取指定工作表的Views对象</span><br><span class="line">  const views = Application.Sheets(&quot;张&quot;).Views;</span><br><span class="line"></span><br><span class="line">  // 获取视图的总数</span><br><span class="line">  const viewsCount = views.Count; // 或者可能是 .count，具体请参考WPS官方文档</span><br><span class="line"></span><br><span class="line">  console.log(&quot;该工作表的视图总数: &quot; + viewsCount);</span><br><span class="line"></span><br><span class="line">  // 遍历所有视图</span><br><span class="line">  for (let i = 1; i &lt;= viewsCount; i++) &#123; // 注意：在VBA和类似的API中，集合的索引通常从1开始</span><br><span class="line">    const view = views.Item(i); // 或者使用 views(i)</span><br><span class="line">    console.log(&quot;视图 &quot; + i + &quot; 的名称是: &quot; + view.Name);</span><br><span class="line">    console.log(&quot;视图 &quot; + i + &quot; 的id是: &quot; + view.Id);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h4 id="通用公式："><a href="#通用公式：" class="headerlink" title="通用公式："></a>通用公式：</h4><h5 id="数据表及视图ID查询："><a href="#数据表及视图ID查询：" class="headerlink" title="数据表及视图ID查询："></a>数据表及视图ID查询：</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">printAllSheetAndViewsIdsFinal</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 步骤 1: 在尝试任何操作前，先对最顶层的 Application.Sheets 对象做最终检查。</span></span><br><span class="line">  <span class="keyword">if</span> (!<span class="title class_">Application</span> || !<span class="title class_">Application</span>.<span class="property">Sheets</span> || <span class="keyword">typeof</span> <span class="title class_">Application</span>.<span class="property">Sheets</span>.<span class="property">Count</span> === <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;致命错误：无法访问 Application.Sheets 对象。脚本无法执行。&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>; <span class="comment">// 如果连工作表列表都拿不到，直接退出。</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> totalSheets = <span class="title class_">Application</span>.<span class="property">Sheets</span>.<span class="property">Count</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`系统报告发现 <span class="subst">$&#123;totalSheets&#125;</span> 个工作表。开始详细遍历...`</span>);</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;==========================================&#x27;</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 步骤 2: 遍历所有工作表</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= totalSheets; i++) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="comment">// **将所有可能出错的操作都放在 try 块中**</span></span><br><span class="line">      <span class="keyword">const</span> sheet = <span class="title class_">Application</span>.<span class="title class_">Sheets</span>(i);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 仍然保留对 sheet 对象的检查，这是一种好习惯</span></span><br><span class="line">      <span class="keyword">if</span> (!sheet) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`警告：索引为 <span class="subst">$&#123;i&#125;</span> 的工作表对象无效或为空，已跳过。`</span>);</span><br><span class="line">        <span class="comment">// 使用 continue 跳出本次循环，进入下一次</span></span><br><span class="line">        <span class="keyword">continue</span>; </span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 打印工作表信息，这步也可能出错（例如 sheet.Name 不存在）</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`工作表 <span class="subst">$&#123;i&#125;</span>: 名称 = &quot;<span class="subst">$&#123;sheet.Name&#125;</span>&quot;, ID = &quot;<span class="subst">$&#123;sheet.Id&#125;</span>&quot;`</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 检查并处理视图</span></span><br><span class="line">      <span class="keyword">if</span> (sheet.<span class="property">Views</span> &amp;&amp; <span class="keyword">typeof</span> sheet.<span class="property">Views</span>.<span class="property">Count</span> !== <span class="string">&#x27;undefined&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> viewsCount = sheet.<span class="property">Views</span>.<span class="property">Count</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (viewsCount &gt; <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt;= viewsCount; j++) &#123;</span><br><span class="line">            <span class="keyword">const</span> view = sheet.<span class="property">Views</span>.<span class="title class_">Item</span>(j);</span><br><span class="line">            <span class="keyword">if</span> (view) &#123;</span><br><span class="line">              <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  └- 视图 <span class="subst">$&#123;j&#125;</span>: 名称 = &quot;<span class="subst">$&#123;view.Name&#125;</span>&quot;, ID = &quot;<span class="subst">$&#123;view.Id&#125;</span>&quot;`</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  └- 警告：工作表 &quot;<span class="subst">$&#123;sheet.Name&#125;</span>&quot; 下索引为 <span class="subst">$&#123;j&#125;</span> 的视图无法获取。`</span>);</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  └- (此工作表下没有视图)`</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  └- (无法读取此工作表的视图信息)`</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">      <span class="comment">// **步骤 3: 捕获在 try 块中发生的任何错误**</span></span><br><span class="line">      <span class="comment">// 如果上面的任何一步（获取sheet、获取Name、获取Views等）失败，代码会立即跳转到这里</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`!!! 处理索引为 <span class="subst">$&#123;i&#125;</span> 的工作表时发生意外错误，已强制跳过。`</span>);</span><br><span class="line">      <span class="comment">// 打印具体的错误信息，有助于调试</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`  └- 错误详情: <span class="subst">$&#123;error.message&#125;</span>`</span>);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">      <span class="comment">// 步骤 4: 无论是否出错，都打印分隔线，保持格式整洁</span></span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;------------------------------------------&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;所有工作表遍历完成。&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// --- 执行函数 ---</span></span><br><span class="line"><span class="title function_">printAllSheetAndViewsIdsFinal</span>();</span><br></pre></td></tr></table></figure>
+
+<h5 id="数据表-amp-视图跳转链接生成"><a href="#数据表-amp-视图跳转链接生成" class="headerlink" title="数据表&amp;视图跳转链接生成"></a>数据表&amp;视图跳转链接生成</h5><p>使用要求：</p>
+<ol>
+<li>需要有一个与函数字段名对应的基础的数据表：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>数据表</th>
+<th>视图</th>
+<th>链接</th>
+<th>生成状态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>“视图”和”生成状态”可以为空，无视图信息，默认获取第一视图链接</p>
+<p>默认采用数据表ID索引方式(不受数据表改名影响)</p>
+<p>若需采用数据表名称索引方式请将以下代码”.ItemById”部分删除<br>const entranceSheet &#x3D; Application.Sheets.ItemById(entranceSheetId);</p>
+<ol start="2">
+<li>配置信息，按需修改</li>
+</ol>
+<p>  &#x2F;&#x2F; — 配置区域 —<br>  const entranceSheetId &#x3D; “1”; &#x2F;&#x2F; “画册入口”工作表的ID<br>  const sheetSourceFieldName &#x3D; “@数据表”; &#x2F;&#x2F; 存储数据表名称的字段<br>  const viewSourceFieldName &#x3D; “@视图”;   &#x2F;&#x2F; 存储视图名称的字段<br>  const targetFieldName &#x3D; “@链接”;   &#x2F;&#x2F; 需要写入分享链接的字段<br>  const statusFieldName &#x3D; “@生成状态”; &#x2F;&#x2F; 用于记录成功或失败状态的字段<br>  const newDomain &#x3D; “<a target="_blank" rel="noopener" href="http://10.150.153.153/weboffice/office/">http://10.150.153.153/weboffice/office/</a>“; &#x2F;&#x2F; 新的目标域名<br>  const oldDomain &#x3D; “<a target="_blank" rel="noopener" href="http://localhost/office/">http://localhost/office/</a>“; &#x2F;&#x2F; 需要被替换的旧域名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ----------------------------------------------------------------</span></span><br><span class="line"><span class="comment"> * 修改说明 :</span></span><br><span class="line"><span class="comment"> * 1. 新增辅助函数 `tryWriteStatus`：</span></span><br><span class="line"><span class="comment"> *    - 此函数专门用于写入状态信息到 &quot;@生成状态&quot; 字段。</span></span><br><span class="line"><span class="comment"> *    - 如果该字段不存在或写入时发生任何错误，它会捕获异常，确保整个脚本不会因此中断。</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 2. 调整主逻辑 `main`：</span></span><br><span class="line"><span class="comment"> *    - 字段容错：通过 try-catch 块安全地读取 &quot;@视图&quot; 字段的值。如果该字段不存在，脚本会继续执行而不会报错。</span></span><br><span class="line"><span class="comment"> *    - 默认视图：当 &quot;@视图&quot; 字段为空或不存在时，脚本将自动使用目标数据表的第一个视图作为默认值。</span></span><br><span class="line"><span class="comment"> *    - 状态写入：所有对 &quot;@生成状态&quot; 字段的写入操作都已替换为调用 `tryWriteStatus` 函数，以实现错误隔离。</span></span><br><span class="line"><span class="comment"> *    - 日志优化：更新了控制台输出的日志信息，使其在各种情况下都更清晰。</span></span><br><span class="line"><span class="comment"> * ----------------------------------------------------------------</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 辅助函数：尝试写入状态到指定单元格。</span></span><br><span class="line"><span class="comment"> * 如果字段不存在或写入出错，该函数会捕获错误，防止脚本中断，并在控制台打印提示。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">object</span>&#125; <span class="variable">entranceSheet</span> - &quot;画册入口&quot;工作表对象。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">recordIndex</span> - 当前处理的记录行号 (从1开始)。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">fieldName</span> - 要写入的字段名称 (例如 &quot;@生成状态&quot;)。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">string</span>&#125; <span class="variable">message</span> - 要写入的状态信息。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">tryWriteStatus</span>(<span class="params">entranceSheet, recordIndex, fieldName, message</span>) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 尝试获取单元格并写入值</span></span><br><span class="line">    <span class="keyword">const</span> statusCell = entranceSheet.<span class="title class_">RecordRange</span>(recordIndex, fieldName);</span><br><span class="line">    <span class="keyword">if</span> (statusCell) &#123;</span><br><span class="line">      statusCell.<span class="property">Value</span> = message;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">// 如果字段不存在或发生其他错误，在控制台打印一个提示信息，然后继续执行</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`(提示) 无法向字段 &quot;<span class="subst">$&#123;fieldName&#125;</span>&quot; 写入状态。错误: <span class="subst">$&#123;e.message&#125;</span>。脚本将继续运行。`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 主函数：用于在“画册入口”表中，根据指定的“@数据表”和“@视图”字段，生成并回填分享链接。</span></span><br><span class="line"><span class="comment"> * 新增功能：当代码出现找不到@数据表或@视图时，在&quot;@生成状态&quot;中写入该行失败原因。</span></span><br><span class="line"><span class="comment"> * 修改功能：支持&quot;@视图&quot;和&quot;@生成状态&quot;字段不存在的情况；&quot;@视图&quot;为空时使用默认视图；写入状态失败不影响运行。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">main</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// --- 配置区域 ---</span></span><br><span class="line">  <span class="keyword">const</span> entranceSheetId = <span class="string">&quot;1&quot;</span>; <span class="comment">// &quot;画册入口&quot;工作表的ID</span></span><br><span class="line">  <span class="keyword">const</span> sheetSourceFieldName = <span class="string">&quot;@数据表&quot;</span>; <span class="comment">// 存储数据表名称的字段</span></span><br><span class="line">  <span class="keyword">const</span> viewSourceFieldName = <span class="string">&quot;@视图&quot;</span>;   <span class="comment">// 存储视图名称的字段</span></span><br><span class="line">  <span class="keyword">const</span> targetFieldName = <span class="string">&quot;@链接&quot;</span>;   <span class="comment">// 需要写入分享链接的字段</span></span><br><span class="line">  <span class="keyword">const</span> statusFieldName = <span class="string">&quot;@生成状态&quot;</span>; <span class="comment">// 用于记录成功或失败状态的字段</span></span><br><span class="line">  <span class="keyword">const</span> newDomain = <span class="string">&quot;http://10.150.153.153/weboffice/office/&quot;</span>; <span class="comment">// 新的目标域名</span></span><br><span class="line">  <span class="keyword">const</span> oldDomain = <span class="string">&quot;http://localhost/office/&quot;</span>; <span class="comment">// 需要被替换的旧域名</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// --- 脚本核心逻辑 ---</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 1. 获取“画册入口”工作表对象</span></span><br><span class="line">  <span class="keyword">const</span> entranceSheet = <span class="title class_">Application</span>.<span class="property">Sheets</span>.<span class="title class_">ItemById</span>(entranceSheetId);</span><br><span class="line">  <span class="keyword">if</span> (!entranceSheet) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`错误：无法找到ID为 &quot;<span class="subst">$&#123;entranceSheetId&#125;</span>&quot; 的工作表。`</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> recordCount = entranceSheet.<span class="property">RecordRange</span>.<span class="property">Count</span>;</span><br><span class="line">  <span class="keyword">if</span> (recordCount === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;“画册入口”表中没有记录，脚本执行完毕。&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`开始处理“画册入口”表中的 <span class="subst">$&#123;recordCount&#125;</span> 条记录...`</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2. 遍历“画册入口”中的每一条记录</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;= recordCount; i++) &#123;</span><br><span class="line">    <span class="comment">// 从 &quot;@数据表&quot; 字段获取名称</span></span><br><span class="line">    <span class="keyword">const</span> sheetNameToFind = entranceSheet.<span class="title class_">RecordRange</span>(i, sheetSourceFieldName).<span class="property">Value</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 检查 &quot;@数据表&quot; 字段是否有效，如果无效则跳过</span></span><br><span class="line">    <span class="keyword">if</span> (!sheetNameToFind || <span class="title class_">String</span>(sheetNameToFind).<span class="title function_">trim</span>() === <span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> skipMessage = <span class="string">&quot;已跳过：“@数据表”字段为空。&quot;</span>;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`跳过第 <span class="subst">$&#123;i&#125;</span> 行，因为“@数据表”字段为空。`</span>);</span><br><span class="line">        <span class="title function_">tryWriteStatus</span>(entranceSheet, i, statusFieldName, skipMessage);</span><br><span class="line">        <span class="keyword">continue</span>; <span class="comment">// 继续处理下一条记录</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="comment">// 安全地尝试获取 &quot;@视图&quot; 字段的值</span></span><br><span class="line">        <span class="keyword">let</span> viewNameToFind = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 如果@视图字段存在，则读取其值</span></span><br><span class="line">            viewNameToFind = entranceSheet.<span class="title class_">RecordRange</span>(i, viewSourceFieldName).<span class="property">Value</span>;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">            <span class="comment">// 如果@视图字段不存在，则忽略错误，viewNameToFind将保持为null</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`(提示) 第 <span class="subst">$&#123;i&#125;</span> 行：字段 &quot;<span class="subst">$&#123;viewSourceFieldName&#125;</span>&quot; 不存在，将使用默认视图。`</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3. 获取目标数据表对象</span></span><br><span class="line">        <span class="keyword">const</span> targetSheet = <span class="title class_">Application</span>.<span class="title class_">Sheets</span>(sheetNameToFind);</span><br><span class="line">        <span class="keyword">if</span> (!targetSheet) &#123;</span><br><span class="line">            <span class="keyword">const</span> errorMessage = <span class="string">`失败：找不到名为 [<span class="subst">$&#123;sheetNameToFind&#125;</span>] 的数据表。`</span>;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`处理第 <span class="subst">$&#123;i&#125;</span> 行时出现问题：<span class="subst">$&#123;errorMessage&#125;</span>`</span>);</span><br><span class="line">            <span class="title function_">tryWriteStatus</span>(entranceSheet, i, statusFieldName, errorMessage);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 4. 获取目标视图对象</span></span><br><span class="line">        <span class="keyword">let</span> targetView = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">let</span> viewIdentifier = <span class="string">&quot;&quot;</span>; <span class="comment">// 用于日志和错误消息</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (viewNameToFind &amp;&amp; <span class="title class_">String</span>(viewNameToFind).<span class="title function_">trim</span>() !== <span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">            <span class="comment">// 如果提供了视图名称，则按名称查找</span></span><br><span class="line">            viewIdentifier = <span class="string">`视图 [<span class="subst">$&#123;viewNameToFind&#125;</span>]`</span>;</span><br><span class="line">            targetView = targetSheet.<span class="title class_">Views</span>(viewNameToFind);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果视图名称为空或字段不存在，则使用第一个视图作为默认值</span></span><br><span class="line">            viewIdentifier = <span class="string">&quot;默认（第一个）视图&quot;</span>;</span><br><span class="line">            <span class="keyword">if</span> (targetSheet.<span class="property">Views</span>.<span class="property">Count</span> &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                targetView = targetSheet.<span class="property">Views</span>.<span class="title class_">Item</span>(<span class="number">1</span>); <span class="comment">// 假设Item(1)获取第一个视图</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 5. 如果成功获取到视图，则继续处理</span></span><br><span class="line">        <span class="keyword">if</span> (targetView) &#123;</span><br><span class="line">          <span class="comment">// 启用该视图的分享</span></span><br><span class="line">          targetView.<span class="property">ViewShare</span>.<span class="title class_">SetEnable</span>(<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">          <span class="comment">// 获取分享URL</span></span><br><span class="line">          <span class="keyword">const</span> originalUrl = targetView.<span class="property">ViewShare</span>.<span class="property">ShareUrl</span>;</span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (originalUrl) &#123;</span><br><span class="line">            <span class="comment">// 修改 URL 域名</span></span><br><span class="line">            <span class="keyword">const</span> newUrl = originalUrl.<span class="title function_">replace</span>(oldDomain, newDomain);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 按照指定格式写入到 &quot;@链接&quot; 字段</span></span><br><span class="line">            entranceSheet.<span class="title class_">RecordRange</span>(i, targetFieldName).<span class="property">Value</span> = <span class="title class_">Application</span>.<span class="title class_">DBCellValue</span>(&#123;</span><br><span class="line">              <span class="attr">address</span>: newUrl,</span><br><span class="line">              <span class="attr">display</span>: <span class="string">&quot;点击前往&quot;</span></span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 写入成功状态</span></span><br><span class="line">            <span class="keyword">const</span> successMessage = <span class="string">`为数据表 [<span class="subst">$&#123;sheetNameToFind&#125;</span>] 的<span class="subst">$&#123;viewIdentifier&#125;</span>生成链接成功。`</span>;</span><br><span class="line">            <span class="title function_">tryWriteStatus</span>(entranceSheet, i, statusFieldName, <span class="string">&quot;生成成功&quot;</span>);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`成功处理第 <span class="subst">$&#123;i&#125;</span> 行：<span class="subst">$&#123;successMessage&#125;</span>`</span>);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             <span class="keyword">const</span> warningMessage = <span class="string">`警告：无法为数据表 [<span class="subst">$&#123;sheetNameToFind&#125;</span>] 的<span class="subst">$&#123;viewIdentifier&#125;</span>获取 ShareUrl。`</span>;</span><br><span class="line">             <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`在第 <span class="subst">$&#123;i&#125;</span> 行，<span class="subst">$&#123;warningMessage&#125;</span>`</span>);</span><br><span class="line">             <span class="title function_">tryWriteStatus</span>(entranceSheet, i, statusFieldName, warningMessage);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           <span class="keyword">const</span> warningMessage = <span class="string">`失败：在数据表 [<span class="subst">$&#123;sheetNameToFind&#125;</span>] 中未找到<span class="subst">$&#123;viewIdentifier&#125;</span>。`</span>;</span><br><span class="line">           <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`在第 <span class="subst">$&#123;i&#125;</span> 行，<span class="subst">$&#123;warningMessage&#125;</span>`</span>);</span><br><span class="line">           <span class="title function_">tryWriteStatus</span>(entranceSheet, i, statusFieldName, warningMessage);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">       <span class="comment">// 捕获处理单行记录时发生的任何意外错误</span></span><br><span class="line">       <span class="keyword">const</span> errorMessage = <span class="string">`错误：处理第 <span class="subst">$&#123;i&#125;</span> 行时发生意外：<span class="subst">$&#123;error.message&#125;</span>`</span>;</span><br><span class="line">       <span class="variable language_">console</span>.<span class="title function_">log</span>(errorMessage);</span><br><span class="line">       <span class="title function_">tryWriteStatus</span>(entranceSheet, i, statusFieldName, <span class="string">`错误：<span class="subst">$&#123;error.message&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;脚本执行完成。&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 执行主函数</span></span><br><span class="line"><span class="title function_">main</span>();</span><br></pre></td></tr></table></figure>
+
+
+
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2024/10/18/ai/">AI项目部署</a></div></section></div>
+
+
+
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">saevio</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E8%A1%A8%E5%85%AC%E5%BC%8F%E6%A1%88%E4%BE%8B%E5%85%B1%E4%BA%AB%E8%A1%A8%EF%BC%9A"><span class="toc-text">多维表公式案例共享表：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ai%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9A"><span class="toc-text">ai提示词：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Javascript%E8%84%9A%E6%9C%AC"><span class="toc-text">Javascript脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E7%89%88api%EF%BC%9A"><span class="toc-text">新版api：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%80%81%E7%89%88api%EF%BC%88%E5%BE%88%E9%9A%BE%E7%94%A8%EF%BC%8C%E5%88%AB%E7%94%A8%EF%BC%89"><span class="toc-text">老版api（很难用，别用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ai%E6%8F%90%E7%A4%BA%E8%AF%8D%EF%BC%9A-1"><span class="toc-text">ai提示词：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="toc-text">通用公式：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E5%8F%8A%E8%A7%86%E5%9B%BEID%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="toc-text">数据表及视图ID查询：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8-amp-%E8%A7%86%E5%9B%BE%E8%B7%B3%E8%BD%AC%E9%93%BE%E6%8E%A5%E7%94%9F%E6%88%90"><span class="toc-text">数据表&amp;视图跳转链接生成</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+
+</div></body></html>
