@@ -20,16 +20,16 @@
   <title>关于 - saevio</title>
 
   
-    <meta name="description" content="本文总访问量:    加载中...    次    document.addEventListener(&#39;DOMContentLoaded&#39;, function() {   const countElement &#x3D; document.getElementById(&#39;page-visitor-count&#39;);      if (countElement) {     &#x2F;&#x2F; 1. 构建指向您C">
+    <meta name="description" content="加载中…    (function() {     &#x2F;&#x2F; 获取当前页面路径（Hexo博客的路径形式）     const pagePath &#x3D; location.pathname;      &#x2F;&#x2F; 构建请求 URL，传递 page 参数和 referrer     const workerUrl &#x3D; &#39;https:&#x2F;&#x2F;blog-count.1127499339m.workers.dev&#x2F;&#39;;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://saevio.github.io/about/">
 <meta property="og:site_name" content="saevio">
-<meta property="og:description" content="本文总访问量:    加载中...    次    document.addEventListener(&#39;DOMContentLoaded&#39;, function() {   const countElement &#x3D; document.getElementById(&#39;page-visitor-count&#39;);      if (countElement) {     &#x2F;&#x2F; 1. 构建指向您C">
+<meta property="og:description" content="加载中…    (function() {     &#x2F;&#x2F; 获取当前页面路径（Hexo博客的路径形式）     const pagePath &#x3D; location.pathname;      &#x2F;&#x2F; 构建请求 URL，传递 page 参数和 referrer     const workerUrl &#x3D; &#39;https:&#x2F;&#x2F;blog-count.1127499339m.workers.dev&#x2F;&#39;;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
-<meta property="article:published_time" content="2025-08-14T02:57:01.186Z">
-<meta property="article:modified_time" content="2025-08-14T02:57:01.186Z">
+<meta property="article:published_time" content="2025-08-14T03:13:17.791Z">
+<meta property="article:modified_time" content="2025-08-14T03:13:17.791Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://saevio.github.io/about/","author":{"@type":"Person","name":"saevio","sameAs":[],"image":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png"},"name":"关于","description":"\n\n  本文总访问量: \n  加载中...\n   次\n\n\n\ndocument.addEventListener('DOMContentLoaded', function() {\n  const countElement = document.getElementById('page-visitor-count');\n  \n  if (countElement) {\n    // 1. 构建指...","url":"https://saevio.github.io/about/","keywords":"博客"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://saevio.github.io/about/","author":{"@type":"Person","name":"saevio","sameAs":[],"image":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png"},"name":"关于","description":"加载中…\n\n  (function() {\n    // 获取当前页面路径（Hexo博客的路径形式）\n    const pagePath = location.pathname;\n\n    // 构建请求 URL，传递 page 参数和 referrer\n    const workerUrl = 'https://blog-count.1127499339m.workers.dev/';...","url":"https://saevio.github.io/about/","keywords":"博客"}</script>
   
 </head>
 <body>
@@ -86,7 +86,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/about/">关于</a>
   </div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-14T02:57:01.186Z">2025-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-14T02:57:01.186Z">2025-08-14</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-14T03:13:17.791Z">2025-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-14T03:13:17.791Z">2025-08-14</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -97,68 +97,33 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><!-- Visitor Counter - Start -->
-<div class="visitor-stats" style="text-align: center; color: #888; font-size: 0.9em; margin-top: 2rem;">
-  <span>本文总访问量: </span>
-  <span id="page-visitor-count">加载中...</span>
-  <span> 次</span>
-</div>
-
+  </div><article class="md-text content"><p><span id="page-views">加载中…</span></p>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const countElement = document.getElementById('page-visitor-count');
-  
-  if (countElement) {
-    // 1. 构建指向您Cloudflare Worker的URL
-    //    - 'page'参数: 使用页面路径作为唯一标识，确保统计到每一篇文章
-    //    - 'referrer'参数: 传递来源信息，用于统计跳转链接
-    const workerUrl = `https://blog-count.1127499339m.workers.dev/?page=${encodeURIComponent(window.location.pathname)}&referrer=${encodeURIComponent(document.referrer)}`;
+  (function() {
+    // 获取当前页面路径（Hexo博客的路径形式）
+    const pagePath = location.pathname;
 
-    // 2. 使用fetch API调用Worker
-    fetch(workerUrl)
-      .then(response => {
-        // 确保请求成功
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
+    // 构建请求 URL，传递 page 参数和 referrer
+    const workerUrl = 'https://blog-count.1127499339m.workers.dev/';
+    const referrer = document.referrer || 'direct';
+    const url = new URL(workerUrl);
+    url.searchParams.set('page', pagePath);
+    url.searchParams.set('referrer', referrer);
+
+    // 请求 Worker 获取访问量
+    fetch(url)
+      .then(response => response.json())
       .then(data => {
-        // 3. 将返回的访问次数更新到页面上
-        if (data && typeof data.count !== 'undefined') {
-          countElement.textContent = data.count;
-        } else {
-          // 如果没有有效数据，显示为1（本次访问）
-          countElement.textContent = '1'; 
-        }
+        const count = data.count || 0;
+        document.getElementById('page-views').textContent = `阅读量: ${count}`;
       })
-      .catch(error => {
-        // 4. 如果发生错误，在控制台打印错误信息，并在页面上显示提示
-        console.error('获取访问次数失败:', error);
-        countElement.textContent = '获取失败';
+      .catch(err => {
+        console.error('获取阅读量失败', err);
+        document.getElementById('page-views').textContent = '阅读量: 暂无';
       });
-  }
-});
-</script>
-<!-- Visitor Counter - End -->
-
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    fetch('https://blog-count.1127499339m.workers.dev/', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        hostname: window.location.hostname,
-        referrer: document.referrer
-      })
-    }).catch(error => console.error('Error recording visit:', error));
-  });
+  })();
 </script>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <p>建站初衷是将自己学到的技术、知识或踩过的坑记录下来，从而加深印象，方便以后查看。</p>
 <p>同时，也会将看到的好文章进行转载，避免后面再次使用时到处查找。</p>
