@@ -28,8 +28,8 @@
 <meta property="og:description" content="本页访问量：加载中...    (async () &#x3D;&gt; {   try {     &#x2F;&#x2F; 获取当前页面路径（Hexo 中可以使用 window.location.pathname）     const pagePath &#x3D; window.location.pathname;       &#x2F;&#x2F; 当前页面的来源，直接使用 document.referrer，如果没有来源，则为 direct">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
-<meta property="article:published_time" content="2025-08-14T07:32:51.977Z">
-<meta property="article:modified_time" content="2025-08-14T07:32:51.977Z">
+<meta property="article:published_time" content="2025-08-14T07:33:52.703Z">
+<meta property="article:modified_time" content="2025-08-14T07:33:52.703Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -86,7 +86,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/about/">关于</a>
   </div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-14T07:32:51.977Z">2025-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-14T07:32:51.977Z">2025-08-14</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-14T07:33:52.703Z">2025-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-14T07:33:52.703Z">2025-08-14</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -137,34 +137,6 @@
   本页访问量：<span id="view-count">加载中...</span>
 </div>
 
-<script>
-(async () => {
-  try {
-    // 获取当前页面路径（Hexo 中可以使用 window.location.pathname）
-    const pagePath = /;
-
-
-    // 当前页面的来源，直接使用 document.referrer，如果没有来源，则为 direct
-    const referrer = document.referrer || 'direct';
-
-    // 请求你的 Cloudflare Worker
-    const response = await fetch(`https://blog-count.1127499339m.workers.dev/?page=${encodeURIComponent(pagePath)}&referrer=${encodeURIComponent(referrer)}`);
-`);
-
-    if (!response.ok) throw new Error('请求失败');
-
-    const data = await response.json();
-
-    // 更新页面上的访问计数
-    const countElem = document.getElementById('view-count');
-    countElem.textContent = data.count;
-  } catch (err) {
-    console.error('访问计数加载失败：', err);
-    const countElem = document.getElementById('view-count');
-    countElem.textContent = '国内网络，无法获取';
-  }
-})();
-</script>
 
 
 <p>建站初衷是将自己学到的技术、知识或踩过的坑记录下来，从而加深印象，方便以后查看。</p>
