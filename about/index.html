@@ -20,16 +20,16 @@
   <title>关于 - saevio</title>
 
   
-    <meta name="description" content="加载中…    (function() {     &#x2F;&#x2F; 获取当前页面路径（Hexo博客的路径形式）     const pagePath &#x3D; location.pathname;      &#x2F;&#x2F; 构建请求 URL，传递 page 参数和 referrer     const workerUrl &#x3D; &#39;https:&#x2F;&#x2F;blog-count.1127499339m.workers.dev&#x2F;&#39;;">
+    <meta name="description" content="本页访问量：加载中...    (async () &#x3D;&gt; {   try {     &#x2F;&#x2F; 获取当前页面路径（Hexo 中可以使用 window.location.pathname）     const pagePath &#x3D; window.location.pathname;      &#x2F;&#x2F; 当前页面的来源，直接使用 document.referrer，如果没有来源，则为 direct">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="https://saevio.github.io/about/">
 <meta property="og:site_name" content="saevio">
-<meta property="og:description" content="加载中…    (function() {     &#x2F;&#x2F; 获取当前页面路径（Hexo博客的路径形式）     const pagePath &#x3D; location.pathname;      &#x2F;&#x2F; 构建请求 URL，传递 page 参数和 referrer     const workerUrl &#x3D; &#39;https:&#x2F;&#x2F;blog-count.1127499339m.workers.dev&#x2F;&#39;;">
+<meta property="og:description" content="本页访问量：加载中...    (async () &#x3D;&gt; {   try {     &#x2F;&#x2F; 获取当前页面路径（Hexo 中可以使用 window.location.pathname）     const pagePath &#x3D; window.location.pathname;      &#x2F;&#x2F; 当前页面的来源，直接使用 document.referrer，如果没有来源，则为 direct">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png">
-<meta property="article:published_time" content="2025-08-14T03:13:17.791Z">
-<meta property="article:modified_time" content="2025-08-14T03:13:17.791Z">
+<meta property="article:published_time" content="2025-08-14T03:15:01.111Z">
+<meta property="article:modified_time" content="2025-08-14T03:15:01.111Z">
 <meta property="article:author" content="saevio">
 <meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary">
@@ -53,7 +53,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://saevio.github.io/about/","author":{"@type":"Person","name":"saevio","sameAs":[],"image":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png"},"name":"关于","description":"加载中…\n\n  (function() {\n    // 获取当前页面路径（Hexo博客的路径形式）\n    const pagePath = location.pathname;\n\n    // 构建请求 URL，传递 page 参数和 referrer\n    const workerUrl = 'https://blog-count.1127499339m.workers.dev/';...","url":"https://saevio.github.io/about/","keywords":"博客"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Website","@id":"https://saevio.github.io/about/","author":{"@type":"Person","name":"saevio","sameAs":[],"image":"https://images.weserv.nl/?url=https://article.biliimg.com/bfs/article/d35ad503e264949ae64da24dfa3fb16866713bff.png"},"name":"关于","description":"\n\n  本页访问量：加载中...\n\n\n\n(async () => {\n  try {\n    // 获取当前页面路径（Hexo 中可以使用 window.location.pathname）\n    const pagePath = window.location.pathname;\n\n    // 当前页面的来源，直接使用 document.referrer，如果没有来源，则为 direc...","url":"https://saevio.github.io/about/","keywords":"博客"}</script>
   
 </head>
 <body>
@@ -86,7 +86,7 @@
   <span class="sep"></span>
   <a class="cap breadcrumb" href="/about/">关于</a>
   </div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-14T03:13:17.791Z">2025-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-14T03:13:17.791Z">2025-08-14</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-14T03:15:01.111Z">2025-08-14</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-14T03:15:01.111Z">2025-08-14</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -97,32 +97,38 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><p><span id="page-views">加载中…</span></p>
+  </div><article class="md-text content"><!-- 页面访问计数器 -->
+<div id="page-view-counter">
+  本页访问量：<span id="view-count">加载中...</span>
+</div>
+
 <script>
-  (function() {
-    // 获取当前页面路径（Hexo博客的路径形式）
-    const pagePath = location.pathname;
+(async () => {
+  try {
+    // 获取当前页面路径（Hexo 中可以使用 window.location.pathname）
+    const pagePath = window.location.pathname;
 
-    // 构建请求 URL，传递 page 参数和 referrer
-    const workerUrl = 'https://blog-count.1127499339m.workers.dev/';
+    // 当前页面的来源，直接使用 document.referrer，如果没有来源，则为 direct
     const referrer = document.referrer || 'direct';
-    const url = new URL(workerUrl);
-    url.searchParams.set('page', pagePath);
-    url.searchParams.set('referrer', referrer);
 
-    // 请求 Worker 获取访问量
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        const count = data.count || 0;
-        document.getElementById('page-views').textContent = `阅读量: ${count}`;
-      })
-      .catch(err => {
-        console.error('获取阅读量失败', err);
-        document.getElementById('page-views').textContent = '阅读量: 暂无';
-      });
-  })();
+    // 请求你的 Cloudflare Worker
+    const response = await fetch(`https://blog-count.1127499339m.workers.dev/?page=${encodeURIComponent(pagePath)}&referrer=${encodeURIComponent(referrer)}`);
+
+    if (!response.ok) throw new Error('请求失败');
+
+    const data = await response.json();
+
+    // 更新页面上的访问计数
+    const countElem = document.getElementById('view-count');
+    countElem.textContent = data.count;
+  } catch (err) {
+    console.error('访问计数加载失败：', err);
+    const countElem = document.getElementById('view-count');
+    countElem.textContent = '无法获取';
+  }
+})();
 </script>
+
 
 
 <p>建站初衷是将自己学到的技术、知识或踩过的坑记录下来，从而加深印象，方便以后查看。</p>
