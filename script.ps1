@@ -2,22 +2,36 @@ Set-StrictMode -Version Latest
 
 function Show-Menu {
     param(
-        [string]$Title = "操作菜单"
+        [string]$Title = "操作菜单",
+        [string]$MenuLevel = "main" # "main", "power", "company"
     )
     Clear-Host
     Write-Host "=================================================="
     Write-Host "                $Title"
     Write-Host "=================================================="
-    Write-Host "[1] 电源模式"
-    Write-Host "    [1] 卓越性能"
-    Write-Host "    [2] 高性能"
-    Write-Host "    [3] 节能"
-    Write-Host "    [4] 平衡"
-    Write-Host "[2] 公司特殊配置"
-    Write-Host "    [1] 自动登录"
-    Write-Host "    [2] 代理设置"
-    Write-Host "--------------------------------------------------"
-    Write-Host "[Q] 退出"
+
+    switch ($MenuLevel) {
+        "main" {
+            Write-Host "[1] 电源模式"
+            Write-Host "[2] 公司特殊配置"
+            Write-Host "--------------------------------------------------"
+            Write-Host "[Q] 退出"
+        }
+        "power" {
+            Write-Host "[1] 卓越性能"
+            Write-Host "[2] 高性能"
+            Write-Host "[3] 节能"
+            Write-Host "[4] 平衡"
+            Write-Host "--------------------------------------------------"
+            Write-Host "[B] 返回主菜单"
+        }
+        "company" {
+            Write-Host "[1] 自动登录"
+            Write-Host "[2] 代理设置"
+            Write-Host "--------------------------------------------------"
+            Write-Host "[B] 返回主菜单"
+        }
+    }
     Write-Host "=================================================="
 }
 
@@ -118,38 +132,44 @@ function Company-Config {
                 Read-Host "按任意键返回主菜单..." | Out-Null
 }
 
+$script:exitScript = $false
+$currentMenu = "main"
 do {
-    Show-Menu
-    $mainChoice = Read-Host "请选择一个主选项 (1, 2, Q)"
-
-    switch ($mainChoice) {
-        "1" {
-            $powerChoice = Read-Host "请选择电源模式 (1-4)"
-            if ($powerChoice -as [int]) {
-                Set-PowerScheme -Choice ([int]$powerChoice)
-            } else {
-                Write-Host "无效输入，请重新选择。"
-    Read-Host "按任意键返回主菜单..." | Out-Null
+    switch ($currentMenu) {
+        "main" {
+            Show-Menu -MenuLevel "main" -Title "主菜单"
+            $choice = Read-Host "请选择一个主选项 (1, 2, Q)"
+            switch ($choice) {
+                "1" { $currentMenu = "power" }
+                "2" { $currentMenu = "company" }
+                "q" { $script:exitScript = $true }
+                "Q" { $script:exitScript = $true }
+                default { Write-Host "无效选择，请重新输入。"; Read-Host "按任意键返回主菜单..." | Out-Null }
             }
         }
-        "2" {
-            $companyChoice = Read-Host "请选择公司特殊配置 (1-2)"
-            if ($companyChoice -as [int]) {
-                Company-Config -Choice ([int]$companyChoice)
-            } else {
-                Write-Host "无效输入，请重新选择。"
-                Read-Host "按任意键返回主菜单..." | Out-Null
+        "power" {
+            Show-Menu -MenuLevel "power" -Title "电源模式"
+            $choice = Read-Host "请选择电源模式 (1-4, B返回)"
+            switch ($choice) {
+                "1" { Set-PowerScheme -Choice 1 }
+                "2" { Set-PowerScheme -Choice 2 }
+                "3" { Set-PowerScheme -Choice 3 }
+                "4" { Set-PowerScheme -Choice 4 }
+                "b" { $currentMenu = "main" }
+                "B" { $currentMenu = "main" }
+                default { Write-Host "无效选择，请重新输入。"; Read-Host "按任意键返回..." | Out-Null }
             }
         }
-        "q" {
-            Write-Host "退出脚本。"
-        }
-        "Q" {
-            Write-Host "退出脚本。"
-        }
-        default {
-            Write-Host "无效选择，请重新输入。"
-            Read-Host "按任意键返回主菜单..." | Out-Null
+        "company" {
+            Show-Menu -MenuLevel "company" -Title "公司特殊配置"
+            $choice = Read-Host "请选择公司特殊配置 (1-2, B返回)"
+            switch ($choice) {
+                "1" { Company-Config -Choice 1 }
+                "2" { Company-Config -Choice 2 }
+                "b" { $currentMenu = "main" }
+                "B" { $currentMenu = "main" }
+                default { Write-Host "无效选择，请重新输入。"; Read-Host "按任意键返回..." | Out-Null }
+            }
         }
     }
-} while ($mainChoice -ne "q" -and $mainChoice -ne "Q")
+} while (-not $script:exitScript)
