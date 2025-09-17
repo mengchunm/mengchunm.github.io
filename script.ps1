@@ -1,9 +1,14 @@
 Set-StrictMode -Version Latest
 
+# 全局变量
+$script:scriptDir = "$env:USERPROFILE\LoginScript"
+$script:logFile = "$script:scriptDir\login_script.log"
+$script:taskName = "NetworkLoginScript"
+
 function Show-Menu {
     param(
         [string]$Title = "操作菜单",
-        [string]$MenuLevel = "main" # "main", "power", "company"
+        [string]$MenuLevel = "main" # "main", "power", "company", "autologin"
     )
     Clear-Host
     Write-Host "=================================================="
@@ -26,13 +31,53 @@ function Show-Menu {
             Write-Host "[B] 返回主菜单"
         }
         "company" {
-            Write-Host "[1] 自动登录"
+            Write-Host "[1] 自动登录配置"
             Write-Host "[2] 代理设置"
             Write-Host "--------------------------------------------------"
             Write-Host "[B] 返回主菜单"
         }
+        "autologin" {
+            Write-Host "[1] 安装/更新自动登录脚本"
+            Write-Host "[2] 查看自动登录状态"
+            Write-Host "[3] 启动自动登录"
+            Write-Host "[4] 停止自动登录"
+            Write-Host "[5] 卸载自动登录"
+            Write-Host "[6] 查看日志"
+            Write-Host "--------------------------------------------------"
+            Write-Host "[B] 返回公司配置菜单"
+        }
     }
     Write-Host "=================================================="
+}
+
+function Write-LogMessage {
+    param(
+        [string]$Message,
+        [string]$Level = "INFO"
+    )
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $logMessage = "[$timestamp] [$Level] $Message"
+
+    # 创建日志目录如果不存在
+    if (-not (Test-Path (Split-Path $script:logFile))) {
+        New-Item -ItemType Directory -Path (Split-Path $script:logFile) -Force | Out-Null
+    }
+
+    # 写入日志文件
+    Add-Content -Path $script:logFile -Value $logMessage -ErrorAction SilentlyContinue
+
+    # 根据级别显示不同颜色
+    switch ($Level) {
+        "ERROR" { Write-Host $Message -ForegroundColor Red }
+        "WARNING" { Write-Host $Message -ForegroundColor Yellow }
+        "SUCCESS" { Write-Host $Message -ForegroundColor Green }
+        default { Write-Host $Message }
+    }
+}
+
+function Test-AdminRights {
+    $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+    return $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
 }
 
 function Set-PowerScheme {
@@ -60,12 +105,12 @@ function Set-PowerScheme {
             $schemeName = "平衡"
         }
         default {
-            Write-Host "无效的电源模式选择。"
+            Write-LogMessage "无效的电源模式选择。" -Level "ERROR"
             return
         }
     }
 
-    Write-Host "正在设置 $schemeName..."
+    Write-LogMessage "正在设置 $schemeName..."
 
     # 尝试查找现有方案
     $currentSchemes = powercfg /list
@@ -74,39 +119,685 @@ function Set-PowerScheme {
     if ($existingSchemeLine) {
         # 如果找到同名方案，提取其 GUID 并激活
         $existingGuid = ([regex]::Match($existingSchemeLine, "[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")).Value
-        Write-Host "找到现有电源方案 '$schemeName'，GUID 为：$existingGuid"
-        Write-Host "下一步将执行命令：powercfg -setactive $existingGuid"
+        Write-LogMessage "找到现有电源方案 '$schemeName'，GUID 为：$existingGuid"
         $setActiveResult = powercfg -setactive $existingGuid 2>&1
         if ($LASTEXITCODE -eq 0) {
-            Write-Host "'$schemeName' 已激活。"
+            Write-LogMessage "'$schemeName' 已激活。" -Level "SUCCESS"
         } else {
-            Write-Host "激活 '$schemeName' 失败：$setActiveResult"
+            Write-LogMessage "激活 '$schemeName' 失败：$setActiveResult" -Level "ERROR"
         }
     } else {
         # 如果未找到，则复制源方案并激活新方案
-        Write-Host "未找到电源方案 '$schemeName'，正在创建..."
-            $newSchemeOutput = powercfg -duplicatescheme $sourceGuid 2>&1
-            if ($LASTEXITCODE -eq 0) {
-                # powercfg -duplicatescheme 的输出格式是 "电源方案 GUID: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX  (方案名称)"
-                # 我们需要使用正则表达式提取 GUID。
-                $newSchemeGuid = ([regex]::Match($newSchemeOutput, "[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")).Value
-                if (-not [string]::IsNullOrEmpty($newSchemeGuid)) {
-                    Write-Host "新方案 '$schemeName' 已创建，GUID 为：$newSchemeGuid"
-                    Write-Host "下一步将执行命令：powercfg -setactive $newSchemeGuid"
-                    $setActiveResult = powercfg -setactive $newSchemeGuid 2>&1
-                    if ($LASTEXITCODE -eq 0) {
-                        Write-Host "'$schemeName' ($newSchemeGuid) 已激活。"
-                    } else {
-                        Write-Host "激活新方案 '$schemeName' ($newSchemeGuid) 失败：$setActiveResult"
-                    }
+        Write-LogMessage "未找到电源方案 '$schemeName'，正在创建..."
+        $newSchemeOutput = powercfg -duplicatescheme $sourceGuid 2>&1
+        if ($LASTEXITCODE -eq 0) {
+            $newSchemeGuid = ([regex]::Match($newSchemeOutput, "[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}")).Value
+            if (-not [string]::IsNullOrEmpty($newSchemeGuid)) {
+                Write-LogMessage "新方案 '$schemeName' 已创建，GUID 为：$newSchemeGuid"
+                $setActiveResult = powercfg -setactive $newSchemeGuid 2>&1
+                if ($LASTEXITCODE -eq 0) {
+                    Write-LogMessage "'$schemeName' ($newSchemeGuid) 已激活。" -Level "SUCCESS"
                 } else {
-                    Write-Host "未能从输出中提取 GUID。原始输出：$newSchemeOutput"
+                    Write-LogMessage "激活新方案 '$schemeName' ($newSchemeGuid) 失败：$setActiveResult" -Level "ERROR"
                 }
             } else {
-                Write-Host "创建新方案 '$schemeName' 失败：$newSchemeOutput"
+                Write-LogMessage "未能从输出中提取 GUID。原始输出：$newSchemeOutput" -Level "ERROR"
             }
+        } else {
+            Write-LogMessage "创建新方案 '$schemeName' 失败：$newSchemeOutput" -Level "ERROR"
+        }
     }
-    Read-Host "按任意键返回主菜单..." | Out-Null
+    Read-Host "按任意键返回..." | Out-Null
+}
+
+function Set-ProxySettings {
+    try {
+        Write-LogMessage "正在配置代理设置..."
+        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyEnable -Value 1
+        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyServer -Value "127.0.0.1:7897"
+        Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyOverride -Value "localhost;127.*;192.168.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;airchina.com.*;10.10.101.*;*.airchina.com.cn"
+        Write-LogMessage "代理设置已完成。" -Level "SUCCESS"
+    } catch {
+        Write-LogMessage "代理设置失败：$($_.Exception.Message)" -Level "ERROR"
+    }
+    Read-Host "按任意键返回..." | Out-Null
+}
+
+function Install-AutoLogin {
+    Write-LogMessage "开始安装自动登录脚本..."
+
+    # 验证用户输入
+    $username = ""
+    $password = ""
+
+    while ([string]::IsNullOrWhiteSpace($username)) {
+        $username = Read-Host "请输入用户名"
+        if ([string]::IsNullOrWhiteSpace($username)) {
+            Write-LogMessage "用户名不能为空！" -Level "WARNING"
+        }
+    }
+
+    $securePassword = Read-Host "请输入密码" -AsSecureString
+    $passwordPlainText = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword))
+
+    if ([string]::IsNullOrWhiteSpace($passwordPlainText)) {
+        Write-LogMessage "密码不能为空！" -Level "ERROR"
+        return
+    }
+
+    # Python脚本内容
+    $pythonScript = @'
+import requests, time, json, os
+from urllib.parse import urlparse, urljoin
+from bs4 import BeautifulSoup
+from datetime import datetime
+
+LOGIN_BASE_URL = "http://114.114.114.114:90"
+LOGIN_PATH = "/login"
+USERNAME = "PLACEHOLDER_USERNAME"
+PASSWORD = "PLACEHOLDER_PASSWORD"
+LOG_FILE = "login_script_python.log"
+STATUS_FILE = "login_status.json"
+
+def write_log(message, level="INFO"):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    log_message = f"[{timestamp}] [{level}] {message}"
+    try:
+        with open(LOG_FILE, 'a', encoding='utf-8') as f:
+            f.write(log_message + "\n")
+    except:
+        pass
+    print(log_message)
+
+def update_status(status, last_login=None, error_count=0):
+    try:
+        status_data = {
+            "status": status,
+            "last_check": datetime.now().isoformat(),
+            "last_login": last_login,
+            "error_count": error_count
+        }
+        with open(STATUS_FILE, 'w') as f:
+            json.dump(status_data, f)
+    except:
+        pass
+
+def mc(a):
+    if a == 32: return "+"
+    if (a < 48 and a not in (45, 46)) or (57 < a < 65) or (90 < a < 97 and a != 95) or a > 122:
+        return "%" + "0123456789ABCDEF"[a >> 4] + "0123456789ABCDEF"[a & 15]
+    return chr(a)
+
+def m(a):
+    return (((a&1)<<7)|((a&2)<<5)|((a&4)<<3)|((a&8)<<1)|((a&16)>>1)|((a&32)>>3)|((a&64)>>5)|((a&128)>>7))
+
+def md6(s):
+    return "".join(mc(m(ord(c)) ^ (0x35 ^ i)) for i,c in enumerate(s))
+
+session = requests.Session()
+error_count = 0
+
+import re
+
+def _extract_uri_from_response(response):
+    soup = BeautifulSoup(response.text, 'html.parser')
+    uri_input = soup.find('input', {'id': 'uri', 'name': 'uri'})
+    if uri_input and 'value' in uri_input.attrs:
+        return uri_input['value']
+    parsed_url = urlparse(response.url)
+    uri_from_query = parsed_url.query
+    if uri_from_query:
+        return uri_from_query
+    return None
+
+def get_uri_from_login_page():
+    try:
+        initial_response = session.get(LOGIN_BASE_URL, allow_redirects=True, timeout=10)
+        initial_response.raise_for_status()
+        strategies = [
+            lambda resp: _extract_uri_from_response(resp),
+            lambda resp: _get_uri_from_iframe(resp),
+            lambda resp: _get_uri_from_js_redirect(resp)
+        ]
+        for strategy in strategies:
+            uri = strategy(initial_response)
+            if uri:
+                return uri
+        write_log(f"Cannot find URI parameter. Final URL: {initial_response.url}", "WARNING")
+        return None
+    except requests.exceptions.RequestException as e:
+        write_log(f"Failed to get login page: {e}", "ERROR")
+        return None
+
+def _get_uri_from_iframe(response):
+    soup = BeautifulSoup(response.text, 'html.parser')
+    iframe = soup.find('iframe')
+    if iframe and 'src' in iframe.attrs:
+        iframe_src = iframe['src']
+        full_iframe_url = urljoin(response.url, iframe_src)
+        iframe_response = session.get(full_iframe_url, allow_redirects=True, timeout=10)
+        iframe_response.raise_for_status()
+        return _extract_uri_from_response(iframe_response)
+    return None
+
+def _get_uri_from_js_redirect(response):
+    soup = BeautifulSoup(response.text, 'html.parser')
+    scripts = soup.find_all('script')
+    for script in scripts:
+        if script.string:
+            match = re.search(r'(?:window\.location\.href|document\.location)\s*=\s*["\']([^"\']+)["\']', script.string)
+            if match:
+                redirect_url_relative = match.group(1)
+                full_redirect_url = urljoin(response.url, redirect_url_relative)
+                redirect_response = session.get(full_redirect_url, allow_redirects=True, timeout=10)
+                redirect_response.raise_for_status()
+                return _extract_uri_from_response(redirect_response)
+    return None
+
+def login():
+    global error_count
+    uri = get_uri_from_login_page()
+    if not uri:
+        write_log("Cannot get URI, login failed.", "ERROR")
+        error_count += 1
+        update_status("error", error_count=error_count)
+        return False
+
+    data = {
+        "uri": uri,
+        "terminal": "pc",
+        "login_type": "login",
+        "check_passwd": "1",
+        "username": USERNAME,
+        "password": md6(PASSWORD),
+        "password1": ""
+    }
+
+    try:
+        r = session.post(f"{LOGIN_BASE_URL}{LOGIN_PATH}", data=data, timeout=10)
+        if "login success" in r.text.lower() or "success" in r.text.lower():
+            write_log("Login successful", "SUCCESS")
+            error_count = 0
+            update_status("logged_in", last_login=datetime.now().isoformat(), error_count=0)
+            return True
+        write_log("Login failed - invalid credentials or response", "ERROR")
+        error_count += 1
+        update_status("login_failed", error_count=error_count)
+        return False
+    except Exception as e:
+        write_log(f"Login request failed: {e}", "ERROR")
+        error_count += 1
+        update_status("error", error_count=error_count)
+        return False
+
+def logged_in():
+    try:
+        r = session.get(f"{LOGIN_BASE_URL}{LOGIN_PATH}", timeout=10)
+        is_logged = "login success" in r.text.lower() or "success" in r.text.lower()
+        if is_logged:
+            update_status("logged_in")
+        else:
+            update_status("not_logged_in")
+        return is_logged
+    except:
+        update_status("error")
+        return False
+
+def main():
+    write_log("Starting auto-login script, checking every 30 seconds", "INFO")
+    update_status("running")
+
+    check_count = 0
+    while True:
+        try:
+            check_count += 1
+            if check_count % 10 == 0:  # 每10次检查记录一次
+                write_log(f"Completed {check_count} checks", "INFO")
+
+            if not logged_in():
+                write_log("Not logged in, attempting to login...", "WARNING")
+                if login():
+                    write_log("Login successful, continuing monitoring", "SUCCESS")
+                else:
+                    write_log("Login failed, will retry in next cycle", "WARNING")
+
+            # 如果错误次数过多，增加等待时间
+            if error_count > 10:
+                write_log(f"Too many errors ({error_count}), waiting 60 seconds", "WARNING")
+                time.sleep(60)
+            else:
+                time.sleep(30)
+
+        except KeyboardInterrupt:
+            write_log("Script stopped by user", "INFO")
+            update_status("stopped")
+            break
+        except Exception as e:
+            write_log(f"Unexpected error: {e}", "ERROR")
+            time.sleep(30)
+
+if __name__ == "__main__":
+    main()
+'@
+
+    # 替换占位符
+    $pythonScript = $pythonScript.Replace("PLACEHOLDER_USERNAME", $username)
+    $pythonScript = $pythonScript.Replace("PLACEHOLDER_PASSWORD", $passwordPlainText)
+
+    # 停止现有进程
+    Write-LogMessage "停止现有Python进程..."
+    Stop-AutoLoginProcess
+
+    # 等待进程完全终止
+    Start-Sleep -Seconds 2
+
+    # 创建脚本目录
+    if (-not (Test-Path $script:scriptDir)) {
+        New-Item -ItemType Directory -Path $script:scriptDir -Force | Out-Null
+        Write-LogMessage "创建脚本目录：$script:scriptDir"
+    }
+
+    # 保存Python脚本
+    $scriptPath = "$script:scriptDir\login_script.py"
+    $pythonScript | Out-File -FilePath $scriptPath -Encoding UTF8
+    Write-LogMessage "Python脚本已保存到：$scriptPath"
+
+    # 设置Python环境
+    if (-not (Install-PythonEnvironment)) {
+        Write-LogMessage "Python环境设置失败！" -Level "ERROR"
+        return
+    }
+
+    # 创建批处理文件
+    $batContent = @"
+@echo off
+cd /d "$script:scriptDir"
+if exist "python\pythonw.exe" (
+    python\pythonw.exe login_script.py
+) else if exist "python\python.exe" (
+    python\python.exe login_script.py
+) else (
+    pythonw.exe login_script.py
+)
+"@
+
+    $batPath = "$script:scriptDir\run_login.bat"
+    $batContent | Out-File -FilePath $batPath -Encoding ASCII
+
+    # 创建VBS文件
+    $vbsContent = @"
+CreateObject("Wscript.Shell").Run """$batPath""", 0, False
+"@
+
+    $vbsPath = "$script:scriptDir\run_login_silent.vbs"
+    $vbsContent | Out-File -FilePath $vbsPath -Encoding ASCII
+
+    # 创建计划任务
+    if (Create-ScheduledTask) {
+        Write-LogMessage "自动登录脚本安装完成！" -Level "SUCCESS"
+        Write-LogMessage "脚本位置：$scriptPath"
+
+        # 清理敏感信息
+        $passwordPlainText = $null
+        $securePassword = $null
+
+        # 自动启动
+        Write-Host ""
+        $startNow = Read-Host "是否立即启动自动登录？(Y/N)"
+        if ($startNow -eq 'Y' -or $startNow -eq 'y') {
+            Start-AutoLogin
+        }
+    } else {
+        Write-LogMessage "计划任务创建失败，但脚本已安装。" -Level "WARNING"
+    }
+
+    Read-Host "按任意键返回..." | Out-Null
+}
+
+function Install-PythonEnvironment {
+    $pythonDir = "$script:scriptDir\python"
+
+    # 检查是否已安装Python
+    if (Test-Path "$pythonDir\python.exe") {
+        Write-LogMessage "Python环境已存在，正在验证..."
+
+        # 验证pip和依赖包
+        $pipPath = "$pythonDir\Scripts\pip.exe"
+        if (Test-Path $pipPath) {
+            Write-LogMessage "正在检查并安装依赖包..."
+            & $pipPath install --upgrade requests beautifulsoup4 2>&1 | Out-Null
+            if ($LASTEXITCODE -eq 0) {
+                Write-LogMessage "Python环境验证完成" -Level "SUCCESS"
+                return $true
+            }
+        }
+    }
+
+    Write-LogMessage "正在下载并安装Python环境..."
+    $pythonUrl = "https://www.python.org/ftp/python/3.11.0/python-3.11.0-embed-amd64.zip"
+    $pythonZip = "$script:scriptDir\python.zip"
+
+    try {
+        # 下载Python
+        Write-LogMessage "下载Python (约15MB)..."
+        $webClient = New-Object System.Net.WebClient
+        $webClient.DownloadFile($pythonUrl, $pythonZip)
+
+        # 解压Python
+        Write-LogMessage "解压Python..."
+        Expand-Archive -Path $pythonZip -DestinationPath $pythonDir -Force
+        Remove-Item $pythonZip -ErrorAction SilentlyContinue
+
+        # 修复python._pth文件
+        $pthFile = "$pythonDir\python311._pth"
+        if (Test-Path $pthFile) {
+            $pthContent = Get-Content $pthFile
+            $pthContent = $pthContent -replace '^#import site', 'import site'
+            $pthContent | Set-Content $pthFile
+        }
+
+        # 安装pip
+        Write-LogMessage "安装pip..."
+        $getpipUrl = "https://bootstrap.pypa.io/get-pip.py"
+        $getpipPath = "$script:scriptDir\get-pip.py"
+        $webClient.DownloadFile($getpipUrl, $getpipPath)
+
+        & "$pythonDir\python.exe" "$getpipPath" 2>&1 | Out-Null
+
+        # 安装依赖包
+        Write-LogMessage "安装依赖包..."
+        $pipPath = "$pythonDir\Scripts\pip.exe"
+        if (Test-Path $pipPath) {
+            & $pipPath install requests beautifulsoup4 2>&1 | Out-Null
+        } else {
+            & "$pythonDir\python.exe" -m pip install requests beautifulsoup4 2>&1 | Out-Null
+        }
+
+        # 清理
+        Remove-Item "$getpipPath" -ErrorAction SilentlyContinue
+
+        Write-LogMessage "Python环境设置完成" -Level "SUCCESS"
+        return $true
+
+    } catch {
+        Write-LogMessage "Python环境设置失败：$($_.Exception.Message)" -Level "ERROR"
+
+        # 尝试使用系统Python
+        $pythonCmd = Get-Command python -ErrorAction SilentlyContinue
+        if ($pythonCmd) {
+            Write-LogMessage "将使用系统Python..." -Level "WARNING"
+            return $true
+        }
+
+        return $false
+    }
+}
+
+function Create-ScheduledTask {
+    if (-not (Test-AdminRights)) {
+        Write-LogMessage "需要管理员权限来创建计划任务" -Level "WARNING"
+        Write-LogMessage "尝试使用当前用户权限创建任务..."
+    }
+
+    $vbsPath = "$script:scriptDir\run_login_silent.vbs"
+
+    # 删除现有任务
+    schtasks /delete /tn "$script:taskName" /f 2>$null | Out-Null
+
+    try {
+        if (Test-AdminRights) {
+            # 管理员权限下使用SYSTEM账户
+            $result = schtasks /create /tn "$script:taskName" `
+                /tr "wscript.exe `"$vbsPath`"" `
+                /sc onstart /ru "SYSTEM" /rl highest /f
+
+            if ($LASTEXITCODE -eq 0) {
+                Write-LogMessage "计划任务创建成功（SYSTEM权限）" -Level "SUCCESS"
+                return $true
+            }
+        }
+
+        # 使用当前用户创建任务
+        $action = New-ScheduledTaskAction -Execute "wscript.exe" -Argument "`"$vbsPath`""
+        $trigger = New-ScheduledTaskTrigger -AtStartup
+        $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries `
+            -DontStopIfGoingOnBatteries -StartWhenAvailable
+
+        Register-ScheduledTask -TaskName $script:taskName -Action $action `
+            -Trigger $trigger -Settings $settings -Force | Out-Null
+
+        Write-LogMessage "计划任务创建成功（用户权限）" -Level "SUCCESS"
+        return $true
+
+    } catch {
+        Write-LogMessage "计划任务创建失败：$($_.Exception.Message)" -Level "ERROR"
+        return $false
+    }
+}
+
+function Get-AutoLoginStatus {
+    Write-LogMessage "检查自动登录状态..."
+
+    # 检查脚本文件
+    $scriptPath = "$script:scriptDir\login_script.py"
+    if (Test-Path $scriptPath) {
+        Write-Host "✓ 自动登录脚本已安装" -ForegroundColor Green
+    } else {
+        Write-Host "✗ 自动登录脚本未安装" -ForegroundColor Red
+        Read-Host "按任意键返回..." | Out-Null
+        return
+    }
+
+    # 检查Python环境
+    $pythonDir = "$script:scriptDir\python"
+    if (Test-Path "$pythonDir\python.exe") {
+        Write-Host "✓ Python环境已配置" -ForegroundColor Green
+    } else {
+        $systemPython = Get-Command python -ErrorAction SilentlyContinue
+        if ($systemPython) {
+            Write-Host "✓ 使用系统Python" -ForegroundColor Yellow
+        } else {
+            Write-Host "✗ Python环境未配置" -ForegroundColor Red
+        }
+    }
+
+    # 检查进程状态
+    $pythonProcess = Get-Process | Where-Object {
+        ($_.ProcessName -match "python") -and
+        ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
+    }
+
+    if ($pythonProcess) {
+        Write-Host "✓ 自动登录正在运行 (PID: $($pythonProcess.Id))" -ForegroundColor Green
+    } else {
+        Write-Host "✗ 自动登录未运行" -ForegroundColor Yellow
+    }
+
+    # 检查状态文件
+    $statusFile = "$script:scriptDir\login_status.json"
+    if (Test-Path $statusFile) {
+        try {
+            $status = Get-Content $statusFile | ConvertFrom-Json
+            Write-Host ""
+            Write-Host "状态信息：" -ForegroundColor Cyan
+            Write-Host "  当前状态：$($status.status)"
+            Write-Host "  最后检查：$($status.last_check)"
+            if ($status.last_login) {
+                Write-Host "  最后登录：$($status.last_login)" -ForegroundColor Green
+            }
+            if ($status.error_count -gt 0) {
+                Write-Host "  错误次数：$($status.error_count)" -ForegroundColor Yellow
+            }
+        } catch {
+            Write-LogMessage "无法读取状态文件" -Level "WARNING"
+        }
+    }
+
+    # 检查计划任务
+    Write-Host ""
+    $taskInfo = schtasks /query /tn "$script:taskName" /fo LIST 2>$null
+    if ($LASTEXITCODE -eq 0) {
+        Write-Host "✓ 计划任务已配置" -ForegroundColor Green
+        # 解析任务状态
+        if ($taskInfo -match "状态:\s*(.+)") {
+            Write-Host "  任务状态：$($Matches[1])"
+        }
+    } else {
+        Write-Host "✗ 计划任务未配置" -ForegroundColor Yellow
+    }
+
+    Read-Host "`n按任意键返回..." | Out-Null
+}
+
+function Start-AutoLogin {
+    Write-LogMessage "启动自动登录..."
+
+    $vbsPath = "$script:scriptDir\run_login_silent.vbs"
+    if (-not (Test-Path $vbsPath)) {
+        Write-LogMessage "自动登录脚本未安装！" -Level "ERROR"
+        Read-Host "按任意键返回..." | Out-Null
+        return
+    }
+
+    # 检查是否已在运行
+    $pythonProcess = Get-Process | Where-Object {
+        ($_.ProcessName -match "python") -and
+        ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
+    }
+
+    if ($pythonProcess) {
+        Write-LogMessage "自动登录已在运行中 (PID: $($pythonProcess.Id))" -Level "WARNING"
+        Read-Host "按任意键返回..." | Out-Null
+        return
+    }
+
+    try {
+        Start-Process -FilePath "wscript.exe" -ArgumentList "`"$vbsPath`"" -WindowStyle Hidden
+        Write-LogMessage "自动登录已启动" -Level "SUCCESS"
+
+        # 等待几秒检查是否成功启动
+        Start-Sleep -Seconds 3
+        $newProcess = Get-Process | Where-Object {
+            ($_.ProcessName -match "python") -and
+            ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
+        }
+
+        if ($newProcess) {
+            Write-LogMessage "确认：自动登录正在运行 (PID: $($newProcess.Id))" -Level "SUCCESS"
+        } else {
+            Write-LogMessage "警告：无法确认进程是否启动" -Level "WARNING"
+        }
+
+    } catch {
+        Write-LogMessage "启动失败：$($_.Exception.Message)" -Level "ERROR"
+    }
+
+    Read-Host "按任意键返回..." | Out-Null
+}
+
+function Stop-AutoLogin {
+    Write-LogMessage "停止自动登录..."
+    Stop-AutoLoginProcess
+    Write-LogMessage "自动登录已停止" -Level "SUCCESS"
+    Read-Host "按任意键返回..." | Out-Null
+}
+
+function Stop-AutoLoginProcess {
+    $processes = Get-Process | Where-Object {
+        ($_.ProcessName -match "python") -and
+        ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
+    }
+
+    foreach ($proc in $processes) {
+        try {
+            Write-LogMessage "停止进程：$($proc.ProcessName) (PID: $($proc.Id))"
+            Stop-Process -Id $proc.Id -Force -ErrorAction Stop
+        } catch {
+            Write-LogMessage "无法停止进程 $($proc.Id): $($_.Exception.Message)" -Level "WARNING"
+        }
+    }
+}
+
+function Uninstall-AutoLogin {
+    Write-Host "确定要卸载自动登录吗？这将删除所有相关文件和配置。" -ForegroundColor Yellow
+    $confirm = Read-Host "输入 YES 确认卸载"
+
+    if ($confirm -ne "YES") {
+        Write-LogMessage "取消卸载操作"
+        Read-Host "按任意键返回..." | Out-Null
+        return
+    }
+
+    Write-LogMessage "开始卸载自动登录..."
+
+    # 停止进程
+    Stop-AutoLoginProcess
+
+    # 删除计划任务
+    Write-LogMessage "删除计划任务..."
+    schtasks /delete /tn "$script:taskName" /f 2>$null | Out-Null
+
+    # 等待文件释放
+    Start-Sleep -Seconds 2
+
+    # 删除文件
+    if (Test-Path $script:scriptDir) {
+        Write-LogMessage "删除脚本目录..."
+        try {
+            Remove-Item $script:scriptDir -Recurse -Force -ErrorAction Stop
+            Write-LogMessage "自动登录已完全卸载" -Level "SUCCESS"
+        } catch {
+            Write-LogMessage "部分文件可能正在使用，无法完全删除" -Level "WARNING"
+            Write-LogMessage "请手动删除目录：$script:scriptDir" -Level "WARNING"
+        }
+    }
+
+    Read-Host "按任意键返回..." | Out-Null
+}
+
+function View-AutoLoginLog {
+    Write-LogMessage "查看日志文件..."
+
+    $pythonLog = "$script:scriptDir\login_script_python.log"
+    $psLog = $script:logFile
+
+    if (Test-Path $pythonLog) {
+        Write-Host "`n=== Python脚本日志 (最后20行) ===" -ForegroundColor Cyan
+        Get-Content $pythonLog -Tail 20 -ErrorAction SilentlyContinue | ForEach-Object { Write-Host $_ }
+    } else {
+        Write-Host "Python日志文件不存在" -ForegroundColor Yellow
+    }
+
+    if (Test-Path $psLog) {
+        Write-Host "`n=== PowerShell脚本日志 (最后10行) ===" -ForegroundColor Cyan
+        Get-Content $psLog -Tail 10 -ErrorAction SilentlyContinue | ForEach-Object { Write-Host $_ }
+    }
+
+    Write-Host ""
+    Write-Host "日志文件位置：" -ForegroundColor Cyan
+    Write-Host "  Python日志：$pythonLog"
+    Write-Host "  PowerShell日志：$psLog"
+
+    Read-Host "`n按任意键返回..." | Out-Null
+}
+
+function AutoLogin-Menu {
+    $choice = Read-Host "请选择自动登录操作 (1-6, B返回)"
+    switch ($choice) {
+        "1" { Install-AutoLogin }
+        "2" { Get-AutoLoginStatus }
+        "3" { Start-AutoLogin }
+        "4" { Stop-AutoLogin }
+        "5" { Uninstall-AutoLogin }
+        "6" { View-AutoLoginLog }
+        "b" { return $false }
+        "B" { return $false }
+        default {
+            Write-LogMessage "无效选择，请重新输入。" -Level "WARNING"
+            Read-Host "按任意键返回..." | Out-Null
+        }
+    }
+    return $true
 }
 
 function Company-Config {
@@ -115,25 +806,29 @@ function Company-Config {
     )
     switch ($Choice) {
         1 {
-            Write-Host "自动登录功能待实现..."
-            # 这里可以添加自动登录的逻辑
+            # 进入自动登录子菜单
+            $continueAutoLogin = $true
+            while ($continueAutoLogin) {
+                Show-Menu -MenuLevel "autologin" -Title "自动登录配置"
+                $continueAutoLogin = AutoLogin-Menu
+            }
         }
         2 {
-            Write-Host "正在配置代理设置..."
-            Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyEnable -Value 1
-            Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyServer -Value "127.0.0.1:7897"
-            Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings" -Name ProxyOverride -Value "localhost;127.*;192.168.*;10.*;172.16.*;172.17.*;172.18.*;172.19.*;172.20.*;172.21.*;172.22.*;172.23.*;172.24.*;172.25.*;172.26.*;172.27.*;172.28.*;172.29.*;172.30.*;172.31.*;airchina.com.*;10.10.101.*;*.airchina.com.cn"
-            Write-Host "代理设置已完成。"
+            Set-ProxySettings
         }
         default {
-            Write-Host "无效的公司配置选择。"
+            Write-LogMessage "无效的公司配置选择。" -Level "WARNING"
+            Read-Host "按任意键返回..." | Out-Null
         }
     }
-                Read-Host "按任意键返回主菜单..." | Out-Null
 }
+
+# 主程序开始
+Write-LogMessage "PowerShell配置工具启动" -Level "INFO"
 
 $script:exitScript = $false
 $currentMenu = "main"
+
 do {
     switch ($currentMenu) {
         "main" {
@@ -144,7 +839,10 @@ do {
                 "2" { $currentMenu = "company" }
                 "q" { $script:exitScript = $true }
                 "Q" { $script:exitScript = $true }
-                default { Write-Host "无效选择，请重新输入。"; Read-Host "按任意键返回主菜单..." | Out-Null }
+                default {
+                    Write-LogMessage "无效选择，请重新输入。" -Level "WARNING"
+                    Read-Host "按任意键返回..." | Out-Null
+                }
             }
         }
         "power" {
@@ -157,7 +855,10 @@ do {
                 "4" { Set-PowerScheme -Choice 4 }
                 "b" { $currentMenu = "main" }
                 "B" { $currentMenu = "main" }
-                default { Write-Host "无效选择，请重新输入。"; Read-Host "按任意键返回..." | Out-Null }
+                default {
+                    Write-LogMessage "无效选择，请重新输入。" -Level "WARNING"
+                    Read-Host "按任意键返回..." | Out-Null
+                }
             }
         }
         "company" {
@@ -168,8 +869,13 @@ do {
                 "2" { Company-Config -Choice 2 }
                 "b" { $currentMenu = "main" }
                 "B" { $currentMenu = "main" }
-                default { Write-Host "无效选择，请重新输入。"; Read-Host "按任意键返回..." | Out-Null }
+                default {
+                    Write-LogMessage "无效选择，请重新输入。" -Level "WARNING"
+                    Read-Host "按任意键返回..." | Out-Null
+                }
             }
         }
     }
 } while (-not $script:exitScript)
+
+Write-LogMessage "PowerShell配置工具退出" -Level "INFO"
