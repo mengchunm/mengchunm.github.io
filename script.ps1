@@ -5,49 +5,224 @@ $script:scriptDir = "$env:USERPROFILE\LoginScript"
 $script:logFile = "$script:scriptDir\login_script.log"
 $script:taskName = "NetworkLoginScript"
 
+# ASCII艺术相关函数
+function Convert-BBCodeToAnsi {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$InputString
+    )
+
+    $colorTagRegex = '(\[color=(?<hex>#[a-fA-F0-9]{6})\]|<span style="color:(?<hex>#[a-fA-F0-9]{6})">)'
+
+    $matchEvaluator = {
+        param($match)
+        $hex = $match.Groups['hex'].Value.TrimStart('#')
+        $r = [System.Convert]::ToInt32($hex.Substring(0, 2), 16)
+        $g = [System.Convert]::ToInt32($hex.Substring(2, 2), 16)
+        $b = [System.Convert]::ToInt32($hex.Substring(4, 2), 16)
+        return "$([char]27)[38;2;${r};${g};${b}m"
+    }
+
+    $processedString = [regex]::Replace($InputString, $colorTagRegex, $matchEvaluator)
+    $processedString = $processedString -replace '(\[/color\]|</span>)', "$([char]27)[0m"
+    $processedString = $processedString -replace '\[/?(size|font)[^\]]*\]', ''
+
+    return $processedString
+}
+
+function Get-AsciiArtDimensions {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$AsciiContent,
+
+        [Parameter(Mandatory=$false)]
+        [switch]$Detailed  # 返回详细信息，包括每行的起始位置
+    )
+
+    $plainText = $AsciiContent -replace '\[/?[^\]]+\]', ''
+    $plainText = $plainText -replace '<[^>]+>', ''
+
+    $lines = $plainText -split "`n"
+    $nonEmptyLines = $lines | Where-Object { $_.Trim() -ne '' }
+
+    $height = $nonEmptyLines.Count
+    $width = 0
+    $minLeftPadding = [int]::MaxValue
+    $lineDetails = @()
+
+    foreach ($line in $nonEmptyLines) {
+        $trimmedLine = $line.TrimEnd()
+
+        # 计算左侧空白
+        $leftPadding = 0
+        if ($trimmedLine.Length -gt 0) {
+            $leftPadding = $line.Length - $line.TrimStart().Length
+            if ($leftPadding -lt $minLeftPadding -and $trimmedLine.Length -gt 0) {
+                $minLeftPadding = $leftPadding
+            }
+        }
+
+        # 计算实际内容宽度
+        $contentWidth = $trimmedLine.Length
+        if ($contentWidth -gt $width) {
+            $width = $contentWidth
+        }
+
+        if ($Detailed) {
+            $lineDetails += @{
+                Content = $trimmedLine
+                LeftPadding = $leftPadding
+                Width = $contentWidth
+            }
+        }
+    }
+
+    # 如果所有行都是空的，重置最小左边距
+    if ($minLeftPadding -eq [int]::MaxValue) {
+        $minLeftPadding = 0
+    }
+
+    $result = @{
+        Width = $width
+        Height = $height
+        MinLeftPadding = $minLeftPadding
+        EffectiveWidth = $width - $minLeftPadding  # 去除最小左边距后的实际宽度
+    }
+
+    if ($Detailed) {
+        $result.LineDetails = $lineDetails
+    }
+
+    return $result
+}
+
+function Load-AsciiArt {
+    param(
+        [Parameter(Mandatory=$true)]
+        [string]$FileName
+    )
+
+    $asciiPath = Join-Path $PSScriptRoot "ascii\$FileName"
+
+    if (-not (Test-Path $asciiPath)) {
+        return $null
+    }
+
+    $content = Get-Content $asciiPath -Raw -Encoding UTF8
+    $ansiContent = Convert-BBCodeToAnsi -InputString $content
+    $dimensions = Get-AsciiArtDimensions -AsciiContent $content -Detailed
+
+    return @{
+        Content = $ansiContent
+        Lines = $ansiContent -split "`n"
+        Width = $dimensions.Width
+        Height = $dimensions.Height
+        MinLeftPadding = $dimensions.MinLeftPadding
+        EffectiveWidth = $dimensions.EffectiveWidth
+        LineDetails = $dimensions.LineDetails
+    }
+}
+
+# 计算字符串的显示宽度（考虑中文字符）
+function Get-StringDisplayWidth {
+    param(
+        [string]$Text
+    )
+
+    $width = 0
+    foreach ($char in $Text.ToCharArray()) {
+        $charCode = [int]$char
+        # 中文字符范围和全角字符
+        if (($charCode -ge 0x4E00 -and $charCode -le 0x9FFF) -or
+            ($charCode -ge 0x3000 -and $charCode -le 0x303F) -or
+            ($charCode -ge 0xFF00 -and $charCode -le 0xFFEF)) {
+            $width += 2
+        } else {
+            $width += 1
+        }
+    }
+    return $width
+}
+
 function Show-Menu {
     param(
         [string]$Title = "操作菜单",
-        [string]$MenuLevel = "main" # "main", "power", "company", "autologin"
+        [string]$MenuLevel = "main", # "main", "power", "company", "autologin"
+        [string]$AsciiArtFile = "isekai.bbcode" # 默认使用isekai ASCII画
     )
     Clear-Host
-    Write-Host "=================================================="
-    Write-Host "                $Title"
-    Write-Host "=================================================="
+
+    # 加载ASCII艺术
+    $asciiArt = $null
+    if ($AsciiArtFile) {
+        $asciiArt = Load-AsciiArt -FileName $AsciiArtFile
+    }
+
+    # 准备菜单内容
+    $menuLines = @()
+    $menuLines += "=================================================="
+    $menuLines += "                $Title"
+    $menuLines += "=================================================="
 
     switch ($MenuLevel) {
         "main" {
-            Write-Host "[1] 电源模式"
-            Write-Host "[2] 公司特殊配置"
-            Write-Host "--------------------------------------------------"
-            Write-Host "[Q] 退出"
+            $menuLines += "[1] 电源模式"
+            $menuLines += "[2] 公司特殊配置"
+            $menuLines += "--------------------------------------------------"
+            $menuLines += "[Q] 退出"
         }
         "power" {
-            Write-Host "[1] 卓越性能"
-            Write-Host "[2] 高性能"
-            Write-Host "[3] 节能"
-            Write-Host "[4] 平衡"
-            Write-Host "--------------------------------------------------"
-            Write-Host "[B] 返回主菜单"
+            $menuLines += "[1] 卓越性能"
+            $menuLines += "[2] 高性能"
+            $menuLines += "[3] 节能"
+            $menuLines += "[4] 平衡"
+            $menuLines += "--------------------------------------------------"
+            $menuLines += "[B] 返回主菜单"
         }
         "company" {
-            Write-Host "[1] 自动登录配置"
-            Write-Host "[2] 代理设置"
-            Write-Host "--------------------------------------------------"
-            Write-Host "[B] 返回主菜单"
+            $menuLines += "[1] 自动登录配置"
+            $menuLines += "[2] 代理设置"
+            $menuLines += "--------------------------------------------------"
+            $menuLines += "[B] 返回主菜单"
         }
         "autologin" {
-            Write-Host "[1] 安装/更新自动登录脚本"
-            Write-Host "[2] 查看自动登录状态"
-            Write-Host "[3] 启动自动登录"
-            Write-Host "[4] 停止自动登录"
-            Write-Host "[5] 卸载自动登录"
-            Write-Host "[6] 查看日志"
-            Write-Host "--------------------------------------------------"
-            Write-Host "[B] 返回公司配置菜单"
+            $menuLines += "[1] 安装/更新自动登录脚本"
+            $menuLines += "[2] 查看自动登录状态"
+            $menuLines += "[3] 卸载自动登录"
+            $menuLines += "[4] 查看日志"
+            $menuLines += "--------------------------------------------------"
+            $menuLines += "[B] 返回公司配置菜单"
         }
     }
-    Write-Host "=================================================="
+    $menuLines += "=================================================="
+
+    # 获取终端宽度
+    $terminalWidth = $Host.UI.RawUI.BufferSize.Width
+
+    # 如果有ASCII艺术，先显示ASCII艺术
+    if ($asciiArt) {
+        foreach ($line in $asciiArt.Lines) {
+            $plainLine = $line -replace '(\[color=#[a-fA-F0-9]{6}\]|<span style="color:#[a-fA-F0-9]{6}">|\[/color\]|</span>)', ''
+            $lineDisplayWidth = Get-StringDisplayWidth -Text $plainLine
+            $leftPadding = [Math]::Max(0, [Math]::Floor(($terminalWidth - $lineDisplayWidth) / 2))
+            Write-Host (" " * $leftPadding) -NoNewline
+            Write-Host $line
+        }
+        Write-Host "" # 在ASCII艺术后添加空行
+    }
+
+    # 显示菜单 (左对齐)
+    foreach ($line in $menuLines) {
+        Write-Host $line
+    }
+
+    # 确保颜色重置
+    Write-Host "$([char]27)[0m" -NoNewline
+
+    # 添加ASCII尺寸信息（调试用）
+    if ($asciiArt -and $env:DEBUG_ASCII) {
+        Write-Host "`n[ASCII Info: Width=$($asciiArt.Width), Height=$($asciiArt.Height)]" -ForegroundColor DarkGray
+    }
 }
 
 function Write-LogMessage {
@@ -445,7 +620,7 @@ CreateObject("Wscript.Shell").Run """$batPath""", 0, False
         Write-Host ""
         $startNow = Read-Host "是否立即启动自动登录？(Y/N)"
         if ($startNow -eq 'Y' -or $startNow -eq 'y') {
-            Start-AutoLogin
+            Start-AutoLoginDirect
         }
     } else {
         Write-LogMessage "计划任务创建失败，但脚本已安装。" -Level "WARNING"
@@ -561,7 +736,8 @@ function Create-ScheduledTask {
         $action = New-ScheduledTaskAction -Execute "wscript.exe" -Argument "`"$vbsPath`""
         $trigger = New-ScheduledTaskTrigger -AtStartup
         $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries `
-            -DontStopIfGoingOnBatteries -StartWhenAvailable
+            -DontStopIfGoingOnBatteries -StartWhenAvailable `
+            -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Days 0)
 
         Register-ScheduledTask -TaskName $script:taskName -Action $action `
             -Trigger $trigger -Settings $settings -Force | Out-Null
@@ -603,9 +779,8 @@ function Get-AutoLoginStatus {
 
     # 检查进程状态
     $pythonProcess = Get-Process | Where-Object {
-        ($_.ProcessName -match "python") -and
-        ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
-    }
+        $_.ProcessName -match "python" -and $_.Path -like "*$script:scriptDir*"
+    } -ErrorAction SilentlyContinue
 
     if ($pythonProcess) {
         Write-Host "✓ 自动登录正在运行 (PID: $($pythonProcess.Id))" -ForegroundColor Green
@@ -635,12 +810,26 @@ function Get-AutoLoginStatus {
 
     # 检查计划任务
     Write-Host ""
-    $taskInfo = schtasks /query /tn "$script:taskName" /fo LIST 2>$null
+    $taskInfo = schtasks /query /tn "$script:taskName" /fo LIST /v 2>$null
     if ($LASTEXITCODE -eq 0) {
         Write-Host "✓ 计划任务已配置" -ForegroundColor Green
         # 解析任务状态
-        if ($taskInfo -match "状态:\s*(.+)") {
-            Write-Host "  任务状态：$($Matches[1])"
+        $taskInfoString = $taskInfo | Out-String
+        if ($taskInfoString -match "状态:\s*(.+?)\r?\n") {
+            $status = $Matches[1].Trim()
+            Write-Host "  任务状态：$status"
+        }
+        if ($taskInfoString -match "上次运行时间:\s*(.+?)\r?\n") {
+            $lastRun = $Matches[1].Trim()
+            if ($lastRun -ne "N/A" -and $lastRun -ne "不适用") {
+                Write-Host "  上次运行：$lastRun"
+            }
+        }
+        if ($taskInfoString -match "下次运行时间:\s*(.+?)\r?\n") {
+            $nextRun = $Matches[1].Trim()
+            if ($nextRun -ne "N/A" -and $nextRun -ne "不适用") {
+                Write-Host "  下次运行：$nextRun"
+            }
         }
     } else {
         Write-Host "✗ 计划任务未配置" -ForegroundColor Yellow
@@ -649,25 +838,23 @@ function Get-AutoLoginStatus {
     Read-Host "`n按任意键返回..." | Out-Null
 }
 
-function Start-AutoLogin {
+function Start-AutoLoginDirect {
+    # 内部函数，安装后直接启动，不需要额外的暂停
     Write-LogMessage "启动自动登录..."
 
     $vbsPath = "$script:scriptDir\run_login_silent.vbs"
     if (-not (Test-Path $vbsPath)) {
         Write-LogMessage "自动登录脚本未安装！" -Level "ERROR"
-        Read-Host "按任意键返回..." | Out-Null
         return
     }
 
     # 检查是否已在运行
     $pythonProcess = Get-Process | Where-Object {
-        ($_.ProcessName -match "python") -and
-        ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
-    }
+        $_.ProcessName -match "python" -and $_.Path -like "*$script:scriptDir*"
+    } -ErrorAction SilentlyContinue
 
     if ($pythonProcess) {
         Write-LogMessage "自动登录已在运行中 (PID: $($pythonProcess.Id))" -Level "WARNING"
-        Read-Host "按任意键返回..." | Out-Null
         return
     }
 
@@ -678,9 +865,8 @@ function Start-AutoLogin {
         # 等待几秒检查是否成功启动
         Start-Sleep -Seconds 3
         $newProcess = Get-Process | Where-Object {
-            ($_.ProcessName -match "python") -and
-            ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
-        }
+            $_.ProcessName -match "python" -and $_.Path -like "*$script:scriptDir*"
+        } -ErrorAction SilentlyContinue
 
         if ($newProcess) {
             Write-LogMessage "确认：自动登录正在运行 (PID: $($newProcess.Id))" -Level "SUCCESS"
@@ -691,22 +877,12 @@ function Start-AutoLogin {
     } catch {
         Write-LogMessage "启动失败：$($_.Exception.Message)" -Level "ERROR"
     }
-
-    Read-Host "按任意键返回..." | Out-Null
-}
-
-function Stop-AutoLogin {
-    Write-LogMessage "停止自动登录..."
-    Stop-AutoLoginProcess
-    Write-LogMessage "自动登录已停止" -Level "SUCCESS"
-    Read-Host "按任意键返回..." | Out-Null
 }
 
 function Stop-AutoLoginProcess {
     $processes = Get-Process | Where-Object {
-        ($_.ProcessName -match "python") -and
-        ($_.Path -like "*$script:scriptDir*" -or $_.CommandLine -like "*login_script.py*")
-    }
+        $_.ProcessName -match "python" -and $_.Path -like "*$script:scriptDir*"
+    } -ErrorAction SilentlyContinue
 
     foreach ($proc in $processes) {
         try {
@@ -782,14 +958,12 @@ function View-AutoLoginLog {
 }
 
 function AutoLogin-Menu {
-    $choice = Read-Host "请选择自动登录操作 (1-6, B返回)"
+    $choice = Read-Host "请选择自动登录操作 (1-4, B返回)"
     switch ($choice) {
         "1" { Install-AutoLogin }
         "2" { Get-AutoLoginStatus }
-        "3" { Start-AutoLogin }
-        "4" { Stop-AutoLogin }
-        "5" { Uninstall-AutoLogin }
-        "6" { View-AutoLoginLog }
+        "3" { Uninstall-AutoLogin }
+        "4" { View-AutoLoginLog }
         "b" { return $false }
         "B" { return $false }
         default {
@@ -823,7 +997,32 @@ function Company-Config {
     }
 }
 
+# 检查管理员权限并提示
+function Request-AdminElevation {
+    if (-not (Test-AdminRights)) {
+        Write-Host "========================================" -ForegroundColor Yellow
+        Write-Host "注意：某些功能需要管理员权限" -ForegroundColor Yellow
+        Write-Host "建议以管理员身份重新运行此脚本" -ForegroundColor Yellow
+        Write-Host "========================================" -ForegroundColor Yellow
+
+        $response = Read-Host "是否以管理员权限重新启动？(Y/N)"
+        if ($response -eq 'Y' -or $response -eq 'y') {
+            try {
+                Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+                exit
+            } catch {
+                Write-Host "无法提升权限，将以当前权限继续运行" -ForegroundColor Yellow
+                Start-Sleep -Seconds 2
+            }
+        } else {
+            Write-Host "将以当前权限继续运行，某些功能可能受限" -ForegroundColor Yellow
+            Start-Sleep -Seconds 2
+        }
+    }
+}
+
 # 主程序开始
+Request-AdminElevation
 Write-LogMessage "PowerShell配置工具启动" -Level "INFO"
 
 $script:exitScript = $false
