@@ -102,13 +102,36 @@ function Load-AsciiArt {
         [string]$FileName
     )
 
-    $asciiPath = Join-Path $PSScriptRoot "ascii\$FileName"
+    $content = $null
 
-    if (-not (Test-Path $asciiPath)) {
+    # 检查是否是URL
+    if ($FileName -match "^https?://") {
+        try {
+            $webClient = New-Object System.Net.WebClient
+            $content = $webClient.DownloadString($FileName)
+        } catch {
+            Write-LogMessage "从URL下载ASCII艺术失败: $($_.Exception.Message)" -Level "ERROR"
+            # 如果下载失败，尝试从本地文件加载
+            $content = $null
+        }
+    }
+
+    # 如果内容仍为空，尝试从本地文件加载
+    if (-not $content) {
+        $asciiPath = Join-Path $PSScriptRoot "ascii\$FileName"
+        if (-not (Test-Path $asciiPath)) {
+            Write-LogMessage "本地ASCII艺术文件不存在: $asciiPath" -Level "ERROR"
+            return $null
+        }
+        Write-LogMessage "尝试从本地文件加载ASCII艺术: $asciiPath" -Level "INFO"
+        $content = Get-Content $asciiPath -Raw -Encoding UTF8
+        Write-LogMessage "从本地文件加载ASCII艺术成功。" -Level "SUCCESS"
+    }
+
+    if (-not $content) {
         return $null
     }
 
-    $content = Get-Content $asciiPath -Raw -Encoding UTF8
     $ansiContent = Convert-BBCodeToAnsi -InputString $content
     $dimensions = Get-AsciiArtDimensions -AsciiContent $content -Detailed
 
@@ -148,7 +171,7 @@ function Show-Menu {
     param(
         [string]$Title = "操作菜单",
         [string]$MenuLevel = "main", # "main", "power", "company", "autologin"
-        [string]$AsciiArtFile = "isekai.bbcode" # 默认使用isekai ASCII画
+        [string]$AsciiArtFile = "https://raw.githubusercontent.com/mengchunm/mengchunm.github.io/main/ascii/isekai.bbcode" # 默认使用isekai ASCII画
     )
     Clear-Host
 
