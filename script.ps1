@@ -299,36 +299,6 @@ function Show-Menu {
     }
 }
 
-function Write-LogMessage {
-    param(
-        [string]$Message,
-        [string]$Level = "INFO"
-    )
-    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    $logMessage = "[$timestamp] [$Level] $Message"
-
-    # 创建日志目录如果不存在
-    if (-not (Test-Path (Split-Path $script:logFile))) {
-        New-Item -ItemType Directory -Path (Split-Path $script:logFile) -Force | Out-Null
-    }
-
-    # 写入日志文件
-    Add-Content -Path $script:logFile -Value $logMessage -ErrorAction SilentlyContinue
-
-    # 根据级别显示不同颜色
-    switch ($Level) {
-        "ERROR" { Write-Host $Message -ForegroundColor Red }
-        "WARNING" { Write-Host $Message -ForegroundColor Yellow }
-        "SUCCESS" { Write-Host $Message -ForegroundColor Green }
-        default { Write-Host $Message }
-    }
-}
-
-function Test-AdminRights {
-    $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
-    return $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
-}
-
 function Set-PowerScheme {
     param(
         [int]$Choice
@@ -1075,6 +1045,36 @@ function Company-Config {
     }
 }
 
+function Write-LogMessage {
+    param(
+        [string]$Message,
+        [string]$Level = "INFO"
+    )
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    $logMessage = "[$timestamp] [$Level] $Message"
+
+    # 创建日志目录如果不存在
+    if (-not (Test-Path (Split-Path $script:logFile))) {
+        New-Item -ItemType Directory -Path (Split-Path $script:logFile) -Force | Out-Null
+    }
+
+    # 写入日志文件
+    Add-Content -Path $script:logFile -Value $logMessage -ErrorAction SilentlyContinue
+
+    # 根据级别显示不同颜色
+    switch ($Level) {
+        "ERROR" { Write-Host $Message -ForegroundColor Red }
+        "WARNING" { Write-Host $Message -ForegroundColor Yellow }
+        "SUCCESS" { Write-Host $Message -ForegroundColor Green }
+        default { Write-Host $Message }
+    }
+}
+
+function Test-AdminRights {
+    $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+    return $currentPrincipal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+}
+
 # 检查管理员权限并提示
 function Request-AdminElevation {
     if (-not (Test-AdminRights)) {
@@ -1088,7 +1088,7 @@ function Request-AdminElevation {
             try {
                 $scriptBlock = $MyInvocation.MyCommand.Definition
                 $encodedCommand = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($scriptBlock))
-                Start-Process powershell.exe -ArgumentList "-NoExit -ExecutionPolicy Bypass -EncodedCommand", $encodedCommand -Verb RunAs
+                Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -EncodedCommand", $encodedCommand -Verb RunAs
                 exit
             } catch {
                 Write-Host "无法提升权限，将以当前权限继续运行" -ForegroundColor Yellow
