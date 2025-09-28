@@ -1,4 +1,4 @@
-Set-StrictMode -Version Latest
+﻿Set-StrictMode -Version Latest
 
 # 全局变量
 $script:scriptDir = "$env:USERPROFILE\LoginScript"
@@ -383,88 +383,79 @@ function Install-AutoLogin {
         return
     }
 
-    # Python脚本内容
+# Python脚本内容 - 基于您的工作版本
     $pythonScript = @'
-import requests, time, json, os
+import requests, time
 from urllib.parse import urlparse, urljoin
 from bs4 import BeautifulSoup
-from datetime import datetime
 
+# 配置
 LOGIN_BASE_URL = "http://114.114.114.114:90"
 LOGIN_PATH = "/login"
-USERNAME = "PLACEHOLDER_USERNAME"
-PASSWORD = "PLACEHOLDER_PASSWORD"
-LOG_FILE = "login_script_python.log"
-STATUS_FILE = "login_status.json"
+USERNAME  = "PLACEHOLDER_USERNAME"
+PASSWORD  = "PLACEHOLDER_PASSWORD"
 
-def write_log(message, level="INFO"):
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    log_message = f"[{timestamp}] [{level}] {message}"
-    try:
-        with open(LOG_FILE, 'a', encoding='utf-8') as f:
-            f.write(log_message + "\n")
-    except:
-        pass
-    print(log_message)
-
-def update_status(status, last_login=None, error_count=0):
-    try:
-        status_data = {
-            "status": status,
-            "last_check": datetime.now().isoformat(),
-            "last_login": last_login,
-            "error_count": error_count
-        }
-        with open(STATUS_FILE, 'w') as f:
-            json.dump(status_data, f)
-    except:
-        pass
-
+# --- md6 加密 ---
 def mc(a):
     if a == 32: return "+"
     if (a < 48 and a not in (45, 46)) or (57 < a < 65) or (90 < a < 97 and a != 95) or a > 122:
         return "%" + "0123456789ABCDEF"[a >> 4] + "0123456789ABCDEF"[a & 15]
     return chr(a)
 
-def m(a):
+def m(a): 
     return (((a&1)<<7)|((a&2)<<5)|((a&4)<<3)|((a&8)<<1)|((a&16)>>1)|((a&32)>>3)|((a&64)>>5)|((a&128)>>7))
 
-def md6(s):
+def md6(s): 
     return "".join(mc(m(ord(c)) ^ (0x35 ^ i)) for i,c in enumerate(s))
 
 session = requests.Session()
-error_count = 0
 
 import re
 
 def _extract_uri_from_response(response):
+    """
+    从响应中提取URI，优先从HTML中的input字段，其次从URL查询字符串。
+    """
     soup = BeautifulSoup(response.text, 'html.parser')
+
+    # 尝试从HTML中的隐藏input字段获取URI
     uri_input = soup.find('input', {'id': 'uri', 'name': 'uri'})
     if uri_input and 'value' in uri_input.attrs:
         return uri_input['value']
+    
+    # 尝试从URL的查询字符串中提取URI
     parsed_url = urlparse(response.url)
     uri_from_query = parsed_url.query
     if uri_from_query:
         return uri_from_query
+    
     return None
 
 def get_uri_from_login_page():
     try:
-        initial_response = session.get(LOGIN_BASE_URL, allow_redirects=True, timeout=10)
+        # 访问基础URL
+        initial_response = session.get(LOGIN_BASE_URL, allow_redirects=True)
         initial_response.raise_for_status()
+
+        # 定义URI获取策略
         strategies = [
+            # 策略1: 从当前响应中直接提取
             lambda resp: _extract_uri_from_response(resp),
+            # 策略2: 从iframe中提取
             lambda resp: _get_uri_from_iframe(resp),
+            # 策略3: 从JavaScript重定向中提取
             lambda resp: _get_uri_from_js_redirect(resp)
         ]
+
         for strategy in strategies:
             uri = strategy(initial_response)
             if uri:
                 return uri
-        write_log(f"Cannot find URI parameter. Final URL: {initial_response.url}", "WARNING")
+
+        print(f"未能在任何地方找到URI参数。最终URL: {initial_response.url}")
         return None
     except requests.exceptions.RequestException as e:
-        write_log(f"Failed to get login page: {e}", "ERROR")
+        print(f"获取登录页面失败: {e}")
         return None
 
 def _get_uri_from_iframe(response):
@@ -473,8 +464,10 @@ def _get_uri_from_iframe(response):
     if iframe and 'src' in iframe.attrs:
         iframe_src = iframe['src']
         full_iframe_url = urljoin(response.url, iframe_src)
-        iframe_response = session.get(full_iframe_url, allow_redirects=True, timeout=10)
+        
+        iframe_response = session.get(full_iframe_url, allow_redirects=True)
         iframe_response.raise_for_status()
+        
         return _extract_uri_from_response(iframe_response)
     return None
 
@@ -487,92 +480,49 @@ def _get_uri_from_js_redirect(response):
             if match:
                 redirect_url_relative = match.group(1)
                 full_redirect_url = urljoin(response.url, redirect_url_relative)
-                redirect_response = session.get(full_redirect_url, allow_redirects=True, timeout=10)
+                
+                redirect_response = session.get(full_redirect_url, allow_redirects=True)
                 redirect_response.raise_for_status()
+
                 return _extract_uri_from_response(redirect_response)
     return None
 
 def login():
-    global error_count
     uri = get_uri_from_login_page()
     if not uri:
-        write_log("Cannot get URI, login failed.", "ERROR")
-        error_count += 1
-        update_status("error", error_count=error_count)
+        print("无法获取URI，登录失败。")
         return False
 
     data = {
         "uri": uri,
-        "terminal": "pc",
-        "login_type": "login",
-        "check_passwd": "1",
-        "username": USERNAME,
-        "password": md6(PASSWORD),
-        "password1": ""
+        "terminal": "pc", "login_type": "login", "check_passwd": "1",
+        "username": USERNAME, "password": md6(PASSWORD), "password1": ""
     }
-
     try:
-        r = session.post(f"{LOGIN_BASE_URL}{LOGIN_PATH}", data=data, timeout=10)
-        if "login success" in r.text.lower() or "success" in r.text.lower():
-            write_log("Login successful", "SUCCESS")
-            error_count = 0
-            update_status("logged_in", last_login=datetime.now().isoformat(), error_count=0)
+        r = session.post(f"{LOGIN_BASE_URL}{LOGIN_PATH}", data=data)
+        if "您已经成功登录！" in r.text:
+            print("登录成功")
             return True
-        write_log("Login failed - invalid credentials or response", "ERROR")
-        error_count += 1
-        update_status("login_failed", error_count=error_count)
+        print("登录失败")
         return False
     except Exception as e:
-        write_log(f"Login request failed: {e}", "ERROR")
-        error_count += 1
-        update_status("error", error_count=error_count)
+        print("登录请求失败:", e)
         return False
 
 def logged_in():
     try:
-        r = session.get(f"{LOGIN_BASE_URL}{LOGIN_PATH}", timeout=10)
-        is_logged = "login success" in r.text.lower() or "success" in r.text.lower()
-        if is_logged:
-            update_status("logged_in")
-        else:
-            update_status("not_logged_in")
-        return is_logged
-    except:
-        update_status("error")
+        r = session.get(f"{LOGIN_BASE_URL}{LOGIN_PATH}")
+        return "您已经成功登录！" in r.text
+    except: 
         return False
 
 def main():
-    write_log("Starting auto-login script, checking every 30 seconds", "INFO")
-    update_status("running")
-
-    check_count = 0
+    print("开始检测，每5秒循环")
     while True:
-        try:
-            check_count += 1
-            if check_count % 10 == 0:  # 每10次检查记录一次
-                write_log(f"Completed {check_count} checks", "INFO")
-
-            if not logged_in():
-                write_log("Not logged in, attempting to login...", "WARNING")
-                if login():
-                    write_log("Login successful, continuing monitoring", "SUCCESS")
-                else:
-                    write_log("Login failed, will retry in next cycle", "WARNING")
-
-            # 如果错误次数过多，增加等待时间
-            if error_count > 10:
-                write_log(f"Too many errors ({error_count}), waiting 60 seconds", "WARNING")
-                time.sleep(60)
-            else:
-                time.sleep(30)
-
-        except KeyboardInterrupt:
-            write_log("Script stopped by user", "INFO")
-            update_status("stopped")
-            break
-        except Exception as e:
-            write_log(f"Unexpected error: {e}", "ERROR")
-            time.sleep(30)
+        if not logged_in():
+            print("未登录，尝试登录...")
+            login()
+        time.sleep(5)
 
 if __name__ == "__main__":
     main()
@@ -736,38 +686,92 @@ function Create-ScheduledTask {
         Write-LogMessage "需要管理员权限来创建计划任务" -Level "WARNING"
         Write-LogMessage "尝试使用当前用户权限创建任务..."
     }
-
     $vbsPath = "$script:scriptDir\run_login_silent.vbs"
-
-    # 删除现有任务
-    schtasks /delete /tn "$script:taskName" /f 2>$null | Out-Null
-
+    
+    # 创建任务XML
+    $taskXml = @"
+<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>$(Get-Date -Format 'yyyy-MM-ddTHH:mm:ss')</Date>
+    <Author>$env:USERNAME</Author>
+    <Description>NetworkLoginScript自动启动任务</Description>
+  </RegistrationInfo>
+  <Settings>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <DisallowStartIfOnBatteries>false</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>false</StopIfGoingOnBatteries>
+    <AllowHardTerminate>false</AllowHardTerminate>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
+    <IdleSettings>
+      <StopOnIdleEnd>false</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <Hidden>false</Hidden>
+    <RunOnlyIfIdle>false</RunOnlyIfIdle>
+    <WakeToRun>false</WakeToRun>
+    <ExecutionTimeLimit>PT0S</ExecutionTimeLimit>
+    <Priority>7</Priority>
+  </Settings>
+  <Triggers>
+    <BootTrigger>
+      <Enabled>true</Enabled>
+    </BootTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <UserId>$env:USERDOMAIN\$env:USERNAME</UserId>
+      <LogonType>InteractiveToken</LogonType>
+      <RunLevel>HighestAvailable</RunLevel>
+    </Principal>
+  </Principals>
+  <Actions Context="Author">
+    <Exec>
+      <Command>wscript.exe</Command>
+      <Arguments>"$vbsPath"</Arguments>
+    </Exec>
+  </Actions>
+</Task>
+"@
+    
     try {
+        # 保存XML到临时文件
+        $tempXmlPath = "$env:TEMP\task_temp_$(Get-Random).xml"
+        $taskXml | Out-File -FilePath $tempXmlPath -Encoding Unicode
+        
+        # 删除现有任务
+        $deleteResult = & schtasks /delete /tn "$script:taskName" /f 2>&1
+        
+        # 使用XML创建任务
         if (Test-AdminRights) {
-            # 管理员权限下使用SYSTEM账户
-            $result = schtasks /create /tn "$script:taskName" `
-                /tr "wscript.exe `"$vbsPath`"" `
-                /sc onstart /ru "SYSTEM" /rl highest /f
-
-            if ($LASTEXITCODE -eq 0) {
-                Write-LogMessage "计划任务创建成功（SYSTEM权限）" -Level "SUCCESS"
-                return $true
-            }
+            # 如果有管理员权限，使用SYSTEM账户
+            $createResult = & schtasks /create /tn "$script:taskName" /xml "$tempXmlPath" /ru "SYSTEM" /f 2>&1
+        } else {
+            # 普通用户权限
+            $createResult = & schtasks /create /tn "$script:taskName" /xml "$tempXmlPath" /f 2>&1
         }
-
-        # 使用当前用户创建任务
-        $action = New-ScheduledTaskAction -Execute "wscript.exe" -Argument "`"$vbsPath`""
-        $trigger = New-ScheduledTaskTrigger -AtStartup
-        $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries `
-            -DontStopIfGoingOnBatteries -StartWhenAvailable `
-            -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Days 0)
-
-        Register-ScheduledTask -TaskName $script:taskName -Action $action `
-            -Trigger $trigger -Settings $settings -Force | Out-Null
-
-        Write-LogMessage "计划任务创建成功（用户权限）" -Level "SUCCESS"
-        return $true
-
+        
+        # 删除临时文件
+        Remove-Item -Path $tempXmlPath -Force -ErrorAction SilentlyContinue
+        
+        if ($LASTEXITCODE -eq 0) {
+            Write-LogMessage "计划任务创建成功" -Level "SUCCESS"
+            
+            # 验证设置是否正确应用
+            $task = Get-ScheduledTask -TaskName $script:taskName -ErrorAction SilentlyContinue
+            if ($task) {
+                Write-LogMessage "任务设置验证：电池模式运行 = $(-not $task.Settings.DisallowStartIfOnBatteries)" -Level "INFO"
+                Write-LogMessage "任务设置验证：无执行时限 = $($task.Settings.ExecutionTimeLimit -eq 'PT0S')" -Level "INFO"
+            }
+            
+            return $true
+        } else {
+            Write-LogMessage "计划任务创建失败: $createResult" -Level "ERROR"
+            return $false
+        }
     } catch {
         Write-LogMessage "计划任务创建失败：$($_.Exception.Message)" -Level "ERROR"
         return $false
