@@ -1086,9 +1086,9 @@ function Request-AdminElevation {
         $response = Read-Host "是否以管理员权限重新启动？(Y/N)"
         if ($response -eq 'Y' -or $response -eq 'y') {
             try {
-                $scriptBlock = $MyInvocation.MyCommand.Definition
-                $encodedCommand = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($scriptBlock))
-                Start-Process powershell.exe -ArgumentList "-ExecutionPolicy Bypass -EncodedCommand", $encodedCommand -Verb RunAs
+                $tempFile = Join-Path $env:TEMP "$(Get-Random)-elevate.ps1"
+                $MyInvocation.MyCommand.Definition | Out-File -FilePath $tempFile -Encoding utf8
+                Start-Process powershell.exe -ArgumentList "-NoExit -ExecutionPolicy Bypass -File `"$tempFile`"" -Verb RunAs
                 exit
             } catch {
                 Write-Host "无法提升权限，将以当前权限继续运行" -ForegroundColor Yellow
